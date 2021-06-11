@@ -44,6 +44,8 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
+header('X-Powered-By: Exchange-CMS v1.0.0');
+
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
