@@ -7,10 +7,13 @@ use Illuminate\Routing\Controller;
 
 class AuthController extends Controller
 {
-   public function register(Request $request)
-   {
-       $request->validate([],[]);
-       return response()->json();
-       
-   }
+    public function register_form()
+    {
+        return view('');
+    }
+    public function register(Request $request)
+    {
+        $request->validate([], []);
+        return response()->json();
+    }
 }
