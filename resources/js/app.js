@@ -1,28 +1,25 @@
 // require('./bootstrap');
 
 window.Vue = require('vue').default;
-import App from './App.vue';
-import axios from 'axios';
-import VueAxios from 'vue-axios';
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-Vue.use(VueAxios, axios, VueRouter);
-
-// const routers = [{
-//     name: '/',
-//     path: '/',
-//     components: AdminDashboard
-// }];
-// const router = new VueRouter({ mode: 'history', router: routers });
-
+// import axios from 'axios';
+// import VueAxios from 'vue-axios';
+// import Vue from 'vue';
+// import VueRouter from 'vue-router';
+// import AdminHome from './Pages/Admin/Home.vue'
+// Vue.use(VueAxios, axios);
+// Vue.use(VueRouter)
 // const app = new Vue(
 //     Vue.util.extend(App)
-// ).$mount('#app');
-
+// ).$mount('#app');  
 // const app = new Vue({
-//     el: '#app'
+//     el: '#app',
+//     // components: { App },
+//     router
 // });
-
-new Vue({
+import { createApp } from 'vue'
+import App from './App.vue';
+import router from './router'
+const app = new Vue({
     render: h => h(App),
+    router,
 }).$mount('#app');

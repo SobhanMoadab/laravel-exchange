@@ -1,5 +1,6 @@
 <template>
 <admin-dashboard/>
+
 </template>
 <script>
 import Vue from 'vue';

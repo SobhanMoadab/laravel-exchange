@@ -9,8 +9,10 @@
         <link rel="stylesheet" href="font/simple-line-icons/css/simple-line-icons.css" />
     </head>
     <body >
-       <div id="app">
-    </div>
+        <div id="app">
+            <router-view></router-view>
+
+        </div>
         <script src="{{ mix('/js/app.js') }}"></script>
        <script src="{{asset('/js/vendor/jquery-3.3.1.min.js')}}"></script>
        <script src="{{asset('/js/vendor/bootstrap.bundle.min.js')}}"></script>

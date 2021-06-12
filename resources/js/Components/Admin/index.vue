@@ -1,6 +1,5 @@
 <template>
 <fragment>
-
 <Header />
 <Sidebar />
 <Main />
