@@ -30,7 +30,7 @@ export default{
 
 
 <style>
-  @import '../../../css/vendor/bootstrap.min.css';
+  /* @import '../../../css/vendor/bootstrap.min.css';
   @import '../../../css/vendor/bootstrap.rtl.only.min.css';
   @import '../../../css/vendor/fullcalendar.min.css';
   @import '../../../css/vendor/dataTables.bootstrap4.min.css';
@@ -42,5 +42,5 @@ export default{
   @import '../../../css/vendor/nouislider.min.css';
   @import '../../../css/vendor/bootstrap-datepicker3.min.css';
   @import '../../../css/vendor/component-custom-switch.min.css';
-  @import '../../../css/main.css';
+  @import '../../../css/main.css'; */
 </style>
