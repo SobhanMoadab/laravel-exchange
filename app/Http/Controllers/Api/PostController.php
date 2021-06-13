@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Resources\BlogResource;
-use App\Models\Blog;
+use App\Http\Resources\PostResource;
+
+use App\Models\Posts;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class BlogController extends Controller
+class PostController extends Controller
 {
-    public function create_blog(Request $request)
+    public function create_post(Request $request)
     {
         $validated =  $request->validate([
             'title' => 'required',
@@ -20,13 +21,13 @@ class BlogController extends Controller
             'body.required' => 'body is required',
         ]);
         try {
-            $blog = Blog::create([
+            $post = Posts::create([
                 'title' => $request->title,
                 'body' => $request->body,
                 'user_id' => Auth::id(),
             ]);
-            $blog_resource = new BlogResource($blog);
-            return response()->json(['msg' => 'Blog created successfully', 'blog' => $blog_resource, 201]);
+            $post_resource = new PostResource($post);
+            return response()->json(['msg' => 'Post created successfully', 'post' => $post_resource, 201]);
         } catch (\Exception $e) {
             return response()->json(['msg' => $e->getMessage(), 500]);
         }
@@ -34,8 +35,8 @@ class BlogController extends Controller
     public function delete_blog(Request $request, $id)
     {
         try {
-            Blog::findOrFail($id)->delete();
-            return response()->json(['msg' => 'Blog deleted Successfully', 204]);
+            Posts::findOrFail($id)->delete();
+            return response()->json(['msg' => 'Post deleted Successfully', 204]);
         } catch (\Exception $e) {
             return response()->json(['msg' => $e->getMessage(), 500]);
         }
@@ -43,22 +44,22 @@ class BlogController extends Controller
     public function get_blog(Request $request, $p = null){
         try{
             if($request->query('p') == 'all'){
-                $blogs = Blog::all();   
+                $posts = Posts::all();   
             }else {
-                $blogs = Blog::paginate(10);
+                $posts = Posts::paginate(10);
             }
-            return response()->json(['blogs'=>$blogs,200]);
+            return response()->json(['posts'=>$posts,200]);
         }catch(\Exception $e){
             return response()->json(['msg' => $e->getMessage(), 500]);
         }
     }
     public function edit_blog(Request $request, $id){
         try{
-            Blog::findOrFail($id)->update([
+            Posts::findOrFail($id)->update([
                 'title' => $request->title,
                 'body' => $request->body,
             ]);
-            return response()->json(['msg'=>'Blog updated Successfully',200]);
+            return response()->json(['msg'=>'Post updated Successfully',200]);
         }catch(\Exception $e){
             return response()->json(['msg' => $e->getMessage(), 500]);
         }
