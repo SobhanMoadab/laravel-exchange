@@ -34,7 +34,7 @@ class BlogController extends Controller
     public function delete_blog(Request $request, $id)
     {
         try {
-            Blog::find($id)->delete();
+            Blog::findOrFail($id)->delete();
             return response()->json(['msg' => 'Blog deleted Successfully', 204]);
         } catch (\Exception $e) {
             return response()->json(['msg' => $e->getMessage(), 500]);
