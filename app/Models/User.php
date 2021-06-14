@@ -9,6 +9,7 @@ use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
+    
     use HasFactory, Notifiable,HasApiTokens;
     protected $guarded = [];
 }
