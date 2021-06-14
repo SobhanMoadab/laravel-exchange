@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\BlogController;
+use App\Http\Controllers\Api\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,10 +28,10 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::prefix('/dashboard')->middleware('auth:api')->group(function () {
     // B L O G
-    Route::post('/blog', [BlogController::class, 'create_blog']);
-    Route::delete('/blog/{id}', [BlogController::class, 'delete_blog']);
-    Route::get('/blog/{p?}', [BlogController::class, 'get_blog']);
-    Route::put('/blog/{id}', [BlogController::class, 'edit_blog']);
+    Route::post('/blog', [PostController::class, 'create_post']);
+    Route::delete('/post/{id}', [PostController::class, 'delete_post']);
+    Route::get('/post/{p?}', [PostController::class, 'get_post']);
+    Route::put('/post/{id}', [PostController::class, 'edit_post']);
 
     
 });
