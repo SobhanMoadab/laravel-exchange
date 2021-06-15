@@ -32,7 +32,7 @@ class PostController extends Controller
             return response()->json(['msg' => $e->getMessage(), 500]);
         }
     }
-    public function delete_blog(Request $request, $id)
+    public function delete_post(Request $request, $id)
     {
         try {
             Posts::findOrFail($id)->delete();
@@ -41,7 +41,7 @@ class PostController extends Controller
             return response()->json(['msg' => $e->getMessage(), 500]);
         }
     }
-    public function get_blog(Request $request, $p = null){
+    public function get_post(Request $request, $p = null){
         try{
             if($request->query('p') == 'all'){
                 $posts = Posts::all();   
@@ -53,7 +53,7 @@ class PostController extends Controller
             return response()->json(['msg' => $e->getMessage(), 500]);
         }
     }
-    public function edit_blog(Request $request, $id){
+    public function edit_post(Request $request, $id){
         try{
             Posts::findOrFail($id)->update([
                 'title' => $request->title,

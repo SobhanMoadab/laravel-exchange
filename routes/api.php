@@ -26,7 +26,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::prefix('/dashboard')->middleware('auth:api')->group(function () {
+Route::prefix('/dashboard')->group(function () {
     // B L O G
     Route::post('/post', [PostController::class, 'create_post']);
     Route::delete('/post/{id}', [PostController::class, 'delete_post']);
