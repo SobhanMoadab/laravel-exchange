@@ -42,6 +42,7 @@ class PostController extends Controller
         }
     }
     public function get_post(Request $request, $p = null){
+
         try{
             if($request->query('p') == 'all'){
                 $posts = Posts::all();   
@@ -55,11 +56,12 @@ class PostController extends Controller
     }
     public function edit_post(Request $request, $id){
         try{
-            Posts::findOrFail($id)->update([
+            $post = Posts::findOrFail($id);
+            $post->update([
                 'title' => $request->title,
                 'body' => $request->body,
             ]);
-            return response()->json(['msg'=>'Post updated Successfully',200]);
+            return response()->json(['msg'=>'Post updated Successfully','post' => $post ,200]);
         }catch(\Exception $e){
             return response()->json(['msg' => $e->getMessage(), 500]);
         }

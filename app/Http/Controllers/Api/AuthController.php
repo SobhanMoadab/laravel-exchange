@@ -62,7 +62,6 @@ class AuthController extends Controller
      */
     public function register(Request $request)
     {
-        
         $validated = $request->validate([
             'email' => 'required|unique:users,email',
             'password' => 'required|min:6|confirmed',
