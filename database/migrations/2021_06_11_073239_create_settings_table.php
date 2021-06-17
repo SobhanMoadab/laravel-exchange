@@ -15,6 +15,9 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
+            $table->text('key');
+            $table->text('value');
+            //TODO: License Validator On Extensions Loader?!
             $table->timestamps();
         });
     }

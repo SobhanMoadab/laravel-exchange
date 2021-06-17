@@ -15,6 +15,12 @@ class CreateCurrenciesTable extends Migration
     {
         Schema::create('currencies', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('icon');
+            $table->boolean('is_active');
+            //TODO: Implementation Of Live API Price Helper Needed Here
+            $table->text('price');
+            $table->integer('admin_id');
             $table->timestamps();
         });
     }
