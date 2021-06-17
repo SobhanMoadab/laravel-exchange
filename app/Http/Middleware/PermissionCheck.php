@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Role;
 
 class PermissionCheck
 {
@@ -18,14 +19,11 @@ class PermissionCheck
      */
     public function handle(Request $request, Closure $next, $permission)
     {
-        $role = Auth::user()->roles->pluck('name');
-        $userPermission = Auth::user()->getPermissionsViaRoles();
-
-        if ($userPermission != $permission) {
-            return response()->json(['a' => $userPermission, 'b'=> $permission]);
-
+        $role = Auth::user()->getAllPermissions()->pluck('name');
+        if (strpos($role, $permission) >= 0) {
+            return $next($request);
         } else {
-            return redirect(route('login'));
+            return response()->json(['msg' => 'you are not authorized'], 403);
         }
     }
 }
