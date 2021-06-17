@@ -15,6 +15,15 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
+            $table->enum('status', ['completed' , 'failed' , 'cancelled']);
+            // Generate A BCrypt String Of (Current Time Stamp And user_id)
+            $table->text('invoice_ray_id');
+            $table->text('gateway_message')->nullable();
+            // All User Inputs Returned From Gateway Will Recoreded In Here For Example : { data : amount : xxx$ } }
+            $table->text('payment_data')->nullable();
+            $table->integer('gateway_id');
+            $table->integer('status_code')->nullable();
+
             $table->timestamps();
         });
     }
