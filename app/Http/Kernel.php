@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\PermissionCheck;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -62,8 +63,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'adminCheck' => AdminCheck::class,
-        'subadminCheck' => SubAdminCheck::class,
-        'superadminCheck' => SuperAdminCheck::class,
+        'permissionCheck' => PermissionCheck::class,
+  
     ];
 }

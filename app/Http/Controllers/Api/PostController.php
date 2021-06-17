@@ -55,6 +55,13 @@ class PostController extends Controller
         }
     }
     public function edit_post(Request $request, $id){
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required'
+        ],[
+            'title.required' => 'title is required',
+            'body.required' => 'body is required'
+        ]);
         try{
             $post = Posts::findOrFail($id);
             $post->update([

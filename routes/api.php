@@ -30,13 +30,15 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
     // todo add middleware to check if user is registered, removed for developement reasons
 Route::prefix('/dashboard')->group(function () {
     // B L O G
-    Route::post('/post', [PostController::class, 'create_post'])->middleware('permission:store a post');
-    Route::delete('/post/{id}', [PostController::class, 'delete_post'])->middleware('permission:delete a post');
+    Route::post('/post', [PostController::class, 'create_post']);
+    Route::delete('/post/{id}', [PostController::class, 'delete_post']);
     Route::get('/post/{p?}', [PostController::class, 'get_post']);
     Route::put('/post/{id}', [PostController::class, 'edit_post']);
     // P E R M I S S I O N 
     Route::post('/create_role',[PermissionController::class, 'create_role']);
+    Route::post('/create_permission',[PermissionController::class, 'create_permission']);
     Route::post('/create_subadmin',[PermissionController::class, 'create_subadmin']);
+    Route::get('/get_all_roles', [PermissionController::class, 'get_all_roles'])->middleware(['auth:api', 'permissionCheck:post a post']);
     
 });
 Route::get('/debug-sentry', function () {
