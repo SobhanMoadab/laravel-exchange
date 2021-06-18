@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->integer('user_id');
             $table->integer('invoice_id');
             $table->enum('order_status', ['in_progress', 'pending_confirmation', 'completed']);
-            // We Can Add Any Extra Data We Want For Further Extensions Releases
+            // We Can Add Any Extra Data We Want For Further Modules Releases
             $table->json('data');
             $table->timestamps();
         });

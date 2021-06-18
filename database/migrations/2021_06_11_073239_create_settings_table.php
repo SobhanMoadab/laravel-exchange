@@ -17,7 +17,7 @@ class CreateSettingsTable extends Migration
             $table->id();
             $table->text('key');
             $table->text('value');
-            //TODO: License Validator On Extensions Loader?!
+            //TODO: License Validator On Modules Loader?!
             $table->timestamps();
         });
     }
