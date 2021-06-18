@@ -12,7 +12,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
   /**
  * @OA\Info(
- *    title="Your super  ApplicationAPI",
+ *    title="E-CMS Platform",
  *    version="3.0.0",
  * )
  */
