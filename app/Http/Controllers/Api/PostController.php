@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PostController extends Controller
 {
+    //TODO: We Need Meessage Helper Function With Response Code Handler In Kernel
     public function create_post(Request $request)
     {
         $validated =  $request->validate([
@@ -49,7 +50,7 @@ class PostController extends Controller
 
         try{
             if($request->query('p') == 'all'){
-                $posts = Posts::all();   
+                $posts = Posts::all();
             }else {
                 $posts = Posts::paginate(10);
             }

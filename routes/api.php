@@ -21,20 +21,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-
-// A U T H E N T I C A T I ON
+// A U T H E N T I C A T I O N
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
-
-    // todo add middleware to check if user is registered, removed for developement reasons
+//TODO: add middleware to check if user is registered, removed for developement reasons
 Route::prefix('/dashboard')->group(function () {
     // B L O G
     Route::post('/post', [PostController::class, 'create_post'])->middleware(['auth:api', 'role:SuperAdmin|Admin|SubAdmin|post a post']);
     Route::delete('/post/{id}', [PostController::class, 'delete_post'])->middleware(['auth:api', 'role:SubAdmin']);
     Route::get('/post/{p?}', [PostController::class, 'get_post']);
     Route::put('/post/{id}', [PostController::class, 'edit_post']);
-    // P E R M I S S I O N 
+    // P E R M I S S I O N
     Route::post('/create_role',[PermissionController::class, 'create_role']);
     Route::post('/assign_permission',[PermissionController::class, 'assign_permission_to_role'])->middleware(['auth:api', 'role:SuperAdmin']);
     Route::post('/create_subadmin',[PermissionController::class, 'create_subadmin'])->middleware(['auth:api', 'role:SuperAdmin|Admin']);
@@ -44,6 +41,7 @@ Route::prefix('/dashboard')->group(function () {
     
     
 });
+
 Route::get('/debug-sentry', function () {
     throw new Exception('My first Sentry error!');
 });

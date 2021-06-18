@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCurrenciesTable extends Migration
+class CreateGatewaysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateCurrenciesTable extends Migration
      */
     public function up()
     {
-        Schema::create('currencies', function (Blueprint $table) {
+        Schema::create('gateways', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            // Note : Icon Is Base64 String Encoded In Admin Dashboard Front And Saved As Base 64 For Easy Conduction
-            $table->text('icon');
+            // In This Method If Any Gateway Needed API Key Or Any Additional Configurations
+            // We Don't Need to Change Structure
+            $table->text('settings');
             $table->boolean('is_active');
-            //TODO: Implementation Of Live API Price Helper Needed Here
-            $table->text('price');
-            $table->integer('admin_id');
+            // Priority In Payment Page ( ex : Stripe : 1 , Paypal : 2 )
+            $table->integer('index');
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreateCurrenciesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('currencies');
+        Schema::dropIfExists('gateways');
     }
 }
