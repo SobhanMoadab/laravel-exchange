@@ -23,7 +23,7 @@ class PermissionController extends Controller
         // fetch all roles
         $user = Auth::user();
         $user->with('roles')->first();
-        return response()->json(['a'=>$user->roles]);
+        return response()->json(['a' => $user->roles]);
 
         $roles = Role::get();
         return response()->json(['msg' => 'Success', 'roles' => $roles, 200]);
@@ -37,47 +37,116 @@ class PermissionController extends Controller
             'name.required' => 'name is required'
         ]);
         try {
-            $role = Role::create(['name' => $validated['name']]);
+            $role = Role::create(['guard_name'=>'api','name' => $validated['name']]);
             return response()->json(['msg' => 'success', 'role' => $role, 200]);
         } catch (\Exception $e) {
             return response()->json(['msg' => $e->getMessage(), 500]);
         }
     }
-    public function create_permission(Request $request){
-
+    public function create_permission(Request $request)
+    {
+        // create a permission to be checked by middleware,
+        //assignable to role
         $validated = $request->validate([
             'name' => 'required'
         ], [
             'name.required' => 'name is required'
         ]);
         try {
-             $role = Role::findByName('SuperAdmin');
-             $role->givePermissionTo('post a post');
-            return response()->json(['msg' => 'sucess'], 200);
+            $permission = Permission::create(['guard_name'=>'api','name' => $validated['name']]);
+            return response()->json(['msg' => 'success', 'permission' => $permission], 200);
         } catch (\Exception $e) {
-            return response()->json(['msg' => $e->getMessage(), 500]);
+            return response()->json(['msg' => $e->getMessage()], 500);
         }
     }
+    public function assign_permission_to_role(Request $request)
+    {
+        // you need to create permission first to assign it to a role
+
+        $validated = $request->validate([
+            'name' => 'required',
+            'permission' => 'required',
+        ], [
+            'name.required' => 'name is required',
+            'permission.required' => 'permission is required',
+        ]);
+        try {
+            $role = Role::findByName($request->name,'api');
+            $permission = Permission::findByName($request->permission,'api');
+
+            if (!$role || !$permission) {
+                return response()->json(['msg' => 'requested role or permission does not existsts'], 400);
+            }
+            $role->givePermissionTo($request->permission);
+            return response()->json(['msg' => $request->permission . ' assigned to ' . $request->name], 200);
+        } catch (\Exception $e) {
+            return response()->json(['msg' => $e->getMessage()], 500);
+        }
+    }
+    public function revoke_permission_of_role(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required',
+            'permission' => 'required',
+        ], [
+            'name.required' => 'name is required',
+            'permission.required' => 'permission is required',
+        ]);
+
+        try {
+            $role = Role::findByName($request->name, 'api');
+            $permission = Permission::findByName($request->permission,'api');
+
+            if (!$role || !$permission) {
+                return response()->json(['msg' => 'requested role or permission does not exists'], 400);
+            }
+           $role->revokePermissionTo($request->permission);
+           return response()->json(['msg' => 'permission revoked'], 200);
+
+        } catch (\Exception $e) {
+            return response()->json(['msg' => $e->getMessage()], 500);
+        }
+    }
+
     public function create_subadmin(Request $request)
     {
         // done by super admin and admin
+       
         // created subadmin even with same permissions as admin CAN NOT DELETE admins or superAdmin
+       
         // has custom privileges
 
-        $validated = $request->validate(['user_id' => 'required'], ['user_id.required' => 'user_id is required']);
+        $validated = $request->validate(['user_id' => 'required','permission' => 'required'], ['user_id.required' => 'user_id is required', 'permission.required' => 'permission is required']);
+
         try {
             $user_id = $validated['user_id'];
-            $user =  User::find($user_id);
-            if($user->hasRole('Admin') || $user->Role('SuperAdmin')){
-            return response()->json(['msg' => 'User is already an Admin'],400);
+            $user =  User::findOrFail($user_id);
+            if ($user->hasRole('Admin') || $user->Role('SuperAdmin')) {
+                return response()->json(['msg' => 'User is already an Admin'], 400);
             }
 
             $user->syncRoles('SubAdmin');
             $user_resource = new UserResource($user);
 
-            return response()->json(['msg' => 'Role assigned to user', 'user' => $user_resource],200);
+            return response()->json(['msg' => 'Role assigned to user', 'user' => $user_resource], 200);
         } catch (\Exception $e) {
             return response()->json(['msg' => $e->getMessage()], 500);
         }
+    }
+    //to do
+    //create function to assign role to user
+    public function assign_role_to_user(Request $request){
+        try{
+            $request->validate([
+                'user_id' => 'required',
+                ''
+            ],[
+
+            ]);
+
+        }catch(\Exception $e){
+
+        }
+
     }
 }

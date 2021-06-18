@@ -12,4 +12,5 @@ class User extends Authenticatable
     
     use HasFactory, Notifiable,HasApiTokens,HasRoles;
     protected $guarded = [];
+    protected $guard_name = 'api';
 }

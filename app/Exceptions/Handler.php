@@ -2,7 +2,10 @@
 
 namespace App\Exceptions;
 
+use Facade\FlareClient\Http\Response;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -12,6 +15,24 @@ class Handler extends ExceptionHandler
      *
      * @var array
      */
+    public function render($request, Throwable $exception)
+    {
+        if ($request->is('api/*')) {
+            if ($exception instanceof ModelNotFoundException) {
+                $model = strtolower(class_basename($exception->getModel()));
+
+                return response()->json([
+                    'error' => 'Model not found'
+                ], 404);
+            }
+            if ($exception instanceof NotFoundHttpException) {
+                return response()->json([
+                    'error' => 'Resource not found'
+                ], 404);
+            }
+        }
+    }
+
     public function report(Throwable $exception)
     {
         if (app()->bound('sentry') && $this->shouldReport($exception)) {
@@ -42,6 +63,7 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
+
         $this->reportable(function (Throwable $e) {
             //
         });

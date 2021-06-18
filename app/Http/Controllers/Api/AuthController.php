@@ -80,7 +80,7 @@ class AuthController extends Controller
             $user_resource = new UserResource($user);
             return response()->json(['user' => $user_resource, 'token' => $token], 200);
         } catch (\Exception $e) {
-            return response()->json(['msg' => $e->getMessage(), 500]);
+            return response()->json(['msg' => $e->getMessage()],500);
         }
     }
      /**
@@ -143,12 +143,12 @@ class AuthController extends Controller
         ]);
         try {
             if (!auth()->attempt($validated)) {
-                return response()->json(['msg' => 'Invalid Credentials', 403]);
+                return response()->json(['msg' => 'Invalid Credentials'],403);
             }
             $token = auth()->user()->createToken('authToken')->accessToken;
-            return response()->json(['msg' => 'Logged In', 'token' => $token, 200]);
+            return response()->json(['msg' => 'Logged In', 'token' => $token],200);
         } catch (\Exception $e) {
-            return response()->json(['msg' => $e->getMessage(), 500]);
+            return response()->json(['msg' => $e->getMessage()],500);
         }
     }
 }
