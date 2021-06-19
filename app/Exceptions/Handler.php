@@ -14,13 +14,24 @@ class Handler extends ExceptionHandler
      * A list of the exception types that are not reported.
      *
      * @var array
+     * 
+     * 
      */
-    public function render($request, Throwable $exception ){
+
+    public function render($request, Throwable $exception)
+    {
         if ($exception instanceof ModelNotFoundException) {
             return response()->json([
                 'error' => 'Data not found'
             ], 404);
         }
+        if ($exception instanceof NotFoundHttpException) {
+            return response()->json([
+                'error' => 'route not found'
+            ], 404);
+        }
+
+
         return parent::render($request, $exception);
     }
 
