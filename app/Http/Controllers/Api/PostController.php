@@ -8,8 +8,9 @@ use App\Models\Posts;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Database\Eloquent\ModelNotFoundException; 
-
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\File;
+use Image;
 class PostController extends Controller
 {
     //TODO: We Need Meessage Helper Function With Response Code Handler In Kernel
@@ -23,10 +24,18 @@ class PostController extends Controller
             'body.required' => 'body is required',
         ]);
         try {
+            $path = public_path('Images/post/');
+            if(!File::isDirectory($path)){
+                File::makeDirectory($path, 0777, true, true);
+            }
+            $time = time();
+            $cover = 'Square' . $time . '.' . $request->image->extension();
+            $original_image = Image::make($request->image)->save(('Images/post/').$cover, 80);
             $post = Posts::create([
                 'title' => $request->title,
                 'body' => $request->body,
                 'user_id' => Auth::user()->id,
+                'image_path' => $cover
             ]);
             $post_resource = new PostResource($post);
             return response()->json(['msg' => 'Post created successfully', 'post' => $post_resource],201);
