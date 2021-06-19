@@ -35,7 +35,7 @@ Route::prefix('/dashboard')->group(function () {
     Route::get('/post/{p?}', [PostController::class, 'get_post'])->middleware('auth:api');
     Route::put('/post/{id}', [PostController::class, 'edit_post'])->middleware('auth:api');
     // P E R M I S S I O N
-                   // to do add middleware after production
+                   //TODO: add middleware after production
                    // removed for dev reasons
 
     // Route::post('/assign_permission',[PermissionController::class, 'assign_permission_to_role'])->middleware(['auth:api', 'role:SuperAdmin']);
