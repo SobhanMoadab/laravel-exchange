@@ -7505,16 +7505,16 @@ var render = function() {
                 _vm._v(" "),
                 _c("p", { staticClass: "white mb-0" }, [
                   _vm._v(
-                    "\n                                Please use your credentials to login.\n                                "
+                    "\r\n                                Please use your credentials to login.\r\n                                "
                   ),
                   _c("br"),
                   _vm._v(
-                    "If you are not a member, please\n                                "
+                    "If you are not a member, please\r\n                                "
                   ),
                   _c("a", { staticClass: "white", attrs: { href: "#" } }, [
                     _vm._v("register")
                   ]),
-                  _vm._v(".\n                            ")
+                  _vm._v(".\r\n                            ")
                 ])
               ]),
               _vm._v(" "),
