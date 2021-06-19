@@ -26,7 +26,7 @@ class PermissionController extends Controller
         return response()->json(['a' => $user->roles]);
 
         $roles = Role::get();
-        return response()->json(['msg' => 'Success', 'roles' => $roles, 200]);
+        return response()->json(['msg' => 'Success', 'roles' => $roles],200);
     }
     public function create_role(Request $request)
     {
@@ -38,9 +38,9 @@ class PermissionController extends Controller
         ]);
         try {
             $role = Role::create(['guard_name' => 'api', 'name' => $validated['name']]);
-            return response()->json(['msg' => 'success', 'role' => $role, 200]);
+            return response()->json(['msg' => 'success', 'role' => $role],200);
         } catch (\Exception $e) {
-            return response()->json(['msg' => $e->getMessage(), 500]);
+            return response()->json(['msg' => $e->getMessage()],500);
         }
     }
     public function create_permission(Request $request)
