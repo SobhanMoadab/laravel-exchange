@@ -37,7 +37,7 @@ class PermissionController extends Controller
             'name.required' => 'name is required'
         ]);
         try {
-            $role = Role::create(['guard_name'=>'api','name' => $validated['name']]);
+            $role = Role::create(['guard_name' => 'api', 'name' => $validated['name']]);
             return response()->json(['msg' => 'success', 'role' => $role, 200]);
         } catch (\Exception $e) {
             return response()->json(['msg' => $e->getMessage(), 500]);
@@ -53,7 +53,7 @@ class PermissionController extends Controller
             'name.required' => 'name is required'
         ]);
         try {
-            $permission = Permission::create(['guard_name'=>'api','name' => $validated['name']]);
+            $permission = Permission::create(['guard_name' => 'api', 'name' => $validated['name']]);
             return response()->json(['msg' => 'success', 'permission' => $permission], 200);
         } catch (\Exception $e) {
             return response()->json(['msg' => $e->getMessage()], 500);
@@ -71,8 +71,8 @@ class PermissionController extends Controller
             'permission.required' => 'permission is required',
         ]);
         try {
-            $role = Role::findByName($request->name,'api');
-            $permission = Permission::findByName($request->permission,'api');
+            $role = Role::findByName($request->name, 'api');
+            $permission = Permission::findByName($request->permission, 'api');
 
             if (!$role || !$permission) {
                 return response()->json(['msg' => 'requested role or permission does not existsts'], 400);
@@ -95,28 +95,68 @@ class PermissionController extends Controller
 
         try {
             $role = Role::findByName($request->name, 'api');
-            $permission = Permission::findByName($request->permission,'api');
+            $permission = Permission::findByName($request->permission, 'api');
 
             if (!$role || !$permission) {
                 return response()->json(['msg' => 'requested role or permission does not exists'], 400);
             }
-           $role->revokePermissionTo($request->permission);
-           return response()->json(['msg' => 'permission revoked'], 200);
-
+            $role->revokePermissionTo('edit articles');
+            return response()->json(['msg' => 'permission revoked'], 200);
         } catch (\Exception $e) {
             return response()->json(['msg' => $e->getMessage()], 500);
         }
     }
 
-    public function create_subadmin(Request $request)
+    public function create_sub_admin(Request $request)
     {
         // done by super admin and admin
-       
-        // created subadmin even with same permissions as admin CAN NOT DELETE admins or superAdmin
-       
-        // has custom privileges
+        // created subadmin even with permissions as admin /CAN NOT DELETE admins or superAdmin
 
-        $validated = $request->validate(['user_id' => 'required','permission' => 'required'], ['user_id.required' => 'user_id is required', 'permission.required' => 'permission is required']);
+
+        // 1 give permissions to array of users
+        // 2 assign role of sub-admin
+        
+        $validated = $request->validate([
+            'user_id' => 'required',
+            'permission' => 'required'
+        ], [
+            'user_id.required' => 'cant be empty',
+            'permission.required' => 'cant be empty'
+        ]);
+
+        try {
+            $role =  Role::findOrCreate('admin','api');
+            $permission = Permission::findOrCreate($request->permission, 'api');
+            $user = User::findOrFail($request->user_id);
+            if(!$user->hasRole('admin')){
+                $user->assignRole('admin');
+            }
+            $user->givePermissionTo($request->permission);
+            return response()->json(['msg' =>  "user can '$request->permission' "],200);
+            
+           
+        } catch (\Exception $e) {
+            return response()->json(['msg' => $e->getMessage()], 500);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        $validated = $request->validate(['user_id' => 'required', 'permission' => 'required'], ['user_id.required' => 'user_id is required', 'permission.required' => 'permission is required']);
 
         try {
             $user_id = $validated['user_id'];
@@ -135,18 +175,14 @@ class PermissionController extends Controller
     }
     //to do
     //create function to assign role to user
-    public function assign_role_to_user(Request $request){
-        try{
+    public function assign_role_to_user(Request $request)
+    {
+        try {
             $request->validate([
                 'user_id' => 'required',
                 ''
-            ],[
-
-            ]);
-
-        }catch(\Exception $e){
-
+            ], []);
+        } catch (\Exception $e) {
         }
-
     }
 }

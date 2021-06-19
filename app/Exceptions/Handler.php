@@ -15,22 +15,13 @@ class Handler extends ExceptionHandler
      *
      * @var array
      */
-    public function render($request, Throwable $exception)
-    {
-        if ($request->is('api/*')) {
-            if ($exception instanceof ModelNotFoundException) {
-                $model = strtolower(class_basename($exception->getModel()));
-
-                return response()->json([
-                    'error' => 'Model not found'
-                ], 404);
-            }
-            if ($exception instanceof NotFoundHttpException) {
-                return response()->json([
-                    'error' => 'Resource not found'
-                ], 404);
-            }
+    public function render($request, Throwable $exception ){
+        if ($exception instanceof ModelNotFoundException) {
+            return response()->json([
+                'error' => 'Data not found'
+            ], 404);
         }
+        return parent::render($request, $exception);
     }
 
     public function report(Throwable $exception)
