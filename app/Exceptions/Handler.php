@@ -2,9 +2,15 @@
 
 namespace App\Exceptions;
 
+use BadMethodCallException;
 use Facade\FlareClient\Http\Response;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use InvalidArgumentException;
+use PDO;
+use PDOException;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
@@ -20,6 +26,27 @@ class Handler extends ExceptionHandler
 
     public function render($request, Throwable $exception)
     {
+        if($exception instanceof MethodNotAllowedHttpException){
+            return response()->json([
+                'error' => $exception->getMessage()
+            ], 500);
+        }
+        if($exception instanceof BadMethodCallException){
+            return response()->json([
+                'error' => $exception->getMessage()
+            ], 500);
+        }
+
+        if($exception instanceof InvalidArgumentException){
+            return response()->json([
+                'error' => $exception->getMessage()
+            ], 500);
+        }
+        if ($exception instanceof QueryException) {
+            // example algo for make response
+            return response()->json(['message' => 'something is wrong'], 500);
+        }
+
         if ($exception instanceof ModelNotFoundException) {
             return response()->json([
                 'error' => 'Data not found'
@@ -31,12 +58,12 @@ class Handler extends ExceptionHandler
             ], 404);
         }
 
-
         return parent::render($request, $exception);
     }
 
     public function report(Throwable $exception)
     {
+        
         if (app()->bound('sentry') && $this->shouldReport($exception)) {
             app('sentry')->captureException($exception);
         }

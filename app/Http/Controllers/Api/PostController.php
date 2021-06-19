@@ -52,7 +52,6 @@ class PostController extends Controller
             return response()->json(['msg' => 'requested record does not exists'],404);
         } catch(\Exception $e){
             return response()->json(['msg' => $e->getMessage()],500);
-
         }
     }
     public function get_post(Request $request, $p = null){
@@ -82,8 +81,11 @@ class PostController extends Controller
                 'title' => $request->title,
                 'body' => $request->body,
             ]);
-            return response()->json(['msg'=>'Post updated Successfully','post' => $post],200);
+            $post_resource = new PostResource($post);
+
+            return response()->json(['msg'=>'Post updated Successfully','post' => $post_resource],200);
         }catch(\Exception $e){
+           
             return response()->json(['msg' => $e->getMessage()],500);
         }
     }

@@ -15,9 +15,9 @@ class CreateCurrenciesTable extends Migration
     {
         Schema::create('currencies', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             // Note : Icon Is Base64 String Encoded In Admin Dashboard Front And Saved As Base 64 For Easy Conduction
-            $table->text('icon');
+            $table->longText('icon');
             $table->boolean('is_active');
             //TODO: Implementation Of Live API Price Helper Needed Here
             $table->text('price');

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\CurrencyController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\PostController;
 use Illuminate\Http\Request;
@@ -48,6 +49,13 @@ Route::prefix('/dashboard')->group(function () {
     Route::post('/create_role',[PermissionController::class, 'create_role']);
     Route::get('/get_all_roles', [PermissionController::class, 'get_all_roles']);
     
+    // C U R R E N C Y
+    Route::post('/create_currency',[CurrencyController::class, 'create_currency'])->middleware('auth:api');
+    Route::get('/get_currency', [CurrencyController::class, 'get_currencies'])->middleware('auth:api');
+    Route::put('/edit_currency/{id}', [CurrencyController::class, 'edit_currency'])->middleware('auth:api');
+    Route::delete('/delete_currency/{id}', [CurrencyController::class, 'delete_currency'])->middleware('auth:api');
+
+
     
 });
 
