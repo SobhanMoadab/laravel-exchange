@@ -34,7 +34,7 @@ Route::prefix('/dashboard')->group(function () {
     Route::get('/post/{p?}', [PostController::class, 'get_post'])->middleware('auth:api');
     Route::put('/post/{id}', [PostController::class, 'edit_post'])->middleware('auth:api');
     // P E R M I S S I O N
-                   // to do add middleware after production
+                   //TODO: add middleware after production
                    // removed for dev reasons
 
     // Route::post('/assign_permission',[PermissionController::class, 'assign_permission_to_role'])->middleware(['auth:api', 'role:SuperAdmin']);
@@ -47,10 +47,4 @@ Route::prefix('/dashboard')->group(function () {
     Route::post('/revoke_permission',[PermissionController::class, 'revoke_permission_of_role'])->middleware('auth:api');
     Route::post('/create_role',[PermissionController::class, 'create_role']);
     Route::get('/get_all_roles', [PermissionController::class, 'get_all_roles']);
-    
-    
-});
-
-Route::get('/debug-sentry', function () {
-    throw new Exception('My first Sentry error!');
 });
