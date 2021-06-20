@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="{{asset('font/iconsmind-s/css/iconsminds.css')}}" />
         <link rel="stylesheet" href="{{asset('font/simple-line-icons/css/simple-line-icons.css')}}" />
     
+
+        <link rel="stylesheet" href="/css/vendor/bootstrap-float-label.min.css" />
         <link rel="stylesheet" href="{{asset('css/vendor/bootstrap.min.css')}}" />
         <link rel="stylesheet" href="{{asset('css/vendor/bootstrap.rtl.only.min.css')}}" />
         <link rel="stylesheet" href="{{asset('css/vendor/fullcalendar.min.css')}}" />
@@ -26,26 +28,6 @@
                 
             </App>
         </div>
-        {{--<script src="{{asset('/js/vendor/jquery-3.3.1.min.js')}}"></script>
-       <script src="{{asset('/js/vendor/bootstrap.bundle.min.js')}}"></script>
-       <script src="{{asset('/js/vendor/Chart.bundle.min.js')}}"></script>
-       <script src="{{asset('/js/vendor/chartjs-plugin-datalabels.js')}}"></script>
-       <script src="{{asset('/js/vendor/moment.min.js')}}"></script>
-       <script src="{{asset('/js/vendor/fullcalendar.min.js')}}"></script>
-       <script src="{{asset('/js/vendor/datatables.min.js')}}"></script>
-       <script src="{{asset('/js/vendor/perfect-scrollbar.min.js')}}"></script>
-       <script src="{{asset('/js/vendor/progressbar.min.js')}}"></script>
-       <script src="{{asset('/js/vendor/jquery.barrating.min.js')}}"></script>
-       <script src="{{asset('/js/vendor/select2.full.js')}}"></script>
-       <script src="{{asset('/js/vendor/nouislider.min.js')}}"></script>
-       <script src="{{asset('/js/vendor/bootstrap-datepicker.js')}}"></script>
-       <script src="{{asset('/js/vendor/Sortable.js')}}"></script>
-       <script src="{{asset('/js/vendor/mousetrap.min.js')}}"></script>
-       <script src="{{asset('/js/vendor/glide.min.js')}}"></script>
-       <script src="{{asset('/js/dore.script.js')}}"></script>
-       <script src="{{asset('/js/scripts.js')}}"></script> --}}
-       
-
        <!-- JavaScript Bundle with Popper -->
        <script src="{{ asset('/js/app.js') }}"></script>
        <script src="/js/vendor/jquery-3.3.1.min.js"></script>

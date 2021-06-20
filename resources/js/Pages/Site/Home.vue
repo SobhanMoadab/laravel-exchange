@@ -2,9 +2,10 @@
 <div>
         <Header/>
             <div class="container-fluid" role="main">
-
+                
                 <div class="exchange-section data_background text-center"
-                data-background='/site/assets/images/exchange-background.png'>.
+                data-background='/site/assets/images/exchange-background.png'>
+
                     <CryptoBar />
                 <h1 class="text-center">Buy and sell Coins at the Cryptic without additional fees</h1>
                 <p class="text-center">Buy now and get +40% extra bonus Minimum pre-sale amount 25 Cryptic Coin. We accept
@@ -306,6 +307,9 @@
      </div>
 </template> 
 <script>
+ 
+
+
 import Header from '../../layout/Site/Header.vue';
 import Footer from '../../layout/Site/Footer.vue';
 import CryptoBar from '../../Components/Binance/CryptoBar.vue'

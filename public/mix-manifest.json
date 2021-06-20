@@ -1,9 +1,4 @@
 {
     "/js/app.js": "/js/app.js",
-    "/js/Home Dashboard.js": "/js/Home Dashboard.js",
-    "/js/Post Blog page.js": "/js/Post Blog page.js",
-    "/js/New Post Blog.js": "/js/New Post Blog.js",
-    "/js/Post Category.js": "/js/Post Category.js",
-    "/js/Login Page.js": "/js/Login Page.js",
     "/css/app.css": "/css/app.css"
 }
