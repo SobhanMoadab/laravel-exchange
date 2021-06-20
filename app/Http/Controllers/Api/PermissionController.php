@@ -80,7 +80,7 @@ class PermissionController extends Controller
             $role->givePermissionTo($request->permission);
             return response()->json(['msg' => $request->permission . ' assigned to ' . $request->name], 200);
         } catch (\Exception $e) {
-            return response()->json(['msg' => $e->getMessage()], 500);
+          return response()->json(['msg' => $e->getMessage()], 500);
         }
     }
     public function revoke_permission_of_role(Request $request)
