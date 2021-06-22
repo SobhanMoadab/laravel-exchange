@@ -7,11 +7,36 @@ use App\Models\Currency;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+
 require_once("$_SERVER[DOCUMENT_ROOT]/PHP-websocket-client/websocket_client.php");
 class CurrencyController extends Controller
 {
     // crud for currency 
     // currencies can be turned off and on
+
+    public function coin_availablity(Request $request, $id)
+    {
+        $request->validate([
+            'state' => 'required'
+        ], [
+            'state.required' => 'declare the state'
+        ]);
+        try {
+            $currency = Currency::findOrFail($id);
+            if ($request->state == 0) {
+                $currency->update([
+                    'is_active' => 0
+                ]);
+            } elseif ($request->state == 1) {
+                $currency->update([
+                    'is_active' => 1
+                ]);
+            }
+            return response()->json(['msg' => 'success', 'currency' => $currency], 200);
+        } catch (\Exception $e) {
+            return response()->json(['msg' => $e->getMessage()], 500);
+        }
+    }
     public function create_currency(Request $request)
     {
         $request->validate([
@@ -28,10 +53,13 @@ class CurrencyController extends Controller
         try {
             $currency = Currency::create([
                 'name' => $request->name,
+                'min' => $request->min,
+                'max' => $request->max,
                 'icon' => $request->icon,
                 'is_active' => $request->is_active,
                 'price' => $request->price,
                 'admin_id' => Auth::id(),
+
             ]);
             $currency_resource = new CurrencyResource($currency);
             return response()->json(['msg' => 'Success', 'currency' => $currency_resource], 200);
@@ -105,26 +133,24 @@ class CurrencyController extends Controller
             $streamname = "!ticker@arr";
             $t = array("method" => "SUBSCRIBE", "params" => array("$streamname"), "id" => 1);
             $uri = "/ws/$streamname";
-            
+
             $message = json_encode($t) . "\n";
-            
+
             echo "\n*** Connecting to server: $server at " . gmdate("Y-m-d H:i:s") . " UTC+0\n";
-            
-            $sp = websocket_open($server, $serverport,'',$errstr, 30, true, false, $uri);
+
+            $sp = websocket_open($server, $serverport, '', $errstr, 30, true, false, $uri);
             if ($sp) {
                 echo "Sending message to server: '" . trim($message) . "' \n";
-                websocket_write($sp,$message);
+                websocket_write($sp, $message);
                 while (1) {
-                  $r = websocket_read($sp,$errstr);
-                  echo "$r\n";
-                  if ($r == "") {
-                    echo "errstr=$errstr\n";
-                    die;
-                  }
+                    $r = websocket_read($sp, $errstr);
+                    echo "$r\n";
+                    if ($r == "") {
+                        echo "errstr=$errstr\n";
+                        die;
+                    }
                 }
-              }
-
-
+            }
         } catch (\Exception $e) {
             return response()->json(['msg' => $e->getMessage()], 500);
         }

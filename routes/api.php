@@ -55,6 +55,7 @@ Route::prefix('/dashboard')->middleware('auth:api')->group(function () {
     Route::get('/get_currency', [CurrencyController::class, 'get_currencies']);
     Route::put('/edit_currency/{id}', [CurrencyController::class, 'edit_currency']);
     Route::delete('/delete_currency/{id}', [CurrencyController::class, 'delete_currency']);
+    Route::post('/coin_state/{id}',[CurrencyController::class, 'coin_availablity']);
 
     // S E T T I N G
     Route::post('/down', [SettingController::class, 'maintenance_on'])->middleware('role:super-admin');
@@ -63,6 +64,7 @@ Route::prefix('/dashboard')->middleware('auth:api')->group(function () {
     
 });
 
+Route::get('/ws_market', [CurrencyController::class, 'ws_market']);
 
 
 Route::get('/debug-sentry', function () {

@@ -20,6 +20,8 @@ class CurrencyResource extends JsonResource
             "icon"=> $this->icon,
             "is_active"=> $this->is_active,
             "price" => $this->price,
+            "min" => $this->min,
+            "max" => $this->max,
         ];
     }
 }
