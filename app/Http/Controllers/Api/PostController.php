@@ -18,10 +18,12 @@ class PostController extends Controller
     {
         $validated =  $request->validate([
             'title' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'image' => 'required'
         ], [
             'title.required' => 'title is required',
             'body.required' => 'body is required',
+            'image.required' => 'image is required',
         ]);
         try {
             $path = public_path('Images/post/');
