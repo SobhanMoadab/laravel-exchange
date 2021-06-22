@@ -27,7 +27,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 //TODO: add middleware to check if user is registered, removed for developement reasons
-Route::prefix('/dashboard')->group(function () {
+Route::prefix('/dashboard')->middleware('auth:api')->group(function () {
     // B L O G
     // Route::post('/post', [PostController::class, 'create_post'])->middleware(['auth:api', 'role_or_permission:post a blog']);
     // Route::delete('/post/{id}', [PostController::class, 'delete_post'])->middleware(['auth:api', 'role:SubAdmin']);
