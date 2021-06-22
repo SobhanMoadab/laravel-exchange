@@ -122,7 +122,6 @@ export default {
 
                  axios.post('/api/register', this.form)
                 .then((res) => {
-                console.log(res)
                  this.$toast.success("You are registered !!", {
                 position: "top-right",
                 timeout: 5000,
@@ -141,7 +140,6 @@ export default {
                 setTimeout(() => {this.$router.push("/login")}, 1000);
             })
             .catch((e) => {
-                 console.log(e.response)
                 if(e.response.data.errors.email){
                 this.$toast.error(e.response.data.errors.email.[0], {
                 position: "top-right",
@@ -158,7 +156,6 @@ export default {
                 rtl: false
                 });
                 }else if(e.response.data.errors.password){
-                    console.log('saalm')
                     for(let i = 0; i < e.response.data.errors.password.length; i++ ){
                 this.$toast.error(e.response.data.errors.password.[i], {
                 position: "top-right",
@@ -174,7 +171,6 @@ export default {
                 icon: true,
                 rtl: false
                 });
-                console.log(i)
                     }
                 }
             })
@@ -188,8 +184,20 @@ export default {
                 .then((res)=> {
                     this.countrys = res.data;
                 }).catch((error)=> {
-                    console.log(error)
-                })
+                 this.$toast.error(error.response, {
+                position: "top-right",
+                timeout: 5000,
+                closeOnClick: true,
+                pauseOnFocusLoss: true,
+                pauseOnHover: true,
+                draggable: true,
+                draggablePercent: 0.6,
+                showCloseButtonOnHover: false,
+                hideProgressBar: false,
+                closeButton: "button",
+                icon: true,
+                rtl: false
+                });                })
     },
 
 }

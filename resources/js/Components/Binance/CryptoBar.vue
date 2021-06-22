@@ -1,16 +1,16 @@
 <template>
-        <div class="horz-list ">
+        <div class="horz-list mb-4 ">
                     <ul >
-                        <li><i class="cc BTC ">  </i>  $ <span class="coin-value">
-                          <content-loader    :width="60" :height="4" :speed="1" primaryColor="#f7f7f7" secondaryColor="#d1d1d1">      <rect x="0" y="0" rx="0" ry="0" width="53" height="3" />
-
-</content-loader>
-                        {{this.BTCBUSD.c}}</span></li>
+  <content-loader :width="700" :height="40" :speed="1" primaryColor="#f7f7f700" secondaryColor="#ffd500" > 
+  <rect x="14" y="11" rx="0" ry="0" width="102" height="9" /> <rect x="132" y="11" rx="0" ry="0" width="102" height="9" /> 
+  <rect x="253" y="11" rx="0" ry="0" width="102" height="9" /> <rect x="377" y="11" rx="0" ry="0" width="102" height="9" /> 
+  <rect x="497" y="11" rx="0" ry="0" width="102" height="9" /></content-loader>     
+                        <li><i class="cc BTC ">  </i>  $ <span class="coin-value">{{this.BTCBUSD.c}}</span></li>
                         <li><i class="cc ETH ">  </i>  $ <span class="coin-value">{{this.ETHBUSD.c}}</span></li>
                         <li><i class="cc BNB ">  </i>  $ <span class="coin-value">{{this.BNBBUSD.c}}</span></li>
-                        <li><i class="cc FIL">  </i>  $ <span class="coin-value">{{this.FILBUSD.c}}</span></li>
-                        <li><i class="cc ADA "> </i>  $ <span class="coin-value">{{this.ADABUSD.c}}</span></li>
-                        <li><i class="cc DOGE ">  </i>  $ <span class="coin-value">{{this.LTCBTC.c}}</span></li>
+                        <li><i class="cc FIL">   </i>  $ <span class="coin-value">{{this.FILBUSD.c}}</span></li>
+                        <li><i class="cc ADA ">  </i>  $ <span class="coin-value">{{this.ADABUSD.c}}</span></li>
+                        <li><i class="cc DOGE "> </i>  $ <span class="coin-value">{{this.LTCBTC.c}}</span></li>
 
                     </ul>
 
@@ -55,9 +55,9 @@ export default {
             this.BNB.onmessage = (event) => {
             this.BNBBUSD = JSON.parse(event.data);
             } 
-            this.BNB.onopen = (event) => {
-            console.log(event)
-            }
+            // this.BNB.onopen = (event) => {
+            // console.log(event)
+            // }
             this.ETH.onmessage = (event) => {
             this.ETHBUSD = JSON.parse(event.data);
             }

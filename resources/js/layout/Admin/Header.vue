@@ -28,9 +28,6 @@
                     <i class="simple-icon-magnifier"></i>
                 </span>
             </div>
-
-            <a class="btn btn-sm btn-outline-primary ml-3 d-none d-md-inline-block"
-                href="https://1.envato.market/5kAb">&nbsp;BUY&nbsp;</a>
         </div>
 
 
@@ -98,7 +95,7 @@
                         <div class="scroll">
                             <div class="d-flex flex-row mb-3 pb-3 border-bottom">
                                 <a href="#">
-                                    <img src="img/profiles/l-2.jpg" alt="Notification Image"
+                                    <img src="/img/profiles/l-2.jpg" alt="Notification Image"
                                         class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
                                 </a>
                                 <div class="pl-3">
@@ -110,7 +107,7 @@
                             </div>
                             <div class="d-flex flex-row mb-3 pb-3 border-bottom">
                                 <a href="#">
-                                    <img src="img/notifications/1.jpg" alt="Notification Image"
+                                    <img src="/img/notifications/1.jpg" alt="Notification Image"
                                         class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
                                 </a>
                                 <div class="pl-3">
@@ -122,7 +119,7 @@
                             </div>
                             <div class="d-flex flex-row mb-3 pb-3 border-bottom">
                                 <a href="#">
-                                    <img src="img/notifications/2.jpg" alt="Notification Image"
+                                    <img src="/img/notifications/2.jpg" alt="Notification Image"
                                         class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
                                 </a>
                                 <div class="pl-3">
@@ -134,7 +131,7 @@
                             </div>
                             <div class="d-flex flex-row mb-3 pb-3 ">
                                 <a href="#">
-                                    <img src="img/notifications/3.jpg" alt="Notification Image"
+                                    <img src="/img/notifications/3.jpg" alt="Notification Image"
                                         class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
                                 </a>
                                 <div class="pl-3">
@@ -159,9 +156,9 @@
             <div class="user d-inline-block">
                 <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
-                    <span class="name">Sarah Kortney</span>
+                    <span class="name">  </span>
                     <span>
-                        <img alt="Profile Picture" src="img/profiles/l-1.jpg" />
+                        <img alt="Profile Picture" src="/img/profiles/l-1.jpg" />
                     </span>
                 </button>
 

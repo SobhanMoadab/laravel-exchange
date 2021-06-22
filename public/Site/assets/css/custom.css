@@ -332,6 +332,7 @@ table.dataTable {
 .button-element {
     z-index: 2;
     position: relative;
+    border-radius:7px;
 }
 .button-element,
 .button-element::after {
@@ -557,9 +558,11 @@ tr.special td{
     width: 85%;
     background: rgba(0,0,0,.1);
     padding: 20px 5px;
+    border-radius:20px;
 }
 .exchange-calculator .select2-container--default .select2-selection--single {
     border-color: transparent;
+    border-radius: 0 10px 10px 0;
 }
 .exchange-calculator input {
     height: 60px;
@@ -571,6 +574,7 @@ tr.special td{
     transition: all 300ms ease;
     -webkit-transition: all 300ms ease;
     background: #f0e8cb;
+    border-radius:10px 0 0 10px;
 }
 .exchange-calculator .select2-container {
     width: 15% !important;
@@ -2345,6 +2349,14 @@ input[type="search"] {
 /*11. Rewrite Bootstrap Rulles*/
 body .panel {
     margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0px 9px 0px #fff !important;
+}
+.panel-heading{
+    border-radius: 10px 10px 0 0 !important;
+}
+.data_background{
+    border-radius: 0 0 50px 50px !important;
 }
 /* 12. MEMBERS PAGE */
  .members-container .member01-content-inside{
