@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Resources\PostResource;
 
-use App\Models\Posts;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -33,7 +33,7 @@ class PostController extends Controller
             $time = time();
             $cover = 'Square' . $time . '.' . $request->image->extension();
             $original_image = Image::make($request->image)->save(('Images/post/').$cover, 80);
-            $post = Posts::create([
+            $post = Post::create([
                 'title' => $request->title,
                 'body' => $request->body,
                 'user_id' => Auth::user()->id,
@@ -48,7 +48,7 @@ class PostController extends Controller
     public function delete_post(Request $request, $id)
     {
         try {
-            Posts::findOrFail($id)->delete();
+            Post::findOrFail($id)->delete();
             return response()->json(['msg' => 'Post deleted Successfully'],204);
         } catch (ModelNotFoundException $e) {
             return response()->json(['msg' => 'requested record does not exists'],404);
@@ -60,9 +60,9 @@ class PostController extends Controller
 
         try{
             if($request->query('p') == 'all'){
-                $posts = Posts::all();
+                $posts = Post::all();
             }else {
-                $posts = Posts::paginate(10);
+                $posts = Post::paginate(10);
             }
             return response()->json(['posts'=>$posts],200);
         }catch(\Exception $e){
@@ -78,10 +78,22 @@ class PostController extends Controller
             'body.required' => 'body is required'
         ]);
         try{
-            $post = Posts::findOrFail($id);
+            $post = Post::findOrFail($id);
+            $Image = public_path("Images\post\\" . $post->image_path);
+            if (File::exists($Image)) {
+                unlink($Image);
+            }
+            $path = public_path('Images/post/');
+            if(!File::isDirectory($path)){
+                File::makeDirectory($path, 0777, true, true);
+            }
+            $time = time();
+            $cover = 'Square' . $time . '.' . $request->image->extension();
+            $original_image = Image::make($request->image)->save(('Images/post/').$cover, 80);
             $post->update([
                 'title' => $request->title,
                 'body' => $request->body,
+               'image_path'=> $cover
             ]);
             $post_resource = new PostResource($post);
 
