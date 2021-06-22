@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use BadMethodCallException;
 use Facade\FlareClient\Http\Response;
+use Http\Client\Exception\HttpException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -26,6 +27,8 @@ class Handler extends ExceptionHandler
 
     public function render($request, Throwable $exception)
     {
+        
+    
         if($exception instanceof MethodNotAllowedHttpException){
             return response()->json([
                 'error' => $exception->getMessage()
