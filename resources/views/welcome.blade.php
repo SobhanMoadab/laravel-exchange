@@ -13,8 +13,13 @@
         <link rel="stylesheet" href="{{asset('css/vendor/bootstrap.min.css')}}" />
         <link rel="stylesheet" href="{{asset('css/vendor/bootstrap.rtl.only.min.css')}}" />
         <link rel="stylesheet" href="{{asset('css/vendor/fullcalendar.min.css')}}" />
+        <!--  data table style-->
+        <link rel="stylesheet" href="/css/vendor/select2.min.css" />
+        <link rel="stylesheet" href="/css/vendor/select2-bootstrap.min.css" />
         <link rel="stylesheet" href="{{asset('css/vendor/dataTables.bootstrap4.min.css')}}" />
         <link rel="stylesheet" href="{{asset('css/vendor/datatables.responsive.bootstrap4.min.css')}}" />
+
+
         <link rel="stylesheet" href="{{asset('css/vendor/perfect-scrollbar.css')}}" />
         <link rel="stylesheet" href="{{asset('css/vendor/bootstrap-stars.css')}}" />
         <link rel="stylesheet" href="{{asset('css/vendor/nouislider.min.css')}}" />
@@ -30,6 +35,7 @@
         </div>
        <!-- JavaScript Bundle with Popper -->
        <script src="{{ asset('/js/app.js') }}"></script>
+
        <script src="/js/vendor/jquery-3.3.1.min.js"></script>
        <script src="/js/vendor/bootstrap.bundle.min.js"></script>
        <script src="/js/vendor/Chart.bundle.min.js"></script>

@@ -1,9 +1,11 @@
 <template>
-            <main>
+<div> 
+<Header />
+<Sidebar />
+     <main>
         <div class="container-fluid">
             <div class="row  ">
                 <div class="col-12">
-
                     <h1>Dashboard Analytics</h1>
                     <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
                         <ol class="breadcrumb pt-0">
@@ -310,10 +312,21 @@
             </div>
         </div>
     </main>
- 
+ <Footer />
+  </div>
 </template>
+
 <script>
+
+import Header from '../../layout/Admin/Header.vue'
+import Sidebar from '../../layout/Admin/Sidebar.vue'
+import Footer from '../../layout/Admin/Footer.vue'
 export default {
     name: 'AdminHome',
+    components:{
+        Header,
+        Sidebar,
+        Footer
+    }
 }
 </script>
