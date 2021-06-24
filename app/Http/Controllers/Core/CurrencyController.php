@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 
-require_once("$_SERVER[DOCUMENT_ROOT]/PHP-websocket-client/websocket_client.php");
+// todo
+require_once( __DIR__ . "\PHP-websocket-client\websocket_client.php");
+
 class CurrencyController extends Controller
 {
     // crud for currency 
