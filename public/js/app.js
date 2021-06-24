@@ -2153,8 +2153,6 @@ vue__WEBPACK_IMPORTED_MODULE_4__.default.use(vue_toastification__WEBPACK_IMPORTE
         });
       } else {
         axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/register', this.form).then(function (res) {
-          console.log(res);
-
           _this.$toast.success("You are registered !!", {
             position: "top-right",
             timeout: 5000,
@@ -2175,8 +2173,6 @@ vue__WEBPACK_IMPORTED_MODULE_4__.default.use(vue_toastification__WEBPACK_IMPORTE
             _this.$router.push("/login");
           }, 1000);
         })["catch"](function (e) {
-          console.log(e.response);
-
           if (e.response.data.errors.email) {
             _this.$toast.error(e.response.data.errors.email[0], {
               position: "top-right",
