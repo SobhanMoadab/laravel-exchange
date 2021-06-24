@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Resources\UserResource;
 use App\Models\User;
-use App\Providers\PermissionServiceProvider;
+use App\Http\Controllers\Core\Services\PermissionServices;
+
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -19,59 +20,32 @@ class PermissionController extends Controller
     // 3. can make sub admins with custom privileges
 
 
-    public function get_all_roles(PermissionServiceProvider $permission)
+    public function get_all_roles(Request $request, PermissionServices $permission)
     {
         // fetch all roles
-        $result = $permission->get_all_roles();
+        $result = $permission->get_all_roles($request);
         return response()->json(['msg'=>'success', 'result' => $result],200);
     }
-    public function create_role(Request $request, PermissionServiceProvider $permission)
+    public function create_role(Request $request, PermissionServices $permission)
     {
         // for super Admin only
         $result = $permission->create_role($request);
         return response()->json(['msg'=>'success', 'result' => $result],200);
     }
-    public function create_permission(Request $request, PermissionServiceProvider $permission)
+    public function create_permission(Request $request, PermissionServices $permission)
     {
-        // create a permission to be checked by middleware,
-        //assignable to role
-        $validated = $request->validate([
-            'name' => 'required'
-        ], [
-            'name.required' => 'name is required'
-        ]);
-        try {
-            $permission = Permission::create(['guard_name' => 'api', 'name' => $validated['name']]);
-            return response()->json(['msg' => 'success', 'permission' => $permission], 200);
-        } catch (\Exception $e) {
-            return response()->json(['msg' => $e->getMessage()], 500);
+        $result = $permission->create_permission($request);
+        if($result['e'] instanceof \Exception){
+            return response()->json([$result['msg']], $result['e']->getCode());
         }
+        return response()->json(['msg'=>'success', 'result' => $result],200);
     }
-    public function assign_permission_to_role(Request $request, PermissionServiceProvider $permission)
+    public function assign_permission_to_role(Request $request, PermissionServices $permission)
     {
         // you need to create permission first to assign it to a role
 
-        $validated = $request->validate([
-            'name' => 'required',
-            'permission' => 'required',
-        ], [
-            'name.required' => 'name is required',
-            'permission.required' => 'permission is required',
-        ]);
-        try {
-            $role = Role::findByName($request->name, 'api');
-            $permission = Permission::findByName($request->permission, 'api');
-
-            if (!$role || !$permission) {
-                return response()->json(['msg' => 'requested role or permission does not existsts'], 400);
-            }
-            $role->givePermissionTo($request->permission);
-            return response()->json(['msg' => $request->permission . ' assigned to ' . $request->name], 200);
-        } catch (\Exception $e) {
-          return response()->json(['msg' => $e->getMessage()], 500);
-        }
     }
-    public function revoke_permission_of_role(Request $request, PermissionServiceProvider $permission)
+    public function revoke_permission_of_role(Request $request, PermissionServices $permission)
     {
         $validated = $request->validate([
             'name' => 'required',
@@ -95,7 +69,7 @@ class PermissionController extends Controller
         }
     }
 
-    public function create_sub_admin(Request $request, PermissionServiceProvider $permission)
+    public function create_sub_admin(Request $request, PermissionServices $permission)
     {
         // done by super admin and admin
         // created subadmin even with permissions as admin /CAN NOT DELETE admins or superAdmin

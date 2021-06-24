@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\Core\Services\PostServices;
 use Illuminate\Support\ServiceProvider;
-use App\Http\Controllers\Core\Services\AuthenticationServices;
 
-class AuthenticationServiceProvider extends ServiceProvider
+class PostServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -14,9 +14,9 @@ class AuthenticationServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('App\Services\AuthenticationServices', function ($app) {
+        $this->app->bind('App\Core\Services\PostServices', function ($app) {
             $request = app(\Illuminate\Http\Request::class);
-            return app(AuthenticationServices::class, [$request]);
+            return app(PostServices::class, [$request]);
           });
     }
 

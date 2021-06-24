@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Http\Controllers\Core\Services\Permission;
+use App\Http\Controllers\Core\Services\PermissionServices;
 
 class PermissionServiceProvider extends ServiceProvider
 {
@@ -14,9 +14,9 @@ class PermissionServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('App\Core\Services\Permission', function ($app) {
+        $this->app->bind('App\Services\PermissionServices', function ($app) {
             $request = app(\Illuminate\Http\Request::class);
-            return app(Permission::class, [$request]);
+            return app(PermissionServices::class, [$request]);
           });
     }
 

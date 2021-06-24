@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Core\Services\Authentication;
+use App\Http\Controllers\Core\Services\AuthenticationServices;
 
 class AuthController extends Controller
 {
@@ -61,11 +61,11 @@ class AuthController extends Controller
      
      */
 
-    public function register(Authentication $auth, Request $request){
+    public function register(AuthenticationServices $auth, Request $request){
         $result = $auth->register($request);
         return response()->json(['msg'=>'success', 'result' => $result],200);
     }
-    public function login(Authentication $auth, Request $request){
+    public function login(AuthenticationServices $auth, Request $request){
         $result = $auth->login($request);
         return response()->json(['msg'=>'success', 'result' => $result],200);
     }

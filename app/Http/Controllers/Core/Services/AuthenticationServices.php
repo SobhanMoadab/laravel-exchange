@@ -5,7 +5,7 @@ use App\Http\Resources\UserResource;
 use App\Http\Resources\UserCollection;
 use App\Models\User;
 
-class Authentication
+class AuthenticationServices
 {
     public function register($request) 
     {
