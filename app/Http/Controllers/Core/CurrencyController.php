@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Core;
 
 use App\Http\Resources\CurrencyResource;
@@ -13,25 +15,25 @@ use Illuminate\Support\Facades\Auth;
 
 class CurrencyController extends Controller
 {
-    // crud for currency 
+    // crud for currency
     // currencies can be turned off and on
 
     public function coin_availablity(Request $request, $id)
     {
         $request->validate([
-            'state' => 'required'
+            'state' => 'required',
         ], [
-            'state.required' => 'declare the state'
+            'state.required' => 'declare the state',
         ]);
         try {
             $currency = Currency::findOrFail($id);
-            if ($request->state == 0) {
+            if ($request->state === 0) {
                 $currency->update([
-                    'is_active' => 0
+                    'is_active' => 0,
                 ]);
-            } elseif ($request->state == 1) {
+            } elseif ($request->state === 1) {
                 $currency->update([
-                    'is_active' => 1
+                    'is_active' => 1,
                 ]);
             }
             return response()->json(['msg' => 'success', 'currency' => $currency], 200);
@@ -72,7 +74,7 @@ class CurrencyController extends Controller
     public function get_currencies(Request $request)
     {
         try {
-            if ($request->query('p') == 'all') {
+            if ($request->query('p') === 'all') {
                 $currencies = Currency::all();
             } else {
                 $currencies = Currency::paginate(10);
@@ -95,7 +97,7 @@ class CurrencyController extends Controller
         ]);
         try {
             $currency = Currency::findOrFail($id);
-            if (!$request->has('image')) {
+            if (! $request->has('image')) {
                 $currency->update([
                     'name' => $request->name,
                     'is_active' => $request->is_active,
@@ -119,7 +121,7 @@ class CurrencyController extends Controller
     public function delete_currency(Request $request, $id)
     {
         try {
-            $currency =  Currency::findOrFail($id);
+            $currency = Currency::findOrFail($id);
             $currency->delete();
             return response()->json(['msg' => 'Post deleted Successfully'], 204);
         } catch (\Exception $e) {
@@ -130,15 +132,15 @@ class CurrencyController extends Controller
     {
         try {
             // subscribe  to stream
-            $server = "stream.binance.com";
+            $server = 'stream.binance.com';
             $serverport = 9443;
-            $streamname = "!ticker@arr";
-            $t = array("method" => "SUBSCRIBE", "params" => array("$streamname"), "id" => 1);
-            $uri = "/ws/$streamname";
+            $streamname = '!ticker@arr';
+            $t = ['method' => 'SUBSCRIBE', 'params' => ["${streamname}"], 'id' => 1];
+            $uri = "/ws/${streamname}";
 
             $message = json_encode($t) . "\n";
 
-            echo "\n*** Connecting to server: $server at " . gmdate("Y-m-d H:i:s") . " UTC+0\n";
+            echo "\n*** Connecting to server: ${server} at " . gmdate('Y-m-d H:i:s') . " UTC+0\n";
 
             $sp = websocket_open($server, $serverport, '', $errstr, 30, true, false, $uri);
             if ($sp) {
@@ -146,9 +148,9 @@ class CurrencyController extends Controller
                 websocket_write($sp, $message);
                 while (1) {
                     $r = websocket_read($sp, $errstr);
-                    echo "$r\n";
-                    if ($r == "") {
-                        echo "errstr=$errstr\n";
+                    echo "${r}\n";
+                    if ($r === '') {
+                        echo "errstr=${errstr}\n";
                         die;
                     }
                 }

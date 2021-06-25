@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Http\Controllers\Statics\AuthStatic;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,17 +14,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 // S T A T I C, WEB ROUTES
+
 Route::get('/register_form', [AuthStatic::class, 'register_form']);
 Route::post('/register_store', [AuthStatic::class, 'register'])->name('register');
-
-
-
-
-
-
-
 Route::get('/admin', function () {
     return view('welcome');
 });

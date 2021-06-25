@@ -1,13 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Core\Services;
-use App\Http\Resources\UserResource;
-use App\Http\Resources\UserCollection;
-use App\Models\User;
 
 class PostServices
 {
-    public function register() 
+    public function register()
     {
         return [];
     }
