@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Statics\AuthStatic;
 use App\Http\Controllers\Core\CurrencyController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\PostController;
@@ -24,8 +25,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 // A U T H E N T I C A T I O N
-Route::post('/register', [AuthController::class, 'register'])->name('register');
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 //TODO: add middleware to check if user is registered, removed for developement reasons
 Route::prefix('/dashboard')->middleware('auth:api')->group(function () {
     // B L O G
