@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Wizous | Responsive Bootstrap Landing Page Template</title>
+    <title>Ecms | OKexchange</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="Themesdesign" />
@@ -118,3 +118,50 @@
     </div>
 
     <!-- END NAVBAR -->
+        <!-- tickers start -->
+        <div class="contain-div container-fluid ">
+            <div class="row cycle-slideshow" data-cycle-fx=carousel data-cycle-speed="2000" data-cycle-timeout=1
+                data-cycle-easing="linear" data-cycle-carousel-fluid=true data-cycle-pause-on-hover="true"
+                data-cycle-slides="> div">
+    
+                <div class="box">
+                    <div class="ticker-box">
+                        <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
+                                    src="./images/svg/bitcoin-441959.svg" alt=""></span></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="ticker-box">
+                        <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
+                                    src="./images/svg/aurouracoin-441945.svg" alt=""></span></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="ticker-box">
+                        <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
+                                    src="./images/svg/dash-441957.svg" alt=""></span></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="ticker-box">
+                        <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
+                                    src="./images/svg/devcoin-441952.svg" alt=""></span></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="ticker-box">
+                        <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
+                                    src="./images/svg/dogecoin-441958.svg" alt=""></span></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="ticker-box">
+                        <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
+                                    src="./images/svg/etherium-441951.svg" alt=""></span></div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
+        <!-- tckers End -->
