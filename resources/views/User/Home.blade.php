@@ -1,315 +1,144 @@
 @include('Layout.Header')
-@include('Layout.SidebarNav')
-<main>
-    
-    <div class="container-fluid">
-        <div class="row  ">
-                <div class="col-12">
+    <!--start card-->
+    <section>
+        <div class="container">
 
-                    <h1>Dashboard Analytics</h1>
-                    <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
-                        <ol class="breadcrumb pt-0">
-                            <li class="breadcrumb-item">
-                                <a href="#">Home</a>
-                            </li>
-                            <li class="breadcrumb-item">
-                                <a href="#">Library</a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">Data</li>
-                        </ol>
-                    </nav>
-                    <div class="separator mb-5"></div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 col-sm-12 mb-4">
-                    <div class="card dashboard-filled-line-chart">
-                        <div class="card-body ">
-                            <div class="float-left float-none-xs">
-                                <div class="d-inline-block">
-                                    <h5 class="d-inline">Website Visits</h5>
-                                    <span class="text-muted text-small d-block">Unique Visitors</span>
-                                </div>
-                            </div>
-                            <div class="btn-group float-right float-none-xs mt-2">
-                                <button class="btn btn-outline-primary btn-xs dropdown-toggle" type="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    This Week
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Last Week</a>
-                                    <a class="dropdown-item" href="#">This Month</a>
-                                </div>
-                            </div>
+            <div class="row mt-4 mb-5 row-card-dashboard">
+                <div class="col-12 col-sm-12 my-2  col-md-4">
+                    <div class="card card-dashboard">
+                        <div class="card-body rounded-2"
+                            style="background: linear-gradient(144deg, rgba(138,39,129,1) 0%, rgba(245,56,94,1) 100%); ">
+                            <h5 class="card-title text-white">Orders Sum</h5>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
+                                class="bi bi-bag position-relative text-white icon-dashboard" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                            </svg>
+                            <p class="card-title text-white">$0.00</p>
+                            <hr>
+                            <a href="#" class="text-white link-card"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                    height="20" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg>Orders Count: 0</a>
                         </div>
-                        <div class="chart card-body pt-0">
-                            <canvas id="visitChart"></canvas>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 my-2 col-md-4">
+                    <div class="card card-dashboard">
+                        <div class="card-body   rounded-2"
+                            style="background: linear-gradient(144deg, rgba(39,138,74,1) 0%, rgba(56,196,245,1) 100%); ">
+                            <h5 class="card-title text-white">Discount</h5>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
+                                class="bi bi-percent position-relative text-white icon-dashboard" viewBox="0 0 16 16">
+                                <path
+                                    d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                            </svg>
+                            <p class="card-title text-white">0</p>
+                            <hr>
+                            <a href="#" class="text-white link-card"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                    height="20" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg>More Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 my-2 col-md-4">
+                    <div class="card card-dashboard">
+                        <div class="card-body bg-danger rounded-2"
+                            style="background: linear-gradient(139deg, rgba(213,33,33,1) 0%, rgba(208,193,25,1) 100%); ">
+                            <h5 class="card-title text-white">Referrals Sum</h5>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
+                                class="bi bi-people-fill position-relative text-white icon-dashboard"
+                                viewBox="0 0 16 16">
+                                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                <path fill-rule="evenodd"
+                                    d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
+                                <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                            </svg>
+                            <p class="card-title text-white">$0.00</p>
+                            <hr>
+                            <a href="#" class="text-white link-card"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                    height="20" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg>Referrals Count: 0</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-sm-12 mb-4">
-                    <div class="card dashboard-filled-line-chart">
-                        <div class="card-body ">
-                            <div class="float-left float-none-xs">
-                                <div class="d-inline-block">
-                                    <h5 class="d-inline">Conversion Rates</h5>
-                                    <span class="text-muted text-small d-block">Per Session</span>
-                                </div>
-                            </div>
-                            <div class="btn-group float-right mt-2 float-none-xs">
-                                <button class="btn btn-outline-secondary btn-xs dropdown-toggle" type="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    This Week
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Last Week</a>
-                                    <a class="dropdown-item" href="#">This Month</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="chart card-body pt-0">
-                            <canvas id="conversionChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-12 col-lg-6 col-xl-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Product Categories</h5>
-                            <div class="dashboard-donut-chart chart">
-                                <canvas id="categoryChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-12 col-lg-6 col-xl-4 mb-4">
-                    <div class="card dashboard-progress">
-                        <div class="position-absolute card-top-buttons">
-                            <button class="btn btn-header-light icon-button">
-                                <i class="simple-icon-refresh"></i>
-                            </button>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Profile Status</h5>
-                            <div class="mb-4">
-                                <p class="mb-2">Basic Information
-                                    <span class="float-right text-muted">12/18</span>
-                                </p>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="mb-4">
-                                <p class="mb-2">Portfolio
-                                    <span class="float-right text-muted">1/8</span>
-                                </p>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="15" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="mb-4">
-                                <p class="mb-2">Billing Details
-                                    <span class="float-right text-muted">2/6</span>
-                                </p>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="mb-4">
-                                <p class="mb-2">Interests
-                                    <span class="float-right text-muted">0/8</span>
-                                </p>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="mb-4">
-                                <p class="mb-2">Legal Documents
-                                    <span class="float-right text-muted">1/2</span>
-                                </p>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-12 col-xl-4">
-                    <div class="row">
-                        <div class="col-6 mb-4">
-                            <div class="card dashboard-small-chart-analytics">
-                                <div class="card-body">
-                                    <p class="lead color-theme-1 mb-1 value"></p>
-                                    <p class="mb-0 label text-small"></p>
-                                    <div class="chart">
-                                        <canvas id="smallChart1"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 mb-4">
-                            <div class="card dashboard-small-chart-analytics">
-                                <div class="card-body">
-                                    <p class="lead color-theme-1 mb-1 value"></p>
-                                    <p class="mb-0 label text-small"></p>
-                                    <div class="chart">
-                                        <canvas id="smallChart2"></canvas>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-6 mb-4">
-                            <div class="card dashboard-small-chart-analytics">
-                                <div class="card-body">
-                                    <p class="lead color-theme-1 mb-1 value"></p>
-                                    <p class="mb-0 label text-small"></p>
-                                    <div class="chart">
-                                        <canvas id="smallChart3"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 mb-4">
-                            <div class="card dashboard-small-chart-analytics">
-                                <div class="card-body">
-                                    <p class="lead color-theme-1 mb-1 value"></p>
-                                    <p class="mb-0 label text-small"></p>
-                                    <div class="chart">
-                                        <canvas id="smallChart4"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
 
             </div>
 
 
-            <div class="row sortable">
-                <div class="col-xl-3 col-lg-6 mb-4">
-                    <div class="card">
-                        <div class="card-header p-0 position-relative">
-                            <div class="position-absolute handle card-icon">
-                                <i class="simple-icon-shuffle"></i>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex justify-content-between align-items-center">
-                            <h6 class="mb-0">Profile Status</h6>
-                            <div role="progressbar" class="progress-bar-circle position-relative" data-color="#922c88"
-                                data-trailColor="#d7d7d7" aria-valuemax="100" aria-valuenow="40"
-                                data-show-percent="true">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 mb-4">
-                    <div class="card">
-                        <div class="card-header p-0 position-relative">
-                            <div class="position-absolute handle card-icon">
-                                <i class="simple-icon-shuffle"></i>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex justify-content-between align-items-center">
-                            <h6 class="mb-0">Work Progress</h6>
-                            <div role="progressbar" class="progress-bar-circle position-relative" data-color="#922c88"
-                                data-trailColor="#d7d7d7" aria-valuemax="100" aria-valuenow="64"
-                                data-show-percent="true">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 mb-4">
-                    <div class="card">
-                        <div class="card-header p-0 position-relative">
-                            <div class="position-absolute handle card-icon">
-                                <i class="simple-icon-shuffle"></i>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex justify-content-between align-items-center">
-                            <h6 class="mb-0">Tasks Completed</h6>
-                            <div role="progressbar" class="progress-bar-circle position-relative" data-color="#922c88"
-                                data-trailColor="#d7d7d7" aria-valuemax="100" aria-valuenow="75"
-                                data-show-percent="true">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 mb-4">
-                    <div class="card">
-                        <div class="card-header p-0 position-relative">
-                            <div class="position-absolute handle card-icon">
-                                <i class="simple-icon-shuffle"></i>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex justify-content-between align-items-center">
-                            <h6 class="mb-0">Payments Done</h6>
-                            <div role="progressbar" class="progress-bar-circle position-relative" data-color="#922c88"
-                                data-trailColor="#d7d7d7" aria-valuemax="100" aria-valuenow="32"
-                                data-show-percent="true">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+    </section>
+    <!--end card-->
+    <!--start transaction-->
+    <section>
+        <div class="container col-12 mb-5 ">
+
+            <div class="row bg-dark px-3 rounded-2">
+                <h5 class="transaction text-white">Transaction</h5>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-white" scope="col">#</th>
+                            <th class="text-white" scope="col">status</th>
+                            <th class="text-white" scope="col">Digital currency</th>
+                            <th class="text-white" scope="col">wallet</th>
+                            <th class="text-white" scope="col">Last update</th>
+                            <th class="text-white" scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                    class="bi bi-arrow-up-circle-fill text-success" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+                                </svg>
+                            </th>
+                            <td><span class="badge bg-danger">Sold</span></td>
+                            <td class="text-white">BTC</td>
+                            <td class="text-white">Using - Bank *******5264</td>
+                            <td class="fw-bold text-danger">-0.000242 BTC</td>
+                            <td class="text-white">-0.125 USD4</td>
+                        </tr>
+                        <tr>
+                            <th><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                    class="bi bi-arrow-down-circle-fillr text-danger" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+                                </svg>
+                            </th>
+                            <td><span class="badge bg-success">buy</span></td>
+                            <td class="text-white">LTC</td>
+                            <td class="text-white">Using - Bank *******5264</td>
+                            <td class="fw-bold text-success">-0.000242 BTC</td>
+                            <td class="text-white">-0.125 USD4</td>
+                        </tr>
+                        <tr>
+                            <th><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                    class="bi bi-arrow-up-circle-fill text-success" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+                                </svg>
+                            </th>
+                            <td><span class="badge bg-danger">Sold</span></td>
+                            <td class="text-white">XRP</td>
+                            <td class="text-white">Using - Bank *******5264</td>
+                            <td class="fw-bold text-danger">-0.000242 BTC</td>
+                            <td class="text-white">-0.125 USD4</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-
-            <div class="row">
-                <div class="col-lg-6 col-12 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Order - Stock</h5>
-                            <div class="chart-container chart">
-                                <canvas id="radarChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Categories</h5>
-                            <div class="chart-container chart">
-                                <canvas id="polarChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Sales</h5>
-                            <div class="dashboard-line-chart chart">
-                                <canvas id="salesChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-</main>
+
+    </section>
+    <!--end transaction-->
+
 @include('Layout.Footer')

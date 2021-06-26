@@ -12,19 +12,19 @@
     <link rel="shortcut icon" href="images/favicon.ico">
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="Client/css/bootstrap.min.css" type="text/css">
 
     <!--Material Icon -->
-    <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css" />
+    <link rel="stylesheet" type="text/css" href="Client/css/materialdesignicons.min.css" />
 
     <!-- Pe-icon-7 icon -->
-    <link rel="stylesheet" type="text/css" href="css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" type="text/css" href="Client/css/pe-icon-7-stroke.css">
 
     <!-- tinyslider -->
-    <link rel="stylesheet" href="css/tiny-slider.css">
+    <link rel="stylesheet" href="Client/css/tiny-slider.css">
 
     <!-- Custom  Css -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="Client/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://malsup.github.io/jquery.cycle2.js"></script>

@@ -1,4 +1,4 @@
-@@include('Layout/Header')
+@include('Layout/Header')
     <!-- START HOME -->
     <section class="bg-home-2 align-items-center d-flex" id="home">
         <div class="container">
@@ -866,4 +866,4 @@
         </div>
     </div>
     <!-- END CTA -->
-    @@include('Layout/Footer')
+    @include('Layout/Footer')

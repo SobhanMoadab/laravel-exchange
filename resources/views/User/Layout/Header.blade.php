@@ -1,185 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
     <meta charset="UTF-8">
-    @include('Base.head')
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wizous | Responsive Bootstrap Landing Page Template</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Themesdesign" />
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="User/css/bootstrap.min.css" type="text/css">
+
+    <!--Material Icon -->
+    <link rel="stylesheet" type="text/css" href="User/css/materialdesignicons.min.css" />
+
+    <!-- Pe-icon-7 icon -->
+    <link rel="stylesheet" type="text/css" href="User/css/pe-icon-7-stroke.css">
+
+    <!-- tinyslider -->
+    <link rel="stylesheet" href="User/css/tiny-slider.css">
+
+    <!-- Custom  Css -->
+    <link rel="stylesheet" type="text/css" href="User/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://malsup.github.io/jquery.cycle2.js"></script>
+    <script src="https://malsup.github.io/jquery.cycle2.carousel.js"></script>
 </head>
 
-<body id="app-container" class="menu-default show-spinner">
-<nav class="navbar fixed-top">
-        <div class="d-flex align-items-center navbar-left">
-            <a href="#" class="menu-button d-none d-md-block">
-                <svg class="main" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 17">
-                    <rect x="0.48" y="0.5" width="7" height="1" />
-                    <rect x="0.48" y="7.5" width="7" height="1" />
-                    <rect x="0.48" y="15.5" width="7" height="1" />
-                </svg>
-                <svg class="sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 17">
-                    <rect x="1.56" y="0.5" width="16" height="1" />
-                    <rect x="1.56" y="7.5" width="16" height="1" />
-                    <rect x="1.56" y="15.5" width="16" height="1" />
-                </svg>
+<body class="bg-light">
+    <!-- START  NAVBAR -->
+    <nav class="navbar navbar-expand-lg  navbar-white fixed-top navbar-custom sticky sticky-light">
+        <div class="container" id="navbar">
+
+            <!-- LOGO -->
+
+
+
+            <a class="navbar-brand logo text-uppercase " href="index-1.html">
+                <img src="images/E-cms.png" alt="" height="40">
             </a>
-
-            <a href="#" class="menu-button-mobile d-xs-block d-sm-block d-md-none">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
-                    <rect x="0.5" y="0.5" width="25" height="1" />
-                    <rect x="0.5" y="7.5" width="25" height="1" />
-                    <rect x="0.5" y="15.5" width="25" height="1" />
-                </svg>
-            </a>
-
-            <div class="search" data-search-path="Pages.Search.html?q=">
-                <input placeholder="Search...">
-                <span class="search-icon">
-                    <i class="simple-icon-magnifier"></i>
-                </span>
-            </div>
-
-            <a class="btn btn-sm btn-outline-primary ml-3 d-none d-md-inline-block"
-                href="https://1.envato.market/5kAb">&nbsp;BUY&nbsp;</a>
-        </div>
-
-
-        <a class="navbar-logo" href="Dashboard.Default.html">
-            <span class="logo d-none d-xs-block"></span>
-            <span class="logo-mobile d-block d-xs-none"></span>
-        </a>
-
-        <div class="navbar-right">
-            <div class="header-icons d-inline-block align-middle">
-                <div class="d-none d-md-inline-block align-text-bottom mr-3">
-                    <div class="custom-switch custom-switch-primary-inverse custom-switch-small pl-1" 
-                        data-toggle="tooltip" data-placement="left" title="Dark Mode">
-                        <input class="custom-switch-input" id="switchDark" type="checkbox" checked>
-                        <label class="custom-switch-btn" for="switchDark"></label>
-                    </div>
-                </div>
-
-                <div class="position-relative d-none d-sm-inline-block">
-                    <button class="header-icon btn btn-empty" type="button" id="iconMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i class="simple-icon-grid"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right mt-3  position-absolute" id="iconMenuDropdown">
-                        <a href="#" class="icon-menu-item">
-                            <i class="iconsminds-equalizer d-block"></i>
-                            <span>Settings</span>
-                        </a>
-
-                        <a href="#" class="icon-menu-item">
-                            <i class="iconsminds-male-female d-block"></i>
-                            <span>Users</span>
-                        </a>
-
-                        <a href="#" class="icon-menu-item">
-                            <i class="iconsminds-puzzle d-block"></i>
-                            <span>Components</span>
-                        </a>
-
-                        <a href="#" class="icon-menu-item">
-                            <i class="iconsminds-bar-chart-4 d-block"></i>
-                            <span>Profits</span>
-                        </a>
-
-                        <a href="#" class="icon-menu-item">
-                            <i class="iconsminds-file d-block"></i>
-                            <span>Surveys</span>
-                        </a>
-
-                        <a href="#" class="icon-menu-item">
-                            <i class="iconsminds-suitcase d-block"></i>
-                            <span>Tasks</span>
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="position-relative d-inline-block">
-                    <button class="header-icon btn btn-empty" type="button" id="notificationButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="simple-icon-bell"></i>
-                        <span class="count">3</span>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right mt-3 position-absolute" id="notificationDropdown">
-                        <div class="scroll">
-                            <div class="d-flex flex-row mb-3 pb-3 border-bottom">
-                                <a href="#">
-                                    <img src="img/profiles/l-2.jpg" alt="Notification Image"
-                                        class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
-                                </a>
-                                <div class="pl-3">
-                                    <a href="#">
-                                        <p class="font-weight-medium mb-1">Joisse Kaycee just sent a new comment!</p>
-                                        <p class="text-muted mb-0 text-small">09.04.2018 - 12:45</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-row mb-3 pb-3 border-bottom">
-                                <a href="#">
-                                    <img src="img/notifications/1.jpg" alt="Notification Image"
-                                        class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
-                                </a>
-                                <div class="pl-3">
-                                    <a href="#">
-                                        <p class="font-weight-medium mb-1">1 item is out of stock!</p>
-                                        <p class="text-muted mb-0 text-small">09.04.2018 - 12:45</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-row mb-3 pb-3 border-bottom">
-                                <a href="#">
-                                    <img src="img/notifications/2.jpg" alt="Notification Image"
-                                        class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
-                                </a>
-                                <div class="pl-3">
-                                    <a href="#">
-                                        <p class="font-weight-medium mb-1">New order received! It is total $147,20.</p>
-                                        <p class="text-muted mb-0 text-small">09.04.2018 - 12:45</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-row mb-3 pb-3 ">
-                                <a href="#">
-                                    <img src="img/notifications/3.jpg" alt="Notification Image"
-                                        class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
-                                </a>
-                                <div class="pl-3">
-                                    <a href="#">
-                                        <p class="font-weight-medium mb-1">3 items just added to wish list by a user!
-                                        </p>
-                                        <p class="text-muted mb-0 text-small">09.04.2018 - 12:45</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="header-icon btn btn-empty d-none d-sm-inline-block" type="button" id="fullScreenButton">
-                    <i class="simple-icon-size-fullscreen"></i>
-                    <i class="simple-icon-size-actual"></i>
+            <div>
+                <button id="nav-btn" class="btn-sm btn-primary mx-1 border-0 bg-transparent">login</button>
+                <button class="btn-sm btn-primary mx-1 border-0">register</button>
+                <button onclick="navPhoneOpen()" class="d-lg-none bg-transparent mx-1 border-0"><i class="bi bi-list"
+                        style="color:#fff;" id="nav-phone-icon"></i>
                 </button>
 
             </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto" id="navbar-navlist">
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link " href="">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link " href="/">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link " href="/">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link" href="/">Client</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link" href="/">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link" href="/">Contact</a>
+                    </li>
+                </ul>
 
-            <div class="user d-inline-block">
-                <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    <span class="name">Sarah Kortney</span>
-                    <span>
-                        <img alt="Profile Picture" src="img/profiles/l-1.jpg" />
-                    </span>
-                </button>
 
-                <div class="dropdown-menu dropdown-menu-right mt-3">
-                    <a class="dropdown-item" href="#">Account</a>
-                    <a class="dropdown-item" href="#">Features</a>
-                    <a class="dropdown-item" href="#">History</a>
-                    <a class="dropdown-item" href="#">Support</a>
-                    <a class="dropdown-item" href="#">Sign out</a>
-                </div>
             </div>
         </div>
+
+
     </nav>
+    <div id="nav-phone" class="menu-mobile  d-lg-none">
+        <div class="d-flex justify-content-center w-100 p-3 ">
+            <button onclick="navPhoneclose()"
+                class="justify-content-around flex-column align-content-end bg-transparent border-0">
+                <svg viewBox="0 0 24 24" class="i-float_left cursor-pointer" style="width: 34px; height: 34px;">
+                    <path fill="#fff"
+                        d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z">
+                    </path>
+                </svg>
+            </button>
+
+            <a class=" logo d-flex flex-direction-column flex-grow-1 flex-row-reverse " href="#">
+                <img src="images/E-cms.png" alt="" height="40">
+            </a>
+        </div>
+
+        <ul class="navbar-nav ms-auto" id="navbar-navlist">
+            <li class="nav-item">
+                <a id="nav-link" class="nav-link " href="">Home</a>
+            </li>
+            <li class="nav-item">
+                <a id="nav-link" class="nav-link " href="/">Services</a>
+            </li>
+            <li class="nav-item">
+                <a id="nav-link" class="nav-link " href="/">Features</a>
+            </li>
+            <li class="nav-item">
+                <a id="nav-link" class="nav-link" href="/">Client</a>
+            </li>
+            <li class="nav-item">
+                <a id="nav-link" class="nav-link" href="/">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a id="nav-link" class="nav-link" href="/">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- END NAVBAR -->
+    <section class="bg-home-2" style="padding: 180px 0px 0px 0px;">
+        <div class="container">
+            <div class="text-center mb-5 ">
+                <h1 class="display-5 fw-normal text-white">Dashboard <span class="fw-bold text-white"> User Name</span>
+                </h1>
+    
+            </div>
+    
+        </div>
+        <nav class="navbar w-100 navbar-expand-lg  ">
+            <div class="container bg-white py-3 px-0 rounded-2">
+    
+                <div class=" overflow navbar-collapse">
+                    <ul class="nav mx-auto nav-user  ">
+                        <li class="nav-item">
+    
+                            <a class="nav-link-user active " href=""> <i class="bi bi-person"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link-user" href="#"><i class="bi bi-credit-card-2-back-fill"></i>
+                                Order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link-user " href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link-user" href="#">Client</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link-user" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link-user" href="#"><i class="bi bi-gear-wide-connected"></i>
+                                Setting</a>
+                        </li>
+                    </ul>
+    
+    
+                </div>
+            </div>
+    
+    
+        </nav>
+    </section>
