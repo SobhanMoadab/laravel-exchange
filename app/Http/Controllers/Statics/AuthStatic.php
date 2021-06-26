@@ -1,13 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Statics;
 
-use App\Models\User;
+use App\Http\Controllers\Core\Services\AuthenticationServices;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Core\Services\AuthenticationServices;
 use Illuminate\Support\Facades\Http;
 
 class AuthStatic extends Controller

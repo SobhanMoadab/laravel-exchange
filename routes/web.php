@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Http\Controllers\Statics\AuthStatic;
 use App\Http\Controllers\Statics\PermissionStatic;
 use App\Http\Controllers\Statics\PostStatic;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes

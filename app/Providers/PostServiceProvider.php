@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers;
 
 use App\Http\Controllers\Core\Services\PostServices;
@@ -9,24 +11,20 @@ class PostServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->bind('App\Core\Services\PostServices', function ($app) {
             $request = app(\Illuminate\Http\Request::class);
             return app(PostServices::class, [$request]);
-          });
+        });
     }
 
     /**
      * Bootstrap services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-        //
+        
     }
 }
