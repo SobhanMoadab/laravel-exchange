@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<form class="text-left" action="{{route('register')}}" method="POST">
+<form class="text-left" action="{{route('register_store')}}" method="POST">
 
     <div class="form">
         @csrf

@@ -8,7 +8,7 @@ use Spatie\Permission\Models\Role;
 
 class PermissionServices
 {
-    
+
     // 1. handles mass assigning permissions to users
     // 2. Permissions are customizable
     // 3. can make sub admins with custom privileges
@@ -17,12 +17,22 @@ class PermissionServices
     public function get_all_roles($request)
     {
         // fetch all roles
-        $user = Auth::user();
-        $user->with('roles')->first();
-        return response()->json(['roles' => $user->roles]);
+        try {
+            $roles = Role::all()->pluck('name');
 
-        $roles = Role::get();
-        return [$roles];
+            return ['roles' => $roles];
+        } catch (\Exception $e) {
+            return ['msg' => $e->getMessage()];
+        }
+    }
+    public function get_all_permissions($request)
+    {
+        try {
+            $permissions = Permission::all()->pluck('name');
+            return ['permissions' => $permissions];
+        } catch (\Exception $e) {
+            return ['msg' => $e->getMessage()];
+        }
     }
 
     public function create_role($request)
@@ -45,7 +55,9 @@ class PermissionServices
     {
         // create a permission to be checked by middleware,
         //assignable to role
-        throw new \Exception('test');
+        if ($data = $request->json()->all()) {
+            return $data;
+        }
         $validated = $request->validate([
             'name' => 'required'
         ], [
@@ -55,7 +67,7 @@ class PermissionServices
             $permission = Permission::create(['guard_name' => 'api', 'name' => $validated['name']]);
             return [$permission];
         } catch (\Exception $e) {
-            return ['msg' => $e->getMessage(),'e'=>$e];
+            return ['msg' => $e->getMessage(), 'e' => $e];
         }
     }
     public function assign_permission_to_role($request)
@@ -79,7 +91,7 @@ class PermissionServices
             $role->givePermissionTo($request->permission);
             return ['msg' => 'success'];
         } catch (\Exception $e) {
-          return ['msg' => $e->getMessage(),'e'=>$e];
+            return ['msg' => $e->getMessage(), 'e' => $e];
         }
     }
 }

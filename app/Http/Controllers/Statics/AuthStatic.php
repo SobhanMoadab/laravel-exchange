@@ -12,19 +12,29 @@ use Illuminate\Support\Facades\Http;
 
 class AuthStatic extends Controller
 {
-    public function register_form(){
+    public function register_form()
+    {
         $response = Http::withHeaders([
             'X-CSCAPI-KEY' => env('COUNTRY_API_KEY'),
         ])->get('https://api.countrystatecity.in/v1/countries');
-  
+
         $data = [
             'countries' => json_decode($response),
         ];
         return view('auth.register', $data);
     }
-    public function register(AuthenticationServices $auth, Request $request){
+    public function register(AuthenticationServices $auth, Request $request)
+    {
         $result = $auth->register($request);
-        return redirect()->back()->with('success', 'کاربر ایجاد شد');
+        return redirect(route('home'));
     }
-
+    public function login_form()
+    {
+        return view('auth.login');
+    }
+    public function login(AuthenticationServices $auth, Request $request)
+    {
+        $result = $auth->login($request);
+        return redirect(route('home'));
+    }
 }
