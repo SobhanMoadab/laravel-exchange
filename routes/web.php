@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Statics\AuthStatic;
+use App\Http\Controllers\Statics\PermissionStatic;
+use App\Http\Controllers\Statics\PostStatic;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +16,41 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// S T A T I C, WEB ROUTES
 
-Route::get('/register_form', [AuthStatic::class, 'register_form']);
-Route::post('/register_store', [AuthStatic::class, 'register'])->name('register');
+// *** S T A T I C ***
+
+
+// AUTH
+Route::get('/register_form', [AuthStatic::class, 'register_form'])->name('register');
+Route::post('/register_store', [AuthStatic::class, 'register'])->name('register_store');
+Route::get('/login_form', [AuthStatic::class, 'login_form'])->name('login');
+Route::post('/login_form', [AuthStatic::class, 'login'])->name('login_store');
+
+
+Route::prefix('/dashboard')->group(function () {
+
+    // PERMISSION
+    Route::get('/role/create', [PermissionStatic::class, 'create_role_form']);
+    Route::post('/role/create_role', [PermissionStatic::class, 'create_role'])->name('create_role');
+    Route::post('/role/create_permission', [PermissionStatic::class, 'create_permission'])->name('create_permission');
+    Route::post('/role/assign_permission_to_role', [PermissionStatic::class, 'assign_permission_to_role'])->name('assign_permission_to_role');
+
+    // POST
+    Route::get('/post', [PostStatic::class, 'get_posts']);
+    Route::post('/post/delete/{id}', [PermissionStatic::class, 'delete_post'])->name('delete_post');
+
+    
+
+
+});
+
+
+
+
+
 Route::get('/admin', function () {
     return view('welcome');
-});
+})->name('dashboard');
 Route::get('/admin/posts', function () {
     return view('welcome');
 });
@@ -35,4 +65,4 @@ Route::get('/register', function () {
 });
 Route::get('/', function () {
     return view('Home');
-});
+})->name('home');

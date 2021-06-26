@@ -25,6 +25,15 @@ class AuthStatic extends Controller
     public function register(AuthenticationServices $auth, Request $request)
     {
         $result = $auth->register($request);
-        return redirect()->back()->with('success', 'کاربر ایجاد شد');
+        return redirect(route('home'));
+    }
+    public function login_form()
+    {
+        return view('auth.login');
+    }
+    public function login(AuthenticationServices $auth, Request $request)
+    {
+        $result = $auth->login($request);
+        return redirect(route('home'));
     }
 }
