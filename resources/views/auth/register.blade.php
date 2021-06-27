@@ -96,11 +96,11 @@
                                             aria-label="Email">
                                     </div>
                                     <div class="mb-3">
-                                        <input type="email" class="form-control" name="password"
+                                        <input type="password" class="form-control" name="password"
                                             placeholder="Password" aria-label="Password">
                                     </div>
                                     <div class="mb-3">
-                                        <input type="email" class="form-control" name='password_confirmation'
+                                        <input type="password" class="form-control" name='password_confirmation'
                                             placeholder="Confirmation Password" aria-label="Confirmation Password">
                                     </div>
                                     <div class="mb-3">
@@ -108,7 +108,7 @@
                                             <select class="form-control" name="country_id" placeholder="Contrry"
                                                 id="ConuntrySelect1">
                                                 @foreach($countries as $country)
-                                                <option value="{{$country->id}}">{{$country->name}}</option>
+                                                <option value="{{$country['id']}}">{{$country['name']}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
