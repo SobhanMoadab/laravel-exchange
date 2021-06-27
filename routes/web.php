@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\Core\SettingServices;
 use App\Http\Controllers\Statics\AuthStatic;
 use App\Http\Controllers\Statics\CurrencyStatic;
 use App\Http\Controllers\Statics\PermissionStatic;
@@ -48,7 +48,8 @@ Route::prefix('/dashboard')->group(function () {
     Route::post('/currency/delete/{id}', [CurrencyStatic::class, 'delete_currency']);
     
     // SETTING
-
+    Route::get('/setting/off', [SettingServices::class, 'maintenance_off']);
+    Route::post('/setting/on', [SettingServices::class, 'maintenance_on']);
 });
 
 
