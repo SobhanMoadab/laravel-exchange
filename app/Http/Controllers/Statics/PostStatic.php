@@ -17,10 +17,7 @@ class PostStatic extends Controller
         $result = $post->get_posts($request);
         return view('Admin.Posts.index', $result);
     }
-    public function create_post(Request $request, PostServices $post)
-    {
-        return view('post.create');
-    }
+  
     public function store_post(Request $request, PostServices $post)
     {
         $result = $post->store_post($request);
@@ -28,7 +25,7 @@ class PostStatic extends Controller
     }
     public function edit_post($id)
     {
-        return view('post.edit', $id);
+        return view('Admin.Posts.index', $id);
     }
     public function update_post(Request $request, PostServices $post, $id)
     {

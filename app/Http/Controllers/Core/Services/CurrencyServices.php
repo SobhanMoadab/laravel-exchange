@@ -1,6 +1,5 @@
 <?php
 
-declare(strict_types=1);
 
 namespace App\Http\Controllers\Core;
 
@@ -11,14 +10,14 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 
 // todo
-// require_once( "..\PHP-websocket-client\websocket_client.php");
+//  require_once( __DIR__ . "..\PHP-websocket-client\websocket_client.php");
 
-class CurrencyController extends Controller
+class CurrencyServices
 {
     // crud for currency
     // currencies can be turned off and on
 
-    public function coin_availablity(Request $request, $id)
+    public function coin_availablity($request, $id)
     {
         $request->validate([
             'state' => 'required',
@@ -36,11 +35,12 @@ class CurrencyController extends Controller
                     'is_active' => 1,
                 ]);
             }
-            return response()->json(['msg' => 'success', 'currency' => $currency], 200);
+            return ['currency' => $currency];
         } catch (\Exception $e) {
-            return response()->json(['msg' => $e->getMessage()], 500);
+            return['msg' => $e->getMessage()];
         }
     }
+
     public function create_currency(Request $request)
     {
         $request->validate([

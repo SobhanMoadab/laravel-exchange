@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class OrderController extends Controller
+class OrderServices
 {
     public function register_order(Request $request)
     {

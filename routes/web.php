@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\Statics\AuthStatic;
+use App\Http\Controllers\Statics\CurrencyStatic;
 use App\Http\Controllers\Statics\PermissionStatic;
 use App\Http\Controllers\Statics\PostStatic;
 use Illuminate\Support\Facades\Route;
@@ -36,8 +37,13 @@ Route::prefix('/dashboard')->group(function () {
 
     // POST
     Route::get('/post', [PostStatic::class, 'get_posts']);
-    Route::post('/post/delete/{id}', [PermissionStatic::class, 'delete_post'])->name('delete_post');
-
+    Route::post('/post/delete/{id}', [PostStatic::class, 'delete_post'])->name('delete_post');
+    Route::post('/post/update/{id}', [PostStatic::class, 'update_post'])->name('update_post');
+    Route::post('/post', [PostStatic::class, 'store_post'])->name('store_post');
+   
+    // CURRENCY
+    Route::post('/currency/state/{id}', [CurrencyStatic::class, 'coin_availablity']);
+    Route::get('/currency', [CurrencyStatic::class, 'get_posts']);
     
 
 

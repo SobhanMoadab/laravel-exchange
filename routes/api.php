@@ -49,16 +49,16 @@ Route::prefix('/dashboard')->middleware('auth:api')->group(function (): void {
     Route::post('/create_role', [PermissionController::class, 'create_role']);
     Route::get('/get_all_roles', [PermissionController::class, 'get_all_roles']);
     // C U R R E N C Y
-    Route::post('/create_currency', [CurrencyController::class, 'create_currency']);
-    Route::get('/get_currency', [CurrencyController::class, 'get_currencies']);
-    Route::put('/edit_currency/{id}', [CurrencyController::class, 'edit_currency']);
-    Route::delete('/delete_currency/{id}', [CurrencyController::class, 'delete_currency']);
-    Route::post('/coin_state/{id}', [CurrencyController::class, 'coin_availablity']);
+    // Route::post('/create_currency', [CurrencyController::class, 'create_currency']);
+    // Route::get('/get_currency', [CurrencyController::class, 'get_currencies']);
+    // Route::put('/edit_currency/{id}', [CurrencyController::class, 'edit_currency']);
+    // Route::delete('/delete_currency/{id}', [CurrencyController::class, 'delete_currency']);
+    // Route::post('/coin_state/{id}', [CurrencyController::class, 'coin_availablity']);
     // S E T T I N G
     Route::post('/down', [SettingController::class, 'maintenance_on'])->middleware('role:super-admin');
     Route::get('/up', [SettingController::class, 'maintenance_off'])->middleware('role:super-admin');
 });
-Route::get('/ws_market', [CurrencyController::class, 'ws_market']);
+// Route::get('/ws_market', [CurrencyController::class, 'ws_market']);
 Route::get('/debug-sentry', function (): void {
     throw new Exception('My first Sentry error!');
 });
