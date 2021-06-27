@@ -6,8 +6,7 @@
             <div class="row mt-4 mb-5 row-card-dashboard">
                 <div class="col-12 col-sm-12 my-2  col-md-4">
                     <div class="card card-dashboard">
-                        <div class="card-body rounded-2"
-                            style="background: linear-gradient(144deg, rgba(138,39,129,1) 0%, rgba(245,56,94,1) 100%); ">
+                        <div class="card-body rounded-2 order-card">
                             <h5 class="card-title text-white">Orders Sum</h5>
                             <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
                                 class="bi bi-bag position-relative text-white icon-dashboard" viewBox="0 0 16 16">
@@ -26,8 +25,7 @@
                 </div>
                 <div class="col-12 col-sm-12 my-2 col-md-4">
                     <div class="card card-dashboard">
-                        <div class="card-body   rounded-2"
-                            style="background: linear-gradient(144deg, rgba(39,138,74,1) 0%, rgba(56,196,245,1) 100%); ">
+                        <div class="card-body rounded-2 discount-card">
                             <h5 class="card-title text-white">Discount</h5>
                             <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
                                 class="bi bi-percent position-relative text-white icon-dashboard" viewBox="0 0 16 16">
@@ -46,8 +44,7 @@
                 </div>
                 <div class="col-12 col-sm-12 my-2 col-md-4">
                     <div class="card card-dashboard">
-                        <div class="card-body bg-danger rounded-2"
-                            style="background: linear-gradient(139deg, rgba(213,33,33,1) 0%, rgba(208,193,25,1) 100%); ">
+                        <div class="card-body rounded-2 referrals-card">
                             <h5 class="card-title text-white">Referrals Sum</h5>
                             <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
                                 class="bi bi-people-fill position-relative text-white icon-dashboard"
