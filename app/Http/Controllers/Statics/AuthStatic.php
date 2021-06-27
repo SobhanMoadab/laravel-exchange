@@ -21,7 +21,7 @@ class AuthStatic extends Controller
         $data = [
           'countries' => $response
         ];
-        return view('auth.Register', $data);
+        return view('auth.register', $data);
     }
     public function register(AuthenticationServices $auth, Request $request)
     {
@@ -30,7 +30,7 @@ class AuthStatic extends Controller
     }
     public function login_form()
     {
-        return view('auth.Login');
+        return view('auth.login');
     }
     public function login(AuthenticationServices $auth, Request $request)
     {
