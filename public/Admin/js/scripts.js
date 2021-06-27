@@ -18,9 +18,9 @@ function loadStyle(href, callback) {
     var link = document.createElement("link");
     link.rel = "stylesheet";
     link.type = "text/css";
-    link.href = '/' + href;
+    link.href = '/Admin/' + href;
     if (callback) {
-        link.onload = function() {
+        link.onload = function () {
 
             callback();
         };
@@ -34,7 +34,7 @@ function loadStyle(href, callback) {
 }
 
 /* 02. Theme Selector, Layout Direction And Initializer */
-(function($) {
+(function ($) {
     if ($().dropzone) {
         Dropzone.autoDiscover = false;
     }
@@ -143,7 +143,7 @@ function loadStyle(href, callback) {
         $("body").dore();
     }
 
-    $("body").on("click", ".theme-color", function(event) {
+    $("body").on("click", ".theme-color", function (event) {
         event.preventDefault();
         var dataTheme = $(this).data("theme");
         if (typeof Storage !== "undefined") {
@@ -152,7 +152,7 @@ function loadStyle(href, callback) {
         }
     });
 
-    $("input[name='directionRadio']").on("change", function(event) {
+    $("input[name='directionRadio']").on("change", function (event) {
         var direction = $(event.currentTarget).data("direction");
         if (typeof Storage !== "undefined") {
             localStorage.setItem("dore-direction", direction);
@@ -160,7 +160,7 @@ function loadStyle(href, callback) {
         }
     });
 
-    $("input[name='radiusRadio']").on("change", function(event) {
+    $("input[name='radiusRadio']").on("change", function (event) {
         var radius = $(event.currentTarget).data("radius");
         if (typeof Storage !== "undefined") {
             localStorage.setItem("dore-radius", radius);
@@ -168,7 +168,7 @@ function loadStyle(href, callback) {
         }
     });
 
-    $("#switchDark").on("change", function(event) {
+    $("#switchDark").on("change", function (event) {
         var mode = $(event.currentTarget)[0].checked ? "dark" : "light";
         if (mode == "dark") {
             theme = theme.replace("light", "dark");
@@ -181,24 +181,24 @@ function loadStyle(href, callback) {
         }
     });
 
-    $(".theme-button").on("click", function(event) {
+    $(".theme-button").on("click", function (event) {
         event.preventDefault();
         $(this)
             .parents(".theme-colors")
             .toggleClass("shown");
     });
 
-    $(document).on("click", function(event) {
+    $(document).on("click", function (event) {
         if (!(
-                $(event.target)
+            $(event.target)
                 .parents()
                 .hasClass("theme-colors") ||
-                $(event.target)
+            $(event.target)
                 .parents()
                 .hasClass("theme-button") ||
-                $(event.target).hasClass("theme-button") ||
-                $(event.target).hasClass("theme-colors")
-            )) {
+            $(event.target).hasClass("theme-button") ||
+            $(event.target).hasClass("theme-colors")
+        )) {
             if ($(".theme-colors").hasClass("shown")) {
                 $(".theme-colors").removeClass("shown");
             }

@@ -4,12 +4,6 @@
                 <ul class="list-unstyled">
                     <li class="active">
                         <a href="#dashboard">
-                            <i class="iconsminds-shop-4"></i>
-                            <span>Dashboards</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#dashboard">
                             <i class="iconsminds-digital-drawing"></i> Dashboard
                         </a>
                     </li>

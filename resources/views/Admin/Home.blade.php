@@ -1,5 +1,5 @@
-@include('Admin.Layout.Header')
-@include('Admin.Layout.SidebarNav')
+@include('./Admin/Layout/Header')
+@include('./Admin/Layout/SidebarNav')
 <main>
     
     <div class="container-fluid">
@@ -312,4 +312,4 @@
             </div>
         </div>
 </main>
-@include('Admin.Layout.Footer')
+@include('./Admin/Layout/Footer')
