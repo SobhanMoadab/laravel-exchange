@@ -37,7 +37,6 @@
                 </span>
             </div>
 
-            <a class="btn btn-sm btn-outline-primary ml-3 d-none d-md-inline-block" href="https://1.envato.market/5kAb">&nbsp;BUY&nbsp;</a>
         </div>
 
 

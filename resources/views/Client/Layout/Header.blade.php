@@ -41,7 +41,7 @@
 
 
             <a class="navbar-brand logo text-uppercase " href="index-1.html">
-                <img src="images/E-cms.png" alt="" height="40">
+                <img src="/client/images/E-cms.png" alt="" height="40">
             </a>
             <div>
                 <button id="nav-btn" class="btn-sm btn-primary mx-1 border-0 bg-transparent">login</button>
@@ -91,7 +91,7 @@
             </button>
 
             <a class=" logo d-flex flex-direction-column flex-grow-1 flex-row-reverse " href="#">
-                <img src="images/E-cms.png" alt="" height="40">
+                <img src="/client/images/E-cms.png" alt="" height="40">
             </a>
         </div>
 
@@ -120,44 +120,44 @@
     <!-- END NAVBAR -->
         <!-- tickers start -->
         <div class="contain-div container-fluid ">
-            <div class="row cycle-slideshow" data-cycle-fx=carousel data-cycle-speed="2000" data-cycle-timeout=1
+            <div class="row cycle-slideshow" data-cycle-fx=carousel data-cycle-speed="4000" data-cycle-timeout=0.1
                 data-cycle-easing="linear" data-cycle-carousel-fluid=true data-cycle-pause-on-hover="true"
                 data-cycle-slides="> div">
     
                 <div class="box">
                     <div class="ticker-box">
                         <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
-                                    src="./images/svg/bitcoin-441959.svg" alt=""></span></div>
+                                    src="/client/images/svg/bitcoin-441959.svg" alt=""></span></div>
                     </div>
                 </div>
                 <div class="box">
                     <div class="ticker-box">
                         <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
-                                    src="./images/svg/aurouracoin-441945.svg" alt=""></span></div>
+                                    src="/client/images/svg/aurouracoin-441945.svg" alt=""></span></div>
                     </div>
                 </div>
                 <div class="box">
                     <div class="ticker-box">
                         <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
-                                    src="./images/svg/dash-441957.svg" alt=""></span></div>
+                                    src="/client/images/svg/dash-441957.svg" alt=""></span></div>
                     </div>
                 </div>
                 <div class="box">
                     <div class="ticker-box">
                         <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
-                                    src="./images/svg/devcoin-441952.svg" alt=""></span></div>
+                                    src="/client/images/svg/devcoin-441952.svg" alt=""></span></div>
                     </div>
                 </div>
                 <div class="box">
                     <div class="ticker-box">
                         <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
-                                    src="./images/svg/dogecoin-441958.svg" alt=""></span></div>
+                                    src="/client/images/svg/dogecoin-441958.svg" alt=""></span></div>
                     </div>
                 </div>
                 <div class="box">
                     <div class="ticker-box">
                         <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
-                                    src="./images/svg/etherium-441951.svg" alt=""></span></div>
+                                    src="/client/images/svg/etherium-441951.svg" alt=""></span></div>
                     </div>
                 </div>
     

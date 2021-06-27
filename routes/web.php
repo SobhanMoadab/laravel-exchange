@@ -59,6 +59,10 @@ Route::get('/dashboard', function () {
     return view('Admin.Home');
 })->name('dashboard');
 
+Route::get('/dashboard/currency', function () {
+    return view('Admin.currency');
+})->name('dashboard');
+
 Route::get('/admin/posts', function () {
     return view('welcome');
 });
@@ -66,9 +70,10 @@ Route::get('/admin/posts/new-post', function () {
     return view('welcome');
 });
 Route::get('/login', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/', function () {
-    return view('User.Home');
+    return view('Client.Home');
 })->name('home');
+

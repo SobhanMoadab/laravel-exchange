@@ -232,16 +232,17 @@ function typewrite() {
 window.onload(typewrite());
 
 // js active tab
-function tabs(e) {
-    var tab_btn = document.getElementsByClassName('tab-btn');
-    var i;
-
-    for (i = 0; i < tab_btn.length; i++) {
-        tab_btn[i].classList.remove('active-menu');
-    }
-
-    e.currentTarget.classList.add('active-menu');
-
+function tabsSell() {
+    document.getElementById('Purchase-body').classList.remove('d-flex')
+    document.getElementById('Purchase-body').classList.add('d-none')
+    document.getElementById('sell-body').classList.remove('d-none')
+    document.getElementById('sell-body').classList.add('d-flex')
+}
+function tabsPurchase() {
+    document.getElementById('Purchase-body').classList.remove('d-none')
+    document.getElementById('Purchase-body').classList.add('d-flex')
+    document.getElementById('sell-body').classList.remove('d-flex')
+    document.getElementById('sell-body').classList.add('d-none')
 }
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */

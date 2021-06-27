@@ -2010,7 +2010,7 @@ border-radius: 50px;
 
 }
 
-.theme-switcher {
+.tab-switcher {
   background-color: var(--c-bg-secondary);
   border-radius: 10px;
   display: flex;
@@ -2019,7 +2019,7 @@ border-radius: 50px;
   position: relative;
   overflow: hidden;
 }
-.theme-switcher .slider {
+.tab-switcher .slider {
   display: block;
   position: absolute;
   z-index: 1;
@@ -2032,25 +2032,25 @@ border-radius: 50px;
   background-color: var(--c-bg-button);
   box-shadow: var(--slider-shadow);
 }
-.theme-switcher input {
+.tab-switcher input {
   display: none;
 }
-.theme-switcher input:nth-of-type(1):checked ~ .slider {
+.tab-switcher input:nth-of-type(1):checked ~ .slider {
   transform: translateX(0);
 }
-.theme-switcher input:nth-of-type(2):checked ~ .slider {
+.tab-switcher input:nth-of-type(2):checked ~ .slider {
   transform: translateX(100%);
 }
-.theme-switcher input:nth-of-type(3):checked ~ .slider {
+.tab-switcher input:nth-of-type(3):checked ~ .slider {
   transform: translateX(200%);
 }
-.theme-switcher label {
+.tab-switcher label {
   position: relative;
   z-index: 2;
   width: calc(100% / 2);
   color: var(--c-text-secondary);
 }
-.theme-switcher label span {
+.tab-switcher label span {
   padding: 8px 0;
   border-radius: 6px;
   display: flex;
@@ -2058,7 +2058,7 @@ border-radius: 50px;
   align-items: center;
   font-weight: 500;
 }
-.theme-switcher label svg {
+.tab-switcher label svg {
   display: inline-block;
   margin-right: 0.5rem;
   width: 20px;

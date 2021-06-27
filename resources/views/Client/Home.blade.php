@@ -1,4 +1,4 @@
-@include('Layout/Header')
+@include('client.Layout.Header')
     <!-- START HOME -->
     <section class="bg-home-2 align-items-center d-flex" id="home">
         <div class="container">
@@ -25,16 +25,16 @@
 
                             <div class="card rounded-2 border-0 shadow-white p-4 ">
                                 <div class="menu-header">
-                                    <div class="theme-switcher">
-                                        <input type="radio" id="light-theme" name="themes" onclick="tabs(event)"
+                                    <div class="tab-switcher">
+                                        <input type="radio" id="Sell" name="themes" onclick="tabsSell()"
                                             checked />
-                                        <label for="light-theme">
+                                        <label for="Sell">
                                             <span>
                                                 <i data-feather="sun"></i>Sell ​​to site
                                             </span>
                                         </label>
-                                        <input type="radio" id="dark-theme" onclick="tabs(event)" name="themes" />
-                                        <label for="dark-theme">
+                                        <input type="radio" id="Purchase" onclick="tabsPurchase()" name="themes" />
+                                        <label for="Purchase">
                                             <span>
                                                 <i data-feather="moon"></i>Purchase from the site
                                             </span>
@@ -43,7 +43,7 @@
                                     </div>
                                 </div>
 
-                                <div class="card-body d-flex justify-content-center align-content-center row  exchange">
+                                <div class="card-body d-flex justify-content-center align-content-center row  exchange" id="sell-body">
                                     <div class="col-12 col-sm-12 col-lg-6">
                                         <div
                                             class="card bg-transparent border-0  d-flex justify-content-center align-content-center row ">
@@ -128,9 +128,96 @@
                                         </div>
                                     </div>
 
+                                    <button class="btn btn-primary w-100 shadow-lg mt-3 "> exchange</button>
+                                </div>
+                                <div class="card-body d-none justify-content-center align-content-center row  exchange" id="Purchase-body">
+                                    <div class="col-12 col-sm-12 col-lg-6">
+                                        <div
+                                            class="card bg-transparent border-0  d-flex justify-content-center align-content-center row ">
+
+                                            <div class="card-body  d-flex justify-content-center  row">
+
+
+
+                                                <div class="input-group">
+                                                    <p id="give">You</p>
+                                                    <input type="text"
+                                                        class="form-control rounded text-white bg-dark border-0 w-100"
+                                                        aria-label="Text input with dropdown button">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-primary dropdown-toggle btn-exchange "
+                                                            type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">Dropdown</button>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item" href="#">Action</a>
+                                                            <a class="dropdown-item" href="#">Another action</a>
+                                                            <a class="dropdown-item" href="#">Something else
+                                                                here</a>
+                                                            <div role="separator" class="dropdown-divider">
+                                                            </div>
+                                                            <a class="dropdown-item" href="#">Separated link</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="dropdown">
+                                                        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                                                        <div id="myDropdown" class="dropdown-content">
+                                                            <a href="#home">Home</a>
+                                                            <a href="#about">About</a>
+                                                            <a href="#contact">Contact</a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div class="input-group">
+                                                    <p id="take">Take</p>
+                                                    <input type="text"
+                                                        class="form-control rounded bg-dark text-white border-0 w-100"
+                                                        aria-label="Text input with dropdown button">
+
+
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-primary dropdown-toggle btn-exchange "
+                                                            type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">Dropdown</button>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item" href="#">Action</a>
+                                                            <a class="dropdown-item" href="#">Another action</a>
+                                                            <a class="dropdown-item" href="#">Something else
+                                                                here</a>
+                                                            <div role="separator" class="dropdown-divider">
+                                                            </div>
+                                                            <a class="dropdown-item" href="#">Separated link</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="dropdown">
+                                                        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                                                        <div id="myDropdown" class="dropdown-content">
+                                                            <a href="#home">Home</a>
+                                                            <a href="#about">About</a>
+                                                            <a href="#contact">Contact</a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-lg-6  exchange-table">
+                                        <div class="card bg-dark text-white h-100 ">
+                                            <div class="card-body p-4 pb-3 justify-content-end">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-primary w-100 shadow-lg mt-3 "> exchange</button>
                                 </div>
 
-                                <button class="btn btn-primary w-100 shadow-lg "> exchange</button>
                             </div>
                         </div>
                     </div>
@@ -311,7 +398,7 @@
                 <div class="col-lg-6 offset-lg-1">
                     <div class="mt-4 p-4">
 
-                        <img src="images/features/img-1.png" class="img-fluid" alt="">
+                        <img src="/client/images/features/img-1.png" class="img-fluid" alt="">
 
                     </div>
                 </div>
@@ -323,7 +410,7 @@
 
                 <div class="col-lg-6">
                     <div class="mt-4 p-4">
-                        <img src="images/features/img-2.png" class="img-fluid" alt="">
+                        <img src="/client/images/features/img-2.png" class="img-fluid" alt="">
                     </div>
                 </div>
 
@@ -480,7 +567,7 @@
                             </div>
                             <div class="client-user mt-5 d-flex">
                                 <div class="client-img pe-3">
-                                    <img src="images/users/img-1.jpg" class="img-fluid rounded-circle" alt="">
+                                    <img src="/client/images/users/img-1.jpg" class="img-fluid rounded-circle" alt="">
                                 </div>
                                 <div class="flex-1">
                                     <h5 class="f-18 mb-0">Brandon Carney</h5>
@@ -524,7 +611,7 @@
                             </div>
                             <div class="client-user mt-5 d-flex">
                                 <div class="client-img pe-3">
-                                    <img src="images/users/img-2.jpg" class="img-fluid rounded-circle" alt="">
+                                    <img src="/client/images/users/img-2.jpg" class="img-fluid rounded-circle" alt="">
                                 </div>
                                 <div class="flex-1">
                                     <h5 class="f-18 mb-0">Jeremiah Eskew</h5>
@@ -566,7 +653,7 @@
                             </div>
                             <div class="client-user mt-5 d-flex">
                                 <div class="client-img pe-3">
-                                    <img src="images/users/img-3.jpg" class="img-fluid rounded-circle" alt="">
+                                    <img src="/client/images/users/img-3.jpg" class="img-fluid rounded-circle" alt="">
                                 </div>
                                 <div class="flex-1">
                                     <h5 class="f-18 mb-0">William Alderman</h5>
@@ -612,7 +699,7 @@
                             </div>
                             <div class="client-user mt-5 d-flex">
                                 <div class="client-img pe-3">
-                                    <img src="images/users/img-4.jpg" class="img-fluid rounded-circle" alt="">
+                                    <img src="/client/images/users/img-4.jpg" class="img-fluid rounded-circle" alt="">
                                 </div>
                                 <div class="flex-1">
                                     <h5 class="f-18 mb-0">Zachary Tevis</h5>
@@ -648,22 +735,22 @@
             <div class="row mt-5">
                 <div class="col-lg-3">
                     <div class="client-images mt-4">
-                        <img src="images/clients/img-1.png" alt="logo-img" class="mx-auto img-fluid d-block">
+                        <img src="/client/images/clients/img-1.png" alt="logo-img" class="mx-auto img-fluid d-block">
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="client-images mt-4">
-                        <img src="images/clients/img-2.png" alt="logo-img" class="mx-auto img-fluid d-block">
+                        <img src="/client/images/clients/img-2.png" alt="logo-img" class="mx-auto img-fluid d-block">
                     </div>
                 </div>
                 <div class="col-lg-3 ">
                     <div class="client-images mt-4">
-                        <img src="images/clients/img-3.png" alt="logo-img" class="mx-auto img-fluid d-block">
+                        <img src="/client/images/clients/img-3.png" alt="logo-img" class="mx-auto img-fluid d-block">
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="client-images mt-4">
-                        <img src="images/clients/img-4.png" alt="logo-img" class="mx-auto img-fluid d-block">
+                        <img src="/client/images/clients/img-4.png" alt="logo-img" class="mx-auto img-fluid d-block">
                     </div>
                 </div>
 
@@ -820,4 +907,4 @@
         </div>
     </div>
     <!-- END CTA -->
-    @include('Layout/Footer')
+    @include('client.Layout.Footer')

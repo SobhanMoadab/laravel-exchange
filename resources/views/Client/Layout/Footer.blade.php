@@ -5,7 +5,7 @@
             <div class="row text-center">
                 <div class="col-md-6">
                     <div class="text-sm-start mt-3 mt-sm-0">
-                        <img src="images/E-cms.png" alt="" height="40">
+                        <img src="/client/images/E-cms.png" alt="" height="40">
                     </div>
                 </div>
                 <div class="col-md-6">
