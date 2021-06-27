@@ -1,6 +1,5 @@
 <?php
 
-declare(strict_types=1);
 
 use App\Http\Controllers\Statics\AuthStatic;
 use App\Http\Controllers\Statics\PermissionStatic;
@@ -21,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // AUTH
-Route::get('/register_form', [AuthStatic::class, 'register_form'])->name('register');
+Route::get('/register', [AuthStatic::class, 'register_form'])->name('register');
 Route::post('/register_store', [AuthStatic::class, 'register'])->name('register_store');
 Route::get('/login_form', [AuthStatic::class, 'login_form'])->name('login');
 Route::post('/login_form', [AuthStatic::class, 'login'])->name('login_store');
@@ -48,9 +47,10 @@ Route::prefix('/dashboard')->group(function () {
 
 
 
-Route::get('/admin', function () {
-    return view('welcome');
+Route::get('/dashboard', function () {
+    return view('Admin.Home');
 })->name('dashboard');
+
 Route::get('/admin/posts', function () {
     return view('welcome');
 });
@@ -60,9 +60,7 @@ Route::get('/admin/posts/new-post', function () {
 Route::get('/login', function () {
     return view('welcome');
 });
-Route::get('/register', function () {
-    return view('welcome');
-});
+
 Route::get('/', function () {
-    return view('Home');
+    return view('User.Home');
 })->name('home');

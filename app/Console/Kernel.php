@@ -1,6 +1,5 @@
 <?php
 
-declare(strict_types=1);
 
 namespace App\Console;
 
@@ -14,7 +13,7 @@ class Kernel extends ConsoleKernel
      *
      * @var array
      */
-    protected array $commands = [
+    protected $commands = [
 
     ];
     /**

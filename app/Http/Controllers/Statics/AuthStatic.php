@@ -16,11 +16,12 @@ class AuthStatic extends Controller
         $response = Http::withHeaders([
             'X-CSCAPI-KEY' => env('COUNTRY_API_KEY'),
         ])->get('https://api.countrystatecity.in/v1/countries');
-
+        $response = strval($response->getBody());
+        $response = json_decode($response, true);
         $data = [
-            'countries' => json_decode($response),
+          'countries' => $response
         ];
-        return view('auth.register', $data);
+        return view('auth.Register', $data);
     }
     public function register(AuthenticationServices $auth, Request $request)
     {
@@ -29,7 +30,7 @@ class AuthStatic extends Controller
     }
     public function login_form()
     {
-        return view('auth.login');
+        return view('auth.Login');
     }
     public function login(AuthenticationServices $auth, Request $request)
     {

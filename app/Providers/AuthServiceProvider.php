@@ -1,6 +1,5 @@
 <?php
 
-declare(strict_types=1);
 
 namespace App\Providers;
 
@@ -13,7 +12,7 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected array $policies = [
+    protected  $policies = [
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
     ];
     /**

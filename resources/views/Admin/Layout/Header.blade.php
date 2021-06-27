@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    @include('Base.head')
+    @include('Admin.Layout.Base.Head')
 </head>
 
 <body id="app-container" class="menu-default show-spinner">
-<nav class="navbar fixed-top">
+    <nav class="navbar fixed-top">
         <div class="d-flex align-items-center navbar-left">
             <a href="#" class="menu-button d-none d-md-block">
                 <svg class="main" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 17">
@@ -37,8 +37,7 @@
                 </span>
             </div>
 
-            <a class="btn btn-sm btn-outline-primary ml-3 d-none d-md-inline-block"
-                href="https://1.envato.market/5kAb">&nbsp;BUY&nbsp;</a>
+            <a class="btn btn-sm btn-outline-primary ml-3 d-none d-md-inline-block" href="https://1.envato.market/5kAb">&nbsp;BUY&nbsp;</a>
         </div>
 
 
@@ -50,16 +49,14 @@
         <div class="navbar-right">
             <div class="header-icons d-inline-block align-middle">
                 <div class="d-none d-md-inline-block align-text-bottom mr-3">
-                    <div class="custom-switch custom-switch-primary-inverse custom-switch-small pl-1" 
-                        data-toggle="tooltip" data-placement="left" title="Dark Mode">
+                    <div class="custom-switch custom-switch-primary-inverse custom-switch-small pl-1" data-toggle="tooltip" data-placement="left" title="Dark Mode">
                         <input class="custom-switch-input" id="switchDark" type="checkbox" checked>
                         <label class="custom-switch-btn" for="switchDark"></label>
                     </div>
                 </div>
 
                 <div class="position-relative d-none d-sm-inline-block">
-                    <button class="header-icon btn btn-empty" type="button" id="iconMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <button class="header-icon btn btn-empty" type="button" id="iconMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="simple-icon-grid"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right mt-3  position-absolute" id="iconMenuDropdown">
@@ -97,8 +94,7 @@
                 </div>
 
                 <div class="position-relative d-inline-block">
-                    <button class="header-icon btn btn-empty" type="button" id="notificationButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="header-icon btn btn-empty" type="button" id="notificationButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="simple-icon-bell"></i>
                         <span class="count">3</span>
                     </button>
@@ -106,8 +102,7 @@
                         <div class="scroll">
                             <div class="d-flex flex-row mb-3 pb-3 border-bottom">
                                 <a href="#">
-                                    <img src="img/profiles/l-2.jpg" alt="Notification Image"
-                                        class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
+                                    <img src="img/profiles/l-2.jpg" alt="Notification Image" class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
                                 </a>
                                 <div class="pl-3">
                                     <a href="#">
@@ -118,8 +113,7 @@
                             </div>
                             <div class="d-flex flex-row mb-3 pb-3 border-bottom">
                                 <a href="#">
-                                    <img src="img/notifications/1.jpg" alt="Notification Image"
-                                        class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
+                                    <img src="img/notifications/1.jpg" alt="Notification Image" class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
                                 </a>
                                 <div class="pl-3">
                                     <a href="#">
@@ -130,8 +124,7 @@
                             </div>
                             <div class="d-flex flex-row mb-3 pb-3 border-bottom">
                                 <a href="#">
-                                    <img src="img/notifications/2.jpg" alt="Notification Image"
-                                        class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
+                                    <img src="img/notifications/2.jpg" alt="Notification Image" class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
                                 </a>
                                 <div class="pl-3">
                                     <a href="#">
@@ -142,8 +135,7 @@
                             </div>
                             <div class="d-flex flex-row mb-3 pb-3 ">
                                 <a href="#">
-                                    <img src="img/notifications/3.jpg" alt="Notification Image"
-                                        class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
+                                    <img src="img/notifications/3.jpg" alt="Notification Image" class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle" />
                                 </a>
                                 <div class="pl-3">
                                     <a href="#">
@@ -165,8 +157,7 @@
             </div>
 
             <div class="user d-inline-block">
-                <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
+                <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="name">Sarah Kortney</span>
                     <span>
                         <img alt="Profile Picture" src="img/profiles/l-1.jpg" />

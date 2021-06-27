@@ -22,4 +22,4 @@
             </div>
         </div>
     </footer>
-@include('Base.Footer')
+@include('Admin.Layout.Base.Footer')

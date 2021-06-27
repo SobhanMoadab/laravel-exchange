@@ -1,4 +1,4 @@
-@include('Layout.Header')
+@include('User.Layout.Header')
     <!--start card-->
     <section>
         <div class="container">
@@ -141,4 +141,4 @@
     </section>
     <!--end transaction-->
 
-@include('Layout.Footer')
+@include('User.Layout.Footer')

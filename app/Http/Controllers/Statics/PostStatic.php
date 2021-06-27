@@ -15,7 +15,7 @@ class PostStatic extends Controller
     public function get_posts(Request $request, PostServices $post)
     {
         $result = $post->get_posts($request);
-        return view('post.index', $result);
+        return view('Admin.Posts.index', $result);
     }
     public function create_post(Request $request, PostServices $post)
     {

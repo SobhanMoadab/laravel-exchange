@@ -1,6 +1,5 @@
 <?php
 
-declare(strict_types=1);
 
 namespace App\Providers;
 
@@ -15,7 +14,7 @@ class EventServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected array $listen = [
+    protected  $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],

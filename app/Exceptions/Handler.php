@@ -1,6 +1,5 @@
 <?php
 
-declare(strict_types=1);
 
 namespace App\Exceptions;
 
@@ -23,11 +22,7 @@ class Handler extends ExceptionHandler
      *
      * @var array
      */
-    protected array $dontFlash = [
-        'current_password',
-        'password',
-        'password_confirmation',
-    ];
+   
     /**
      * A list of the exception types that are not reported.
      *
