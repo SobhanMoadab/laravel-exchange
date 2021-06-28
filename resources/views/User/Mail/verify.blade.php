@@ -1,3 +1,6 @@
-
-Hello <strong>{{ $name }}</strong>,
-<p>{{body}}</p>
+<html>
+<div> 
+<strong>Exchange CMS</strong>
+</div>
+<div>Your Verification Code is: {{$body}}</div>
+</html>
