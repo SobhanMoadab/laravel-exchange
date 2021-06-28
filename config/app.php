@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\PermissionServiceProvider::class,
         App\Providers\OrderServiceProvider::class,
+        App\Providers\MailServiceProvider::class,
         App\Providers\SettingServiceProvider::class,
         App\Providers\CurrencyServiceProvider::class,
         App\Providers\PostServiceProvider::class,

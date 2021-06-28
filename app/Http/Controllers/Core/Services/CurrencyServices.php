@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\Core;
+namespace App\Http\Controllers\Core\Services;
 
 use App\Http\Resources\CurrencyResource;
 use App\Models\Currency;
@@ -63,7 +63,6 @@ class CurrencyServices
                 'is_active' => $request->is_active,
                 'price' => $request->price,
                 'admin_id' => Auth::id(),
-
             ]);
             $currency_resource = new CurrencyResource($currency);
             return response()->json(['msg' => 'Success', 'currency' => $currency_resource], 200);

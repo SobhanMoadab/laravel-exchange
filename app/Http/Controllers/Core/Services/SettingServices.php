@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\Core;
+namespace App\Http\Controllers\Core\Services;
 
 use App\Http\Resources\CurrencyResource;
 use App\Models\Currency;
