@@ -67,7 +67,7 @@ Route::prefix('/dashboard')->group(function () {
 
 
 
-
+// Admin Route
 Route::get('/dashboard', function () {
     return view('Admin.Home');
 })->name('dashboard');
@@ -75,6 +75,15 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard/currency', function () {
     return view('Admin.currency.index');
 })->name('dashboard');
+<<<<<<< HEAD
+// End Admin Route
+//User Route 
+Route::get('/user', function () {
+    return view('User.Home');
+})->name('dashboard');
+//End User Route
+//Auth Route
+=======
 
 Route::get('/test', function () {
     return view('User.Mail.verify',);
@@ -82,11 +91,14 @@ Route::get('/test', function () {
 Route::get('/admin/posts/new-post', function () {
     return view('welcome');
 });
+>>>>>>> d955f8b5d341ee7f2c7818015c7b6d0e3c53ba15
 Route::get('/login', function () {
     return view('auth.login');
 });
-
+//End Auth Route
+//Client Route
 Route::get('/', function () {
-    return view('Client.Home');
+    return view('Client.Wizard');
 })->name('home');
 
+//End Client Route 

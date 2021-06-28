@@ -9,11 +9,10 @@
     <meta name="keywords" content="" />
     <meta name="author" content="Themesdesign" />
 
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="client/images/e-cms.ico">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="Client/css/bootstrap.min.css" type="text/css">
-
     <!--Material Icon -->
     <link rel="stylesheet" type="text/css" href="Client/css/materialdesignicons.min.css" />
 
@@ -26,9 +25,7 @@
     <!-- Custom  Css -->
     <link rel="stylesheet" type="text/css" href="Client/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="https://malsup.github.io/jquery.cycle2.js"></script>
-    <script src="https://malsup.github.io/jquery.cycle2.carousel.js"></script>
+
 </head>
 
 <body class="bg-light">

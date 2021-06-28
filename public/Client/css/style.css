@@ -1965,6 +1965,7 @@ border-radius: 50px;
   border-top: 0;
   border-bottom: 0;
   border-right: 0;
+padding-left: 10px !important;
 }
 .bg-light{
   background: #f7f7f7 !important;
