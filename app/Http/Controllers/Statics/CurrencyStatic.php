@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Statics;
 use App\Http\Controllers\Core\CurrencyServices;
 use App\Models\Currency;
 use App\Providers\CurrencyServiceProvider;
+use Binance;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -36,6 +37,13 @@ class CurrencyStatic extends Controller
     {
       $currency->delete_currency($request,$id);
       return redirect()->back()->with('success', 'حذف شد');
+    }
+
+    public function coin_data(Request $request){
+
+        $api = new Binance\API();
+        return $api;
+        
     }
 
 }

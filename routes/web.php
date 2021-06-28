@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\Core\Services\OrderServices;
 use App\Http\Controllers\Core\SettingServices;
 use App\Http\Controllers\Statics\AuthStatic;
 use App\Http\Controllers\Statics\CurrencyStatic;
 use App\Http\Controllers\Statics\PermissionStatic;
 use App\Http\Controllers\Statics\PostStatic;
+use App\Http\Controllers\Statics\SettingStatic;
 use Illuminate\Support\Facades\Route;
+use Stripe\Service\OrderService;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,13 +47,20 @@ Route::prefix('/dashboard')->group(function () {
    
     // CURRENCY
     Route::post('/currency/state/{id}', [CurrencyStatic::class, 'coin_availablity']);
-    Route::get('/currency', [CurrencyStatic::class, 'get_currencies']);
+    // Route::get('/currency', [CurrencyStatic::class, 'get_currencies']);
+    Route::get('/currency_data', [CurrencyStatic::class, 'coin_data']);
     Route::post('/currency/update/{id}', [CurrencyStatic::class, 'edit_currency']);
     Route::post('/currency/delete/{id}', [CurrencyStatic::class, 'delete_currency']);
     
     // SETTING
-    Route::get('/setting/off', [SettingServices::class, 'maintenance_off']);
-    Route::post('/setting/on', [SettingServices::class, 'maintenance_on']);
+    Route::get('/setting/off', [SettingStatic::class, 'maintenance_off']);
+    Route::post('/setting/on', [SettingStatic::class, 'maintenance_on']);
+
+    // ORDER
+    Route::get('/order', [OrderServices::class, 'register_order_form']);
+    Route::post('/order/verify_email', [OrderServices::class, 'verify_email'])->name('order_verify');
+    Route::post('/order/choose_password', [OrderServices::class, 'choose_password'])->name('order_verify');
+
 });
 
 
@@ -63,6 +74,7 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard/currency', function () {
     return view('Admin.currency.index');
 })->name('dashboard');
+<<<<<<< HEAD
 // End Admin Route
 //User Route 
 Route::get('/user', function () {
@@ -70,6 +82,15 @@ Route::get('/user', function () {
 })->name('dashboard');
 //End User Route
 //Auth Route
+=======
+
+Route::get('/test', function () {
+    return view('User.Mail.verify',);
+});
+Route::get('/admin/posts/new-post', function () {
+    return view('welcome');
+});
+>>>>>>> d955f8b5d341ee7f2c7818015c7b6d0e3c53ba15
 Route::get('/login', function () {
     return view('auth.login');
 });

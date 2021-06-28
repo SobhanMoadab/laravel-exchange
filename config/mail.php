@@ -32,7 +32,7 @@ return [
     |            "postmark", "log", "array"
     |
     */
-
+    'from' => ['address' => 'veiledassassin99@example.com', 'name' => 'Exchange-CMS'],
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
