@@ -62,7 +62,7 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/dashboard/currency', function () {
-    return view('Admin.currency');
+    return view('Admin.currency.index');
 })->name('dashboard');
 
 Route::get('/admin/posts', function () {
