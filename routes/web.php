@@ -46,6 +46,7 @@ Route::prefix('/dashboard')->group(function () {
     Route::post('/post', [PostStatic::class, 'store_post'])->name('store_post');
    
     // CURRENCY
+    Route::post('/currency',[CurrencyStatic::class,'create_currency'])->name('create_currency');
     Route::post('/currency/state/{id}', [CurrencyStatic::class, 'coin_availablity']);
     // Route::get('/currency', [CurrencyStatic::class, 'get_currencies']);
     Route::get('/currency_data', [CurrencyStatic::class, 'coin_data']);
