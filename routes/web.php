@@ -67,37 +67,27 @@ Route::prefix('/dashboard')->group(function () {
 
 
 // Admin Route
-Route::get('/dashboard', function () {
-    return view('Admin.Home');
-})->name('dashboard');
-
-Route::get('/dashboard/currency', function () {
-    return view('Admin.currency.index');
-})->name('dashboard');
-<<<<<<< HEAD
-// End Admin Route
+Route::get('/dashboard', function () {return view('Admin.Home');})->name('dashboard');
+Route::get('/dashboard/currency', function () {return view('Admin.currency.index');})->name('dashboard');
+Route::get('/dashboard/orders', function () {return view('Admin.Orders.index');})->name('dashboard');
+Route::get('/dashboard/plugins', function () {return view('Admin.Plugins.index');})->name('dashboard');
+Route::get('/dashboard/posts', function () {return view('Admin.Posts.index');})->name('dashboard');
+Route::get('/dashboard/profile', function () {return view('Admin.Profile.index');})->name('dashboard');
+Route::get('/dashboard/views/customcode', function () {return view('Admin.Views.CustomCode');})->name('dashboard');
+Route::get('/dashboard/views/menu', function () {return view('Admin.Views.Menu');})->name('dashboard');
 //User Route 
-Route::get('/user', function () {
-    return view('User.Home');
-})->name('dashboard');
-//End User Route
+Route::get('/user', function () {return view('User.Home');})->name('dashboard');
+Route::get('/user/order', function () {return view('User.Order');})->name('dashboard');
+Route::get('/user/referrals', function () {return view('User.Referrals');})->name('dashboard');
+Route::get('/user/setting', function () {return view('User.Setting');})->name('dashboard');
+Route::get('/user/verify', function () {return view('User.Verifications');})->name('dashboard');
 //Auth Route
-=======
-
-Route::get('/test', function () {
-    return view('User.Mail.verify',);
-});
-Route::get('/admin/posts/new-post', function () {
-    return view('welcome');
-});
->>>>>>> d955f8b5d341ee7f2c7818015c7b6d0e3c53ba15
-Route::get('/login', function () {
-    return view('auth.login');
-});
-//End Auth Route
+Route::get('/test', function () { return view('User.Mail.verify',); });
+Route::get('/login', function () {return view('auth.login');});
+Route::get('/register', function () {return view('auth.register');});
 //Client Route
-Route::get('/', function () {
-    return view('Client.Wizard');
-})->name('home');
-
-//End Client Route 
+Route::get('/', function () {return view('Client.Home');})->name('home');
+Route::get('/wizard', function () {return view('Client.Wizard');})->name('home');
+Route::get('/faq', function () {return view('Client.FAQ');})->name('home');
+Route::get('/coontactus', function () {return view('Client.ContactUs');})->name('home');
+Route::get('/feedback', function () {return view('Client.Feedback');})->name('home');

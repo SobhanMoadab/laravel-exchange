@@ -1,4 +1,4 @@
-@include('Layout.Header')
+@include('Client.Layout.Header')
 
 <section class="bg-home-2" style="padding: 80px 0px 80px 0px;">
     <div class="container">
@@ -194,4 +194,4 @@
     </li>
 </ul>
 </div>
-@include('Layout.Footer')
+@include('Client.Layout.Footer')

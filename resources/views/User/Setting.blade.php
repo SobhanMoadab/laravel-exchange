@@ -1,4 +1,4 @@
-@include('Layout.Header')
+@include('User.Layout.Header')
 
 <!--start card-->
    <section class="container">
@@ -111,4 +111,4 @@
     </div>
 </section>
 <!--end card-->
-@include('Layout.Footer')
+@include('User.Layout.Footer')
