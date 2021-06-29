@@ -40,7 +40,7 @@ class OrderServices
             'amount' => $request->amount,
         ]);
         $request->session()->put('order', $order);
-            return view();
+            return view('');
         //    return view('User.Verification.Email');
     }
     public function register_order_form()

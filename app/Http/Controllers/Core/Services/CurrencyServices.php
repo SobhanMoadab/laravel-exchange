@@ -37,7 +37,7 @@ class CurrencyServices
             }
             return ['currency' => $currency];
         } catch (\Exception $e) {
-            return['msg' => $e->getMessage()];
+            return ['msg' => $e->getMessage()];
         }
     }
 
@@ -45,14 +45,13 @@ class CurrencyServices
     {
         $request->validate([
             'name' => 'required|unique:currencies,name',
-            'icon' => 'required',
             'is_active' => 'required',
             'price' => 'required',
         ], [
             'name.required' => 'name is required',
-            'icon.required' => 'icon is required',
             'is_active.required' => 'is_active is required',
             'price.required' => 'price is required',
+
         ]);
         try {
             $currency = Currency::create([
@@ -65,9 +64,9 @@ class CurrencyServices
                 'admin_id' => Auth::id(),
             ]);
             $currency_resource = new CurrencyResource($currency);
-            return response()->json(['msg' => 'Success', 'currency' => $currency_resource], 200);
+            return ['msg' => 'Success', 'currency' => $currency_resource];
         } catch (\Exception $e) {
-            return response()->json(['msg' => $e->getMessage()], 500);
+            return ['err' => $e];
         }
     }
     public function get_currencies(Request $request)
@@ -78,9 +77,9 @@ class CurrencyServices
             } else {
                 $currencies = Currency::paginate(10);
             }
-            return response()->json(['currencies' => $currencies], 200);
+            return ['currencies' => $currencies];
         } catch (\Exception $e) {
-            return response()->json(['msg' => $e->getMessage()], 500);
+            return ['msg' => $e->getMessage()];
         }
     }
     public function edit_currency(Request $request, $id)
@@ -96,7 +95,7 @@ class CurrencyServices
         ]);
         try {
             $currency = Currency::findOrFail($id);
-            if (! $request->has('image')) {
+            if (!$request->has('image')) {
                 $currency->update([
                     'name' => $request->name,
                     'is_active' => $request->is_active,

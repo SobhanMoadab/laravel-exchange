@@ -34,12 +34,12 @@
     </div>
 @endif
 
-@if(Session::has('Error'))
+@if(Session::has('error'))
     <div class="form-group form-group-last">
         <div class="alert alert-danger" role="alert" id="kt_form_1_msg">
             <div class="alert-icon"><i class="flaticon-more"></i></div>
             <div class="alert-text">
-                {{Session::get('Error')}}
+                {{Session::get('error')}}
             </div>
             <div class="alert-close">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">

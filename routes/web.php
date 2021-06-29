@@ -44,14 +44,15 @@ Route::prefix('/dashboard')->group(function () {
     Route::post('/post/delete/{id}', [PostStatic::class, 'delete_post'])->name('delete_post');
     Route::post('/post/update/{id}', [PostStatic::class, 'update_post'])->name('update_post');
     Route::post('/post', [PostStatic::class, 'store_post'])->name('store_post');
-   
+
     // CURRENCY
+    Route::post('/currency',[CurrencyStatic::class,'create_currency'])->name('create_currency');
     Route::post('/currency/state/{id}', [CurrencyStatic::class, 'coin_availablity']);
     // Route::get('/currency', [CurrencyStatic::class, 'get_currencies']);
     Route::get('/currency_data', [CurrencyStatic::class, 'coin_data']);
     Route::post('/currency/update/{id}', [CurrencyStatic::class, 'edit_currency']);
     Route::post('/currency/delete/{id}', [CurrencyStatic::class, 'delete_currency']);
-    
+
     // SETTING
     Route::get('/setting/off', [SettingStatic::class, 'maintenance_off']);
     Route::post('/setting/on', [SettingStatic::class, 'maintenance_on']);
