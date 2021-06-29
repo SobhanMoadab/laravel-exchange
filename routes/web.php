@@ -44,7 +44,7 @@ Route::prefix('/dashboard')->group(function () {
     Route::post('/post/delete/{id}', [PostStatic::class, 'delete_post'])->name('delete_post');
     Route::post('/post/update/{id}', [PostStatic::class, 'update_post'])->name('update_post');
     Route::post('/post', [PostStatic::class, 'store_post'])->name('store_post');
-   
+
     // CURRENCY
     Route::post('/currency',[CurrencyStatic::class,'create_currency'])->name('create_currency');
     Route::post('/currency/state/{id}', [CurrencyStatic::class, 'coin_availablity']);
@@ -52,7 +52,7 @@ Route::prefix('/dashboard')->group(function () {
     Route::get('/currency_data', [CurrencyStatic::class, 'coin_data']);
     Route::post('/currency/update/{id}', [CurrencyStatic::class, 'edit_currency']);
     Route::post('/currency/delete/{id}', [CurrencyStatic::class, 'delete_currency']);
-    
+
     // SETTING
     Route::get('/setting/off', [SettingStatic::class, 'maintenance_off']);
     Route::post('/setting/on', [SettingStatic::class, 'maintenance_on']);
@@ -75,15 +75,14 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard/currency', function () {
     return view('Admin.currency.index');
 })->name('dashboard');
-<<<<<<< HEAD
+
 // End Admin Route
-//User Route 
+//User Route
 Route::get('/user', function () {
     return view('User.Home');
 })->name('dashboard');
 //End User Route
 //Auth Route
-=======
 
 Route::get('/test', function () {
     return view('User.Mail.verify',);
@@ -91,7 +90,6 @@ Route::get('/test', function () {
 Route::get('/admin/posts/new-post', function () {
     return view('welcome');
 });
->>>>>>> d955f8b5d341ee7f2c7818015c7b6d0e3c53ba15
 Route::get('/login', function () {
     return view('auth.login');
 });
@@ -101,4 +99,4 @@ Route::get('/', function () {
     return view('Client.Wizard');
 })->name('home');
 
-//End Client Route 
+//End Client Route
