@@ -1,4 +1,4 @@
-@include('Layout.Header')
+@include('User.Layout.Header')
 
 <!--start card-->
    <section class="container">
@@ -18,7 +18,7 @@
                             </svg></label>
                     </div>
                     <div class="">
-                        <button class="btn btn-warning"> verify</button>
+                        <a href="/users/verify"><button class="btn btn-warning"> verify</button></a>
                     </div>
 
                 </div>
@@ -111,4 +111,4 @@
     </div>
 </section>
 <!--end card-->
-@include('Layout.Footer')
+@include('User.Layout.Footer')

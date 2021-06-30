@@ -129,8 +129,8 @@
                                         </p>
                                     </div>
                                     <div class="text-center">
-                                        <button type="button" class="btn bg-gradient-dark w-100 mt-2 mb-4">Sign
-                                            In</button>
+                                        <a href="/login"><button type="button" class="btn bg-gradient-dark w-100 mt-2 mb-4">Sign
+                                            In</button></a>
                                     </div>
                                 </form>
                             </div>

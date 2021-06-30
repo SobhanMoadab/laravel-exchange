@@ -1258,6 +1258,17 @@ hr {
   background-position: center center;
   position: relative;
 }
+.heading {
+  padding: 180px 0px 0px 0px;
+    background: rgb(2,0,36);
+  /* background-image:url("https://ok-ex.io/dist/images/5c99b6f84d83df2bd490f12af48a8312.webp"), linear-gradient(180deg, rgba(2,0,36,0.7903362028405112) 0%, rgba(122,87,209,0.7791317210477942) 42%, rgba(255,255,255,1) 82%);   */
+  /* background: linear-gradient(193deg, rgba(2,0,36,1) 0%, rgba(122,87,209,1) 100%); */
+
+  background: linear-gradient(150deg, rgba(80,193,233,1) 0%, rgba(122,87,209,1) 62%); 
+  /* background-size: cover; */
+  background-position: center center;
+  position: relative;
+}
 
 .bg-home-2 .home-desc {
   max-width: 700px;
@@ -1966,6 +1977,9 @@ border-radius: 50px;
 .bg-light{
   background: #f7f7f7 !important;
 }
+.input-group .btn{
+  z-index: 13 !important;
+}
 
 .menu-header-title {
   font-size: 0.875rem;
@@ -2133,27 +2147,27 @@ transition: .3s;
   color:#7a57d1 !important;
 }
 
-    .nav-user{
+.nav-user{
 
-        white-space: nowrap;
-        overflow-x: hidden; 
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        flex-wrap: nowrap;
-      margin-bottom: -17px;
-      padding-bottom: 20px;
+  white-space: nowrap;
+  overflow-x: hidden; 
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  flex-wrap: nowrap;
+margin-bottom: -17px;
+padding-bottom: 20px;
 
 
-      overflow-x: auto;
-      background-color: white;
-      /* background-image: linear-gradient(to right, white 0%, white 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(to left, white 0%, white 50%, rgb(255, 255, 255, 0) 100%), linear-gradient(to right, rgba(0, 0, 0, .3) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(to left, rgba(0, 0, 0, .3) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%); */
-      background-repeat: no-repeat;
-      background-position: left center, right center, left center, right center;
-      background-size: 50px 100%, 30px 100%, 20px 100%, 40px 100%;
-      /* Opera doesn't support this in the shorthand */
-      background-attachment: local, local, scroll, scroll;
-      -webkit-overflow-scrolling: touch;
-    }
+overflow-x: auto;
+background-color: white;
+/* background-image: linear-gradient(to right, white 0%, white 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(to left, white 0%, white 50%, rgb(255, 255, 255, 0) 100%), linear-gradient(to right, rgba(0, 0, 0, .3) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(to left, rgba(0, 0, 0, .3) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%); */
+background-repeat: no-repeat;
+background-position: left center, right center, left center, right center;
+background-size: 50px 100%, 30px 100%, 20px 100%, 40px 100%;
+/* Opera doesn't support this in the shorthand */
+background-attachment: local, local, scroll, scroll;
+-webkit-overflow-scrolling: touch;
+}
     .overflow{
       white-space:nowrap ;
       overflow-x: hidden;
@@ -2255,4 +2269,107 @@ transition: .3s;
   opacity: 1;
   transition: 1s;
 }
+
+.contain-div{
+  position: fixed;
+  bottom: 0;
+  z-index: 9999999;
+  background: #fff;
+  border-top: 1px solid #704fff;
+}
+.ticker-box{
+	color:#fff;
+	padding:1px 5px;
+	border-bottom:1px solid #704fff;
+}
+.box{
+	width:100px;
+	padding:5px;
+}
+.ticker-date{
+	font-size:10px;
+	color:#666;
+}
+.score-opp, .score-at, .ticker-prog{float:right;}
+.ticker-prog{color:#f00000;}
+.ticker-opp, .ticker-at{width:100%;}
+
+.text-news{
+  text-align: center;
+}
+.title-news{
+  color: #2ba2ce;
+}
+.news-form{
+  background: #fff; 
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+  border-radius: 20px;
+}
+.header-news{
+  margin: 20px 0 0 0;
+  padding: 20px;
+}
+.header-news h4 {
+  color: #000;
+  display: block;
+}
+.header-news h4 span {
+  font-size: 14px;
+  float: right;
+}
+.body-news p small {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 20px 20px 20px 20px;
+  color: #777;
+  border-left: 3px solid #777;
+  font-size: 15px;
+}
+.body-news p {
+  font-size: 14px;
+}
+.other-item{
+  background-color: #1e304d;
+  border-width: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+@media only screen and (max-width:576px){
+  #other-display{
+    display: none;
+  }
+}
+.header-users-icon{
+  position: absolute;
+  left: 20%;
+
+}
+.header-users-icon img {
+ float: left;
+ border-radius: 50px;
+ margin-top: 5px;
+}
+.header-users-icon ul {
+  float: right;
+}
+.header-users-icon ul li{
+  top: 0px;
+}
+@media only screen and (max-width:991px){
+  .header-users-icon{
+    left: 30%;
+    top: 12%;
+  }
+  .header-users-icon img {
+    float: left;
+    margin-top: 10px;
+   }
+   .header-users-icon ul {
+     float: left;
+   }
+
+}  
+/*# sourceMappingURL=style.css.map */
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,5 @@
-@include('../Client/Layout/Header')
-<section class="bg-home-2 align-items-center d-flex">
+@include('Client.Layout.Header')
+<section class="heading align-items-center d-flex">
 
     <div class="container">
         <section>
@@ -111,8 +111,8 @@
                                         </p>
                                     </div>
                                     <div class="text-center">
-                                        <button type="button" class="btn bg-gradient-dark w-100 mt-2 mb-4">Sign
-                                            up</button>
+                                        <a href="/register"><button type="button" class="btn bg-gradient-dark w-100 mt-2 mb-4">Sign
+                                            up</button></a>
                                     </div>
                                 </form>
                             </div>
@@ -123,4 +123,4 @@
         </section>
     </div>
 </section>
-@include('../Client/Layout/Footer')
+@include('Client.Layout.Footer')

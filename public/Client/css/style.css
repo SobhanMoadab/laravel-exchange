@@ -1970,6 +1970,22 @@ padding-left: 10px !important;
 .bg-light{
   background: #f7f7f7 !important;
 }
+.input-group .btn{
+  z-index: 13 !important;
+}
+.heading{
+
+    padding: 0px 0px 220px 0px;
+    background: rgb(2,0,36);
+    /* background-image:url("https://ok-ex.io/dist/images/5c99b6f84d83df2bd490f12af48a8312.webp"), linear-gradient(180deg, rgba(2,0,36,0.7903362028405112) 0%, rgba(122,87,209,0.7791317210477942) 42%, rgba(255,255,255,1) 82%);   */
+    /* background: linear-gradient(193deg, rgba(2,0,36,1) 0%, rgba(122,87,209,1) 100%); */
+  
+    background: linear-gradient(150deg, rgba(80,193,233,1) 0%, rgba(122,87,209,1) 62%); 
+    /* background-size: cover; */
+    background-position: center center;
+    position: relative;
+  
+}
 .bg-gradient-info{
   position: relative;
   background: linear-gradient(150deg, rgba(80,193,233,1) 0%, rgba(122,87,209,1) 62%); 

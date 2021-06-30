@@ -1,4 +1,4 @@
-@include('Layout/Header')
+@include('Client.Layout.Header')
     <!-- START HOME -->
     <section class="bg-home-2 align-items-center d-flex">
 
@@ -104,4 +104,4 @@
             </div>
         </div>
     </section>
-@include('Layout/Footer')
+    @include('Client.Layout.Footer')
