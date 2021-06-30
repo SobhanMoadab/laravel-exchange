@@ -1,4 +1,4 @@
-@include('Layout.Header')
+@include('User.layout.Header')
 <section>
     <div class="container mt-5 mb-5">
         <div class="row">
@@ -95,6 +95,6 @@
         </div>
     </div>
 </section>
-@include('Layout.Footer')
+@include('User.Layout.Footer')
 
 

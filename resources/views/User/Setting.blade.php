@@ -18,7 +18,7 @@
                             </svg></label>
                     </div>
                     <div class="">
-                        <button class="btn btn-warning"> verify</button>
+                        <a href="/users/verify"><button class="btn btn-warning"> verify</button></a>
                     </div>
 
                 </div>

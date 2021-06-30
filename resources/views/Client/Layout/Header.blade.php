@@ -41,32 +41,28 @@
                 <img src="/client/images/E-cms.png" alt="" height="40">
             </a>
             <div>
-                <button id="nav-btn" class="btn-sm btn-primary mx-1 border-0 bg-transparent">login</button>
-                <button class="btn-sm btn-primary mx-1 border-0">register</button>
-                <button onclick="navPhoneOpen()" class="d-lg-none bg-transparent mx-1 border-0"><i class="bi bi-list"
-                        style="color:#fff;" id="nav-phone-icon"></i>
+                <a href="/login"><button id="nav-btn" class="btn-sm btn-primary mx-1 border-0 bg-transparent">login</button></a>
+                <a href="/register"><button class="btn-sm btn-primary mx-1 border-0">register</button></a>
+                <button onclick="navPhoneOpen()" class="d-lg-none bg-transparent mx-1 border-0"><i class="bi bi-list text-white" id="nav-phone-icon"></i>
                 </button>
 
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto" id="navbar-navlist">
                     <li class="nav-item">
-                        <a id="nav-link" class="nav-link " href="">Home</a>
+                        <a id="nav-link" class="nav-link " href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link" class="nav-link " href="/">Services</a>
+                        <a id="nav-link" class="nav-link " href="/feedback">Feedback</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link" class="nav-link " href="/">Features</a>
+                        <a id="nav-link" class="nav-link" href="/wizard">Wizard</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link" class="nav-link" href="/">Client</a>
+                        <a id="nav-link" class="nav-link " href="/faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link" class="nav-link" href="/">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="nav-link" class="nav-link" href="/">Contact</a>
+                        <a id="nav-link" class="nav-link" href="/contactus">ContactUs</a>
                     </li>
                 </ul>
 
@@ -94,22 +90,19 @@
 
         <ul class="navbar-nav ms-auto" id="navbar-navlist">
             <li class="nav-item">
-                <a id="nav-link" class="nav-link " href="">Home</a>
+                <a id="nav-link" class="nav-link " href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a id="nav-link" class="nav-link " href="/">Services</a>
+                <a id="nav-link" class="nav-link " href="/feedback">Feedback</a>
             </li>
             <li class="nav-item">
-                <a id="nav-link" class="nav-link " href="/">Features</a>
+                <a id="nav-link" class="nav-link" href="/wizard">Wizard</a>
             </li>
             <li class="nav-item">
-                <a id="nav-link" class="nav-link" href="/">Client</a>
+                <a id="nav-link" class="nav-link " href="/faq">FAQ</a>
             </li>
             <li class="nav-item">
-                <a id="nav-link" class="nav-link" href="/">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a id="nav-link" class="nav-link" href="/">Contact</a>
+                <a id="nav-link" class="nav-link" href="/contactus">ContactUs</a>
             </li>
         </ul>
     </div>

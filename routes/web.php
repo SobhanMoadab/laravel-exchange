@@ -77,11 +77,11 @@ Route::get('/dashboard/profile', function () {return view('Admin.Profile.index')
 Route::get('/dashboard/views/customcode', function () {return view('Admin.Views.CustomCode');})->name('dashboard');
 Route::get('/dashboard/views/menu', function () {return view('Admin.Views.Menu');})->name('dashboard');
 //User Route 
-Route::get('/user', function () {return view('User.Home');})->name('dashboard');
-Route::get('/user/order', function () {return view('User.Order');})->name('dashboard');
-Route::get('/user/referrals', function () {return view('User.Referrals');})->name('dashboard');
-Route::get('/user/setting', function () {return view('User.Setting');})->name('dashboard');
-Route::get('/user/verify', function () {return view('User.Verifications');})->name('dashboard');
+Route::get('/users', function () {return view('User.Home');})->name('dashboard');
+Route::get('/users/order', function () {return view('User.Order');})->name('dashboard');
+Route::get('/users/referrals', function () {return view('User.Referrals');})->name('dashboard');
+Route::get('/users/setting', function () {return view('User.Setting');})->name('dashboard');
+Route::get('/users/verify', function () {return view('User.Verifications');})->name('dashboard');
 //Auth Route
 Route::get('/test', function () { return view('User.Mail.verify',); });
 Route::get('/login', function () {return view('auth.login');});
@@ -90,5 +90,5 @@ Route::get('/register', function () {return view('auth.register');});
 Route::get('/', function () {return view('Client.Home');})->name('home');
 Route::get('/wizard', function () {return view('Client.Wizard');})->name('home');
 Route::get('/faq', function () {return view('Client.FAQ');})->name('home');
-Route::get('/coontactus', function () {return view('Client.ContactUs');})->name('home');
+Route::get('/contactus', function () {return view('Client.ContactUs');})->name('home');
 Route::get('/feedback', function () {return view('Client.Feedback');})->name('home');
