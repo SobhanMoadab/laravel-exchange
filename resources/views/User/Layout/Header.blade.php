@@ -87,7 +87,7 @@
             </button>
 
             <a class=" logo d-flex flex-direction-column flex-grow-1 flex-row-reverse " href="#">
-                <img src="Client/images/E-cms.png" alt="" height="40">
+                <img src="/Client/images/E-cms.png" alt="" height="40">
             </a>
         </div>
 
