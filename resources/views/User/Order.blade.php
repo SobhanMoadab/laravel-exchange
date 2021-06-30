@@ -2,7 +2,7 @@
 <section>
     <div class="container mt-4 mb-4">
         <div class="row">
-            <ul class="list-group list-group-flush p-2 rounded-2 col-12" style="background: #1e304d;">
+            <ul class="list-group list-group-flush p-2 rounded-2 col-12 bg-dark" >
                 <ul class="list-group list-group-horizontal" style="border-bottom: 1px solid #fff;">
                     <li id="other-display" class="other-item list-group-item text-white col">#</li>
                     <li class="other-item list-group-item text-white col">status</li>

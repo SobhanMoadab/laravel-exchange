@@ -21,16 +21,16 @@
     <!-- bootstrap -->
     <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
 <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
-    <script src="Client/js/bootstrap.bundle.min.js"></script>
+    <script src="/Client/js/bootstrap.bundle.min.js"></script>
 
 <script src="/client/js/Wizard.js"></script>
 
     <!-- JAVASCRIPTS -->
-    <script src="Client/js/smooth-scroll.polyfills.min.js"></script>
-    <script src="Client/js/gumshoe.polyfills.min.js"></script>
-    <script src="Client/js/tiny-slider.js"></script>
+    <script src="/Client/js/smooth-scroll.polyfills.min.js"></script>
+    <script src="/Client/js/gumshoe.polyfills.min.js"></script>
+    <script src="/Client/js/tiny-slider.js"></script>
     <!-- CUSTOM JS -->
-    <script src="Client/js/app.js"></script>
+    <script src="/Client/js/app.js"></script>
     {{-- <script src="https://code.jquery.com/jquery-latest.min.js"></script> --}}
     <script src="https://malsup.github.io/jquery.cycle2.js"></script>
     <script src="https://malsup.github.io/jquery.cycle2.carousel.js"></script>
