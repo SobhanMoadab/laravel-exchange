@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Image;
 
 class PostServices
@@ -40,6 +41,7 @@ class PostServices
                 'image_path' => $cover
             ]);
             $post_resource = new PostResource($post);
+            Log::create(['action' => ' ایجاد پست', 'user_id' => Auth::id(), 'is_admin' => true]);
             return ['post' => $post_resource];
         } catch (\Exception $e) {
             return ['msg' => $e->getMessage()];
@@ -49,7 +51,9 @@ class PostServices
     {
         try {
             Post::findOrFail($id)->delete();
+            Log::create(['action' => ' حذف پست', 'user_id' => Auth::id(), 'is_admin' => true]);
             return ['msg' => 'Post deleted Successfully'];
+
         } catch (ModelNotFoundException $e) {
             return ['msg' => 'requested record does not exists'];
         } catch (\Exception $e) {
@@ -64,6 +68,7 @@ class PostServices
             }else {
                 $posts = Post::paginate(10);
             }
+            Log::create(['action' => '  دریافت پست ها', 'user_id' => Auth::id(), 'is_admin' => true]);
             return ['posts'=>$posts];
         }catch(\Exception $e){
             return ['msg' => $e->getMessage()];
@@ -96,7 +101,7 @@ class PostServices
                'image_path'=> $cover
             ]);
             $post_resource = new PostResource($post);
-
+            Log::create(['action' => 'اپدیت پست ', 'user_id' => Auth::id(), 'is_admin' => true]);
             return response()->json(['msg'=>'Post updated Successfully','post' => $post_resource],200);
         }catch(\Exception $e){
            
