@@ -6,6 +6,8 @@ namespace App\Http\Controllers\Core\Services;
 
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class AuthenticationServices
 {
@@ -27,6 +29,7 @@ class AuthenticationServices
             $user = User::create($validated);
             $token = $user->createToken('authToken')->accessToken;
             $user_resource = new UserResource($user);
+            Log::create(['action' => ' ساخت حساب کاربری', 'user_id' => $user->id, 'is_admin' => false]);
             return [$user_resource];
         } catch (\Exception $e) {
             return ['msg' => $e->getMessage()];
@@ -43,13 +46,14 @@ class AuthenticationServices
             'password.required' => 'password is required',
         ]);
         try {
-            if (! auth()->attempt($validated)) {
-                return response()->json(['msg' => 'Invalid Credentials'], 403);
+            if (!auth()->attempt($validated)) {
+                return ['error' => 'اطلاعات نادرست می باشید'];
             }
             $token = auth()->user()->createToken('authToken')->accessToken;
+            Log::create(['action' => ' ساخت حساب کاربری', 'user_id' => Auth::id(), 'is_admin' => false]);
             return [$token];
         } catch (\Exception $e) {
-            return response()->json(['msg' => $e->getMessage()], 500);
+            return ['error' => $e->getMessage()];
         }
     }
 }
