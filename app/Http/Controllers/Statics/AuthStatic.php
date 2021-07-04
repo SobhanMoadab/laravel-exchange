@@ -19,7 +19,7 @@ class AuthStatic extends Controller
         $response = strval($response->getBody());
         $response = json_decode($response, true);
         $data = [
-          'countries' => $response
+            'countries' => $response
         ];
         return view('auth.register', $data);
     }
