@@ -29,13 +29,18 @@ class CurrencyStatic extends Controller
         }
         return redirect()->back()->with('success', 'ارز ساخته شد');
     }
-    public function get_currencies()
+
+
+    public function get_currencies(CurrencyServices $currency, Request $request)
     {
-        $data = [
-            'currencies' => Currency::all(),
-        ];
-        return view('Admin.Currency.index', $data);
+        // result either currencies or an exception
+        $result = $currency->get_currencies($request);
+        if ($result['err']) {
+            return redirect()->back()->with('error', 'مشکلی پیش اومد :(');
+        }
+        return view('Admin.Currency.index', $result);
     }
+    
     public function edit_currency(CurrencyServices $currency, Request $request, $id)
     {
         $currency->edit_currency($request, $id);

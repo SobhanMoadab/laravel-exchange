@@ -66,7 +66,7 @@ class CurrencyServices
             $currency_resource = new CurrencyResource($currency);
             return ['msg' => 'Success', 'currency' => $currency_resource];
         } catch (\Exception $e) {
-            return ['err' => $e];
+            return ['error' => $e];
         }
     }
     public function get_currencies(Request $request)
