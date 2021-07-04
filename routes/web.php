@@ -75,3 +75,6 @@ Route::group([], function () {
     Route::post('/order/choose_password', [OrderServices::class, 'choose_password'])->name('order_verify');
 });
 
+Route::get('/dashboard/currenc', function () {
+    return view('Admin.currency.index');
+})->name('dashboard');

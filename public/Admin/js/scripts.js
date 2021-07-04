@@ -205,3 +205,9 @@ function loadStyle(href, callback) {
         }
     });
 })(jQuery);
+
+// currncy select option Js
+// $('#select_currncy').ready(() =>{
+//     var text = ''
+//     var item = '<option><img src="'+ img +'" alt="" value="'+value+'"/><span>'+ text +'</span></option>';
+// } )

@@ -49,6 +49,67 @@
                                                 <label>Max</label>
                                                 <input type="text" name="max" class="form-control" placeholder="">
                                             </div>
+                                            <div class="form-group">
+                                                <label>Logo currency</label>
+                                                <input type="File" name="Logo" class="form-control" >
+                                            </div>
+                                            <div class="select-country" data-input-name="Currncy" data-selected-country="BTC">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Status</label>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" name="is_active" class="custom-control-input" id="customCheck1">
+                                                    <label class="custom-control-label" for="customCheck1">Completed</label>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="cancel" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-right-button-container">
+                        <div class="modal fade modal-right" id="UpdateModalRight" tabindex="-1" role="dialog" aria-labelledby="UpdateModalRight" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Update</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="text-left" action="{{route('create_currency')}}" method="POST">
+                                            @csrf
+                                            @include('flash-message')
+                                            <div class="form-group">
+                                                <label>Name</label>
+                                                <input type="text" class="form-control" name="name" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Price</label>
+                                                <input type="text" class="form-control" name="price" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Min</label>
+                                                <input type="text" name="min" class="form-control" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Max</label>
+                                                <input type="text" name="max" class="form-control" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Logo currency</label>
+                                                <input type="File" name="Logo" class="form-control" >
+                                            </div>
+                                            <div class="select-country" data-input-name="Currncy" data-selected-country="BTC">
+                                            </div>
 
                                             <div class="form-group">
                                                 <label>Status</label>
@@ -104,7 +165,7 @@
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                             <button class="btn badge badge-danger border-0 rounded"> Delete</button>
-                            <button class="btn badge badge-info border-0 rounded"> Update</button>
+                            <button class="btn badge badge-info border-0 rounded" data-toggle="modal" data-backdrop="static" data-target="#UpdateModalRight"> Update</button>
 
                         </div>
                     </li>
@@ -126,7 +187,7 @@
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                             <button class="btn badge badge-danger border-0 rounded"> Delete</button>
-                            <button class="btn badge badge-info border-0 rounded"> Update</button>
+                            <button class="btn badge badge-info border-0 rounded" data-toggle="modal" data-backdrop="static" data-target="#UpdateModalRight"> Update</button>
 
                         </div>
                     </li>
@@ -148,7 +209,7 @@
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                             <button class=" btn badge badge-danger border-0 rounded"> Delete</button>
-                            <button class="btn badge badge-info border-0 rounded"> Update</button>
+                            <button class="btn badge badge-info border-0 rounded " data-toggle="modal" data-backdrop="static" data-target="#UpdateModalRight"> Update</button>
 
 
                         </div>
