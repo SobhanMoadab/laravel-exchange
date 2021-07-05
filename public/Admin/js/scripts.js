@@ -211,3 +211,22 @@ function loadStyle(href, callback) {
 //     var text = ''
 //     var item = '<option><img src="'+ img +'" alt="" value="'+value+'"/><span>'+ text +'</span></option>';
 // } )
+
+let base64String = "";
+
+function imageUploaded() {
+    var file = document.getElementById('currencylogo')['files'][0];
+
+    var reader = new FileReader();
+    console.log("next");
+    console.log(document.getElementById('currencylogo')['files'][0]);
+    reader.onload = function () {
+        base64String = reader.result.replace("data:", "")
+            .replace(/^.+,/, "");
+
+        // file = base64String;
+        alert(imageBase64Stringsep);
+        console.log(base64String);
+    }
+    reader.readAsDataURL(file);
+}
