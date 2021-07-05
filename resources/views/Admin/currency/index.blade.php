@@ -60,7 +60,7 @@
                                                 <label>Status</label>
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" name="is_active" class="custom-control-input" id="customCheck1">
-                                                    <label class="custom-control-label" for="customCheck1">Completed</label>
+                                                    <label class="custom-control-label" for="customCheck1">Available</label>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">

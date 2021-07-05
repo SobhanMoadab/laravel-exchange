@@ -67,10 +67,7 @@ Route::prefix('/dashboard')->group(function () {
     Route::get('/setting/maintenance/off', [SettingStatic::class, 'maintenance_off']);
     Route::post('/setting/maintenance/on', [SettingStatic::class, 'maintenance_on']);
 
-    // ORDER
-    Route::get('/dashboard/orders', function () {
-        return view('Admin.Orders.index');
-    })->name('dashboard');
+    
 });
 
 // USER ROUTES

@@ -53,6 +53,11 @@ class CurrencyServices
             'price.required' => 'price is required',
 
         ]);
+        if($request->is_active){
+            $request->is_active = 1;
+        } else{
+            $request->is_active = 0;
+        }
         try {
             $currency = Currency::create([
                 'name' => $request->name,
@@ -64,7 +69,7 @@ class CurrencyServices
                 'admin_id' => Auth::id(),
             ]);
             $currency_resource = new CurrencyResource($currency);
-            return ['msg' => 'Success', 'currency' => $currency_resource];
+            return ['msg' => 'Success', 'currency' => $currency_resource, 'error' => null];
         } catch (\Exception $e) {
             return ['error' => $e];
         }
@@ -77,9 +82,9 @@ class CurrencyServices
             } else {
                 $currencies = Currency::paginate(10);
             }
-            return ['currencies' => $currencies];
+            return ['currencies' => $currencies, 'error'=>null];
         } catch (\Exception $e) {
-            return ['msg' => $e->getMessage()];
+            return ['error' => $e->getMessage()];
         }
     }
     public function edit_currency(Request $request, $id)
@@ -126,35 +131,5 @@ class CurrencyServices
             return response()->json(['msg' => $e->getMessage()], 500);
         }
     }
-    public function ws_market(Request $request)
-    {
-        try {
-            // subscribe  to stream
-            $server = 'stream.binance.com';
-            $serverport = 9443;
-            $streamname = '!ticker@arr';
-            $t = ['method' => 'SUBSCRIBE', 'params' => ["${streamname}"], 'id' => 1];
-            $uri = "/ws/${streamname}";
-
-            $message = json_encode($t) . "\n";
-
-            echo "\n*** Connecting to server: ${server} at " . gmdate('Y-m-d H:i:s') . " UTC+0\n";
-
-            $sp = websocket_open($server, $serverport, '', $errstr, 30, true, false, $uri);
-            if ($sp) {
-                echo "Sending message to server: '" . trim($message) . "' \n";
-                websocket_write($sp, $message);
-                while (1) {
-                    $r = websocket_read($sp, $errstr);
-                    echo "${r}\n";
-                    if ($r === '') {
-                        echo "errstr=${errstr}\n";
-                        die;
-                    }
-                }
-            }
-        } catch (\Exception $e) {
-            return response()->json(['msg' => $e->getMessage()], 500);
-        }
-    }
+    
 }
