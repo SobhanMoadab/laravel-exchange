@@ -101,3 +101,8 @@ Route::get('/price/{id}', function (PriceServices $price_service, $id) {
     event(new PriceList($coin));
     
 });
+
+
+Route::get('/dashboard/curn', function () {
+    return view('Admin.currency.index');
+})->name('dashboard');
