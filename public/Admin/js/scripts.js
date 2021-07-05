@@ -214,13 +214,13 @@ function loadStyle(href, callback) {
 
 
 //base64 upload image Currency
-let base64String = "";
 function imageUploaded() {
+    let base64String = "";
     var file = document.getElementById('currencylogo')['files'][0];
     var reader = new FileReader();
     reader.onload = function () {
         base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
-        // console.log(base64String);
+        document.getElementById('currencylogo').setAttribute('value', base64String)
     }
     reader.readAsDataURL(file);
 }
