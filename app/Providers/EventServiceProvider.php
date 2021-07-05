@@ -3,9 +3,13 @@
 
 namespace App\Providers;
 
+use App\Events\PriceList;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Event;
+
+use function Illuminate\Events\queueable;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -17,6 +21,7 @@ class EventServiceProvider extends ServiceProvider
     protected  $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+            PriceList::class
         ],
     ];
 
@@ -25,6 +30,5 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        
     }
 }

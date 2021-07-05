@@ -1,12 +1,16 @@
 <?php
 
+use App\Events\PriceList;
 use App\Http\Controllers\Core\Services\OrderServices;
+use App\Http\Controllers\Core\Services\PriceServices;
 use App\Http\Controllers\Statics\AuthStatic;
 use App\Http\Controllers\Statics\CurrencyStatic;
+use App\Http\Controllers\Statics\OrderStatic;
 use App\Http\Controllers\Statics\PageStatic;
 use App\Http\Controllers\Statics\PermissionStatic;
 use App\Http\Controllers\Statics\PostStatic;
 use App\Http\Controllers\Statics\SettingStatic;
+use Composer\DependencyResolver\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,7 +36,13 @@ Route::post('/login_form', [AuthStatic::class, 'login'])->name('login_store');
 
 Route::prefix('/dashboard')->group(function () {
 
+
     Route::get('/dashboard', [PageStatic::class])->name('dashboard');
+
+    // ORDER
+    Route::get('/order', [OrderStatic::class, 'register_order_form']);
+
+
     // PERMISSION
     Route::get('/role/create', [PermissionStatic::class, 'create_role_form']);
     Route::post('/role/create_role', [PermissionStatic::class, 'create_role'])->name('create_role');
@@ -54,8 +64,8 @@ Route::prefix('/dashboard')->group(function () {
     Route::post('/currency/delete/{id}', [CurrencyStatic::class, 'delete_currency']);
 
     // SETTING
-    Route::get('/setting/off', [SettingStatic::class, 'maintenance_off']);
-    Route::post('/setting/on', [SettingStatic::class, 'maintenance_on']);
+    Route::get('/setting/maintenance/off', [SettingStatic::class, 'maintenance_off']);
+    Route::post('/setting/maintenance/on', [SettingStatic::class, 'maintenance_on']);
 
     // ORDER
     Route::get('/dashboard/orders', function () {
@@ -66,15 +76,28 @@ Route::prefix('/dashboard')->group(function () {
 // USER ROUTES
 Route::group([], function () {
     // profile
-    Route::get('/dashboard/profile', function () {
+    Route::get('/profile', function () {
         return view('Admin.Profile.index');
     })->name('dashboard');
     // order register
-    Route::get('/order', [OrderServices::class, 'register_order_form']);
     Route::post('/order/verify_email', [OrderServices::class, 'verify_email'])->name('order_verify');
     Route::post('/order/choose_password', [OrderServices::class, 'choose_password'])->name('order_verify');
 });
 
-Route::get('/dashboard/currenc', function () {
-    return view('Admin.currency.index');
-})->name('dashboard');
+// Route::get('/broadcast', function (PriceServices $price, Request $request) {
+//     $result = $price->get_all_prices($request);
+//     $result = json_encode($result);
+//     $result = json_decode($result);
+// //    broadcast(new PriceList($result->currencies, $request));
+
+//     PriceList::dispatch($result->currencies, $request);
+// });
+Route::get('/price', function (PriceServices $price_service) {
+    $currency_list = $price_service->get_currencies();
+    event(new PriceList($currency_list));
+});
+Route::get('/price/{id}', function (PriceServices $price_service, $id) {
+    $coin = $price_service->get_currency_by_id($id);
+    event(new PriceList($coin));
+    
+});
