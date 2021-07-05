@@ -215,12 +215,26 @@ function loadStyle(href, callback) {
 
 //base64 upload image Currency
 function imageUploaded() {
-    let base64String = "";
-    var file = document.getElementById('currencylogo')['files'][0];
+    var fileInput = document.getElementById('currencylogo');
+
     var reader = new FileReader();
+    reader.readAsDataURL(fileInput.files[0]);
+
     reader.onload = function () {
-        base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
-        document.getElementById('currencylogo').setAttribute('value', base64String)
-    }
-    reader.readAsDataURL(file);
+        console.log(reader.result);//base64encoded string
+        fileInput.value = null;
+        document.getElementById('upload_base').value = reader.result;
+    };
+}
+function imageUploadedUpdate() {
+    var fileInput = document.getElementById('Updatelogo');
+
+    var reader = new FileReader();
+    reader.readAsDataURL(fileInput.files[0]);
+
+    reader.onload = function () {
+        console.log(reader.result);//base64encoded string
+        fileInput.value = null;
+        document.getElementById('update_base').value = reader.result;
+    };
 }

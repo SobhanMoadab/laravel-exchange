@@ -51,7 +51,8 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Logo currency</label>
-                                                <input type="File" name="Logo" id="currencylogo" onchange="imageUploaded();"  class="form-control" accept=".png, .jpg, .jpeg, .gif" >
+                                                <input type="File"  id="currencylogo" onchange="imageUploaded();"  class="form-control" accept=".png, .jpg, .jpeg, .gif" >
+                                                <input type="hidden" name="upload_base" id="upload_base" />
                                             </div>
                                             <div class="select-country" data-input-name="Currncy" data-selected-country="BTC">
                                             </div>
@@ -106,7 +107,8 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Logo </label>  
-                                                <input type="File" name="Logo" id="currencylogo" onchange="imageUploaded();" class="form-control" accept=".png, .jpg, .jpeg, .gif" >
+                                                <input type="File" id="Updatelogo" onchange="imageUploadedUpdate();" class="form-control" accept=".png, .jpg, .jpeg, .gif" >
+                                                <input type="hidden" name="upload_base" id="update_base" />
 
                                             </div>
                                             <div class="select-country" data-input-name="Currncy" data-selected-country="BTC">
