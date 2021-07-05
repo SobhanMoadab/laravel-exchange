@@ -51,7 +51,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Logo currency</label>
-                                                <input type="File" name="Logo" class="form-control" >
+                                                <input type="File" name="Logo" id="currencylogo" onchange="imageUploaded();" class="form-control" accept=".png, .jpg, .jpeg, .gif" >
                                             </div>
                                             <div class="select-country" data-input-name="Currncy" data-selected-country="BTC">
                                             </div>
@@ -105,11 +105,13 @@
                                                 <input type="text" name="max" class="form-control" placeholder="">
                                             </div>
                                             <div class="form-group">
-                                                <label>Logo currency</label>
-                                                <input type="File" name="Logo" class="form-control" >
+                                                <label>Logo </label>  
+                                                <input type="File" name="Logo" id="currencylogo" onchange="imageUploaded();" class="form-control" accept=".png, .jpg, .jpeg, .gif" >
+
                                             </div>
                                             <div class="select-country" data-input-name="Currncy" data-selected-country="BTC">
                                             </div>
+                                           
 
                                             <div class="form-group">
                                                 <label>Status</label>
@@ -120,8 +122,9 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="cancel" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                <button type="submit"  class="btn btn-primary">Submit</button>
                                             </div>
+
                                         </form>
 
                                     </div>
@@ -219,5 +222,7 @@
             </div>
         </div>
     </div>
+
 </main>
+
 @include('Admin.layout.Footer')
