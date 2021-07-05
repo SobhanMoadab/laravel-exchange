@@ -14,7 +14,6 @@ use Illuminate\Routing\Controller;
 class CurrencyStatic extends Controller
 {
 
-
     public function coin_availablity(CurrencyServices $currency, Request $request, $id)
     {
         $result =  $currency->coin_availablity($request, $id);
@@ -24,7 +23,8 @@ class CurrencyStatic extends Controller
     public function create_currency(CurrencyServices $currency, Request $request)
     {
         $result = $currency->create_currency($request);
-        if ($result['err']) {
+        return $result['error'];
+        if ($result['error']) {
             return redirect()->back()->with('error', 'مشکلی پیش اومد :(');
         }
         return redirect()->back()->with('success', 'ارز ساخته شد');
@@ -35,7 +35,7 @@ class CurrencyStatic extends Controller
     {
         // result either currencies or an exception
         $result = $currency->get_currencies($request);
-        if ($result['err']) {
+        if ($result['error']) {
             return redirect()->back()->with('error', 'مشکلی پیش اومد :(');
         }
         return view('Admin.Currency.index', $result);
