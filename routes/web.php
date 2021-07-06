@@ -68,7 +68,7 @@ Route::prefix('/dashboard')->group(function () {
     Route::post('/setting/maintenance/on', [SettingStatic::class, 'maintenance_on']);
 
     // PAGES
-    Route::get('/pages/create', [PageStatic::class, 'create']);
+    Route::get('/pages', [PageStatic::class, 'create']);
     Route::post('/pages', [PageStatic::class, 'store'])->name('store_page');
 
     
