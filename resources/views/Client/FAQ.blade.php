@@ -8,10 +8,10 @@
                     <div class="card">
 
                         <div class="card-body">
-                            <div class="card-title">
+                            <div class="card-title text-center">
                                 FAQ
                             </div>
-
+{{-- 
                             <div id="accordion">
                                 <div class="card faq-card  p-0 m-2">
                                     <div class="card-header p-0 faq-heading " id="headingOne">
@@ -97,7 +97,33 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
+                            <h5>
+                                testName
+                                <br>
+                                 <p>
+                                   
+                                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti necessitatibus, rem, commodi dolorem sit amet eos ea dolores incidunt a nobis enim quidem reprehenderit adipisci ipsam cupiditate veniam maiores? Vel.
+                                </p>
+                                testName
+                                <br>
+                                 <p>
+                                   
+                                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti necessitatibus, rem, commodi dolorem sit amet eos ea dolores incidunt a nobis enim quidem reprehenderit adipisci ipsam cupiditate veniam maiores? Vel.
+                                </p>
+                                testName
+                                <br>
+                                 <p>
+                                   
+                                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti necessitatibus, rem, commodi dolorem sit amet eos ea dolores incidunt a nobis enim quidem reprehenderit adipisci ipsam cupiditate veniam maiores? Vel.
+                                </p>
+                                testName
+                                <br>
+                                 <p>
+                                   
+                                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti necessitatibus, rem, commodi dolorem sit amet eos ea dolores incidunt a nobis enim quidem reprehenderit adipisci ipsam cupiditate veniam maiores? Vel.
+                                </p>
+                            </h5>
                         </div>
                     </div>
                 </div>

@@ -11,50 +11,18 @@
 
                         <section class="section ">
                             <div class="container">
-                                <div class="row justify-content-center">
-
-                                    <div class="col-lg-8">
-
-                                        <div class="heading-box text-center">
-                                            <h3 class="heading-title"><span class="fw-normal">Let's talk
-                                                    about</span>
-                                                everything!</h3>
-                                            <p class="heading-desc text-muted mt-3">We thrive when coming up with
-                                                innovative
-                                                ideas but also
-                                                understand that a smart concept should be
-                                                supported with faucibus sapien odio measurable results.</p>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
                                 <div class="row mt-5 pt-4">
                                     <div class="col-lg-3">
 
                                         <div class="mt-4">
-                                            <h5 class="f-17 mb-1 mt-4 pt-2">Email Address</h5>
-                                            <p class="text-muted">JohnPBeau@jourrapide.com</p>
+                                            <h5 class="f-17 mb-1 mt-4 pt-2">
+                                                Email Address: JohnPBeau@jourrapide.com
 
-                                            <div class="mt-4">
-                                                <h5 class="f-17 mb-1">Contact Number</h5>
-                                                <p class="text-muted">+112
-                                                    708-231-9668</p>
-                                            </div>
+                                                Contact Number: +112 708-231-9668
 
-
-
-
-                                            <div class="mt-4">
-                                                <h5 class="f-17 mb-1">Office Address</h5>
-                                                <p class="text-muted">3429
-                                                    Gnatty Creek Road
-                                                    Farmingdale, NY 11735</p>
-                                            </div>
-
-
+                                                Office Address: 3429 Gnatty Creek Road Farmingdale, NY 11735
+                                                
+                                            </h5>
                                         </div>
 
                                     </div>
