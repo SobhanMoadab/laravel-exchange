@@ -165,7 +165,7 @@
                     <li class="list-group-item d-flex justify-content-between align-items-center border-0">
                         <div>{{ $currency->name}}</div>
                         <div> {{$currency->is_active}}</div>
-                        <!-- <div> {{$currency->icon}}</div> -->
+                        <div> {{$currency->icon}}</div>
                         <div> {{$currency->price}}</div>
                     </li>
                     @endforeach
