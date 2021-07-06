@@ -8,8 +8,13 @@
                         </a>
                     </li>
                     <li>
+                        <a href="#Pages">
+                            <i class="simple-icon-notebook"></i> Pages
+                        </a>
+                    </li>
+                    <li>
                         <a href="#Posts">
-                            <i class="iconsminds-air-balloon-1"></i> Posts
+                            <i class="simple-icon-docs"></i> Posts
                         </a>
                     </li>
                     <li>
@@ -18,8 +23,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#Views">
-                            <i class="iconsminds-pantone"></i> Views
+                        <a href="#currency">
+                            <i class="iconsminds-pantone"></i> currency
                         </a>
                     </li>
                     <li>
@@ -40,49 +45,37 @@
             <div class="scroll">
                 <ul class="list-unstyled" data-link="dashboard">
                     <li>
-                        <a href="Dashboard.Default.html">
+                        <a href="/dashboard">
                             <i class="simple-icon-rocket"></i> <span class="d-inline-block">Home</span>
                         </a>
                     </li>
+
+                </ul>
+                <ul class="list-unstyled" data-link="Pages" id="Pages">
                     <li>
-                        <a href="Dashboard.Default.html">
-                            <i class="simple-icon-rocket"></i> <span class="d-inline-block">Updates</span>
+                        <a href="/dashboard/pages">
+                            <i class="simple-icon-note"></i> <span class="d-inline-block">Pages</span>
                         </a>
                     </li>
                 </ul>
                 <ul class="list-unstyled" data-link="Posts" id="Posts">
                     <li>
-                        <a href="Dashboard.Default.html">
-                            <i class="simple-icon-rocket"></i> <span class="d-inline-block">Posts</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Dashboard.Default.html">
-                            <i class="simple-icon-rocket"></i> <span class="d-inline-block"> Create a New Post</span>
+                        <a href="/dashboard/post">
+                            <i class="simple-icon-book-open"></i> <span class="d-inline-block">Posts</span>
                         </a>
                     </li>
                 </ul>
                 <ul class="list-unstyled" data-link="Orders">
                     <li>
-                        <a href="Apps.MediaLibrary.html">
-                            <i class="simple-icon-picture"></i> <span class="d-inline-block">Orders</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Apps.Todo.List.html">
-                            <i class="simple-icon-check"></i> <span class="d-inline-block">Invoce</span>
+                        <a href="/dashboard/order">
+                            <i class="simple-icon-list"></i> <span class="d-inline-block">Orders</span>
                         </a>
                     </li>
                 </ul>
-                <ul class="list-unstyled" data-link="Views">
+                <ul class="list-unstyled" data-link="currency">
                     <li>
-                        <a href="Apps.MediaLibrary.html">
-                            <i class="simple-icon-picture"></i> <span class="d-inline-block">Menu</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Apps.Todo.List.html">
-                            <i class="simple-icon-check"></i> <span class="d-inline-block">Custom Code</span>
+                        <a href="/dashboard/currency">
+                            <i class="simple-icon-menu"></i> <span class="d-inline-block">currency</span>
                         </a>
                     </li>
                 </ul>
