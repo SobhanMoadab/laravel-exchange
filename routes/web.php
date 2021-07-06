@@ -70,6 +70,7 @@ Route::middleware('auth')->prefix('/dashboard')->group(function () {
 
     // PAGES
     Route::get('/pages/create', [PageStatic::class, 'create']);
+    Route::post('/pages', [PageStatic::class, 'store'])->name('store_page');
 
     
 });

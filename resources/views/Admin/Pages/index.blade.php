@@ -18,35 +18,38 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
+                                    @include('flash-message')
                                     <div class="modal-body">
-                                        <form>
+                                        <form class="text-left" action="{{route('store_page')}}" method="POST">
+                                            @csrf
                                             <div class="form-group">
                                                 <label>Title</label>
-                                                <input type="text" class="form-control" placeholder="">
+                                                <input type="text" name="name" class="form-control" placeholder="">
                                             </div>
                                             <div class="form-group">
                                                 <label>Details</label>
-                                                <textarea placeholder="" class="form-control" rows="2"></textarea>
+                                                <textarea placeholder="" name="body" class="form-control" rows="2"></textarea>
                                             </div>
 
 
                                             <div class="form-group">
                                                 <label>Type</label>
                                                 <div class="custom-control custom-checkbox">
-                                                    <select>
-                                                        <option value='faq'>FAQ</option>
+                                                    <select name="page_type">
+                                                        <option value='FAQ'>FAQ</option>
                                                         <option value='contact_us'>Contact Us</option>
                                                         <option value='about_us'>About Us</option>
                                                         <option value='rules'>Rules</option>
                                                     </select>
                                                 </div>
                                             </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
                                         </form>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                                        <button type="button" class="btn btn-primary">Submit</button>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
