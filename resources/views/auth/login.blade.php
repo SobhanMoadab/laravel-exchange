@@ -87,16 +87,18 @@
                             </div>
                             <div class="card-body">
                                 <form action="{{route('login_store')}}" method="POST">
+                                @csrf 
+                                @include('flash-message')
                                     <div class="mb-3">
                                         <input type="email" class="form-control" name='email' placeholder="Email"
                                             aria-label="Email">
                                     </div>
                                     <div class="mb-3">
-                                        <input type="email" class="form-control" name='password'
+                                        <input type="password" class="form-control" name='password'
                                             placeholder="Password" aria-label="Password">
                                     </div>
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="rememberMe">
+                                        <input class="form-check-input" type="checkbox" name ="remember" id="rememberMe">
                                         <label class="form-check-label" for="rememberMe">Remember me</label>
                                     </div>
                                     <div class="text-center">

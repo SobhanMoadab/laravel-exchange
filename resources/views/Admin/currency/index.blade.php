@@ -52,7 +52,7 @@
                                             <div class="form-group">
                                                 <label>Logo currency</label>
                                                 <input type="File"  id="currencylogo" onchange="imageUploaded();"  class="form-control" accept=".png, .jpg, .jpeg, .gif" >
-                                                <input type="hidden" name="upload_base" id="upload_base" />
+                                                <input type="hidden" name="icon" id="upload_base" />
                                             </div>
                                             <div class="select-country" data-input-name="Currncy" data-selected-country="BTC">
                                             </div>

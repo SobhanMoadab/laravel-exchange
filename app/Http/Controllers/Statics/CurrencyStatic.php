@@ -23,9 +23,9 @@ class CurrencyStatic extends Controller
     public function create_currency(CurrencyServices $currency, Request $request)
     {
         $result = $currency->create_currency($request);
-        return $result['error'];
         if ($result['error']) {
-            return redirect()->back()->with('error', 'مشکلی پیش اومد :(');
+            // return redirect()->back()->with('error', 'مشکلی پیش اومد :(');
+            return $result['error'];
         }
         return redirect()->back()->with('success', 'ارز ساخته شد');
     }
