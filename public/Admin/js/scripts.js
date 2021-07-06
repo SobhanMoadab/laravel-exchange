@@ -221,9 +221,9 @@ function imageUploaded() {
     reader.readAsDataURL(fileInput.files[0]);
 
     reader.onload = function () {
-        console.log(reader.result);//base64encoded string
-        fileInput.value = null;
-        document.getElementById('upload_base').value = reader.result;
+        // console.log(reader.result);//base64encoded string
+        document.getElementById('upload_base').value = reader.result.replace("data:", "")
+            .replace(/^.+,/, "");
     };
 }
 function imageUploadedUpdate() {
@@ -233,8 +233,9 @@ function imageUploadedUpdate() {
     reader.readAsDataURL(fileInput.files[0]);
 
     reader.onload = function () {
-        console.log(reader.result);//base64encoded string
-        fileInput.value = null;
-        document.getElementById('update_base').value = reader.result;
+        // console.log(reader.result.replace("data:", "")
+        //     .replace(/^.+,/, ""));//base64encoded string
+        document.getElementById('update_base').value = reader.result.replace("data:", "")
+            .replace(/^.+,/, "");
     };
 }
