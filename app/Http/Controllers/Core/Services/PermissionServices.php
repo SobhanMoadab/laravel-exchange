@@ -21,7 +21,7 @@ class PermissionServices
         // fetch all roles
         try {
             $roles = Role::all()->pluck('name');
-            Log::create(['action' => 'دریافت سطح ها (role) ', 'user_id' => Auth::id(), 'is_admin' => true]);
+            Log::info(['action' => 'دریافت سطح ها (role) ', 'user_id' => Auth::id(), 'is_admin' => true]);
             return ['roles' => $roles];
         } catch (\Exception $e) {
             return ['msg' => $e->getMessage()];
@@ -31,7 +31,7 @@ class PermissionServices
     {
         try {
             $permissions = Permission::all()->pluck('name');
-            Log::create(['action' => 'دریافت دسترسی ها (permission) ', 'user_id' => Auth::id(), 'is_admin' => true]);
+            Log::info(['action' => 'دریافت دسترسی ها (permission) ', 'user_id' => Auth::id(), 'is_admin' => true]);
 
             return ['permissions' => $permissions];
         } catch (\Exception $e) {
@@ -49,7 +49,7 @@ class PermissionServices
         ]);
         try {
             $role = Role::create(['guard_name' => 'api', 'name' => $validated['name']]);
-            Log::create(['action' => "$request->name:ایجاد سطح", 'user_id' => Auth::id(), 'is_admin' => true]);
+            Log::info(['action' => "$request->name:ایجاد سطح", 'user_id' => Auth::id(), 'is_admin' => true]);
             return [$role];
         } catch (\Exception $e) {
             return ['msg' => $e->getMessage()];
@@ -70,7 +70,7 @@ class PermissionServices
         ]);
         try {
             $permission = Permission::create(['guard_name' => 'api', 'name' => $validated['name']]);
-            Log::create(['action' => "$request->name :ایجاد دسترسی", 'user_id' => Auth::id(), 'is_admin' => true]);
+            Log::info(['action' => "$request->name :ایجاد دسترسی", 'user_id' => Auth::id(), 'is_admin' => true]);
             return [$permission];
         } catch (\Exception $e) {
             return ['msg' => $e->getMessage(), 'e' => $e];
@@ -94,7 +94,7 @@ class PermissionServices
                 return ['error' => 'requested role or permission does not existsts'];
             }
             $role->givePermissionTo($request->permission);
-            Log::create(['action' => " ($request->name) به سطح  ($request->permission) دسترسی", 'user_id' => Auth::id(), 'is_admin' => true]);
+            Log::info(['action' => " ($request->name) به سطح  ($request->permission) دسترسی", 'user_id' => Auth::id(), 'is_admin' => true]);
             return ['msg' => 'success'];
         } catch (\Exception $e) {
             return ['error' => $e->getMessage(), 'e' => $e];

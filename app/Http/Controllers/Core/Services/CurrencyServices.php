@@ -8,6 +8,7 @@ use App\Models\Currency;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 // todo
 //  require_once( __DIR__ . "..\PHP-websocket-client\websocket_client.php");
@@ -35,6 +36,7 @@ class CurrencyServices
                     'is_active' => 1,
                 ]);
             }
+            Log::info(['action' => 'وضعیت کوین تغییر یافت', 'user_id' => Auth::id(), 'is_admin' => true]);
             return ['currency' => $currency];
         } catch (\Exception $e) {
             return ['msg' => $e->getMessage()];
@@ -68,6 +70,7 @@ class CurrencyServices
                 'price' => $request->price,
                 'admin_id' => Auth::id(),
             ]);
+            Log::info(['action' => 'کوین ساخته شد', 'user_id' => Auth::id(), 'is_admin' => true]);
             return ['msg' => 'Success', 'currency' => $currency, 'error' => null];
         } catch (\Exception $e) {
             return ['error' => $e];
@@ -81,6 +84,7 @@ class CurrencyServices
             } else {
                 $currencies = Currency::paginate(10);
             }
+            Log::info(['action' => 'دریافت لیست کوین ها', 'user_id' => Auth::id(), 'is_admin' => true]);
             return ['currencies' => $currencies, 'error'=>null];
         } catch (\Exception $e) {
             return ['error' => $e->getMessage()];
@@ -113,11 +117,10 @@ class CurrencyServices
                     'icon' => $request->image,
                 ]);
             }
-            $currency_resource = new CurrencyResource($currency);
-
-            return response()->json(['msg' => 'Post updated Successfully', 'currency' => $currency_resource], 200);
+            Log::info(['action' => 'اپدیت  کوین انجام شد', 'user_id' => Auth::id(), 'is_admin' => true]);
+            return ['msg' => 'Post updated Successfully', 'currency' => $currency,'error' => null];
         } catch (\Exception $e) {
-            return response()->json(['msg' => $e->getMessage()], 500);
+            return ['error' => $e->getMessage()];
         }
     }
     public function delete_currency(Request $request, $id)
@@ -125,9 +128,10 @@ class CurrencyServices
         try {
             $currency = Currency::findOrFail($id);
             $currency->delete();
-            return response()->json(['msg' => 'Post deleted Successfully'], 204);
+            Log::info(['action' => '  کوین حذف شد', 'user_id' => Auth::id(), 'is_admin' => true]);
+            return ['msg' => 'Post deleted Successfully', 'error' => null];
         } catch (\Exception $e) {
-            return response()->json(['msg' => $e->getMessage()], 500);
+            return ['error' => $e->getMessage()];
         }
     }
     

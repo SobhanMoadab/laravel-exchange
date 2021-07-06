@@ -38,6 +38,7 @@ class CurrencyStatic extends Controller
         if ($result['error']) {
             return redirect()->back()->with('error', 'مشکلی پیش اومد :(');
         }
+   
         return view('Admin.Currency.index', $result);
     }
     
