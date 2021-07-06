@@ -32,10 +32,9 @@ Route::get('/register', [AuthStatic::class, 'register_form'])->name('register');
 Route::post('/register_store', [AuthStatic::class, 'register'])->name('register_store');
 Route::get('/login_form', [AuthStatic::class, 'login_form'])->name('login');
 Route::post('/login_form', [AuthStatic::class, 'login'])->name('login_store');
-Route::get('/logout', [AuthStatic::class, 'logout'])->name('logout');
 
 
-Route::middleware('auth')->prefix('/dashboard')->group(function () {
+Route::prefix('/dashboard')->group(function () {
 
 
     Route::get('/dashboard', [PageStatic::class])->name('dashboard');
@@ -103,8 +102,3 @@ Route::get('/price/{id}', function (PriceServices $price_service, $id) {
     event(new PriceList($coin));
     
 });
-
-
-Route::get('/dashboard/curn', function () {
-    return view('Admin.currency.index');
-})->name('dashboard');
