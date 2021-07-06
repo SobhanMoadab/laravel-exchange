@@ -25,4 +25,5 @@ class PageStatic extends Controller
         }
         return redirect()->back()->with('success', 'پیج درخواستی ساخته شد');
     }
+    
 }

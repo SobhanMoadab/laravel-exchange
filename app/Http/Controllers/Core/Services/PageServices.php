@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Core\Services;
 
 use App\Models\Pages;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PageServices
 {
@@ -22,7 +23,12 @@ class PageServices
             'page_type.required' => 'field is empty'
         ]);
         try {
-            $page = Pages::create($validated);
+            $page = Pages::create([
+                'name' => $request->name ,
+                'body' =>$request->body ,
+                'admin_id' =>Auth::id(),
+                'page_type' =>$request->page_type,
+            ]);
             return ['msg' => 'success', 'page' => $page, 'error' => null];
         } catch (\Exception $e) {
             return ['error' => $e->getMessage()];
