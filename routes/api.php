@@ -5,7 +5,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Core\CurrencyController;
-use App\Http\Controllers\Core\SettingController;
+// use App\Http\Controllers\Core\SettingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -55,8 +55,8 @@ Route::prefix('/dashboard')->middleware('auth:api')->group(function (): void {
     // Route::delete('/delete_currency/{id}', [CurrencyController::class, 'delete_currency']);
     // Route::post('/coin_state/{id}', [CurrencyController::class, 'coin_availablity']);
     // S E T T I N G
-    Route::post('/down', [SettingController::class, 'maintenance_on'])->middleware('role:super-admin');
-    Route::get('/up', [SettingController::class, 'maintenance_off'])->middleware('role:super-admin');
+    // Route::post('/down', [SettingController::class, 'maintenance_on'])->middleware('role:super-admin');
+    // Route::get('/up', [SettingController::class, 'maintenance_off'])->middleware('role:super-admin');
 });
 // Route::get('/ws_market', [CurrencyController::class, 'ws_market']);
 Route::get('/debug-sentry', function (): void {

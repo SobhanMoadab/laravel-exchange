@@ -46,12 +46,13 @@ class AuthenticationServices
             'password.required' => 'password is required',
         ]);
         try {
-            if (!auth()->attempt($validated)) {
+      
+            if (!Auth::attempt($validated)) {
                 return ['error' => 'اطلاعات نادرست می باشید'];
             }
             $token = auth()->user()->createToken('authToken')->accessToken;
-            Log::create(['action' => ' ساخت حساب کاربری', 'user_id' => Auth::id(), 'is_admin' => false]);
-            return [$token];
+            Log::info(['action' => ' ساخت حساب کاربری', 'user_id' => Auth::id(), 'is_admin' => false, 'error' => null]);
+            return ['msg' => 'success','error' => null ];
         } catch (\Exception $e) {
             return ['error' => $e->getMessage()];
         }

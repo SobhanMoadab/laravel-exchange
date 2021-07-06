@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Statics;
 use App\Http\Controllers\Core\Services\AuthenticationServices;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
 class AuthStatic extends Controller
@@ -35,6 +36,15 @@ class AuthStatic extends Controller
     public function login(AuthenticationServices $auth, Request $request)
     {
         $result = $auth->login($request);
-        return redirect(route('home'));
+        if($result['error']){
+            return redirect()->back()->with('error', 'something is wrong');
+        }
+       return redirect('/')->with('success', 'SUCCESS');
+    }
+    public function logout()
+    {
+        Auth::logout();
+        session()->flush();
+        return redirect('/');
     }
 }

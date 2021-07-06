@@ -68,8 +68,7 @@ class CurrencyServices
                 'price' => $request->price,
                 'admin_id' => Auth::id(),
             ]);
-            $currency_resource = new CurrencyResource($currency);
-            return ['msg' => 'Success', 'currency' => $currency_resource, 'error' => null];
+            return ['msg' => 'Success', 'currency' => $currency, 'error' => null];
         } catch (\Exception $e) {
             return ['error' => $e];
         }

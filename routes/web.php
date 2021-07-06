@@ -32,9 +32,10 @@ Route::get('/register', [AuthStatic::class, 'register_form'])->name('register');
 Route::post('/register_store', [AuthStatic::class, 'register'])->name('register_store');
 Route::get('/login_form', [AuthStatic::class, 'login_form'])->name('login');
 Route::post('/login_form', [AuthStatic::class, 'login'])->name('login_store');
+Route::get('/logout', [AuthStatic::class, 'logout'])->name('logout');
 
 
-Route::prefix('/dashboard')->group(function () {
+Route::middleware('auth')->prefix('/dashboard')->group(function () {
 
 
     Route::get('/dashboard', [PageStatic::class])->name('dashboard');
@@ -66,6 +67,9 @@ Route::prefix('/dashboard')->group(function () {
     // SETTING
     Route::get('/setting/maintenance/off', [SettingStatic::class, 'maintenance_off']);
     Route::post('/setting/maintenance/on', [SettingStatic::class, 'maintenance_on']);
+
+    // PAGES
+    Route::get('/pages/create', [PageStatic::class, 'create']);
 
     
 });
