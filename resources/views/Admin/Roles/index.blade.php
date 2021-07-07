@@ -7,9 +7,9 @@
                 <div class="mb-2">
                     <h1>Users</h1>
                     <div class="top-right-button-container">
-                        <button type="button" class="btn btn-primary btn-lg top-right-button mr-1" data-toggle="modal" data-backdrop="static" data-target="#userModalRight">ADD NEW</button>
+                        {{-- <button type="button" class="btn btn-primary btn-lg top-right-button mr-1" data-toggle="modal" data-backdrop="static" data-target="#userModalRight">ADD NEW</button> --}}
                         {{--  Add New Modal User --}}
-
+{{-- 
                         <div class="modal fade modal-right" id="userModalRight" tabindex="-1" role="dialog" aria-labelledby="userModalRight" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -65,7 +65,7 @@
 
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         {{--  End Add New Modal User --}}
 
 
@@ -129,20 +129,6 @@
                         </div>
                         {{--  End Update Modal User --}}
 
-                        <div class="btn-group">
-                            <div class="btn btn-primary btn-lg pl-4 pr-0 check-button">
-                                <label class="custom-control custom-checkbox mb-0 d-inline-block">
-                                    <input type="checkbox" class="custom-control-input" id="checkAll">
-                                    <span class="custom-control-label">&nbsp;</span>
-                                </label>
-                            </div>
-                            <button type="button" class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Delete</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
