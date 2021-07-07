@@ -102,3 +102,7 @@ Route::get('/price/{id}', function (PriceServices $price_service, $id) {
     event(new PriceList($coin));
     
 });
+
+Route::get('/dashboard/users', function () {
+    return view('Admin.Users.index');
+})->name('dashboard');
