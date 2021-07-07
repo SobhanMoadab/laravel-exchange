@@ -48,6 +48,16 @@ body.show-spinner::after {
   line-height: 1.5;
   border: none;
 }
+.logos {
+  width: 110px !important;
+  height: 35px !important;
+  background: url(../logos/E-cms.png) no-repeat !important;
+      background-position-x: 0% !important;
+      background-position-y: 0% !important;
+  background-position: center center !important;
+  margin: 0 auto !important;
+  background-size: cover !important;
+}
 @keyframes spin {
   to {
     transform: rotate(360deg);

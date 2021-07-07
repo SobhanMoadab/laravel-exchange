@@ -41,7 +41,7 @@
 
 
         <a class="navbar-logo" href="Dashboard.Default.html">
-            <span class="logo d-none d-xs-block"></span>
+            <span class="logos d-none d-xs-block"></span>
             <span class="logo-mobile d-block d-xs-none"></span>
         </a>
 
@@ -157,17 +157,14 @@
 
             <div class="user d-inline-block">
                 <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="name">Sarah Kortney</span>
+                    <span class="name">Admin</span>
                     <span>
-                        <img alt="Profile Picture" src="/Admin/img/profiles/l-1.jpg" />
+                        <img alt="Profile Picture" src="/Admin/img/profiles/l-9.jpg" />
                     </span>
                 </button>
 
                 <div class="dropdown-menu dropdown-menu-right mt-3">
-                    <a class="dropdown-item" href="/profile">Account</a>
-                    <a class="dropdown-item" href="#">Features</a>
-                    <a class="dropdown-item" href="#">History</a>
-                    <a class="dropdown-item" href="#">Support</a>
+                    <a class="dropdown-item" href="/profile">Profile</a>
                     <a class="dropdown-item" href="#">Sign out</a>
                 </div>
             </div>

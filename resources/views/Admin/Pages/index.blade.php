@@ -255,29 +255,6 @@
                         </a>
                     </li>
                 </ul>
-
-                <p class="text-muted text-small">Categories</p>
-                <ul class="list-unstyled mb-5">
-                    <li>
-                        <div class="custom-control custom-checkbox mb-2">
-                            <input type="checkbox" class="custom-control-input" id="category1">
-                            <label class="custom-control-label" for="category1">Development</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="custom-control custom-checkbox mb-2">
-                            <input type="checkbox" class="custom-control-input" id="category2">
-                            <label class="custom-control-label" for="category2">Workplace</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="custom-control custom-checkbox ">
-                            <input type="checkbox" class="custom-control-input" id="category3">
-                            <label class="custom-control-label" for="category3">Hardware</label>
-                        </div>
-                    </li>
-                </ul>
-
             </div>
         </div>
         <a class="app-menu-button d-inline-block d-xl-none" href="#">
