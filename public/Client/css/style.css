@@ -1751,10 +1751,12 @@ textarea.form-control {
 }
 
 .btn-exchange{
-  margin-left: -113px;
+  position: absolute !important;
+  right: 0;
   margin-top: 2px;
-  padding:7px 10px;
+  padding: 7px 10px;
   transform: translate( 0%, 9%);
+  z-index: 12 !important;
 }
 
 /*  mobile menu */
@@ -2233,7 +2235,7 @@ transition: .3s;
 .contain-div{
   position: fixed;
   bottom: 0;
-  z-index: 9999999;
+  z-index: 999;
   background: #fff;
   border-top: 1px solid #704fff;
 }

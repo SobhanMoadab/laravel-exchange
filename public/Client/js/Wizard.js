@@ -1,72 +1,55 @@
-// ------------step-wizard-------------
-$(document).ready(function () {
-    $('.nav-tabs > li a[title]').tooltip();
-
-    //Wizard
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-
-        var target = $(e.target);
-
-        if (target.parent().hasClass('disabled')) {
-            return false;
-        }
-    });
-
-    $(".next-step").click(function (e) {
-
-        var active = $('.wizard .nav-tabs li.active');
-        active.next().removeClass('disabled');
-        nextTab(active);
-
-    });
-    $(".prev-step").click(function (e) {
-
-        var active = $('.wizard .nav-tabs li.active');
-        prevTab(active);
-
-    });
-});
-
-function nextTab(elem) {
-    $(elem).next().find('a[data-toggle="tab"]').click();
-}
-function prevTab(elem) {
-    $(elem).prev().find('a[data-toggle="tab"]').click();
-}
-
-
-$('.nav-tabs').on('click', 'li', function () {
-    $('.nav-tabs li.active').removeClass('active');
-    $(this).addClass('active');
-});
-
-
-// code Email 
-var obj = document.getElementById('partitioned');
-obj.addEventListener('keydown', stopCarret);
-obj.addEventListener('keyup', stopCarret);
-
-function stopCarret() {
-    if (obj.value.length > 3) {
-        setCaretPosition(obj, 3);
+$().ready(function () {
+    $('.line').animate({ width: '30%' }, 1000, 'easeInOutQuint')
+    $('.stepOne').animate({ color: '#7A57D1' })
+    if ($('.you-spend').val() == '') {
+        $('.you-spend').val('0')
     }
-}
-
-function setCaretPosition(elem, caretPos) {
-    if (elem != null) {
-        if (elem.createTextRange) {
-            var range = elem.createTextRange();
-            range.move('character', caretPos);
-            range.select();
+    $(".you-spend").keyup(function () {
+        $(".you-receive").val($(this).val() * 2350);
+    });
+    $.niceToast.setup({
+        position: "bottom-right",
+        timeout: 5000,
+    });
+})
+$('.step-next').click(
+    function () {
+        if ($('.you-spend').val() == 0 || $('.you-receive').val() == 0) {
+            $.niceToast.error("Please enter the number");
+        }
+        else if ($('.you-receive').val() <= 540000) {
+            $.niceToast.error('The maximum amount payable in each purchase must be 540000$');
         }
         else {
-            if (elem.selectionStart) {
-                elem.focus();
-                elem.setSelectionRange(caretPos, caretPos);
-            }
-            else
-                elem.focus();
+            $('.line').animate({ width: '60%' }, 1000, 'easeInOutQuint')
+            $('.stepOne').animate({ color: '#7A57D1' })
+            $('.stepTwo').animate({ color: '#7A57D1' })
+
+            $('.stepbodyone').slideUp('fast')
+            $('.stepbodytwo').slideDown('fast');
         }
     }
-}
+)
+$('#step-two-next').click(
+    function () {
+        $('.line').animate({ width: '100%' }, 1000, 'easeInOutQuint')
+        $('.stepOne').animate({ color: '#7A57D1' })
+        $('.stepTwo').animate({ color: '#7A57D1' })
+        $('.stepTree').animate({ color: '#7A57D1' })
+
+        $('.stepbodytwo').slideUp('fast')
+        $('.stepbodytree').slideDown('fast');
+    }
+)
+$('#step-two-back').click(
+    function () {
+        $('.stepOne').animate({ color: '#7A57D1' })
+        $('.stepTwo').animate({ color: '#aaa' })
+
+        $('.line').animate({ width: '30%' }, 1000, 'easeInOutQuint')
+        $('.stepbodytwo').slideUp('fast');
+        $('.stepbodyone').slideDown('fast');
+    }
+)
+
 
