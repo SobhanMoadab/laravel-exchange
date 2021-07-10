@@ -12,7 +12,7 @@
     background-color: #0003;
     border-radius: 50px;
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     width: 96%;
 }
 .stepbodytwo{
@@ -21,4 +21,83 @@
    .stepbodytree{
     display:none;
    }
-      
+   .stepOne{
+    color:transparent ;
+}
+   .stepTwo{
+    color:transparent ;
+}
+.stepTree{
+    color:transparent ;
+}.modal{
+    position: fixed;
+    bottom: 0;
+    top:auto;
+    right: auto;
+    left: auto;
+    height:auto;
+    padding-right: auto !important;
+    overflow-y: hidden !important;
+}
+.modal.fade .modal-dialog {
+    transition:transform .3s ease-out;
+    transform:translate(0, 0) !important;
+}
+
+.modal-dialog.modal-dialog-centered{
+    margin-bottom: 0 !important;
+    max-width: 1000px !important;
+}
+@media only screen and (max-width:991px){
+.modal-dialog.modal-dialog-centered{
+    margin: 0 !important;
+    max-width: 1000px !important;
+}
+.line::before{
+    content: '';
+    height: 5px;
+    background-color: #0003;
+    border-radius: 50px;
+    position: absolute;
+    z-index: 0;
+    width: 92%;
+}
+}
+.modal-content{
+border: 0px solid transparent !important;
+border-radius: 20px 20px 0 0 !important;
+outline: 0 !important;
+
+}
+
+.slide-top {
+	-webkit-animation: slide-top 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+	        animation: slide-top 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+}
+
+ @-webkit-keyframes slide-top {
+    0% {
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px);
+    }
+    100% {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+    }
+  }
+  @keyframes slide-top {
+    0% {
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px);
+    }
+    100% {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+    }
+  }
+  .list-group{
+    max-height: 220px;
+    margin-bottom: 10px;
+    overflow-y:scroll;
+    -webkit-overflow-scrolling: touch;
+}
