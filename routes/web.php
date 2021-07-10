@@ -33,6 +33,7 @@ Route::post('/register_store', [AuthStatic::class, 'register'])->name('register_
 Route::get('/login_form', [AuthStatic::class, 'login_form'])->name('login');
 Route::post('/login_form', [AuthStatic::class, 'login'])->name('login_store');
 
+Route::get('/order', [OrderStatic::class, 'register_order_form']);
 
 Route::prefix('/dashboard')->group(function () {
 
@@ -44,10 +45,11 @@ Route::prefix('/dashboard')->group(function () {
 
 
     // PERMISSION
-    Route::get('/role/create', [PermissionStatic::class, 'create_role_form']);
-    Route::post('/role/create_role', [PermissionStatic::class, 'create_role'])->name('create_role');
-    Route::post('/role/create_permission', [PermissionStatic::class, 'create_permission'])->name('create_permission');
-    Route::post('/role/assign_permission_to_role', [PermissionStatic::class, 'assign_permission_to_role'])->name('assign_permission_to_role');
+    Route::get('/roles', [PermissionStatic::class, 'create_role_form']);
+    Route::get('/permissions', [PermissionStatic::class, 'create_role_form']);
+    Route::post('/roles/create_role', [PermissionStatic::class, 'create_role'])->name('create_role');
+    Route::post('/permissions/create', [PermissionStatic::class, 'create_permission'])->name('create_permission');
+    Route::post('/roles/assign_permission_to_role', [PermissionStatic::class, 'assign_permission_to_role'])->name('assign_permission_to_role');
 
     // POST
     Route::get('/post', [PostStatic::class, 'get_posts']);
@@ -70,8 +72,6 @@ Route::prefix('/dashboard')->group(function () {
     // PAGES
     Route::get('/pages', [PageStatic::class, 'create']);
     Route::post('/pages', [PageStatic::class, 'store'])->name('store_page');
-
-    
 });
 
 // USER ROUTES
@@ -100,5 +100,4 @@ Route::get('/price', function (PriceServices $price_service) {
 Route::get('/price/{id}', function (PriceServices $price_service, $id) {
     $coin = $price_service->get_currency_by_id($id);
     event(new PriceList($coin));
-    
 });

@@ -13,23 +13,24 @@ use Spatie\Permission\Models\Permission;
 
 class PermissionStatic extends Controller
 {
+    public function __construct()
+    {
+        // $this->middleware('permission:view-permission');
+        // $this->middleware('permission:create-permission', ['only' => ['create_role_form', 'create_role']]);
+        // $this->middleware('permission:update-permission', ['only' => ['edit', 'update']]);
+        // $this->middleware('permission:delete-permission', ['only' => ['destroy']]);
+    }
+
     public function get_all_roles_form(PermissionServices $permission, Request $request)
     {
         $result =  $permission->get_all_roles($request);
-      
-        return view('permission.create', $result);
+        return view('Admin.Roles.index', $result);
     }
 
     public function create_role_form(PermissionServices $permission, Request $request)
     {
-        $roles= $permission->get_all_roles($request);
-        $perms = $permission->get_all_permissions($request);
-        $result =  [
-            'roles' => $roles['roles'],
-            'permissions' => $perms['permissions']
-        ];
-      
-        return view('permission.create', compact('result'));
+        $result = $permission->get_all_roles($request);
+        return view('Admin.Roles.index', $result);
     }
 
     public function create_role(PermissionServices $permission, Request $request)
@@ -41,7 +42,6 @@ class PermissionStatic extends Controller
         }
         return redirect()->back()->with('success', 'با موفقیت انجام شد');
     }
-
 
     public function create_permission(PermissionServices $permission, Request $request)
     {

@@ -20,11 +20,12 @@ class PermissionServices
     {
         // fetch all roles
         try {
-            $roles = Role::all()->pluck('name');
+            $roles = Role::with('permissions')->get()->pluck('name');
+            // $permissions = Permission::all()->pluck('name');
             Log::info(['action' => 'دریافت سطح ها (role) ', 'user_id' => Auth::id(), 'is_admin' => true]);
             return ['roles' => $roles];
         } catch (\Exception $e) {
-            return ['msg' => $e->getMessage()];
+            return ['error' => $e->getMessage()];
         }
     }
     public function get_all_permissions($request)

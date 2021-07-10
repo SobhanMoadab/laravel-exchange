@@ -63,9 +63,7 @@
 
                                                                     <div class="input-group">
                                                                         <p id="take">Take</p>
-                                                                        <input id="test" type="text" class="form-control rounded bg-dark text-white border-0 w-100" aria-label="Text input with dropdown button">
-
-
+                                                                        <input id="test" type="string" class="form-control rounded bg-dark text-white border-0 w-100" aria-label="Text input with dropdown button">
                                                                         <div class="input-group-append">
                                                                             <button class="btn btn-primary dropdown-toggle btn-exchange " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
                                                                             <div class="dropdown-menu">
@@ -78,16 +76,6 @@
                                                                                 <a class="dropdown-item" href="#">Separated link</a>
                                                                             </div>
                                                                         </div>
-
-                                                                        <div class="dropdown">
-                                                                            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-                                                                            <div id="myDropdown" class="dropdown-content">
-                                                                                <a href="#home">Home</a>
-                                                                                <a href="#about">About</a>
-                                                                                <a href="#contact">Contact</a>
-                                                                            </div>
-                                                                        </div>
-
                                                                     </div>
 
 
@@ -166,13 +154,9 @@
                                                                         </div>
 
                                                                     </div>
-
-
                                                                     <div class="input-group">
                                                                         <p id="take">Take</p>
                                                                         <input type="text" class="form-control rounded bg-dark text-white border-0 w-100" aria-label="Text input with dropdown button">
-
-
                                                                         <div class="input-group-append">
                                                                             <button class="btn btn-primary dropdown-toggle btn-exchange " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
                                                                             <div class="dropdown-menu">
@@ -357,15 +341,17 @@
         console.log(e);
     });
 </script>
-<!-- <script>
+<script>
     (function worker() {
         $.ajax({
             url: '/price',
             success: function(data) {
-              console.log('success')
+                console.log('success')
             },
-            error: function(err){
-                console.log('error');
+            error: function(err) {
+                console.log({
+                    err: err
+                });
             },
             complete: function() {
                 // Schedule the next request when the current one's complete
@@ -373,6 +359,6 @@
             }
         });
     })();
-</script> -->
+</script>
 <!-- Wizard End-->
 @include('client.Layout.Footer')
