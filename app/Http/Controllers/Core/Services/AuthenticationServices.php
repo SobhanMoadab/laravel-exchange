@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Core\Services;
 
 use App\Http\Resources\UserResource;
+use App\Models\Log;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class AuthenticationServices
 {
@@ -51,7 +51,7 @@ class AuthenticationServices
                 return ['error' => 'اطلاعات نادرست می باشید'];
             }
             $token = auth()->user()->createToken('authToken')->accessToken;
-            Log::info(['action' => ' ساخت حساب کاربری', 'user_id' => Auth::id(), 'is_admin' => false, 'error' => null]);
+             Log::create(['action' => ' ورود به حساب کاربری', 'user_id' => Auth::id(), 'is_admin' => false,]);
             return ['msg' => 'success','error' => null ];
         } catch (\Exception $e) {
             return ['error' => $e->getMessage()];

@@ -39,6 +39,7 @@ class AuthStatic extends Controller
         if($result['error']){
             return redirect()->back()->with('error', 'something is wrong');
         }
+        return 0;
        return redirect('/')->with('success', 'SUCCESS');
     }
     public function logout()

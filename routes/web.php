@@ -1,6 +1,7 @@
 <?php
 
 use App\Events\PriceList;
+use App\Http\Controllers\Core\Services\LogServices;
 use App\Http\Controllers\Core\Services\OrderServices;
 use App\Http\Controllers\Core\Services\PriceServices;
 use App\Http\Controllers\Statics\AuthStatic;
@@ -29,9 +30,9 @@ use Illuminate\Support\Facades\Route;
 
 // AUTH
 Route::get('/register', [AuthStatic::class, 'register_form'])->name('register');
-Route::post('/register_store', [AuthStatic::class, 'register'])->name('register_store');
-Route::get('/login_form', [AuthStatic::class, 'login_form'])->name('login');
-Route::post('/login_form', [AuthStatic::class, 'login'])->name('login_store');
+Route::post('/register', [AuthStatic::class, 'register'])->name('register_store');
+Route::get('/login', [AuthStatic::class, 'login_form'])->name('login');
+Route::post('/login', [AuthStatic::class, 'login'])->name('login_store');
 
 Route::get('/order', [OrderStatic::class, 'register_order_form']);
 
@@ -72,6 +73,13 @@ Route::prefix('/dashboard')->group(function () {
     // PAGES
     Route::get('/pages', [PageStatic::class, 'create']);
     Route::post('/pages', [PageStatic::class, 'store'])->name('store_page');
+
+    // Logs
+    // route bellow will be turned to methode Post and get methode will be used to show form
+    Route::get('/logs/delete/{days}', [LogServices::class, 'truncate_log']);
+    
+
+
 });
 
 // USER ROUTES
