@@ -42,7 +42,10 @@ class PermissionStatic extends Controller
         }
         return redirect()->back()->with('success', 'با موفقیت انجام شد');
     }
-
+    public function create_permission_form(PermissionServices $permission, Request $request){
+        $result = Permission::all();
+        return view('Admin.Roles.index', $result);
+    }
     public function create_permission(PermissionServices $permission, Request $request)
     {
         $result = $permission->create_permission($request);

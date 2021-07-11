@@ -14,5 +14,10 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable,HasApiTokens,HasRoles;
     protected $guarded = [];
-    protected $guard_name = 'api';
+    // protected $guard_name = 'api';
+
+    public function tickets()
+    {
+        return $this->hasMany(Tickets::class, 'user_id', 'id');
+    }
 }
