@@ -109,3 +109,10 @@ Route::get('/price/{id}', function (PriceServices $price_service, $id) {
     $coin = $price_service->get_currency_by_id($id);
     event(new PriceList($coin));
 });
+
+
+
+
+Route::get('/roles', function () {
+    return view('Admin.Roles.create');
+})->name('dashboard');
