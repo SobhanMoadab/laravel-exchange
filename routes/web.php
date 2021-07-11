@@ -27,6 +27,9 @@ use Illuminate\Support\Facades\Route;
 
 // *** S T A T I C ***
 
+Route::get('/',function(){
+    return view('Client.Home');
+});
 
 // AUTH
 Route::get('/register', [AuthStatic::class, 'register_form'])->name('register');
@@ -36,7 +39,7 @@ Route::post('/login', [AuthStatic::class, 'login'])->name('login_store');
 
 Route::get('/order', [OrderStatic::class, 'register_order_form']);
 
-Route::prefix('/dashboard')->group(function () {
+Route::prefix('/dashboard')->middleware('auth')->group(function () {
 
 
     Route::get('/dashboard', [PageStatic::class])->name('dashboard');
@@ -46,8 +49,10 @@ Route::prefix('/dashboard')->group(function () {
 
 
     // PERMISSION
-    Route::get('/roles', [PermissionStatic::class, 'create_role_form']);
-    Route::get('/permissions', [PermissionStatic::class, 'create_role_form']);
+    Route::get('/roles', [PermissionStatic::class, 'get_all_roles_form']);
+    Route::get('/roles/create', [PermissionStatic::class, 'create_role_form']);
+    // Route::get('/permissions', [PermissionStatic::class, 'create_role_form']);
+    // Route::get('/permissions/create', [PermissionStatic::class, 'create_role_form']);
     Route::post('/roles/create_role', [PermissionStatic::class, 'create_role'])->name('create_role');
     Route::post('/permissions/create', [PermissionStatic::class, 'create_permission'])->name('create_permission');
     Route::post('/roles/assign_permission_to_role', [PermissionStatic::class, 'assign_permission_to_role'])->name('assign_permission_to_role');
