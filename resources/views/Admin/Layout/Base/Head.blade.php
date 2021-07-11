@@ -19,5 +19,5 @@
     <link rel="stylesheet" href="/Admin/css/vendor/component-custom-switch.min.css" />
     <link rel="stylesheet" href="/Admin/css/main.css" />
 
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     

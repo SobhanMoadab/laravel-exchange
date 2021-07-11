@@ -4,189 +4,115 @@
     <div class="container-fluid">
         <div class="row ">
             <div class="col-12">
-                <div class="mb-2">
-                    <h1>Users</h1>
-                    <div class="top-right-button-container">
-                        {{-- <button type="button" class="btn btn-primary btn-lg top-right-button mr-1" data-toggle="modal" data-backdrop="static" data-target="#userModalRight">ADD NEW</button> --}}
-                        {{-- Add New Modal User --}}
-                        {{--
-                        <div class="modal fade modal-right" id="userModalRight" tabindex="-1" role="dialog" aria-labelledby="userModalRight" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Add New Users</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    @include('flash-message')
-                                    <div class="modal-body">
-                                        <form class="text-left" action="{{route('store_page')}}" method="POST">
-                        @csrf
-                        <div class="form-group">
-                            <label>Username (required)</label>
-                            <input type="text" name="username" class="form-control" placeholder="" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email (required)</label>
-                            <input type="email" name="email" class="form-control" placeholder="" required>
-                        </div>
-                        <div class="form-group">
-                            <label>First Name </label>
-                            <input type="text" name="firstname" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Last Name </label>
-                            <input type="text" name="lastname" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Password (required)</label>
-                            <input type="password" name="password" class="form-control" placeholder="" required>
-                        </div>
+                <h1> All Roles </h1>
+                <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+                    <ol class="breadcrumb pt-0">
+                        <li class="breadcrumb-item">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Roles</li>
+                    </ol>
+                </nav>
+                <div class="separator mb-5"></div>
+            </div>
+            <div class="col-12 my-3">
+                <div class="card h-100 overflow-auto">
+                    <div class="card-body">
+                        <h5 class="card-title">All Roles</h5>
+                        <ul class="list-group ">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Super-Admin
+                                <div class="d-flex">
+                                    <span class="badge badge-info badge-pill m-1">Update</span>
+                                    <span class="badge badge-info badge-pill m-1">Delete</span>
+                                    <span class="badge badge-info badge-pill m-1">Create</span>
+                                    <span class="badge badge-info badge-pill m-1">Post</span>
+                                    <span class="badge badge-info badge-pill m-1">Page</span>
 
-                        <div class="form-group">
-                            <label>Roles</label>
-                            <select name="role" id="role" class="form-control">
-                                <option value="suspended">Suspended</option>
-                                <option selected="selected" value="pending_user">Pending</option>
-                                <option value="subscriber">Subscriber</option>
-                                <option value="contributor">Contributor</option>
-                                <option value="author">Author</option>
-                                <option value="editor">Editor</option>
-                                <option value="administrator">Administrator</option>
-                            </select>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                        </form>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="badge border-0 btn-danger badge-pill" onclick="delFunc()" >Delete</button>
+                                    <button class="badge border-0 btn-primary badge-pill">Update</button>
+
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Super-Admin
+                                <div class="d-flex">
+                                    <span class="badge badge-info badge-pill m-1">Update</span>
+                                    <span class="badge badge-info badge-pill m-1">Delete</span>
+                                    <span class="badge badge-info badge-pill m-1">Create</span>
+                                    <span class="badge badge-info badge-pill m-1">Post</span>
+                                    <span class="badge badge-info badge-pill m-1">Page</span>
+
+                                </div>
+                                <div class="d-flex">
+                                    <button class="badge border-0 btn-danger badge-pill" onclick="delFunc()" >Delete</button>
+                                    <button class="badge border-0 btn-primary badge-pill">Update</button>
+
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Super-Admin
+                                <div class="d-flex">
+                                    <span class="badge badge-info badge-pill m-1">Update</span>
+                                    <span class="badge badge-info badge-pill m-1">Delete</span>
+                                    <span class="badge badge-info badge-pill m-1">Create</span>
+                                    <span class="badge badge-info badge-pill m-1">Post</span>
+                                    <span class="badge badge-info badge-pill m-1">Page</span>
+
+                                </div>
+                                <div class="d-flex">
+                                    <button class="badge border-0 btn-danger badge-pill" onclick="delFunc()" >Delete</button>
+                                    <button class="badge border-0 btn-primary badge-pill">Update</button>
+
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Super-Admin
+                                <div class="d-flex">
+                                    <span class="badge badge-info badge-pill m-1">Update</span>
+                                    <span class="badge badge-info badge-pill m-1">Delete</span>
+                                    <span class="badge badge-info badge-pill m-1">Create</span>
+                                    <span class="badge badge-info badge-pill m-1">Post</span>
+                                    <span class="badge badge-info badge-pill m-1">Page</span>
+
+                                </div>
+                                <div class="d-flex">
+                                    <button class="badge border-0 btn-danger badge-pill" onclick="delFunc()" >Delete</button>
+                                    <button class="badge border-0 btn-primary badge-pill">Update</button>
+
+                                </div>
+                            </li>
+                           
+
+                        </ul>
                     </div>
-
                 </div>
             </div>
-        </div> --}}
-        {{-- End Add New Modal User --}}
 
-
-
-        {{-- Update Modal User --}}
-        <div class="modal fade modal-right" id="updateModalRight" tabindex="-1" role="dialog" aria-labelledby="updateModalRight" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Update Users</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    @include('flash-message')
-                    <div class="modal-body">
-                        <form class="text-left" action="{{route('store_page')}}" method="POST">
-                            @csrf
-                            <div class="form-group">
-                                <label>Username (required)</label>
-                                <input type="text" name="username" class="form-control" placeholder="" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email (required)</label>
-                                <input type="email" name="email" class="form-control" placeholder="" required>
-                            </div>
-                            <div class="form-group">
-                                <label>First Name </label>
-                                <input type="text" name="firstname" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label>Last Name </label>
-                                <input type="text" name="lastname" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label>Password (required)</label>
-                                <input type="password" name="password" class="form-control" placeholder="" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Roles</label>
-                                <select name="role" id="role" class="form-control">
-                                    <option value="suspended">Suspended</option>
-                                    <option selected="selected" value="pending_user">Pending</option>
-                                    <option value="subscriber">Subscriber</option>
-                                    <option value="contributor">Contributor</option>
-                                    <option value="author">Author</option>
-                                    <option value="editor">Editor</option>
-                                    <option value="administrator">Administrator</option>
-                                </select>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Update / Save</button>
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        {{-- End Update Modal User --}}
-
-    </div>
-    </div>
-
-    <div class="mb-2">
-        <a class="btn pt-0 pl-0 d-inline-block d-md-none" data-toggle="collapse" href="#displayOptions" role="button" aria-expanded="true" aria-controls="displayOptions">
-            Display Options
-            <i class="simple-icon-arrow-down align-middle"></i>
-        </a>
-        <div class="collapse d-md-block" id="displayOptions">
-            <div class="d-block d-md-inline-block">
-                <div class="btn-group float-md-left mr-1 mb-1">
-                    <button class="btn btn-outline-dark btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Order By
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">A-Z</a>
-                        <a class="dropdown-item" href="#">Z-A</a>
-                    </div>
-                </div>
-                <div class="search-sm d-inline-block float-md-left mr-1 mb-1 align-top">
-                    <input placeholder="Search...">
-                </div>
-            </div>
         </div>
     </div>
-    <div class="separator mb-5"></div>
-    <div class="row bg-white pt-2  rounded-1">
-        <div class="col-12  ">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">Role Name</th>
-                        <th scope="col">Role Permission</th>
-                        <th scope="col">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                @foreach($roles as $role)
-                    <tr>
-                        <th scope="row">{{$role}}</th>
-                        <th scope="row"></th>
-                        <td>
-                            <div class="d-flex ">
-                                <button class="btn-table rounded-1 btn-info mx-1" data-toggle="modal" data-backdrop="static" data-target="#updateModalRight"> update</button>
-                                <button class="btn-table rounded-1 btn-danger mx-1"> Delete</button>
-                            </div>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    </div>
-    </div>
-    </div>
-
+<script>
+ function delFunc(){
+    swal({
+  title: "Are you sure?",
+  text: "Once deleted, you will not be able to recover this imaginary file!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Roles Delete", {
+      icon: "success",
+    });
+  } else {
+    swal("Your imaginary file is safe!");
+  }
+});
+ }
+</script>
 
 </main>
 
