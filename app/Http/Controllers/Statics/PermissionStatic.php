@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Core\Services\PermissionServices;
 use Illuminate\Support\Facades\Http;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class PermissionStatic extends Controller
 {
@@ -23,14 +24,14 @@ class PermissionStatic extends Controller
 
     public function get_all_roles_form(PermissionServices $permission, Request $request)
     {
-        $result =  $permission->get_all_roles($request);
-        return view('Admin.Roles.index', $result);
+        $roles = Role::all();
+        return view('Admin.Roles.index', ['roles' => $roles]);
     }
 
     public function create_role_form(PermissionServices $permission, Request $request)
     {
         $result = $permission->get_all_roles($request);
-        return view('Admin.Roles.index', $result);
+        return view('Admin.Roles.create', $result);
     }
 
     public function create_role(PermissionServices $permission, Request $request)
@@ -42,7 +43,8 @@ class PermissionStatic extends Controller
         }
         return redirect()->back()->with('success', 'با موفقیت انجام شد');
     }
-    public function create_permission_form(PermissionServices $permission, Request $request){
+    public function create_permission_form(PermissionServices $permission, Request $request)
+    {
         $result = Permission::all();
         return view('Admin.Roles.index', $result);
     }

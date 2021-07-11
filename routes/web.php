@@ -43,16 +43,15 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
 
 
     Route::get('/dashboard', [PageStatic::class])->name('dashboard');
-
     // ORDER
     Route::get('/order', [OrderStatic::class, 'register_order_form']);
 
-
     // PERMISSION
     Route::get('/roles', [PermissionStatic::class, 'get_all_roles_form']);
-    Route::get('/roles/create', [PermissionStatic::class, 'create_role_form']);
+    Route::get('/roles/create', [PermissionStatic::class, 'create_role_form'])->name('create_role_form');
     // Route::get('/permissions', [PermissionStatic::class, 'create_role_form']);
     // Route::get('/permissions/create', [PermissionStatic::class, 'create_role_form']);
+
     Route::post('/roles/create_role', [PermissionStatic::class, 'create_role'])->name('create_role');
     Route::post('/permissions/create', [PermissionStatic::class, 'create_permission'])->name('create_permission');
     Route::post('/roles/assign_permission_to_role', [PermissionStatic::class, 'assign_permission_to_role'])->name('assign_permission_to_role');
