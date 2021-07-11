@@ -7,8 +7,7 @@
                 <div class="mb-3">
                     <h1>All Roles</h1>
                     <div class="text-zero top-right-button-container">
-                        <button type="button" class="btn btn-primary btn-lg top-right-button mr-1">ADD NEW</button>
-
+                        <a href="{{route('create_role_form')}}" class="btn btn-primary btn-lg top-right-button mr-1">ADD NEW</a>
                     </div>
                     <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
                         <ol class="breadcrumb pt-0">
@@ -30,18 +29,15 @@
                         <ul class="list-group ">
                             @foreach($roles as $role)
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                            {{$role}}
+                            {{$role->name}}
+                                @if(!empty($role->permissions[0]))
                                 <div class="d-flex">
-                                    <span class="badge badge-info badge-pill m-1">Update</span>
-                                    <span class="badge badge-info badge-pill m-1">Delete</span>
-                                    <span class="badge badge-info badge-pill m-1">Create</span>
-                                    <span class="badge badge-info badge-pill m-1">Post</span>
-                                    <span class="badge badge-info badge-pill m-1">Page</span>
+                                    <span class="badge badge-info badge-pill m-1">{{$role->permissions}}</span>
                                 </div>
+                                @endif
                                 <div class="d-flex">
                                     <button class="badge border-0 btn-danger badge-pill" onclick="delFunc()">Delete</button>
                                     <button class="badge border-0 btn-primary badge-pill">Update</button>
-
                                 </div>
                             </li>
                             @endforeach

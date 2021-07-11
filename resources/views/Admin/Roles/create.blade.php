@@ -23,7 +23,7 @@
                         <div class="card-body">
                             <form action="">
                             <h5 class="card-title">Create Roles</h5>
-                            <input type="text" class="form-control" placeholder="Permition name" />
+                            <input type="text" class="form-control" placeholder="Role name" />
                             <input type="checkbox" class="my-3" onclick="toggle(this);" />Check all permission
 
                             <table class="table table-striped">
