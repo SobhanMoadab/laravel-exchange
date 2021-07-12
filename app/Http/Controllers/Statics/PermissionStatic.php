@@ -30,14 +30,15 @@ class PermissionStatic extends Controller
 
     public function create_role_form(PermissionServices $permission, Request $request)
     {
-        $result = $permission->get_all_roles($request);
-        return view('Admin.Roles.create', $result);
+        $permissions = Permission::all();
+        return view('Admin.Roles.create', ['permissions' => $permissions]);
     }
 
     public function create_role(PermissionServices $permission, Request $request)
     {
-        $result = $permission->create_role($request);
+        return $request->all();
         try {
+            $result = $permission->create_role($request);
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'مشکلی پیش اومد :(');
         }

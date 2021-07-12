@@ -18,34 +18,27 @@
                 </nav>
                 <div class="separator mb-5"></div>
             </div>
-                <div class="col-12 my-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <form action="">
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="{{route('create_role}}" methode="POST">
                             <h5 class="card-title">Create Roles</h5>
-                            <input type="text" class="form-control" placeholder="Role name" />
+                            <input type="text" class="form-control" name="role_name" placeholder="Role name" />
                             <input type="checkbox" class="my-3" onclick="toggle(this);" />Check all permission
-
                             <table class="table table-striped">
+                                @foreach($permissions as $permission)
                                 <tbody>
                                     <tr>
-                                        <td> <input type="checkbox" value="Post" /> Post </td>
+                                        <td> <input  name="permission" type="checkbox" value="{{$permission->name}}" />{{$permission->name}}</td>
                                     </tr>
-                                    <tr>
-                                        <td> <input type="checkbox" value="Page" />Page </td>
-                                    </tr>
-                                    <tr>
-                                        <td> <input type="checkbox" />Edit </td>
-                                    </tr>
-
-
                                 </tbody>
+                                @endforeach
                             </table>
-                            <button class="btn btn-primary"> Create</button>
-                            </form>
-                        </div>
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </form>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 
@@ -59,26 +52,26 @@
         }
     </script>
 
-<script>
-//  function swal(){
-//     swal({
-//   title: "Are you sure?",
-//   text: "Once deleted, you will not be able to recover this imaginary file!",
-//   icon: "warning",
-//   buttons: true,
-//   dangerMode: true,
-// })
-// .then((willDelete) => {
-//   if (willDelete) {
-//     swal("Poof! Your imaginary file has been deleted!", {
-//       icon: "success",
-//     });
-//   } else {
-//     swal("Your imaginary file is safe!");
-//   }
-// });
-//  }
-</script>
+    <script>
+        //  function swal(){
+        //     swal({
+        //   title: "Are you sure?",
+        //   text: "Once deleted, you will not be able to recover this imaginary file!",
+        //   icon: "warning",
+        //   buttons: true,
+        //   dangerMode: true,
+        // })
+        // .then((willDelete) => {
+        //   if (willDelete) {
+        //     swal("Poof! Your imaginary file has been deleted!", {
+        //       icon: "success",
+        //     });
+        //   } else {
+        //     swal("Your imaginary file is safe!");
+        //   }
+        // });
+        //  }
+    </script>
 
 </main>
 

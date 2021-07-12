@@ -17,6 +17,8 @@ class CreateTicketsTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('title');
+            $table->string('image')->nullabe();
+            $table->string('email');
             $table->text('content');
             $table->integer('status');
             $table->enum('priority', ['low','medium','high']);

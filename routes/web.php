@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 // *** S T A T I C ***
 
 Route::get('/',function(){
-    return view('Client.Home');
+    return view('Client.Home')->name('home');
 });
 
 // AUTH
