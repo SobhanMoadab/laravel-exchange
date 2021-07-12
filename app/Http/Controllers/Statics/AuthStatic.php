@@ -27,7 +27,7 @@ class AuthStatic extends Controller
     public function register(AuthenticationServices $auth, Request $request)
     {
         $result = $auth->register($request);
-        return redirect(route('home'));
+        return redirect('/');
     }
     public function login_form()
     {
