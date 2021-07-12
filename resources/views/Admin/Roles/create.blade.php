@@ -21,7 +21,7 @@
             <div class="col-12 my-3">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{route('create_role}}" methode="POST">
+                        <form action="{{route('create_role')}}" methode="POST">
                             <h5 class="card-title">Create Roles</h5>
                             <input type="text" class="form-control" name="role_name" placeholder="Role name" />
                             <input type="checkbox" class="my-3" onclick="toggle(this);" />Check all permission
@@ -67,4 +67,4 @@
 
 </main>
 
-@include('Admin.Layout.Footer')
+@include('Admin.Layout.Footer');
