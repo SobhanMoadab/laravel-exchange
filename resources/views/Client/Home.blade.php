@@ -1,4 +1,4 @@
-@include('client.Layout.Header')
+@include('Client.Layout.Header')
     <!-- START HOME -->
     <section class="bg-home-2 align-items-center d-flex" id="home">
         <div class="container">
@@ -12,16 +12,8 @@
                         <p class="home-desc text-light mt-4">A digital web design studio creating modern & engaging
                             online. Separated they live in Bookmarksgrove
                             right the Semantics, a large language ocean.</p>
-
-
-
-
                         <div class=" mt-4 p-3 row ">
                             <!--tab button-->
-
-
-
-
 
                             <div class="card rounded-2 border-0 shadow-white p-4 ">
                                 <div class="menu-header">

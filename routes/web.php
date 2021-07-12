@@ -27,10 +27,9 @@ use Illuminate\Support\Facades\Route;
 
 // *** S T A T I C ***
 
-Route::get('/',function(){
-    return view('Client.Home')->name('home');
+Route::get('/', function () {
+    return view('Client.Home');
 });
-
 // AUTH
 Route::get('/register', [AuthStatic::class, 'register_form'])->name('register');
 Route::post('/register', [AuthStatic::class, 'register'])->name('register_store');
@@ -81,9 +80,6 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
     // Logs
     // route bellow will be turned to methode Post and get methode will be used to show form
     Route::get('/logs/delete/{days}', [LogServices::class, 'truncate_log']);
-    
-
-
 });
 
 // USER ROUTES
