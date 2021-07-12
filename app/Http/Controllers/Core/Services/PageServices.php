@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Core\Services;
 
+use App\Models\Log;
 use App\Models\Pages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class PageServices
 {
@@ -30,7 +30,7 @@ class PageServices
                 'admin_id' => Auth::id(),
                 'page_type' => $request->page_type,
             ]);
-            Log::info(['action' => 'پیج ساخته شد', 'user_id' => Auth::id(), 'is_admin' => true]);
+            Log::create(['action' => 'پیج ساخته شد', 'user_id' => Auth::id(), 'is_admin' => true]);
             return ['msg' => 'success', 'page' => $page, 'error' => null];
         } catch (\Exception $e) {
             return ['error' => $e->getMessage()];
@@ -54,7 +54,7 @@ class PageServices
                 'body' => $request->body,
                 'page_type' => $request->page_type,
             ]);
-            Log::info(['action' => 'پیج اپدیت شد', 'user_id' => Auth::id(), 'is_admin' => true]);
+            Log::create(['action' => 'پیج اپدیت شد', 'user_id' => Auth::id(), 'is_admin' => true]);
             return ['msg' => 'Post updated Successfully', 'currency' => $page, 'error' => null];
         } catch (\Exception $e) {
             return ['error' => $e->getMessage()];
@@ -65,7 +65,7 @@ class PageServices
         try {
             $page = Pages::findOrFail($id);
             $page->delete();
-            Log::info(['action' => '  پیج حذف شد', 'user_id' => Auth::id(), 'is_admin' => true]);
+            Log::create(['action' => '  پیج حذف شد', 'user_id' => Auth::id(), 'is_admin' => true]);
             return ['msg' => 'Page deleted Successfully', 'error' => null];
         } catch (\Exception $e) {
             return ['error' => $e->getMessage()];

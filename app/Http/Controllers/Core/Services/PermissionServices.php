@@ -33,16 +33,22 @@ class PermissionServices
     {
         // for super Admin only
         $validated = $request->validate([
-            'name' => 'required',
+            'role_name' => 'required',
+            'permissions' => 'required'
         ], [
-            'name.required' => 'name is required',
+            'role_name.required' => 'role_name is required',
+            'permissions.required' => 'permissions is required',
         ]);
         try {
-            $role = Role::create(['guard_name' => 'web', 'name' => $validated['name']]);
-            Log::create(['action' => "$request->name:ایجاد سطح", 'user_id' => Auth::id(), 'is_admin' => true]);
-            return [$role];
+            $role = Role::create(['guard_name' => 'web', 'name' => $validated['role_name']]);
+            foreach($request->permissions as $key=>$permission){
+                $role->givePermissionTo($permission);
+            }
+            Log::create(['action' => "$request->role_name:ایجاد سطح", 'user_id' => Auth::id(), 'is_admin' => true]);
+            Log::create(['action' => "$request->permission : دارای دسترسی های  $role->name سطح", 'user_id' => Auth::id(), 'is_admin' => true]);
+            return ['role' => $role, 'error' => null];
         } catch (\Exception $e) {
-            return ['msg' => $e->getMessage()];
+            return ['error' => $e->getMessage()];
         }
     }
 

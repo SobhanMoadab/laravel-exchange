@@ -29,10 +29,12 @@
                         <ul class="list-group ">
                             @foreach($roles as $role)
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                            {{$role->name}}
+                                {{$role->name}}
                                 @if(!empty($role->permissions[0]))
                                 <div class="d-flex">
-                                    <span class="badge badge-info badge-pill m-1">{{$role->permissions}}</span>
+                                    @foreach($role->permissions as $permissions)
+                                    <span class="badge badge-info badge-pill m-1">{{$permissions->name}}</span>
+                                    @endforeach
                                 </div>
                                 @endif
                                 <div class="d-flex">

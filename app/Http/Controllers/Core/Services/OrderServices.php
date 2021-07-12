@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Core\Services;
 
 use App\Mail\VerifyUser;
+use App\Models\Log;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Binance;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class OrderServices

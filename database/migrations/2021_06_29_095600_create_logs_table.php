@@ -16,7 +16,7 @@ class CreateLogsTable extends Migration
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->nullable();
-            $table->string('action');
+            $table->text('action');
             $table->boolean('is_admin');
             $table->timestamps();
         });

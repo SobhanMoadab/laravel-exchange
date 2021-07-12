@@ -30,16 +30,13 @@
                                                 <label>Details</label>
                                                 <textarea placeholder="" name="body" class="form-control" rows="2"></textarea>
                                             </div>
-
-
                                             <div class="form-group">
                                                 <label>Type</label>
                                                 <div class="custom-control custom-checkbox">
                                                     <select name="page_type">
-                                                        <option value='FAQ'>FAQ</option>
-                                                        <option value='contact_us'>Contact Us</option>
-                                                        <option value='about_us'>About Us</option>
-                                                        <option value='rules'>Rules</option>
+                                                        @foreach($pages as $page)
+                                                        <option value='FAQ'>{{$page->name}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
@@ -49,7 +46,6 @@
                                             </div>
                                         </form>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -150,19 +146,20 @@
                     </div>
                 </div>
                 <div class="separator mb-5"></div>
-
+               @foreach($pages as $page)
                 <div class="list disable-text-selection" data-check-all="checkAll">
                     <div class="card d-flex flex-row mb-3">
                         <div class="d-flex flex-grow-1 min-width-zero">
                             <div class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
                                 <a class="list-item-heading mb-0 truncate w-40 w-xs-100 mt-0" href="Apps.Survey.html">
                                     <i class="simple-icon-refresh heading-icon"></i>
-                                    <span class="align-middle d-inline-block"> About Us </span>
+                                    <span class="align-middle d-inline-block"> {{$page->name}} </span>
                                 </a>
-                                <p class="mb-0 text-muted text-small w-15 w-xs-100">Admin</p>
-                                <p class="mb-0 text-muted text-small w-15 w-xs-100">11.08.2018</p>
                                 <div class="w-10 w-xs-100">
-                                    <span class="badge badge-pill badge-secondary">ON HOLD</span>
+                                    <span class="badge badge-pill badge-secondary">{{$page->page_type}}</span>
+                                </div>
+                                <div class="w-10 w-xs-100">
+                                    <span class="badge badge-pill badge-secondary">{{$page->created_at}}</span>
                                 </div>
                                 <div class="w-10 w-xs-100">
                                     <a href="" class=""><span class="btn-sm btn-info">Update</span></a>
@@ -174,66 +171,11 @@
                             </label>
                         </div>
                     </div>
-
-
                 </div>
-                <div class="list disable-text-selection" data-check-all="checkAll">
-                    <div class="card d-flex flex-row mb-3">
-                        <div class="d-flex flex-grow-1 min-width-zero">
-                            <div class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
-                                <a class="list-item-heading mb-0 truncate w-40 w-xs-100 mt-0" href="Apps.Survey.html">
-                                    <i class="simple-icon-check heading-icon"></i>
-                                    <span class="align-middle d-inline-block"> FAQ</span>
-                                </a>
-                                <p class="mb-0 text-muted text-small w-15 w-xs-100">Admin</p>
-                                <p class="mb-0 text-muted text-small w-15 w-xs-100">11.08.2021</p>
-                                <div class="w-10 w-xs-100">
-                                    <span class="badge badge-pill badge-secondary">ON HOLD</span>
-                                </div>
-                                <div class="w-10 w-xs-100">
-                                    <a href="" class=""><span class="btn-sm btn-info">Update</span></a>
-                                </div>
-                            </div>
-                            <label class="custom-control custom-checkbox mb-1 align-self-center mr-4">
-                                <input type="checkbox" class="custom-control-input">
-                                <span class="custom-control-label">&nbsp;</span>
-                            </label>
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="list disable-text-selection" data-check-all="checkAll">
-                    <div class="card d-flex flex-row mb-3">
-                        <div class="d-flex flex-grow-1 min-width-zero">
-                            <div class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
-                                <a class="list-item-heading mb-0 truncate w-40 w-xs-100 mt-0" href="Apps.Survey.html">
-                                    <i class="simple-icon-refresh heading-icon"></i>
-                                    <span class="align-middle d-inline-block"> Contact Us </span>
-                                </a>
-                                <p class="mb-0 text-muted text-small w-15 w-xs-100">Admin</p>
-                                <p class="mb-0 text-muted text-small w-15 w-xs-100">11.08.2018</p>
-                                <div class="w-10 w-xs-100">
-                                    <span class="badge badge-pill badge-secondary">Pushing</span>
-                                </div>
-                                <div class="w-10 w-xs-100">
-                                    <a href="" class=""><span class="btn-sm btn-info">Update</span></a>
-                                </div>
-                            </div>
-                            <label class="custom-control custom-checkbox mb-1 align-self-center mr-4">
-                                <input type="checkbox" class="custom-control-input">
-                                <span class="custom-control-label">&nbsp;</span>
-                            </label>
-                        </div>
-                    </div>
-
-
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
-
-
     <div class="app-menu">
         <div class="p-4 h-100">
             <div class="scroll">

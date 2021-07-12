@@ -21,7 +21,9 @@
             <div class="col-12 my-3">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{route('create_role')}}" methode="POST">
+                        <form action="{{route('create_role')}}" method="POST">
+                        @csrf 
+                        @include('flash-message')
                             <h5 class="card-title">Create Roles</h5>
                             <input type="text" class="form-control" name="role_name" placeholder="Role name" />
                             <input type="checkbox" class="my-3" onclick="toggle(this);" />Check all permission
@@ -29,7 +31,7 @@
                                 @foreach($permissions as $permission)
                                 <tbody>
                                     <tr>
-                                        <td> <input  name="permission" type="checkbox" value="{{$permission->name}}" />{{$permission->name}}</td>
+                                        <td> <input  name="permissions[]" type="checkbox" value="{{$permission->name}}" />{{$permission->name}}</td>
                                     </tr>
                                 </tbody>
                                 @endforeach
