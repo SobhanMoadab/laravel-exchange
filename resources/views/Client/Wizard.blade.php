@@ -1,9 +1,8 @@
 @include('client.Layout.Header')
 
 <link rel="stylesheet" href="/Client/css/Wizard.css">
-    <!-- Toast Css Link -->
-    <link href="https://cdn.jsdelivr.net/npm/nice-toast-js/dist/css/nice-toast-js.min.css" rel="stylesheet"
-        type="text/css" />
+<!-- Toast Css Link -->
+<link href="https://cdn.jsdelivr.net/npm/nice-toast-js/dist/css/nice-toast-js.min.css" rel="stylesheet" type="text/css" />
 <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 
 <!-- Wizard Start -->
@@ -44,23 +43,18 @@
                             </div>
                         </div>
 
-                        <div class="card-body d-flex justify-content-center align-content-center row  exchange"
-                            id="sell-body">
+                        <div class="card-body d-flex justify-content-center align-content-center row  exchange" id="sell-body">
                             <div class="col-12 col-sm-12 col-lg-6">
-                                <div
-                                    class="card bg-transparent border-0  d-flex justify-content-center align-content-center row ">
+                                <div class="card bg-transparent border-0  d-flex justify-content-center align-content-center row ">
 
                                     <div class="card-body  d-flex justify-content-center  row">
 
 
                                         <div class="input-group">
                                             <label>You Spend</label>
-                                            <input type="text"
-                                                class="form-control rounded bg-light text-dark border-0 w-100 you-spend"
-                                                value="0.00000">
+                                            <input type="text" class="form-control rounded bg-light text-dark border-0 w-100 you-spend" value="0.00000">
                                             <div class="input-group-append ">
-                                                <button class="btn btn-primary btn-exchange " type="button"
-                                                    data-toggle="modal" data-target="#YouSpend">BTC</button>
+                                                <button class="btn btn-primary btn-exchange " type="button" data-toggle="modal" data-target="#YouSpend">BTC</button>
                                             </div>
                                         </div>
 
@@ -68,12 +62,9 @@
 
                                         <div class="input-group">
                                             <label>You Receive</label>
-                                            <input type="text"
-                                                class="form-control rounded bg-light text-dark border-0 w-100 you-receive"
-                                                value="0">
+                                            <input type="text" class="form-control rounded bg-light text-dark border-0 w-100 you-receive" value="0">
                                             <div class="input-group-append">
-                                                <button class="btn btn-primary btn-exchange " type="button"
-                                                    data-toggle="modal" data-target="#ModalReceive">USD</button>
+                                                <button class="btn btn-primary btn-exchange " type="button" data-toggle="modal" data-target="#ModalReceive">USD</button>
                                             </div>
                                         </div>
 
@@ -108,8 +99,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="pr-0 font-weight-500 position-relative"><span
-                                                            class="text-success">live</span>
+                                                    <td class="pr-0 font-weight-500 position-relative"><span class="text-success">live</span>
                                                         <!---->
                                                     </td>
                                                     <td class="pl-0"><span>Purchase status</span></td>
@@ -123,80 +113,71 @@
                             <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">
                                 exchange</button>
                         </div>
-                        <div class="card-body d-none justify-content-center align-content-center row  exchange"
-                        id="Purchase-body">
-                        <div class="col-12 col-sm-12 col-lg-6">
-                            <div
-                                class="card bg-transparent border-0  d-flex justify-content-center align-content-center row ">
+                        <div class="card-body d-none justify-content-center align-content-center row  exchange" id="Purchase-body">
+                            <div class="col-12 col-sm-12 col-lg-6">
+                                <div class="card bg-transparent border-0  d-flex justify-content-center align-content-center row ">
 
-                                <div class="card-body  d-flex justify-content-center  row">                                    
-                                    <div class="input-group">
-                                        <label>You Receive</label>
-                                        <input type="text"
-                                        class="form-control rounded bg-light text-dark border-0 w-100 you-receive"
-                                        value="0">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary btn-exchange " type="button"
-                                            data-toggle="modal" data-target="#ModalReceive">USD</button>
+                                    <div class="card-body  d-flex justify-content-center  row">
+                                        <div class="input-group">
+                                            <label>You Receive</label>
+                                            <input type="text" class="form-control rounded bg-light text-dark border-0 w-100 you-receive" value="0">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary btn-exchange " type="button" data-toggle="modal" data-target="#ModalReceive">USD</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="input-group">
-                                        <label>You Spend</label>
-                                        <input type="text"
-                                            class="form-control rounded bg-light text-dark border-0 w-100 you-spend"
-                                            value="0.00000">
-                                        <div class="input-group-append ">
-                                            <button class="btn btn-primary btn-exchange " type="button"
-                                                data-toggle="modal" data-target="#YouSpend">BTC</button>
+                                        <div class="input-group">
+                                            <label>You Spend</label>
+                                            <input type="text" class="form-control rounded bg-light text-dark border-0 w-100 you-spend" value="0.00000">
+                                            <div class="input-group-append ">
+                                                <button class="btn btn-primary btn-exchange " type="button" data-toggle="modal" data-target="#YouSpend">BTC</button>
+                                            </div>
                                         </div>
+
                                     </div>
-                                    
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-lg-6  exchange-table">
-                            <div class="card bg-light text-white border-0 h-100 ">
-                                <div class="card-body p-4 pb-3">
-                                    <table class=" float-end text-right">
-                                        <tbody class="text-dark text-right">
-                                            <tr>
-                                                <td dir="ltr" class="pr-0 font-weight-500 position-relative">
-                                                    <span>
-                                                        836,476,500
-                                                    </span> <span> $</span>
-                                                </td>
-                                                <td class="pl-0 text-right">
-                                                    Exchange rate
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="pr-0 font-weight-500"><span>Buy from us</span></td>
-                                                <td class="pl-0">
-                                                    Type of exchange
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="pr-0 font-weight-500"><span>instantaneous</span></td>
-                                                <td class="pl-0">
-                                                    estimated time
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="pr-0 font-weight-500 position-relative"><span
-                                                        class="text-success">live</span>
-                                                    <!---->
-                                                </td>
-                                                <td class="pl-0"><span>Purchase status</span></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                            <div class="col-12 col-sm-12 col-lg-6  exchange-table">
+                                <div class="card bg-light text-white border-0 h-100 ">
+                                    <div class="card-body p-4 pb-3">
+                                        <table class=" float-end text-right">
+                                            <tbody class="text-dark text-right">
+                                                <tr>
+                                                    <td dir="ltr" class="pr-0 font-weight-500 position-relative">
+                                                        <span>
+                                                            836,476,500
+                                                        </span> <span> $</span>
+                                                    </td>
+                                                    <td class="pl-0 text-right">
+                                                        Exchange rate
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pr-0 font-weight-500"><span>Buy from us</span></td>
+                                                    <td class="pl-0">
+                                                        Type of exchange
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pr-0 font-weight-500"><span>instantaneous</span></td>
+                                                    <td class="pl-0">
+                                                        estimated time
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pr-0 font-weight-500 position-relative"><span class="text-success">live</span>
+                                                        <!---->
+                                                    </td>
+                                                    <td class="pl-0"><span>Purchase status</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">
-                            exchange</button>
-                    </div>
+                            <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">
+                                exchange</button>
+                        </div>
 
 
 
@@ -266,18 +247,19 @@
         </div>
     </div>
 </div>
-{{-- <script src="{{asset('js/app.js')}}"></script>
+<script src="{{asset('js/app.js')}}"></script>
 <script>
     Echo.channel('price').listen('.App\\Events\\PriceList', (e) => {
         console.log(e);
     });
-</script> --}}
+</script>
 <!-- <script>
     (function worker() {
         $.ajax({
             url: '/price',
             success: function(data) {
                 console.log('success')
+                console.log(data)
             },
             error: function(err) {
                 console.log({
@@ -290,7 +272,7 @@
             }
         });
     })();
-</script>
+</script> -->
 <!-- Wizard End-->
 
 
