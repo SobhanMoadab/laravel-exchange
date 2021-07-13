@@ -241,17 +241,17 @@
                 </div>
             </div>
             <div class="modal-footer border-0">
-                <button type="button" class="btn btn-secondary w-100" data-dismiss="modal">Close</button>
+                <button type="button" id="closeModal" class="btn btn-secondary w-100" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
-<script src="{{asset('js/app.js')}}"></script>
+{{-- <script src="{{asset('js/app.js')}}"></script>
 <script>
     Echo.channel('price').listen('.App\\Events\\PriceList', (e) => {
         console.log(e);
     });
-</script>
+</script> --}}
 <!-- <script>
     (function worker() {
         $.ajax({
@@ -314,8 +314,11 @@
     });
 
     $('#listingCoin').on('click', '#coinBtn', function() {
-    console.log('salam')
-
+       var value =  $(this).val();
+        $('#closeModal').click();
+        $.post('/price/' + value).done( function(data){
+            console.log(data);
+        });
     });
     </script>
 @include('client.Layout.Footer')
