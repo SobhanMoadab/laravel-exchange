@@ -312,7 +312,7 @@
           console.log(data)
         $.each( data.coins, function( i, item ) {
         $( "#listingCoin" ).append(`
-                    <button type="button" id="coinBtn${i}" value="${item.id}"
+                    <button type="button" id="coinBtn" value="${item.id}"
                         class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
                             <span class="ticker-prog"><img width="30" src="${item.icon}"
@@ -323,6 +323,7 @@
                             </span>
                         </div> 
                     </button>
+                   
         `)
         // if ( i === 3 ) {
         //   return false;
@@ -330,9 +331,10 @@
       });
     });
     });
-    $("#coinBtn0").click(function(i){ 
-        console.log( 'salam')
-        // var value  =  $('#coinBtn').val;
+
+    $('#listingCoin').on('click', '#coinBtn', function() {
+    console.log('salam')
+
     });
     </script>
 @include('client.Layout.Footer')
