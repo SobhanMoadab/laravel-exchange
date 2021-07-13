@@ -227,7 +227,6 @@
         </div>
     </div>
 </div>
-
 <div class="modal slide-top" id="YouSpend" tabindex="-1" role="dialog" aria-labelledby="ModalReceiveTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
