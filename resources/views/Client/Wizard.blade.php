@@ -246,108 +246,7 @@
         </div>
     </div>
 </div>
-<div class="modal slide-top" id="ModalReceive" tabindex="-1" role="dialog" aria-labelledby="ModalReceiveTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header border-0">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title
-                </h5>
-            </div>
-            <div class="modal-body border-0">
-                <div class="list-group">
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
-                        <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
-                            <span class="px-2">
-                                BTC
-                            </span>
-                        </div>
 
-                        <div>
-                            12000100$
-                        </div>
-                    </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
-                        <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
-                            <span class="px-2">
-                                BTC
-                            </span>
-                        </div>
-
-                        <div>
-                            12000100$
-                        </div>
-                    </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
-                        <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
-                            <span class="px-2">
-                                BTC
-                            </span>
-                        </div>
-
-                        <div>
-                            12000100$
-                        </div>
-                    </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
-                        <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
-                            <span class="px-2">
-                                BTC
-                            </span>
-                        </div>
-
-                        <div>
-                            12000100$
-                        </div>
-                    </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
-                        <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
-                            <span class="px-2">
-                                BTC
-                            </span>
-                        </div>
-
-                        <div>
-                            12000100$
-                        </div>
-                    </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
-                        <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
-                            <span class="px-2">
-                                BTC
-                            </span>
-                        </div>
-
-                        <div>
-                            12000100$
-                        </div>
-                    </button>
-                </div>
-            </div>
-            <div class="modal-footer border-0">
-                <button type="button" class="btn btn-secondary w-100" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="modal slide-top" id="YouSpend" tabindex="-1" role="dialog" aria-labelledby="ModalReceiveTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -357,78 +256,8 @@
                 </h5>
             </div>
             <div class="modal-body border-0">
-                <div class="list-group">
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
-                        <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="{{asset('/client/images/svg/bitcoin-441959.svg')}}"
-                                    alt=""></span>
-                            <span class="px-2">
-                                BTC
-                            </span>
-                        </div> 
-                    </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
-                        <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="{{asset('/client/images/svg/bitcoin-441959.svg')}}"
-                                    alt=""></span>
-                            <span class="px-2">
-                                BTC
-                            </span>
-                        </div> 
-                    </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
-                        <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="{{asset('/client/images/svg/bitcoin-441959.svg')}}"
-                                    alt=""></span>
-                            <span class="px-2">
-                                BTC
-                            </span>
-                        </div> 
-                    </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
-                        <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="{{asset('/client/images/svg/bitcoin-441959.svg')}}"
-                                    alt=""></span>
-                            <span class="px-2">
-                                BTC
-                            </span>
-                        </div> 
-                    </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
-                        <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="{{asset('/client/images/svg/bitcoin-441959.svg')}}"
-                                    alt=""></span>
-                            <span class="px-2">
-                                BTC
-                            </span>
-                        </div> 
-                    </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
-                        <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="{{asset('/client/images/svg/bitcoin-441959.svg')}}"
-                                    alt=""></span>
-                            <span class="px-2">
-                                BTC
-                            </span>
-                        </div> 
-                    </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
-                        <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="{{asset('/client/images/svg/bitcoin-441959.svg')}}"
-                                    alt=""></span>
-                            <span class="px-2">
-                                BTC
-                            </span>
-                        </div> 
-                    </button>
-                    
+                <div class="list-group" id="listingCoin">
+           
                 </div>
             </div>
             <div class="modal-footer border-0">
@@ -466,4 +295,44 @@
 
 
 <!-- End Toast Script -->
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+    $(document).ready(() => {
+      var CoinAPI = "https://api.coinstats.app/public/v1/coins";
+      $.getJSON( CoinAPI, {
+        tagmode: "any",
+        format: "json"
+      }).done(function( data ) {
+          console.log(data)
+        $.each( data.coins, function( i, item ) {
+        $( "#listingCoin" ).append(`
+                    <button type="button" id="coinBtn${i}" value="${item.id}"
+                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                        <div class="d-flex justify-content-between">
+                            <span class="ticker-prog"><img width="30" src="${item.icon}"
+                                    alt=""></span>
+                            <span class="px-2 d-flex">
+                                ${item.name}
+                               ( ${item.symbol} )
+                            </span>
+                        </div> 
+                    </button>
+        `)
+        // if ( i === 3 ) {
+        //   return false;
+        // }
+      });
+    });
+    });
+    $("#coinBtn0").click(function(i){ 
+        console.log( 'salam')
+        // var value  =  $('#coinBtn').val;
+    });
+    </script>
 @include('client.Layout.Footer')
