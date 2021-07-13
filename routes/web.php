@@ -107,7 +107,8 @@ Route::get('/price', function (PriceServices $price_service) {
 });
 Route::get('/price/{id}', function (PriceServices $price_service, $id) {
     $coin = $price_service->get_currency_by_id($id);
-    event(new PriceList($coin));
+    // event(new PriceList($coin));
+    return $coin;
 });
 
 Route::get('/wizard', function () {
