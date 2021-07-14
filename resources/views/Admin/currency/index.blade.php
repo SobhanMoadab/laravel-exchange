@@ -131,20 +131,20 @@
 
         <div class="row mb-4">
             <div class="col-12  ">
-                <li class="list-group-item d-flex justify-content-between align-items-center rounded border-0">
-                    <div>
+                <li class="list-group-item d-flex align-items-center rounded border-0">
+                    <div class="col-3">
                         Currency Name
                     </div>
-                    <div>
+                    <div class="col-3">
                         Is_active
                     </div>
-                    <div>
+                    <div class="col-2">
                         Icon
                     </div>
-                    <div>
+                    <div class="col-2">
                         Price
                     </div>
-                    <div>
+                    <div class="col-3">
                         Action
                     </div>
 
@@ -152,11 +152,18 @@
                 </ul>
                 <ul class="list-group  mt-2">
                     @foreach($currencies as $index=>$currency)
-                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
-                        <div class="justify-content-between align-items-center border-0">{{$currency->name}}</div>
-                        <div class="justify-content-between align-items-center border-0">{{ $currency->is_active}}</div>
-                        <div class="justify-content-between align-items-center border-0">{{$currency->price}}</div>
-                        <input type="hidden" id="base_64_icon{{$index}}" value="{{$currency->icon}}" class="base_64_icons">
+                    <li class="list-group-item d-flex align-items-center border-0">
+                        <div class="col-3 align-items-center border-0">{{$currency->name}}</div>
+                        <div class="col-3 align-items-center border-0">{{ $currency->is_active}}</div>
+                        <div class="col-2">
+                         <input type="hidden" id="base_64_icon{{$index}}" value="{{$currency->icon}}" class="base_64_icons"> 
+                        </div>
+                        <div class="col-2 align-items-center border-0">{{$currency->price}}</div>
+                        <div class="col-3 align-items-center border-0">
+                          <button class="btn btn-success">Update</button>
+                          <button class="btn btn-danger">Delete</button>
+                        </div>
+                        
                     </li>
                     @endforeach
                 </ul>
