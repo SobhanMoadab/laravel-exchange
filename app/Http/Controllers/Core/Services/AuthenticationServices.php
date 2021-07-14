@@ -8,6 +8,7 @@ use App\Http\Resources\UserResource;
 use App\Models\Log;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthenticationServices
 {
@@ -46,13 +47,21 @@ class AuthenticationServices
             'password.required' => 'password is required',
         ]);
         try {
-      
-            if (!Auth::attempt($validated)) {
-                return ['error' => 'اطلاعات نادرست می باشید'];
+            $user = User::where('email', $request->email)->first();
+            if (!$user) {
+                return ['error' => 'email is wrong or password is wrong'];
             }
-            $token = auth()->user()->createToken('authToken')->accessToken;
-             Log::create(['action' => ' ورود به حساب کاربری', 'user_id' => Auth::id(), 'is_admin' => false,]);
-            return ['msg' => 'success','error' => null ];
+            $hash_check = Hash::check($request->password, $user->password);
+            if (!$hash_check) {
+                return ['error' => 'email is wrong or password is wrong'];
+            }
+            if (!$request->remember) {
+                Auth::login($user);
+            }
+            Auth::login($user, true);
+            // $token = auth()->user()->createToken('authToken')->accessToken;
+            Log::create(['action' => ' ورود به حساب کاربری', 'user_id' => Auth::id(), 'is_admin' => false,]);
+            return ['msg' => 'success', 'error' => null];
         } catch (\Exception $e) {
             return ['error' => $e->getMessage()];
         }

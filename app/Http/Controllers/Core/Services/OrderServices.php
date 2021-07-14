@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Binance;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 
 class OrderServices
@@ -53,6 +54,7 @@ class OrderServices
     }
     public function register_order_form()
     {
+
         return view('Client.Wizard');
     }
 

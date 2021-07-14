@@ -41,7 +41,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Logo currency</label>
-                                                <input type="File"  id="currencylogo" onchange="imageUploaded();"  class="form-control" accept=".png, .jpg, .jpeg, .gif" >
+                                                <input type="File" id="currencylogo" onchange="imageUploaded();" class="form-control" accept=".png, .jpg, .jpeg, .gif">
                                                 <input type="hidden" name="icon" id="upload_base" />
                                             </div>
                                             <div class="select-country" data-input-name="Currncy" data-selected-country="BTC">
@@ -96,14 +96,14 @@
                                                 <input type="text" name="max" class="form-control" placeholder="">
                                             </div>
                                             <div class="form-group">
-                                                <label>Logo </label>  
-                                                <input type="File" id="Updatelogo" onchange="imageUploadedUpdate();" class="form-control" accept=".png, .jpg, .jpeg, .gif" >
+                                                <label>Logo </label>
+                                                <input type="File" id="Updatelogo" onchange="imageUploadedUpdate();" class="form-control" accept=".png, .jpg, .jpeg, .gif">
                                                 <input type="hidden" name="upload_base" id="update_base" />
 
                                             </div>
                                             <div class="select-country" data-input-name="Currncy" data-selected-country="BTC">
                                             </div>
-                                           
+
 
                                             <div class="form-group">
                                                 <label>Status</label>
@@ -114,7 +114,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="cancel" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                                                <button type="submit"  class="btn btn-primary">Submit</button>
+                                                <button type="submit" class="btn btn-primary">Submit</button>
                                             </div>
 
                                         </form>
@@ -151,7 +151,7 @@
                 </li>
                 </ul>
                 <ul class="list-group  mt-2">
-                @foreach($currencies as $currency)
+                    @foreach($currencies as $currency)
                     <li class="list-group-item d-flex justify-content-between align-items-center border-0">
                         <div>{{ $currency->name}}</div>
                         <div> {{$currency->is_active}}</div>

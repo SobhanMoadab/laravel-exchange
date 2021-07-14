@@ -52,9 +52,9 @@ class CurrencyServices
             'price.required' => 'price is required',
 
         ]);
-        if($request->is_active){
+        if ($request->is_active) {
             $request->is_active = 1;
-        } else{
+        } else {
             $request->is_active = 0;
         }
         try {
@@ -82,7 +82,7 @@ class CurrencyServices
                 $currencies = Currency::paginate(10);
             }
             Log::create(['action' => 'دریافت لیست کوین ها', 'user_id' => Auth::id(), 'is_admin' => true]);
-            return ['currencies' => $currencies, 'error'=>null];
+            return ['currencies' => $currencies, 'error' => null];
         } catch (\Exception $e) {
             return ['error' => $e->getMessage()];
         }
@@ -115,7 +115,7 @@ class CurrencyServices
                 ]);
             }
             Log::create(['action' => 'اپدیت  کوین انجام شد', 'user_id' => Auth::id(), 'is_admin' => true]);
-            return ['msg' => 'Post updated Successfully', 'currency' => $currency,'error' => null];
+            return ['msg' => 'Post updated Successfully', 'currency' => $currency, 'error' => null];
         } catch (\Exception $e) {
             return ['error' => $e->getMessage()];
         }
@@ -131,5 +131,4 @@ class CurrencyServices
             return ['error' => $e->getMessage()];
         }
     }
-    
 }
