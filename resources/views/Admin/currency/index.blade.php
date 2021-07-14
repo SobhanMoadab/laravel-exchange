@@ -151,12 +151,12 @@
                 </li>
                 </ul>
                 <ul class="list-group  mt-2">
-                    @foreach($currencies as $currency)
+                    @foreach($currencies as $index=>$currency)
                     <li class="list-group-item d-flex justify-content-between align-items-center border-0">
-                        <div>{{ $currency->name}}</div>
-                        <div> {{$currency->is_active}}</div>
-                        <div> {{$currency->icon}}</div>
-                        <div> {{$currency->price}}</div>
+                        <div class="justify-content-between align-items-center border-0">{{$currency->name}}</div>
+                        <div class="justify-content-between align-items-center border-0">{{ $currency->is_active}}</div>
+                        <div class="justify-content-between align-items-center border-0">{{$currency->price}}</div>
+                        <input type="hidden" id="base_64_icon{{$index}}" value="{{$currency->icon}}" class="base_64_icons">
                     </li>
                     @endforeach
                 </ul>
@@ -165,5 +165,24 @@
     </div>
 
 </main>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
+<script>
+    // WHAT THE FUCK DID I JUST WRITE
+    let img = document.createElement('img');
+    let elements = document.getElementsByClassName('base_64_icons');
+    for (var i = 0; i < elements.length; i++) {
+        let base64 = `${elements[i]['value']}`;
+        src = "data:image/png;base64," + base64;
+        $(`#${elements[i]['id']}`).replaceWith(`<img width="50" height="50" src="${src}">`);
+        //replace with div
+        //get div by id    id => `${elements[i]['id']}`
+
+        // 
+        // console.log(success)
+
+    }
+    // img.width = img.height = "50";
+    // document.querySelector('#Updatelogo').innerHTML = img.outerHTML;
+</script>
 @include('Admin.layout.Footer')

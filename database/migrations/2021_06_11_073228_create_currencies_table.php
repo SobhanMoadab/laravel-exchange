@@ -21,7 +21,7 @@ class CreateCurrenciesTable extends Migration
             $table->boolean('is_active');
             //TODO: Implementation Of Live API Price Helper Needed Here
             $table->text('price');
-            $table->string('min')->unullable();
+            $table->string('min')->nullable();
             $table->string('max')->nullable();
             $table->integer('admin_id');
             $table->timestamps();
