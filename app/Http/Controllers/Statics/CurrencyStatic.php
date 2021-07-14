@@ -34,12 +34,14 @@ class CurrencyStatic extends Controller
     public function get_currencies(CurrencyServices $currency, Request $request)
     {
         // result either currencies or an exception
-        $result = $currency->get_currencies($request);
-        if ($result['error']) {
-            return redirect()->back()->with('error', 'مشکلی پیش اومد :(');
-        }
-   
-        return view('Admin.Currency.index', $result);
+        // $result = $currency->get_currencies($request);
+        // if ($result['error']) {
+        //     return redirect()->back()->with('error', 'مشکلی پیش اومد :(');
+        // }
+            $data = [
+                'currencies' => Currency::all()
+            ];
+        return view('Admin.Currency.index', $data);
     }
     
     public function edit_currency(CurrencyServices $currency, Request $request, $id)

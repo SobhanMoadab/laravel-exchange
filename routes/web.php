@@ -10,6 +10,7 @@ use App\Http\Controllers\Statics\OrderStatic;
 use App\Http\Controllers\Statics\PageStatic;
 use App\Http\Controllers\Statics\PermissionStatic;
 use App\Http\Controllers\Statics\PostStatic;
+use App\Http\Controllers\Statics\User\ProfileStatic;
 use App\Http\Controllers\Statics\SettingStatic;
 use Composer\DependencyResolver\Request;
 use Illuminate\Support\Facades\Route;
@@ -83,11 +84,9 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
 });
 
 // USER ROUTES
-Route::group([], function () {
+Route::middleware('auth')->group(function () {
     // profile
-    Route::get('/profile', function () {
-        return view('Admin.Profile.index');
-    })->name('dashboard');
+    Route::get('/profile', [ProfileStatic::class, 'index'])->name('dashboard');
     // order register
     Route::post('/order/verify_email', [OrderServices::class, 'verify_email'])->name('order_verify');
     Route::post('/order/choose_password', [OrderServices::class, 'choose_password'])->name('order_verify');
