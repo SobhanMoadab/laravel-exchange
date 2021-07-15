@@ -281,7 +281,7 @@
             success: function(data) {
                 $.each(data.currencies, function(i, item) {
                     $("#listingCoin").append(`
-                            <button type="submit" id="coinBtn${i}" onclick="close_modal()" onclick="change_icon('${item.icon}')" value="${item.id}"
+                            <button type="submit" id="coinBtn${i}" onclick="change_icon('${item.icon}')" value="${item.id}"
                                 class="list-group-item d-flex justify-content-between  list-group-item-action ">
                                 <div class="d-flex justify-content-between">
                                     <span class="ticker-prog"><img width="30" src="data:image/png;base64,${item.icon}"
@@ -304,10 +304,6 @@
 
     });
     // modal ro bband
-    
-    function close_modal() {
-        console.log('hu')
-    }
 </script>
 
 
