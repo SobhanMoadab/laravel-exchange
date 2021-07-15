@@ -154,16 +154,16 @@
                     @foreach($currencies as $index=>$currency)
                     <li class="list-group-item d-flex align-items-center border-0">
                         <div class="col-3 align-items-center border-0">{{$currency->name}}</div>
-                        <div class="col-3 align-items-center border-0">{{ $currency->is_active}}</div>
+                        <div class="col-3 align-items-center border-0">@if($currency->is_active == 1) فعال @elseif($currency->is_active == 0) غیر فعال @endif</div>
                         <div class="col-2">
-                         <input type="hidden" id="base_64_icon{{$index}}" value="{{$currency->icon}}" class="base_64_icons"> 
+                            <input type="hidden" id="{{$currency->id}}" value="{{$currency->icon}}" class="base_64_icons">
                         </div>
                         <div class="col-2 align-items-center border-0">{{$currency->price}}</div>
                         <div class="col-3 align-items-center border-0">
-                          <button class="btn btn-success">Update</button>
-                          <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-success">Update</button>
+                            <button class="btn btn-danger">Delete</button>
                         </div>
-                        
+
                     </li>
                     @endforeach
                 </ul>
@@ -176,20 +176,16 @@
 
 <script>
     // WHAT THE FUCK DID I JUST WRITE
+    //create img element
     let img = document.createElement('img');
+    // get all elements in class 'base_64_icons'
     let elements = document.getElementsByClassName('base_64_icons');
     for (var i = 0; i < elements.length; i++) {
-        let base64 = `${elements[i]['value']}`;
-        src = "data:image/png;base64," + base64;
-        $(`#${elements[i]['id']}`).replaceWith(`<img width="50" height="50" src="${src}">`);
-        //replace with div
-        //get div by id    id => `${elements[i]['id']}`
-
-        // 
-        // console.log(success)
-
+        // get value of value(base64 string) of input element
+        let base64 = `${elements[i]['value']}`; 
+        src = `data:image/png;base64,${base64}`;
+        //replace each input element with img element
+        $(`#${elements[i]['id']}`).replaceWith(`<img width="50" class="base_64_icons" height="50" src="${src}">`);
     }
-    // img.width = img.height = "50";
-    // document.querySelector('#Updatelogo').innerHTML = img.outerHTML;
 </script>
 @include('Admin.layout.Footer')
