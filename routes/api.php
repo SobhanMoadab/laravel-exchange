@@ -4,7 +4,7 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\PostController;
-use App\Http\Controllers\Core\CurrencyController;
+use App\Http\Controllers\Api\CurrencyController;
 // use App\Http\Controllers\Core\SettingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -26,6 +27,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 //TODO: add middleware to check if user is registered, removed for developement reasons
+Route::get('/currency', [CurrencyController::class, 'get_currencies']);
+
 Route::prefix('/dashboard')->middleware('auth:api')->group(function (): void {
     // B L O G
     // Route::post('/post', [PostController::class, 'create_post'])->middleware(['auth:api', 'role_or_permission:post a blog']);
@@ -50,7 +53,6 @@ Route::prefix('/dashboard')->middleware('auth:api')->group(function (): void {
     Route::get('/get_all_roles', [PermissionController::class, 'get_all_roles']);
     // C U R R E N C Y
     // Route::post('/create_currency', [CurrencyController::class, 'create_currency']);
-    // Route::get('/get_currency', [CurrencyController::class, 'get_currencies']);
     // Route::put('/edit_currency/{id}', [CurrencyController::class, 'edit_currency']);
     // Route::delete('/delete_currency/{id}', [CurrencyController::class, 'delete_currency']);
     // Route::post('/coin_state/{id}', [CurrencyController::class, 'coin_availablity']);

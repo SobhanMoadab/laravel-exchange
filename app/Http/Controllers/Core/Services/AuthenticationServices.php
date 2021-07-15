@@ -49,11 +49,11 @@ class AuthenticationServices
         try {
             $user = User::where('email', $request->email)->first();
             if (!$user) {
-                return ['error' => 'email is wrong or password is wrong'];
+                return ['error' => 'Wrong Credentials'];
             }
             $hash_check = Hash::check($request->password, $user->password);
             if (!$hash_check) {
-                return ['error' => 'email is wrong or password is wrong'];
+                return ['error' => 'Wrong Credentials'];
             }
             if (!$request->remember) {
                 Auth::login($user);

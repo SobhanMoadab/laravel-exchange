@@ -131,32 +131,35 @@
 
         <div class="row mb-4">
             <div class="col-12  ">
-                <li class="list-group-item d-flex justify-content-between align-items-center rounded border-0">
-                    <div>
-                        Currency Name
+                <li class="list-group-item d-flex align-items-center rounded border-0">
+                    <div class="col-3">
+                        Coin Name
                     </div>
-                    <div>
-                        Is_active
+                    <div class="col-3">
+                        Availability
                     </div>
-                    <div>
+                    <div class="col-2">
                         Icon
                     </div>
-                    <div>
-                        Price
-                    </div>
-                    <div>
+                    <div class="col-3">
                         Action
                     </div>
 
                 </li>
                 </ul>
                 <ul class="list-group  mt-2">
-                    @foreach($currencies as $currency)
-                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
-                        <div>{{ $currency->name}}</div>
-                        <div> {{$currency->is_active}}</div>
-                        <div> {{$currency->icon}}</div>
-                        <div> {{$currency->price}}</div>
+                    @foreach($currencies as $index=>$currency)
+                    <li class="list-group-item d-flex align-items-center border-0">
+                        <div class="col-3 align-items-center border-0">{{ucwords($currency->name)}}</div>
+                        <div class="col-3 align-items-center border-0">@if($currency->is_active == 1) Active @elseif($currency->is_active == 0) Deactive @endif</div>
+                        <div class="col-2">
+                            <input type="hidden" id="{{$currency->id}}" value="{{$currency->icon}}" class="base_64_icons">
+                        </div>
+                        <div class="col-3 align-items-center border-0">
+                            <button class="btn btn-success">Update</button>
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
+
                     </li>
                     @endforeach
                 </ul>
@@ -165,5 +168,20 @@
     </div>
 
 </main>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
+<script>
+    // WHAT THE FUCK DID I JUST WRITE
+    //create img element
+    let img = document.createElement('img');
+    // get all elements in class 'base_64_icons'
+    let elements = document.getElementsByClassName('base_64_icons');
+    for (var i = 0; i < elements.length; i++) {
+        // get value of value(base64 string) of input element
+        let base64 = `${elements[i]['value']}`;
+        src = `data:image/png;base64,${base64}`;
+        //replace each input element with img element
+        $(`#${elements[i]['id']}`).replaceWith(`<img width="50" class="base_64_icons" height="50" src="${src}">`);
+    }
+</script>
 @include('Admin.layout.Footer')

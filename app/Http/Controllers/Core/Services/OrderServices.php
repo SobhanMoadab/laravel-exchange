@@ -37,7 +37,6 @@ class OrderServices
                     'amount' => $request->amount
                 ]);
                 Log::create(['action' => 'مرحله اولیه ثبت سفارش ', 'user_id' => Auth::id(), 'is_admin' => false]);
-                return $order;
                 return view('User.Payment');
             }
             $order = Order::create([
