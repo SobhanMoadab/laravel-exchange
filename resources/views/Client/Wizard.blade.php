@@ -65,7 +65,7 @@
                                             <label>You Receive</label>
                                             <input type="text" class="form-control rounded bg-light text-dark border-0 w-100 you-receive" value="0">
                                             <div class="input-group-append">
-                                                <button class="btn btn-primary btn-exchange" type="button" data-toggle="modal" id="sell_to_site_img_icon" data-target="#ModalReceive"></button>
+                                                <button class="btn btn-primary btn-exchange" type="button" data-toggle="modal" id="sell_to_site_img_icon" data-target="#ModalReceive">USD</button>
                                             </div>
                                         </div>
 
@@ -282,7 +282,7 @@
             success: function(data) {
                 $.each(data.currencies, function(i, item) {
                     $("#listingCoin").append(`
-                            <button type="submit" id="coinBtn${i}" onclick="change_icon('${item.icon}')" value="${item.id}"
+                            <button type="submit" id="coinBtn" onclick="change_icon('${item.icon}')" value="${item.id}"
                                 class="list-group-item d-flex justify-content-between  list-group-item-action ">
                                 <div class="d-flex justify-content-between">
                                     <span class="ticker-prog"><img width="30" src="data:image/png;base64,${item.icon}"
@@ -291,23 +291,27 @@
                                         ${item.name.charAt(0).toUpperCase() + item.name.slice(1)}
                                     </span>
                                 </div> 
-                            </button>
-                `)
+                            </button> `)
+
+                });
+            }
+        
+        });
+    });
 
     $('#listingCoin').on('click', '#coinBtn', function() {
-       var value =  $(this).val();
+        var value =  $(this).val();
         $('#closeModal').click();
 
         $.ajax({
             url: '/price/'+value,
             success: function(data) {
                 console.log('success')
-               const res = $.parseJSON(data.currency);
-               const symbol = res.coin.symbol;
-               const price = res.coin.price;
+            const res = $.parseJSON(data.currency);
+            const symbol = res.coin.symbol;
+            const price = res.coin.price;
                 $('#coinName').text(symbol)
                 $('.you-spend').val(price)
-                });
             },
             error: function(err) {
                 console.log({
@@ -316,7 +320,9 @@
             },
             complete: function() {
                 setTimeout(worker, 5000);
+            }
         });
+    });
     // modal ro bband
 </script>
 
