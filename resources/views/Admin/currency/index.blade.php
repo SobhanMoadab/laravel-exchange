@@ -133,16 +133,13 @@
             <div class="col-12  ">
                 <li class="list-group-item d-flex align-items-center rounded border-0">
                     <div class="col-3">
-                        Currency Name
+                        Coin Name
                     </div>
                     <div class="col-3">
-                        Is_active
+                        Availability
                     </div>
                     <div class="col-2">
                         Icon
-                    </div>
-                    <div class="col-2">
-                        Price
                     </div>
                     <div class="col-3">
                         Action
@@ -153,12 +150,11 @@
                 <ul class="list-group  mt-2">
                     @foreach($currencies as $index=>$currency)
                     <li class="list-group-item d-flex align-items-center border-0">
-                        <div class="col-3 align-items-center border-0">{{$currency->name}}</div>
-                        <div class="col-3 align-items-center border-0">@if($currency->is_active == 1) فعال @elseif($currency->is_active == 0) غیر فعال @endif</div>
+                        <div class="col-3 align-items-center border-0">{{ucwords($currency->name)}}</div>
+                        <div class="col-3 align-items-center border-0">@if($currency->is_active == 1) Active @elseif($currency->is_active == 0) Deactive @endif</div>
                         <div class="col-2">
                             <input type="hidden" id="{{$currency->id}}" value="{{$currency->icon}}" class="base_64_icons">
                         </div>
-                        <div class="col-2 align-items-center border-0">{{$currency->price}}</div>
                         <div class="col-3 align-items-center border-0">
                             <button class="btn btn-success">Update</button>
                             <button class="btn btn-danger">Delete</button>
@@ -182,7 +178,7 @@
     let elements = document.getElementsByClassName('base_64_icons');
     for (var i = 0; i < elements.length; i++) {
         // get value of value(base64 string) of input element
-        let base64 = `${elements[i]['value']}`; 
+        let base64 = `${elements[i]['value']}`;
         src = `data:image/png;base64,${base64}`;
         //replace each input element with img element
         $(`#${elements[i]['id']}`).replaceWith(`<img width="50" class="base_64_icons" height="50" src="${src}">`);

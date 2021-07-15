@@ -129,7 +129,7 @@
                                             <label>You Spend</label>
                                             <input type="text" class="form-control rounded bg-light text-dark border-0 w-100 you-spend" value="0.00000">
                                             <div class="input-group-append ">
-                                                <button class="btn btn-primary btn-exchange " type="button" data-toggle="modal" data-target="#YouSpend">BTC</button>
+                                                <button class="btn btn-primary btn-exchange" onload="change_icon()" type="button" data-toggle="modal" data-target="#YouSpend">BTC</button>
                                             </div>
                                         </div>
 
@@ -227,8 +227,7 @@
         </div>
     </div>
 </div>
-<div class="modal slide-top" id="YouSpend" tabindex="-1" role="dialog" aria-labelledby="ModalReceiveTitle"
-    aria-hidden="true">
+<div class="modal slide-top" id="YouSpend" tabindex="-1" role="dialog" aria-labelledby="ModalReceiveTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header border-0">
@@ -237,7 +236,6 @@
             </div>
             <div class="modal-body border-0">
                 <div class="list-group" id="listingCoin">
-           
                 </div>
             </div>
             <div class="modal-footer border-0">
@@ -246,6 +244,8 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
 {{-- <script src="{{asset('js/app.js')}}"></script>
 <script>
     Echo.channel('price').listen('.App\\Events\\PriceList', (e) => {
@@ -272,53 +272,44 @@
         });
     })();
 </script> -->
-<!-- Wizard End-->
-
-
-<!-- End Toast Script -->
-
-
-
-
-
 
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script>
     $(document).ready(() => {
-      var CoinAPI = "https://api.coinstats.app/public/v1/coins";
-      $.getJSON( CoinAPI, {
-        tagmode: "any",
-        format: "json"
-      }).done(function( data ) {
-          console.log(data)
-        $.each( data.coins, function( i, item ) {
-        $( "#listingCoin" ).append(`
-                    <button type="button" id="coinBtn" value="${item.id}"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
-                        <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="${item.icon}"
-                                    alt=""></span>
-                            <span class="px-2 d-flex">
-                                ${item.name}
-                               ( ${item.symbol} )
-                            </span>
-                        </div> 
-                    </button>
-                   
-        `)
-        // if ( i === 3 ) {
-        //   return false;
-        // }
-      });
-    });
-    });
+        $.ajax({
+            url: '/api/currency',
+            success: function(data) {
+                $.each(data.currencies, function(i, item) {
+                    $("#listingCoin").append(`
+                            <button type="button" id="coinBtn" value="${item.id}"
+                                class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                                <div class="d-flex justify-content-between">
+                                    <span class="ticker-prog"><img width="30" src="data:image/png;base64,${item.icon}"
+                                            alt=""></span>
+                                    <span class="px-2 d-flex">
+                                        ${item.name.charAt(0).toUpperCase() + item.name.slice(1)}
+                                    </span>
+                                </div> 
+                            </button>
 
+                `)
+
+                });
+            },
+            error: function(err) {
+                console.log({
+                    err: err
+                });
+            },
+        });
+
+    });
     $('#listingCoin').on('click', '#coinBtn', function() {
-       var value =  $(this).val();
+        var value = $(this).val();
         $('#closeModal').click();
-        $.post('/price/' + value).done( function(data){
+        $.post('/price/' + value).done(function(data) {
             console.log(data);
         });
     });
-    </script>
+</script>
 @include('client.Layout.Footer')
