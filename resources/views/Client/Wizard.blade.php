@@ -54,7 +54,7 @@
                                             <label>You Spend</label>
                                             <input type="text" class="form-control rounded bg-light text-dark border-0 w-100 you-spend" value="0.00000">
                                             <div class="input-group-append ">
-                                                <button class="btn btn-primary btn-exchange " type="button" data-toggle="modal" data-target="#YouSpend">BTC</button>
+                                                <button class="btn btn-primary btn-exchange "  type="button" data-toggle="modal" data-target="#YouSpend" id="coinName"> BTC</button>
                                             </div>
                                         </div>
 
@@ -153,7 +153,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="pr-0 font-weight-500"><span>Buy from us</span></td>
-                                                    <td class="pl-0">
+                                                    <td class="pl-0" id="coinNames">
                                                         Type of exchange
                                                     </td>
                                                 </tr>
@@ -282,7 +282,7 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(() => {
       var CoinAPI = "https://api.coinstats.app/public/v1/coins";
@@ -316,8 +316,25 @@
     $('#listingCoin').on('click', '#coinBtn', function() {
        var value =  $(this).val();
         $('#closeModal').click();
-        $.post('/price/' + value).done( function(data){
-            console.log(data);
+
+        $.ajax({
+            url: '/price/'+value,
+            success: function(data) {
+                console.log('success')
+               const res = $.parseJSON(data.currency);
+               const symbol = res.coin.symbol;
+               const price = res.coin.price;
+                $('#coinName').text(symbol)
+                $('.you-spend').val(price)
+            },
+            error: function(err) {
+                console.log({
+                    err: err
+                });
+            },
+            complete: function() {
+                setTimeout(worker, 5000);
+            }
         });
     });
     </script>

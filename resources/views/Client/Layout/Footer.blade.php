@@ -27,8 +27,8 @@
     
     <!-- JAVASCRIPTS -->
     <script src="/Client/js/smooth-scroll.polyfills.min.js"></script>
-    <script src="/Client/js/gumshoe.polyfills.min.js"></script>
-    <script src="/Client/js/tiny-slider.js"></script>
+    {{-- <script src="/Client/js/gumshoe.polyfills.min.js"></script> --}}
+    {{-- <script src="/Client/js/tiny-slider.js"></script> --}}
     <!-- CUSTOM JS -->
     <script src="/Client/js/app.js"></script>
     {{-- <script src="https://code.jquery.com/jquery-latest.min.js"></script> --}}
