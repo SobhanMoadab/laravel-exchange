@@ -171,12 +171,9 @@
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 <script>
-    // WHAT THE FUCK DID I JUST WRITE
-    //create img element
-    let img = document.createElement('img');
     // get all elements in class 'base_64_icons'
     let elements = document.getElementsByClassName('base_64_icons');
-    for (var i = 0; i < elements.length; i++) {
+    for (let i = 0; i < elements.length; i++) {
         // get value of value(base64 string) of input element
         let base64 = `${elements[i]['value']}`;
         src = `data:image/png;base64,${base64}`;
