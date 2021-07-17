@@ -280,6 +280,7 @@
         amount_1_input.value = "";
         amount_2_input.value = "";
         amount_1_input.attributes['data-currency'].value = name;
+        $('#closeModal').click();
     }
 
     $('#amount_1').keyup(function() {
