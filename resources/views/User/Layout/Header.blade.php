@@ -26,9 +26,8 @@
     <!-- Custom  Css -->
     <link rel="stylesheet" type="text/css" href="/User/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="https://malsup.github.io/jquery.cycle2.js"></script>
-    <script src="https://malsup.github.io/jquery.cycle2.carousel.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body class="bg-light">
