@@ -12,6 +12,7 @@ use App\Http\Controllers\Statics\PermissionStatic;
 use App\Http\Controllers\Statics\PostStatic;
 use App\Http\Controllers\Statics\User\ProfileStatic;
 use App\Http\Controllers\Statics\SettingStatic;
+use App\Http\Controllers\Statics\User\TicketStatic;
 use Composer\DependencyResolver\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -90,6 +91,10 @@ Route::middleware('auth')->group(function () {
     // order register
     Route::post('/order/verify_email', [OrderServices::class, 'verify_email'])->name('order_verify');
     Route::post('/order/choose_password', [OrderServices::class, 'choose_password'])->name('order_verify');
+
+    // ticket
+    Route::get('/ticket', [TicketStatic::class, 'index']);
+    Route::get('/ticket/{id}', [TicketStatic::class, 'show']);
 });
 
 // Route::get('/broadcast', function (PriceServices $price, Request $request) {
