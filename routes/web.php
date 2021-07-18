@@ -110,6 +110,6 @@ Route::get('/price/{id}', function (PriceServices $price_service, $id) {
     return $coin;
 });
 
-Route::get('/wizard', function () {
-    return view('Client.Wizard');
+Route::get('/ad', function () {
+    return view('Admin.Ticket.index');
 })->name('dashboard');

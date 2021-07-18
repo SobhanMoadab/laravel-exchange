@@ -71,3 +71,9 @@ body.show-spinner::after {
 }
 
 
+.chat-input-container{
+  z-index:1;
+}
+.downfile{
+  padding: 10px 0 0 10px !important;
+}
