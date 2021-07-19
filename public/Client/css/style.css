@@ -2271,4 +2271,10 @@ transition: .3s;
 .ticket-show svg{
    margin-top: 12px;
 }
+.select-ticket{
+  width: 450px;
+}
+.select-ticket select {
+ width: 350px;
+}
 /*# sourceMappingURL=style.css.map */
