@@ -5,48 +5,38 @@
     <div class="card border-0 ">
         <div class="card-body">
 
-            <form class="needs-validation" novalidate>
+            <div class="alert alert-danger alert-dismissible fade show" style="display:none" role="alert">
+                <strong>Error! </strong>
+                Please Fill the blank fields!
+            </div>
+            <form name="myProfile" class="profile-permit" onsubmit="return validform()">
+
                 <div class="row border-left mb-3"><label> A color copy of valid passport or other official state ID
                         (e.g. driver's
                         license, identity card, etc). The ID must be valid and contain the client's full
                         name.</label></div>
                 <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label for="validationCustom01">First name</label>
-                        <input type="text" name="f_name" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+                    <div class="col-md-4 mb-3 ">
+                        <label>First name</label>
+                        <input type="text" name="f_name" class="form-control"  placeholder="First name">
                     </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="validationCustom02">Last name</label>
-                        <input type="text" name="l_name" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+                    <div class="col-md-4 mb-3 ">
+                        <label>Last name</label>
+                        <input type="text" name="l_name" class="form-control"  placeholder="Last name"  >
                     </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="validationCustom02">Phone Number</label>
-                        <input type="text" name="phone" class="form-control" id="validationCustom02" placeholder="Phone Number" value="Otto" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+                    <div class="col-md-4 mb-3 ">
+                        <label>Email</label>
+                        <input type="email" name="email-profile"  class="form-control" placeholder="john@doe.com">
                     </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="validationCustom02">Address</label>
-                        <input type="text" name="address" class="form-control" id="validationCustom02" placeholder="Address" value="Otto" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+                    <div class="col-md-4 mb-3 ">
+                        <label>Address</label>
+                        <input type="text" name="address" class="form-control"  placeholder="Address">
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="validationCustom04" class="px-2  border-left">Passport Picture</label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01" required>
-                            <label class="custom-file-label" for="inputGroupFile01"></label>
-                        </div>
-                        <div class="invalid-feedback">
-                            Please provide a valid Email.
+                            <input type="file" name="file-name" class="custom-file-input">
+                            <label class="custom-file-label"></label>
                         </div>
                     </div>
                 </div>
@@ -55,7 +45,7 @@
                         registered address.</label></div>
                 <div class="mb-3">
                     <div class="form-group">
-                        <select class="form-control" name="country_id" placeholder="Contrry" id="ConuntrySelect1">
+                        <select class="form-control" name="country_id" placeholder="Contrry" id="ConuntrySelect1" >
                             @foreach($countries as $country)
                             <option value="{{$country['id']}}">{{$country['name']}}</option>
                             @endforeach

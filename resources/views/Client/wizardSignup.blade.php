@@ -313,7 +313,7 @@ outline: 0 !important;
                     <div id="step3" class="my-2">
                         <input type="text" placeholder="Goodby" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-primary w-100"> Fnish</button>
+                    <button type="submit" class="btn btn-primary w-100"> Finish</button>
                 </div>
             </form>
         </div>

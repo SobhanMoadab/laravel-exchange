@@ -5,6 +5,7 @@
 */
 
 //  Window scroll sticky class add
+
 function windowScroll() {
     const navbar = document.getElementById("navbar");
     const navlink = document.getElementById("nav-link");
@@ -110,6 +111,7 @@ function fadeIn() {
 
 // client-slider
 
+/*error
 var slider = tns({
     container: '.client-slider',
     loop: true,
@@ -129,10 +131,10 @@ var slider = tns({
             items: 2
         }
     }
-});
+});*/
 
 // HOME TITLE ANIMATION
-
+/*error
 const SELECTOR = {
     DEMO: document.querySelector('.heading-title'),
 }
@@ -149,7 +151,7 @@ window.onload = function () {
     }, 700)
 
 };
-
+*/
 //Counter
 
 const counter = document.querySelectorAll('.counter_value');
@@ -229,6 +231,7 @@ function typewrite() {
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #ffffff}";
     document.body.appendChild(css);
 };
+/*error
 window.onload(typewrite());
 
 // js active tab
@@ -242,7 +245,7 @@ function tabs(e) {
 
     e.currentTarget.classList.add('active-menu');
 
-}
+}*/
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -268,4 +271,28 @@ function navPhoneOpen() {
 }
 function navPhoneclose() {
     document.getElementById('nav-phone').classList.remove('menu-mobile-open');
+}
+//form profile
+var firstName = $('.profile-permit input[name=f_name]');
+var lastName= $('.profile-permit input[name=l_name]');
+var address = $('.profile-permit input[name=address]');
+var email = $('.profile-permit input[name=email-profile]');
+var password = $('.profile-permit input[name=Password-profile]');
+var file = $('.profile-permit input[name=file-name]');
+
+function validform(){
+
+    if( firstName.val() == "" || email.val() == "" || lastName.val() == "" || address.val() == "" || file .val() == "" || password.val() == ""){
+
+        $('.alert').css('display','block');
+        return false;
+    }
+
+    var reg_email = /[a-z0-9]+\@+[a-z]+\.+[a-z]/;
+
+    if( !reg_email.test(email.val()) ){
+        $('.alert').html('<strong>Error! </strong> Please Enter a Valid Email');
+        return false;
+    }
+
 }
