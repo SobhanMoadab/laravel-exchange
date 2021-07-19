@@ -77,3 +77,57 @@ body.show-spinner::after {
 .downfile{
   padding: 10px 0 0 10px !important;
 }
+.chat-input-container{
+  box-shadow: none !important;
+}
+#send{
+opacity: 0; 
+width: 0px;
+ transition: all .4s;
+}
+.active-send{
+opacity: 1 !important;
+width: 44px !important;
+/* height: 44px; */
+  transition: all 1s;
+}
+.clearfixs{
+  padding-bottom: 10px;
+}
+.clearfixs::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.status-ticket{
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50px;
+  padding: 0 !important;
+
+}
+ @-webkit-keyframes showSweetAlert  {
+  0% {
+    -webkit-transform: rotateX(80deg);
+            transform: rotateX(80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    opacity: 1;
+  }
+}
+@keyframes showSweetAlert  {
+  0% {
+    -webkit-transform: rotateX(80deg);
+            transform: rotateX(80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    opacity: 1;
+  }
+}

@@ -272,31 +272,28 @@ function navPhoneOpen() {
 function navPhoneclose() {
     document.getElementById('nav-phone').classList.remove('menu-mobile-open');
 }
-<<<<<<< HEAD
 //form profile
 var firstName = $('.profile-permit input[name=f_name]');
-var lastName= $('.profile-permit input[name=l_name]');
+var lastName = $('.profile-permit input[name=l_name]');
 var address = $('.profile-permit input[name=address]');
 var email = $('.profile-permit input[name=email-profile]');
 var password = $('.profile-permit input[name=Password-profile]');
 var file = $('.profile-permit input[name=file-name]');
 
-function validform(){
+function validform() {
 
-    if( firstName.val() == "" || email.val() == "" || lastName.val() == "" || address.val() == "" || file .val() == "" || password.val() == ""){
+    if (firstName.val() == "" || email.val() == "" || lastName.val() == "" || address.val() == "" || file.val() == "" || password.val() == "") {
 
-        $('.alert').css('display','block');
+        $('.alert').css('display', 'block');
         return false;
     }
 
     var reg_email = /[a-z0-9]+\@+[a-z]+\.+[a-z]/;
 
-    if( !reg_email.test(email.val()) ){
+    if (!reg_email.test(email.val())) {
         $('.alert').html('<strong>Error! </strong> Please Enter a Valid Email');
         return false;
     }
 
 }
-=======
-// Ticket Js
->>>>>>> 157d2f498d0adaf41fa380219a28d4176c83670e
+
