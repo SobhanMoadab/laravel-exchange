@@ -180,6 +180,7 @@ return [
         App\Providers\SettingServiceProvider::class,
         App\Providers\CurrencyServiceProvider::class,
         App\Providers\PriceServiceProvider::class,
+        App\Providers\TicketServicesProvider::class,
         App\Providers\PagesServiceProvider::class,
         App\Providers\PostServiceProvider::class,
         App\Providers\AuthenticationServiceProvider::class,

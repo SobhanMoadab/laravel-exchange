@@ -272,6 +272,7 @@ function navPhoneOpen() {
 function navPhoneclose() {
     document.getElementById('nav-phone').classList.remove('menu-mobile-open');
 }
+<<<<<<< HEAD
 //form profile
 var firstName = $('.profile-permit input[name=f_name]');
 var lastName= $('.profile-permit input[name=l_name]');
@@ -296,3 +297,6 @@ function validform(){
     }
 
 }
+=======
+// Ticket Js
+>>>>>>> 157d2f498d0adaf41fa380219a28d4176c83670e

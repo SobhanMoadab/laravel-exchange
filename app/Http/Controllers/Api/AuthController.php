@@ -66,7 +66,7 @@ class AuthController extends Controller
     public function login(AuthenticationServices $auth, Request $request)
     {
         $result = $auth->login($request);
-        return response()->json(['msg' => 'success', 'result' => $result], 200);
+        return response()->json(['msg' => 'success', 'result' => $result,'token'=>$result['token']], 200);
     }
 
     // public function register(Request $request)

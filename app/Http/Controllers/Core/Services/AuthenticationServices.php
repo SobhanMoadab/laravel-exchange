@@ -29,9 +29,8 @@ class AuthenticationServices
             $validated['password'] = bcrypt($request->password);
             $user = User::create($validated);
             $token = $user->createToken('authToken')->accessToken;
-            $user_resource = new UserResource($user);
             Log::create(['action' => ' ساخت حساب کاربری', 'user_id' => $user->id, 'is_admin' => false]);
-            return [$user_resource];
+            return ['result' => [$user], 'token'=>$token];
         } catch (\Exception $e) {
             return ['msg' => $e->getMessage()];
         }

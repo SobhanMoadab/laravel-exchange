@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\Statics;
+namespace App\Http\Controllers\Statics\Admin;
 
 use App\Events\PriceList;
 use App\Http\Controllers\Core\Services\PriceServices;
