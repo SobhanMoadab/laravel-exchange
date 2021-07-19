@@ -1,5 +1,5 @@
 @include('User.Layout.Header')
- 
+
 <section class="mt-5 mb-4">
     <div class="container">
         <div class="row">
@@ -19,6 +19,19 @@
                 </select>
 
             </div>
+            <form action="{{route('user_store_ticket')}}" method="POST">
+                @csrf
+                @include('flash-message')
+                <input name="title" placeholder="title">
+                <input name="content" placeholder="content">
+                <select name="priority">
+                    <option value="high">high</option>
+                    <option value="medium">medium</option>
+                    <option value="low">low</option>
+                </select>
+                <button type="submit">Submit</button>
+
+            </form>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -32,8 +45,7 @@
                     <tr class="link-el" data-href="#">
                         <td class="text-center">1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
                         <td class="text-center">
-                            <div class="text-left text-truncate w-75"><a><i
-                                        class="icon md-comment-list margin-right-5"></i>#6883361 -
+                            <div class="text-left text-truncate w-75"><a><i class="icon md-comment-list margin-right-5"></i>#6883361 -
                                     Error - Wallet 1245-****-1215 Error - Wallet 1245-****-1215</a>
                             </div>
                         </td>
@@ -43,8 +55,7 @@
                     <tr class="link-el" data-href="#">
                         <td class="text-center">1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
                         <td class="text-center">
-                            <div class="text-left text-truncate w-75"><a><i
-                                        class="icon md-comment-list margin-right-5"></i>#6883361 -
+                            <div class="text-left text-truncate w-75"><a><i class="icon md-comment-list margin-right-5"></i>#6883361 -
                                     Error - Wallet 1245-****-1215 Error - Wallet 1245-****-1215</a>
                             </div>
                         </td>
@@ -54,8 +65,7 @@
                     <tr class="link-el" data-href="#">
                         <td class="text-center">1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
                         <td class="text-center">
-                            <div class="text-left text-truncate w-75"><a><i
-                                        class="icon md-comment-list margin-right-5"></i>#6883361 -
+                            <div class="text-left text-truncate w-75"><a><i class="icon md-comment-list margin-right-5"></i>#6883361 -
                                     Error - Wallet 1245-****-1215 Error - Wallet 1245-****-1215</a>
                             </div>
                         </td>
@@ -70,9 +80,8 @@
 </section>
 
 <script>
-
-    $(document).ready(function ($) {
-        $(".link-el").click(function () {
+    $(document).ready(function($) {
+        $(".link-el").click(function() {
             window.location = $(this).data("href");
         });
     });

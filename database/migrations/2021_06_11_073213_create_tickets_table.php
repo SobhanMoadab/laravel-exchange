@@ -15,13 +15,14 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
+            $table->integer('admin_id')->nullable();
             $table->string('title');
-            $table->string('image')->nullabe();
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->text('content');
+            $table->longText('attachments')->nullable();
             $table->integer('status');
-            $table->enum('priority', ['low','medium','high']);
+            $table->enum('priority', ['low', 'medium', 'high']);
             $table->timestamps();
         });
     }

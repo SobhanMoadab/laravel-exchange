@@ -1,18 +1,20 @@
 <?php
 
 use App\Events\PriceList;
+use App\Http\Controllers\Core\Services\Admin\LogStatic;
 use App\Http\Controllers\Core\Services\LogServices;
 use App\Http\Controllers\Core\Services\OrderServices;
 use App\Http\Controllers\Core\Services\PriceServices;
-use App\Http\Controllers\Statics\AuthStatic;
-use App\Http\Controllers\Statics\CurrencyStatic;
-use App\Http\Controllers\Statics\OrderStatic;
-use App\Http\Controllers\Statics\PageStatic;
-use App\Http\Controllers\Statics\PermissionStatic;
-use App\Http\Controllers\Statics\PostStatic;
-use App\Http\Controllers\Statics\User\ProfileStatic;
-use App\Http\Controllers\Statics\SettingStatic;
-use App\Http\Controllers\Statics\User\TicketStatic;
+use App\Http\Controllers\Statics\Admin\AuthStatic;
+use App\Http\Controllers\Statics\Admin\CurrencyStatic;
+use App\Http\Controllers\Statics\Admin\OrderStatic;
+use App\Http\Controllers\Statics\Admin\PageStatic;
+use App\Http\Controllers\Statics\Admin\PermissionStatic;
+use App\Http\Controllers\Statics\Admin\PostStatic;
+use App\Http\Controllers\Statics\Admin\User\ProfileStatic;
+use App\Http\Controllers\Statics\Admin\SettingStatic;
+use App\Http\Controllers\Statics\Admin\TicketStatic as ticketadmin;
+use App\Http\Controllers\Statics\User\TicketStatic as ticketuser;
 use Composer\DependencyResolver\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -80,8 +82,15 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
     Route::post('/pages', [PageStatic::class, 'store'])->name('store_page');
 
     // Logs
-    // route bellow will be turned to methode Post and get methode will be used to show form
+    // route bellow will be turned to methode Post , get methode will be used to show form
     Route::get('/logs/delete/{days}', [LogServices::class, 'truncate_log']);
+
+    // Route::post('', [LogStatic::class, '']);
+
+    // Ticket
+    Route::get('/ticket', [ticketadmin::class, 'index']);
+    Route::get('/ticket/{id}', [ticketadmin::class, 'show']);
+    Route::post('/ticket', [ticketadmin::class, 'store'])->name('store_ticket');
 });
 
 // USER ROUTES
@@ -93,8 +102,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/order/choose_password', [OrderServices::class, 'choose_password'])->name('order_verify');
 
     // ticket
-    Route::get('/ticket', [TicketStatic::class, 'index']);
-    Route::get('/ticket/{id}', [TicketStatic::class, 'show']);
+    Route::get('/ticket', [ticketuser::class, 'index']);
+    Route::get('/ticket/{id}', [ticketuser::class, 'show']);
+    Route::post('/ticket', [ticketuser::class, 'store'])->name('user_store_ticket');
+
 });
 
 // Route::get('/broadcast', function (PriceServices $price, Request $request) {

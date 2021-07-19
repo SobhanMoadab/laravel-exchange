@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\Statics;
+namespace App\Http\Controllers\Statics\Admin;
 
 use App\Http\Controllers\Core\Services\PageServices;
 use App\Models\Pages;

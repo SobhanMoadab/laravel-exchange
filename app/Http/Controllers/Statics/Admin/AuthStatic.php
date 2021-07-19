@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Statics;
+namespace App\Http\Controllers\Statics\Admin;
 
 use App\Http\Controllers\Core\Services\AuthenticationServices;
 use Illuminate\Http\Request;

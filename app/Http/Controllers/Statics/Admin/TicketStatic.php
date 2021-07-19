@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\Statics\User;
+namespace App\Http\Controllers\Statics\Admin;
 
 use App\Http\Controllers\Core\Services\TicketServices;
 use App\Models\Tickets;
@@ -13,12 +13,16 @@ class TicketStatic extends Controller
 {
     public function index()
     {
-        return view('User.Ticket.index');
+        // list of tickets based on status, -> only active (open ticket)
+        // data = [] => all tickets
+        
+        return view('Admin.Ticket.index');
     }
     public function show($id)
     {
-        $data = ['ticket' => Tickets::findOrFail($id)];
-        return view('User.Ticket.show', $data);
+        // todo get ticket by id
+        return view('Admin.Ticket.index');
+
     }
     public function store(TicketServices $ticket, Request $request)
     {
@@ -26,6 +30,16 @@ class TicketStatic extends Controller
         if ($result['error']) {
             return redirect()->back()->with('error', $result['error']);
         }
+
         return redirect()->back()->with('success', 'تیکت با موفقیت ارسال شد');
+    }
+    public function create()
+    {
+    }
+    public function edit($id)
+    {
+    }
+    public function destroy($id)
+    {
     }
 }
