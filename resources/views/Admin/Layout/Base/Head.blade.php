@@ -20,4 +20,6 @@
     <link rel="stylesheet" href="/Admin/css/main.css" />
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="/Admin/js/vendor/jquery-3.3.1.min.js"></script>
+
     
