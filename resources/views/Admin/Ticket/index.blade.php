@@ -9,7 +9,6 @@
                 <div class="d-flex flex-row justify-content-between mb-3 chat-heading-container">
 
                     <div class="card-body pl-0 align-self-center d-flex flex-lg-row justify-content-between min-width-zero">
-
                         <div>
                             <a href="#">
                                 <p class="list-item-heading mb-1 truncate ">Ticket Status</p>
@@ -297,30 +296,31 @@ function get_user_tickets(event){
     })
 }
 
-            document.getElementById('AdminFileTicktBtn').addEventListener('click', fileupload);
+    document.getElementById('AdminFileTicktBtn').addEventListener('click', fileupload);
 
-            function fileupload() {
-                document.getElementById('AdminFileTickt').click();
-            }
-            document.getElementById('send').addEventListener('click', sendMsg); document.getElementById('chat-input').addEventListener("keyup", function(event) {
-                document.getElementById('send').classList.add('active-send')
-                if (this.value == '') {
-                    document.getElementById('send').classList.remove('active-send')
-                }
-                if (event.keyCode === 13) {
-                    event.preventDefault();
-                    document.getElementById('send').click()
-                    document.getElementById('send').classList.remove('active-send')
+    function fileupload() {
+        document.getElementById('AdminFileTickt').click();
+    }
+    document.getElementById('send').addEventListener('click', sendMsg);
+    document.getElementById('chat-input').addEventListener("keyup", function(event) {
+        document.getElementById('send').classList.add('active-send')
+        if (this.value == '') {
+            document.getElementById('send').classList.remove('active-send')
+        }
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById('send').click()
+            document.getElementById('send').classList.remove('active-send')
 
 
-                }
-            });
+        }
+    });
 
-            function sendMsg() {
-                document.getElementById('send').classList.remove('active-send')
-                var msg = $('.chat-input').val()
-                if (!msg == '') {
-                    $('.chat-box').append(`
+    function sendMsg() {
+        document.getElementById('send').classList.remove('active-send')
+        var msg = $('.chat-input').val()
+        if (!msg == '') {
+            $('.chat-box').append(`
                 <div class="card d-inline-block mb-3 float-right mr-2">
                     <div class="position-absolute pt-1 pr-2 r-0">
                         <span class="text-extra-small text-muted">09:41</span>
@@ -370,8 +370,10 @@ function get_user_tickets(event){
                             swal("Your  Ticket is safe!");
                         }
                     });
+               
+            });
 
-            })
+       
 
  
 </script>

@@ -39,7 +39,7 @@
                         <th scope="col">Title</th>
                         <th scope="col">Ticket Status</th>
                         <th scope="col">Last Update</th>
-                        <th scope="col">Image</th>
+                        <th scope="col">File</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,7 +52,9 @@
                         </td>
                         <td class="text-center"><span class="badge  bg-danger">Error</span></td>
                         <td>1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
-                        <td></td>
+                        <td>
+                        <input type="hidden" class="base_64_icons">
+                        </td>
                     </tr>
                     <tr class="link-el" data-href="#">
                         <td class="text-center">1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
@@ -89,5 +91,14 @@
             window.location = $(this).data("href");
         });
     });
+        // get all elements in class 'base_64_icons'
+        let elements = document.getElementsByClassName('base_64_icons');
+    for (let i = 0; i < elements.length; i++) {
+        // get value of value(base64 string) of input element
+        let base64 = `${elements[i]['value']}`;
+        src = `data:image/png;base64,${base64}`;
+        //replace each input element with img element
+        $(`#${elements[i]['id']}`).replaceWith(`<img width="50" class="base_64_icons" height="50" src="${src}">`);
+    }
 </script>
 @include('User.Layout.Footer')

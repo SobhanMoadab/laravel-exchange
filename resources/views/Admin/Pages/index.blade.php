@@ -2,7 +2,7 @@
 @include('Admin.Layout.SidebarNav')
 <main>
     <div class="container-fluid">
-        <div class="row app-row">
+        <div class="row">
             <div class="col-12">
                 <div class="mb-2">
                     <h1>Pages</h1>
@@ -176,33 +176,7 @@
             </div>
         </div>
     </div>
-    <div class="app-menu">
-        <div class="p-4 h-100">
-            <div class="scroll">
-                <p class="text-muted text-small">Status</p>
-                <ul class="list-unstyled mb-5">
-                    <li class="active">
-                        <a href="#">
-                            <i class="simple-icon-refresh"></i>
-                            Active Surveys
-                            <span class="float-right">2</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="simple-icon-check"></i>
-                            Completed Surveys
-                            <span class="float-right">1</span>
 
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <a class="app-menu-button d-inline-block d-xl-none" href="#">
-            <i class="simple-icon-options"></i>
-        </a>
-    </div>
 </main>
 
 @include('Admin.Layout.Footer')

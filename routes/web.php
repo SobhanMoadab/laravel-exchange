@@ -127,11 +127,6 @@ Route::get('/price/{id}', function (PriceServices $price_service, $id) {
     return $coin;
 });
 
-
-
-Route::get('/ad', function () {
-    return view('Admin.Ticket.index');
-});
-Route::get('/app', function () {
-    return view('Admin.Ticket.a');
+Route::get('/test', function () {
+        return view('Client.wizardSignUp');
 });
