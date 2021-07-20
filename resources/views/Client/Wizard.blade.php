@@ -184,25 +184,24 @@
                 <div class="stepbodytwo my-3">
                     <div class="row">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="First name">
+                            <input type="email" name="email" class="form-control" placeholder="Email">
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Last name">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="First name">
+                            <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Your Password">
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Last name">
+                        <label for="default" class="control-label">Countries</label>
+                            <select type="text" name="country_id" class="form-control country_select2" style="width: 100%">
+                                @foreach($countries as $country)
+                                <option value="{{$country['id']}}">{{$country['name']}}</option>
+                                @endforeach
+                            </select>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="First name">
-                        </div>
-
                     </div>
                     <div class="d-flex justify-content-around">
                         <button type="button" id="step-two-back" class="btn btn-secondary w-50 mx-1"> back</button>
@@ -270,8 +269,9 @@
         });
     })();
 </script> -->
-
 <script src="https://code.jqSuery.com/jquery-3.6.0.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
     function change_logo(icon, name) {
         $('#currency_id').attr('src', `data:image/png;base64,${icon}`);
@@ -323,59 +323,86 @@
 
         });
     });
-    $().ready(function () {
-    $('.line').animate({ width: '30%' }, 1000, 'easeInOutQuint')
-    $('.stepOne').animate({ color: '#7A57D1' })
-    if ($('.you-spend').val() == '') {
-        $('.you-spend').val('0')
-    }
-    $(".you-spend").keyup(function () {
-        $(".you-receive").val($(this).val() * 2350);
-    });
-    $.niceToast.setup({
-        position: "bottom-right",
-        timeout: 5000,
-    });
-})
-$('.step-next').click(
-    function () {
-        if ($('.you-spend').val() == 0 || $('.you-receive').val() == 0) {
-            $.niceToast.error("Please enter the number");
+    $().ready(function() {
+        $('.line').animate({
+            width: '30%'
+        }, 1000, 'easeInOutQuint')
+        $('.stepOne').animate({
+            color: '#7A57D1'
+        })
+        if ($('.you-spend').val() == '') {
+            $('.you-spend').val('0')
         }
-        else if ($('.you-receive').val() <= 540000) {
-            $.niceToast.error('The maximum amount payable in each purchase must be 540000$');
+        $(".you-spend").keyup(function() {
+            $(".you-receive").val($(this).val() * 2350);
+        });
+        $.niceToast.setup({
+            position: "bottom-right",
+            timeout: 5000,
+        });
+    })
+    $('.step-next').click(
+        function() {
+            if ($('.you-spend').val() == 0 || $('.you-receive').val() == 0) {
+                $.niceToast.error("Please enter the number");
+            } else if ($('.you-receive').val() <= 540000) {
+                $.niceToast.error('The maximum amount payable in each purchase must be 540000$');
+            } else {
+                $('.line').animate({
+                    width: '60%'
+                }, 1000, 'easeInOutQuint')
+                $('.stepOne').animate({
+                    color: '#7A57D1'
+                })
+                $('.stepTwo').animate({
+                    color: '#7A57D1'
+                })
+
+                $('.stepbodyone').slideUp('fast')
+                $('.stepbodytwo').slideDown('fast');
+            }
         }
-        else {
-            $('.line').animate({ width: '60%' }, 1000, 'easeInOutQuint')
-            $('.stepOne').animate({ color: '#7A57D1' })
-            $('.stepTwo').animate({ color: '#7A57D1' })
+    )
+    $('#step-two-next').click(
+        function() {
+            $('.line').animate({
+                width: '100%'
+            }, 1000, 'easeInOutQuint')
+            $('.stepOne').animate({
+                color: '#7A57D1'
+            })
+            $('.stepTwo').animate({
+                color: '#7A57D1'
+            })
+            $('.stepTree').animate({
+                color: '#7A57D1'
+            })
 
-            $('.stepbodyone').slideUp('fast')
-            $('.stepbodytwo').slideDown('fast');
+            $('.stepbodytwo').slideUp('fast')
+            $('.stepbodytree').slideDown('fast');
         }
-    }
-)
-$('#step-two-next').click(
-    function () {
-        $('.line').animate({ width: '100%' }, 1000, 'easeInOutQuint')
-        $('.stepOne').animate({ color: '#7A57D1' })
-        $('.stepTwo').animate({ color: '#7A57D1' })
-        $('.stepTree').animate({ color: '#7A57D1' })
+    )
+    $('#step-two-back').click(
+        function() {
+            $('.stepOne').animate({
+                color: '#7A57D1'
+            })
+            $('.stepTwo').animate({
+                color: '#aaa'
+            })
 
-        $('.stepbodytwo').slideUp('fast')
-        $('.stepbodytree').slideDown('fast');
-    }
-)
-$('#step-two-back').click(
-    function () {
-        $('.stepOne').animate({ color: '#7A57D1' })
-        $('.stepTwo').animate({ color: '#aaa' })
+            $('.line').animate({
+                width: '30%'
+            }, 1000, 'easeInOutQuint')
+            $('.stepbodytwo').slideUp('fast');
+            $('.stepbodyone').slideDown('fast');
+        }
+    )
+    $('.country_select2').select2();
+	$('.country_select2').materialSelect();
+	
 
-        $('.line').animate({ width: '30%' }, 1000, 'easeInOutQuint')
-        $('.stepbodytwo').slideUp('fast');
-        $('.stepbodyone').slideDown('fast');
-    }
-)
+
 </script>
 
 

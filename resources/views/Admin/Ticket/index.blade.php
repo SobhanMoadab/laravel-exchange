@@ -25,7 +25,6 @@
                             {{-- Date Create Ticket  --}}
                             <p class="mb-0 text-muted text-small">Ticket Created: 2021/3/4 01:24</p>
                         </div>
-
                         <div>
                             {{-- close Chat (delete) --}}
                             <button type="button" id="delTicket" class="btn btn-outline-danger mx-4">
@@ -118,7 +117,6 @@
 
 
 
-
             {{-- ########    Chat notfound   ########### --}}
             {{-- <div class="col-12 chat-app">
                     <div class="scroll" id="scroll-chat">
@@ -141,18 +139,16 @@
 
     <div class="app-menu">
 
-                {{-- Modal Button  --}}
-                <button class=" btn btn-primary rounded-2 w-100" type="button" data-toggle="modal" data-backdrop="static" data-target="#TicketCreate">Create New Ticket </button>
-                {{-- End --}}
-           
+        {{-- Modal Button  --}}
+        <button class=" btn btn-primary rounded-2 w-100" type="button" data-toggle="modal" data-backdrop="static" data-target="#TicketCreate">Create New Ticket </button>
+        {{-- End --}}
+
         <ul class="nav nav-tabs card-header-tabs ml-0 mr-0 my-1" role="tablist">
             <li class="nav-item w-50 text-center">
-                <a class="nav-link active" id="first-tab" data-toggle="tab" href="#firstFull" role="tab"
-                    aria-selected="true">Messages</a>
+                <a class="nav-link active" id="first-tab" data-toggle="tab" href="#firstFull" role="tab" aria-selected="true">Messages</a>
             </li>
             <li class="nav-item w-50 text-center">
-                <a class="nav-link" id="second-tab" data-toggle="tab" href="#secondFull" role="tab"
-                    aria-selected="false">Contacts</a>
+                <a class="nav-link" id="second-tab" data-toggle="tab" href="#secondFull" role="tab" aria-selected="false">Contacts</a>
             </li>
         </ul>
         <div class="p-4 h-75">
@@ -162,83 +158,74 @@
             </div>
             <div class="tab-content h-100">
 
-                <div class="tab-pane fade show active  h-100" id="firstFull" role="tabpanel"
-                aria-labelledby="first-tab">
+                <div class="tab-pane fade show active  h-100" id="firstFull" role="tabpanel" aria-labelledby="first-tab">
 
-                <div class="scroll">
+                    <div class="scroll">
 
-                    <div class="d-flex flex-row mb-1 border-bottom pb-3 mb-3">
-                        <a class="d-flex" href="#">
-                            <img alt="Profile Picture" src="/Admin/img/profiles/l-1.jpg"
-                                class="img-thumbnail border-0 rounded-circle mr-3 list-thumbnail align-self-center xsmall">
-                        </a>
-                        <div class="d-flex flex-grow-1 min-width-zero">
-                            <div
-                                class="pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
-                                <div class="min-width-zero">
-                                    <a href="#">
-                                        <p class=" mb-0 truncate">Sarah Kortney</p>
-                                    </a>
-                                    <p class="mb-1 text-muted text-small">14:20</p>
+                        <div class="d-flex flex-row mb-1 border-bottom pb-3 mb-3">
+                            <a class="d-flex" href="#">
+                                <img alt="Profile Picture" src="/Admin/img/profiles/l-1.jpg" class="img-thumbnail border-0 rounded-circle mr-3 list-thumbnail align-self-center xsmall">
+                            </a>
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div class="pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                                    <div class="min-width-zero">
+                                        <a href="#">
+                                            <p class=" mb-0 truncate">Sarah Kortney</p>
+                                        </a>
+                                        <p class="mb-1 text-muted text-small">14:20</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
 
-                    <div class="d-flex flex-row mb-1 border-bottom pb-3 mb-3">
-                        <a class="d-flex" href="#">
-                            <img alt="Profile Picture" src="/Admin/img/profiles/l-2.jpg"
-                                class="img-thumbnail border-0 rounded-circle mr-3 list-thumbnail align-self-center xsmall">
-                        </a>
-                        <div class="d-flex flex-grow-1 min-width-zero">
-                            <div
-                                class="pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
-                                <div class="min-width-zero">
-                                    <a href="#">
-                                        <p class=" mb-0 truncate">Rasheeda Vaquera</p>
-                                    </a>
-                                    <p class="mb-1 text-muted text-small">11:10</p>
+                        <div class="d-flex flex-row mb-1 border-bottom pb-3 mb-3">
+                            <a class="d-flex" href="#">
+                                <img alt="Profile Picture" src="/Admin/img/profiles/l-2.jpg" class="img-thumbnail border-0 rounded-circle mr-3 list-thumbnail align-self-center xsmall">
+                            </a>
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div class="pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                                    <div class="min-width-zero">
+                                        <a href="#">
+                                            <p class=" mb-0 truncate">Rasheeda Vaquera</p>
+                                        </a>
+                                        <p class="mb-1 text-muted text-small">11:10</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="d-flex flex-row mb-1 border-bottom pb-3 mb-3">
-                        <a class="d-flex" href="#">
-                            <img alt="Profile Picture" src="/Admin/img/profiles/l-3.jpg"
-                                class="img-thumbnail border-0 rounded-circle mr-3 list-thumbnail align-self-center xsmall">
-                        </a>
-                        <div class="d-flex flex-grow-1 min-width-zero">
-                            <div
-                                class="pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
-                                <div class="min-width-zero">
-                                    <a href="#">
-                                        <p class=" mb-0 truncate">Shelia Otterson</p>
-                                    </a>
-                                    <p class="mb-1 text-muted text-small">09:50</p>
+                        <div class="d-flex flex-row mb-1 border-bottom pb-3 mb-3">
+                            <a class="d-flex" href="#">
+                                <img alt="Profile Picture" src="/Admin/img/profiles/l-3.jpg" class="img-thumbnail border-0 rounded-circle mr-3 list-thumbnail align-self-center xsmall">
+                            </a>
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div class="pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                                    <div class="min-width-zero">
+                                        <a href="#">
+                                            <p class=" mb-0 truncate">Shelia Otterson</p>
+                                        </a>
+                                        <p class="mb-1 text-muted text-small">09:50</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="d-flex flex-row mb-1  pb-3 mb-3">
-                        <a class="d-flex" href="#">
-                            <img alt="Profile Picture" src="/Admin/img/profiles/l-4.jpg"
-                                class="img-thumbnail border-0 rounded-circle mr-3 list-thumbnail align-self-center xsmall">
-                        </a>
-                        <div class="d-flex flex-grow-1 min-width-zero">
-                            <div
-                                class="pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
-                                <div class="min-width-zero">
-                                    <a href="#">
-                                        <p class=" mb-0 truncate">Latarsha Gama</p>
-                                    </a>
-                                    <p class="mb-1 text-muted text-small">09:10</p>
+                        <div class="d-flex flex-row mb-1  pb-3 mb-3">
+                            <a class="d-flex" href="#">
+                                <img alt="Profile Picture" src="/Admin/img/profiles/l-4.jpg" class="img-thumbnail border-0 rounded-circle mr-3 list-thumbnail align-self-center xsmall">
+                            </a>
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div class="pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                                    <div class="min-width-zero">
+                                        <a href="#">
+                                            <p class=" mb-0 truncate">Latarsha Gama</p>
+                                        </a>
+                                        <p class="mb-1 text-muted text-small">09:10</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
 
 

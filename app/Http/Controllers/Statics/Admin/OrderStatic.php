@@ -15,8 +15,14 @@ class OrderStatic extends Controller
 
     public function register_order_form()
     {
+        $response = Http::withHeaders([
+            'X-CSCAPI-KEY' => env('COUNTRY_API_KEY'),
+        ])->get('https://api.countrystatecity.in/v1/countries');
+        $response = strval($response->getBody());
+        $response = json_decode($response, true);
         $data = [
-            'Currencies' => Currency::all()
+            'Currencies' => Currency::all(),
+            'countries' =>$response
         ];
         return view('Client.Wizard', $data);
     }

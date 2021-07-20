@@ -94,7 +94,6 @@
     .slide-top {
         -webkit-animation: slide-top 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
         animation: slide-top 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
-<<<<<<< HEAD
     }
 
     @-webkit-keyframes slide-top {
@@ -109,22 +108,6 @@
         }
     }
 
-=======
-    }
-
-    @-webkit-keyframes slide-top {
-        0% {
-            -webkit-transform: translateY(100px);
-            transform: translateY(100px);
-        }
-
-        100% {
-            -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-        }
-    }
-
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
     @keyframes slide-top {
         0% {
             -webkit-transform: translateY(100px);
@@ -143,10 +126,6 @@
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
 </style>
 <!-- START HOME -->
 <div class="container">
@@ -197,13 +176,7 @@
                                             <label>You Spend</label>
                                             <input type="text" class="form-control rounded bg-light text-dark border-0 w-100 you-spend" value="0.00000">
                                             <div class="input-group-append ">
-<<<<<<< HEAD
-                                                <button class="btn btn-primary btn-exchange " type="button"
-                                                    data-toggle="modal" data-target="#YouSpend" id="coinName">
-                                                    BTC</button>
-=======
                                                 <button class="btn btn-primary btn-exchange " type="button" data-toggle="modal" data-target="#YouSpend">BTC</button>
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                                             </div>
                                         </div>
 
@@ -268,35 +241,15 @@
 
                                     <div class="card-body  d-flex justify-content-center  row">
                                         <div class="input-group">
-<<<<<<< HEAD
-                                            <label>You Receive</label>
-                                            <input type="text"
-                                                class="form-control rounded bg-light text-dark border-0 w-100 you-receive"
-                                                value="0">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary btn-exchange " type="button"
-                                                    data-toggle="modal" data-target="#ModalReceive">USD</button>
-=======
                                             <input type="text" class="form-control rounded bg-light text-white border-0 w-100" placeholder=" You Spend ">
                                             <div class="input-group-append ">
                                                 <button class="btn btn-primary btn-exchange " type="button">USD</button>
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                                             </div>
                                         </div>
                                         <div class="input-group">
-<<<<<<< HEAD
-                                            <label>You Spend</label>
-                                            <input type="text"
-                                                class="form-control rounded bg-light text-dark border-0 w-100 you-spend"
-                                                value="0.00000">
-                                            <div class="input-group-append ">
-                                                <button class="btn btn-primary btn-exchange " type="button"
-                                                    data-toggle="modal" data-target="#YouSpend">BTC</button>
-=======
                                             <input type="text" class="form-control rounded text-white bg-light border-0 w-100" placeholder=" You Receive ">
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary btn-exchange " type="button" data-toggle="modal" data-target="#ModalReceive">BTC</button>
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                                             </div>
                                         </div>
 
@@ -379,26 +332,6 @@
                         <button type="button" id="step-two-next" class="btn btn-primary w-50 mx-1"> next</button>
                     </div>
                 </div>
-<<<<<<< HEAD
-                <div class="stepbodytree my-3">
-                    <div class="step-tree-form">
-                        <div class="row">
-                            <div class="col">
-                                <input type="text" class="form-control" name="fullname" placeholder="Full name">
-                            </div>
-                            <div class="col">
-                                <input type="email" class="form-control" name="email" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <input type="password" class="form-control" name="password" placeholder="Password">
-                            </div>
-                            <div class="col">
-                                <input type="password" class="form-control" name="confirm_password"
-                                    placeholder="confirm Password">
-                            </div>
-=======
                 <div class="stepbodytree">
                     <div id="step1" class="my-2">
                         <input type="text" class="form-control" placeholder="Username">
@@ -442,7 +375,6 @@
                             <span class="px-2">
                                 BTC
                             </span>
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                         </div>
                         <div class="row ">
                             <div class="col">
@@ -453,13 +385,6 @@
                                     <option value="fdfd">sdfdsfsdf</option>
                                 </select>
 
-<<<<<<< HEAD
-                            </div>
-                            <div class="col">
-                                <label> Enter Personal Cart</label>
-                                <input type="file" class="form-control">
-                            </div>
-=======
                         <div>
                             12000100$
                         </div>
@@ -471,30 +396,8 @@
                                 BTC
                             </span>
                         </div>
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
 
                         </div>
-<<<<<<< HEAD
-                    </div>
-                    <div class="row wizard-verify  ">
-                        <div class="col d-flex justify-content-center">
-                            <input type="text" class="form-control w-50 text-center border-info "
-                                placeholder="Enter Code">
-                        </div>
-
-                    </div>
-                    <div class="d-flex justify-content-around">
-                        <button type="button" id="step-tree-back" class="btn btn-secondary w-50 mx-1"> back</button>
-                        <button type="button" id="step-tree-check" class="btn disabled   btn-secondary w-50 mx-1">
-                            Check</button>
-                        <button type="button" id="step-tree-next" class="btn btn-primary w-50 mx-1 d-none">
-                            next</button>
-                    </div>
-                </div>
-                <div class="stepbodyfor">
-
-                    <div class="d-flex justify-content-around align-content-center py-5">
-=======
                     </button>
                     <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
@@ -515,7 +418,6 @@
                                 BTC
                             </span>
                         </div>
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
 
                         <a class=" btn rounded-2 shadow-poper-3 d-flex align-content-center p-5">
                             payment
@@ -523,10 +425,6 @@
                         <div class=" btn rounded-2 shadow-poper-3 d-flex align-content-center p-5">
                             payment
                         </div>
-<<<<<<< HEAD
-                        <div class=" btn rounded-2 shadow-poper-3 d-flex align-content-center p-5">
-                            payment
-=======
                     </button>
                     <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
@@ -534,7 +432,6 @@
                             <span class="px-2">
                                 BTC
                             </span>
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                         </div>
 
 
@@ -554,10 +451,6 @@
                 </h5>
             </div>
             <div class="modal-body border-0">
-<<<<<<< HEAD
-                <div class="list-group" id="listingCoin">
-
-=======
                 <div class="list-group">
                     <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
@@ -631,7 +524,6 @@
                             12000100$
                         </div>
                     </button>
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                 </div>
             </div>
             <div class="modal-footer border-0">
@@ -675,15 +567,9 @@
         $.getJSON(CoinAPI, {
             tagmode: "any",
             format: "json"
-<<<<<<< HEAD
-        }).done(function (data) {
-            console.log(data)
-            $.each(data.coins, function (i, item) {
-=======
         }).done(function(data) {
             console.log(data)
             $.each(data.coins, function(i, item) {
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                 $("#listingCoin").append(`
                     <button type="button" id="coinBtn" value="${item.id}"
                         class="list-group-item d-flex justify-content-between  list-group-item-action ">
@@ -705,21 +591,13 @@
         });
     });
 
-<<<<<<< HEAD
-    $('#listingCoin').on('click', '#coinBtn', function () {
-=======
     $('#listingCoin').on('click', '#coinBtn', function() {
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
         var value = $(this).val();
         $('#closeModal').click();
 
         $.ajax({
             url: '/price/' + value,
-<<<<<<< HEAD
-            success: function (data) {
-=======
             success: function(data) {
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                 console.log('success')
                 const res = $.parseJSON(data.currency);
                 const symbol = res.coin.symbol;
@@ -727,25 +605,16 @@
                 $('#coinName').text(symbol)
                 $('.you-spend').val(price)
             },
-<<<<<<< HEAD
-            error: function (err) {
-=======
             error: function(err) {
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                 console.log({
                     err: err
                 });
             },
-<<<<<<< HEAD
-            complete: function () {
-=======
             complete: function() {
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                 setTimeout(worker, 5000);
             }
         });
     });
-<<<<<<< HEAD
     $().ready(function () {
         $('.line').animate({
             width: '25%'
@@ -937,8 +806,6 @@
 
     })
 
-=======
->>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
 </script>
 
 
