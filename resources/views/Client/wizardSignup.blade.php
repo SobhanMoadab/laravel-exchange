@@ -2,114 +2,130 @@
 
 <link rel="stylesheet" href="/Client/css/Wizard.css">
 <!-- Toast Css Link -->
-<link href="https://cdn.jsdelivr.net/npm/nice-toast-js/dist/css/nice-toast-js.min.css" rel="stylesheet"
-    type="text/css" />
+<link href="https://cdn.jsdelivr.net/npm/nice-toast-js/dist/css/nice-toast-js.min.css" rel="stylesheet" type="text/css" />
 <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 <style>
- .line{
-    height: 5px;
-    width: 0%;
-    border-radius: 40px;
-    background-color: #7A57D1;
-    box-shadow: 0 0 10px 0 var(--bs-indigo);
-    z-index: 3;
-}
-.line::before{
-    content: '';
-    height: 5px;
-    background-color: #0003;
-    border-radius: 50px;
-    position: absolute;
-    z-index: 0;
-    width: 96%;
-}
-.stepbodytwo{
-    display:none;
-   }
-   .stepbodytree{
-    display:none;
-   }
-   .stepbodyfor{
-    display:none;
-   }
-   .stepOne{
-    color:transparent ;
-}
-   .stepTwo{
-    color:transparent ;
-}
-.stepTree{
-    color:transparent ;
-}
-.stepFor{
-    color:transparent ;
-}
-.wizard-verify{
-    display: none;
-}
-.modal{
-    position: fixed;
-    bottom: 0;
-    top:auto;
-    right: auto;
-    left: auto;
-    height:auto;
-    padding-right: auto !important;
-    overflow-y: hidden !important;
-}
-.modal.fade .modal-dialog {
-    transition:transform .3s ease-out;
-    transform:translate(0, 0) !important;
-}
-
-.modal-dialog.modal-dialog-centered{
-    margin-bottom: 0 !important;
-    max-width: 1000px !important;
-}
-@media only screen and (max-width:991px){
-.modal-dialog.modal-dialog-centered{
-    margin: 0 !important;
-    max-width: 1000px !important;
-}
-}
-.modal-content{
-
-border: 0px solid transparent !important;
-border-radius: 20px 20px 0 0 !important;
-outline: 0 !important;
-}
-
-.slide-top {
-	-webkit-animation: slide-top 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
-	        animation: slide-top 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
-}
-
- @-webkit-keyframes slide-top {
-    0% {
-        -webkit-transform: translateY(100px);
-        transform: translateY(100px);
+    .line {
+        height: 5px;
+        width: 0%;
+        border-radius: 40px;
+        background-color: #7A57D1;
+        box-shadow: 0 0 10px 0 var(--bs-indigo);
+        z-index: 3;
     }
-    100% {
-      -webkit-transform: translateY(0px);
-              transform: translateY(0px);
+
+    .line::before {
+        content: '';
+        height: 5px;
+        background-color: #0003;
+        border-radius: 50px;
+        position: absolute;
+        z-index: 0;
+        width: 96%;
     }
-  }
-  @keyframes slide-top {
-    0% {
-        -webkit-transform: translateY(100px);
-        transform: translateY(100px);
+
+    .stepbodytwo {
+        display: none;
     }
-    100% {
-      -webkit-transform: translateY(0px);
-              transform: translateY(0px);
+
+    .stepbodytree {
+        display: none;
     }
-  }
-  .list-group{
-    max-height: 220px;
-    margin-bottom: 10px;
-    overflow-y:scroll;
-    -webkit-overflow-scrolling: touch;
-}
+
+    .stepbodyfor {
+        display: none;
+    }
+
+    .stepOne {
+        color: transparent;
+    }
+
+    .stepTwo {
+        color: transparent;
+    }
+
+    .stepTree {
+        color: transparent;
+    }
+
+    .stepFor {
+        color: transparent;
+    }
+
+    .wizard-verify {
+        display: none;
+    }
+
+    .modal {
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        right: auto;
+        left: auto;
+        height: auto;
+        padding-right: auto !important;
+        overflow-y: hidden !important;
+    }
+
+    .modal.fade .modal-dialog {
+        transition: transform .3s ease-out;
+        transform: translate(0, 0) !important;
+    }
+
+    .modal-dialog.modal-dialog-centered {
+        margin-bottom: 0 !important;
+        max-width: 1000px !important;
+    }
+
+    @media only screen and (max-width:991px) {
+        .modal-dialog.modal-dialog-centered {
+            margin: 0 !important;
+            max-width: 1000px !important;
+        }
+    }
+
+    .modal-content {
+
+        border: 0px solid transparent !important;
+        border-radius: 20px 20px 0 0 !important;
+        outline: 0 !important;
+    }
+
+    .slide-top {
+        -webkit-animation: slide-top 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+        animation: slide-top 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+    }
+
+    @-webkit-keyframes slide-top {
+        0% {
+            -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+        }
+
+        100% {
+            -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes slide-top {
+        0% {
+            -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+        }
+
+        100% {
+            -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+        }
+    }
+
+    .list-group {
+        max-height: 220px;
+        margin-bottom: 10px;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
 </style>
 <!-- START HOME -->
 <div class="container">
@@ -148,23 +164,18 @@ outline: 0 !important;
                             </div>
                         </div>
 
-                        <div class="card-body d-flex justify-content-center align-content-center row  exchange"
-                            id="sell-body">
+                        <div class="card-body d-flex justify-content-center align-content-center row  exchange" id="sell-body">
                             <div class="col-12 col-sm-12 col-lg-6">
-                                <div
-                                    class="card bg-transparent border-0  d-flex justify-content-center align-content-center row ">
+                                <div class="card bg-transparent border-0  d-flex justify-content-center align-content-center row ">
 
                                     <div class="card-body  d-flex justify-content-center  row">
 
 
                                         <div class="input-group">
                                             <label>You Spend</label>
-                                            <input type="text"
-                                                class="form-control rounded bg-light text-dark border-0 w-100 you-spend"
-                                                value="0.00000">
+                                            <input type="text" class="form-control rounded bg-light text-dark border-0 w-100 you-spend" value="0.00000">
                                             <div class="input-group-append ">
-                                                <button class="btn btn-primary btn-exchange " type="button"
-                                                    data-toggle="modal" data-target="#YouSpend">BTC</button>
+                                                <button class="btn btn-primary btn-exchange " type="button" data-toggle="modal" data-target="#YouSpend">BTC</button>
                                             </div>
                                         </div>
 
@@ -172,12 +183,9 @@ outline: 0 !important;
 
                                         <div class="input-group">
                                             <label>You Receive</label>
-                                            <input type="text"
-                                                class="form-control rounded bg-light text-dark border-0 w-100 you-receive"
-                                                value="0">
+                                            <input type="text" class="form-control rounded bg-light text-dark border-0 w-100 you-receive" value="0">
                                             <div class="input-group-append">
-                                                <button class="btn btn-primary btn-exchange " type="button"
-                                                    data-toggle="modal" data-target="#ModalReceive">USD</button>
+                                                <button class="btn btn-primary btn-exchange " type="button" data-toggle="modal" data-target="#ModalReceive">USD</button>
                                             </div>
                                         </div>
 
@@ -212,8 +220,7 @@ outline: 0 !important;
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="pr-0 font-weight-500 position-relative"><span
-                                                            class="text-success">live</span>
+                                                    <td class="pr-0 font-weight-500 position-relative"><span class="text-success">live</span>
                                                         <!---->
                                                     </td>
                                                     <td class="pl-0"><span>Purchase status</span></td>
@@ -227,19 +234,15 @@ outline: 0 !important;
                             <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">
                                 exchange</button>
                         </div>
-                        <div class="card-body d-none justify-content-center align-content-center row  exchange"
-                            id="Purchase-body">
+                        <div class="card-body d-none justify-content-center align-content-center row  exchange" id="Purchase-body">
                             <div class="col-12 col-sm-12 col-lg-6">
-                                <div
-                                    class="card bg-transparent border-0  d-flex justify-content-center align-content-center row ">
+                                <div class="card bg-transparent border-0  d-flex justify-content-center align-content-center row ">
 
                                     <div class="card-body  d-flex justify-content-center  row">
 
 
                                         <div class="input-group">
-                                            <input type="text"
-                                                class="form-control rounded bg-light text-white border-0 w-100"
-                                                placeholder=" You Spend ">
+                                            <input type="text" class="form-control rounded bg-light text-white border-0 w-100" placeholder=" You Spend ">
                                             <div class="input-group-append ">
                                                 <button class="btn btn-primary btn-exchange " type="button">USD</button>
                                             </div>
@@ -248,12 +251,9 @@ outline: 0 !important;
 
 
                                         <div class="input-group">
-                                            <input type="text"
-                                                class="form-control rounded text-white bg-light border-0 w-100"
-                                                placeholder=" You Receive ">
+                                            <input type="text" class="form-control rounded text-white bg-light border-0 w-100" placeholder=" You Receive ">
                                             <div class="input-group-append">
-                                                <button class="btn btn-primary btn-exchange " type="button"
-                                                    data-toggle="modal" data-target="#ModalReceive">BTC</button>
+                                                <button class="btn btn-primary btn-exchange " type="button" data-toggle="modal" data-target="#ModalReceive">BTC</button>
                                             </div>
                                         </div>
 
@@ -319,8 +319,7 @@ outline: 0 !important;
         </div>
     </div>
 </div>
-<div class="modal slide-top" id="ModalReceive" tabindex="-1" role="dialog" aria-labelledby="ModalReceiveTitle"
-    aria-hidden="true">
+<div class="modal slide-top" id="ModalReceive" tabindex="-1" role="dialog" aria-labelledby="ModalReceiveTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header border-0">
@@ -329,11 +328,9 @@ outline: 0 !important;
             </div>
             <div class="modal-body border-0">
                 <div class="list-group">
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
                             <span class="px-2">
                                 BTC
                             </span>
@@ -343,11 +340,9 @@ outline: 0 !important;
                             12000100$
                         </div>
                     </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
                             <span class="px-2">
                                 BTC
                             </span>
@@ -357,11 +352,9 @@ outline: 0 !important;
                             12000100$
                         </div>
                     </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
                             <span class="px-2">
                                 BTC
                             </span>
@@ -371,11 +364,9 @@ outline: 0 !important;
                             12000100$
                         </div>
                     </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
                             <span class="px-2">
                                 BTC
                             </span>
@@ -385,11 +376,9 @@ outline: 0 !important;
                             12000100$
                         </div>
                     </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
                             <span class="px-2">
                                 BTC
                             </span>
@@ -399,11 +388,9 @@ outline: 0 !important;
                             12000100$
                         </div>
                     </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
                             <span class="px-2">
                                 BTC
                             </span>
@@ -421,8 +408,7 @@ outline: 0 !important;
         </div>
     </div>
 </div>
-<div class="modal slide-top" id="YouSpend" tabindex="-1" role="dialog" aria-labelledby="ModalReceiveTitle"
-    aria-hidden="true">
+<div class="modal slide-top" id="YouSpend" tabindex="-1" role="dialog" aria-labelledby="ModalReceiveTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header border-0">
@@ -431,11 +417,9 @@ outline: 0 !important;
             </div>
             <div class="modal-body border-0">
                 <div class="list-group">
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
                             <span class="px-2">
                                 BTC
                             </span>
@@ -445,11 +429,9 @@ outline: 0 !important;
                             12000100$
                         </div>
                     </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
                             <span class="px-2">
                                 BTC
                             </span>
@@ -459,11 +441,9 @@ outline: 0 !important;
                             12000100$
                         </div>
                     </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
                             <span class="px-2">
                                 BTC
                             </span>
@@ -473,11 +453,9 @@ outline: 0 !important;
                             12000100$
                         </div>
                     </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
                             <span class="px-2">
                                 BTC
                             </span>
@@ -487,11 +465,9 @@ outline: 0 !important;
                             12000100$
                         </div>
                     </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
                             <span class="px-2">
                                 BTC
                             </span>
@@ -501,11 +477,9 @@ outline: 0 !important;
                             12000100$
                         </div>
                     </button>
-                    <button type="button"
-                        class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
-                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg"
-                                    alt=""></span>
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
                             <span class="px-2">
                                 BTC
                             </span>
@@ -530,7 +504,6 @@ outline: 0 !important;
     Echo.channel('price').listen('.App\\Events\\PriceList', (e) => {
         console.log(e);
     });
-
 </script> --}}
 <!-- <script>
     (function worker() {
@@ -555,15 +528,15 @@ outline: 0 !important;
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-        $(document).ready(() => {
-            var CoinAPI = "https://api.coinstats.app/public/v1/coins";
-            $.getJSON(CoinAPI, {
-                tagmode: "any",
-                format: "json"
-            }).done(function (data) {
-                console.log(data)
-                $.each(data.coins, function (i, item) {
-                    $("#listingCoin").append(`
+    $(document).ready(() => {
+        var CoinAPI = "https://api.coinstats.app/public/v1/coins";
+        $.getJSON(CoinAPI, {
+            tagmode: "any",
+            format: "json"
+        }).done(function(data) {
+            console.log(data)
+            $.each(data.coins, function(i, item) {
+                $("#listingCoin").append(`
                     <button type="button" id="coinBtn" value="${item.id}"
                         class="list-group-item d-flex justify-content-between  list-group-item-action ">
                         <div class="d-flex justify-content-between">
@@ -577,38 +550,38 @@ outline: 0 !important;
                     </button>
                    
         `)
-                    // if ( i === 3 ) {
-                    //   return false;
-                    // }
+                // if ( i === 3 ) {
+                //   return false;
+                // }
+            });
+        });
+    });
+
+    $('#listingCoin').on('click', '#coinBtn', function() {
+        var value = $(this).val();
+        $('#closeModal').click();
+
+        $.ajax({
+            url: '/price/' + value,
+            success: function(data) {
+                console.log('success')
+                const res = $.parseJSON(data.currency);
+                const symbol = res.coin.symbol;
+                const price = res.coin.price;
+                $('#coinName').text(symbol)
+                $('.you-spend').val(price)
+            },
+            error: function(err) {
+                console.log({
+                    err: err
                 });
-            });
+            },
+            complete: function() {
+                setTimeout(worker, 5000);
+            }
         });
-
-        $('#listingCoin').on('click', '#coinBtn', function () {
-            var value = $(this).val();
-            $('#closeModal').click();
-
-            $.ajax({
-                url: '/price/' + value,
-                success: function (data) {
-                    console.log('success')
-                    const res = $.parseJSON(data.currency);
-                    const symbol = res.coin.symbol;
-                    const price = res.coin.price;
-                    $('#coinName').text(symbol)
-                    $('.you-spend').val(price)
-                },
-                error: function (err) {
-                    console.log({
-                        err: err
-                    });
-                },
-                complete: function () {
-                    setTimeout(worker, 5000);
-                }
-            });
-        });
-    </script>
+    });
+</script>
 
 
 @include('client.Layout.Footer')
