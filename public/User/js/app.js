@@ -296,7 +296,6 @@ function validform() {
     }
 
 }
-<<<<<<< HEAD
 //base64 upload image ticket
 function imageUploadedTicket() {
     var fileInput = document.getElementById('ticketImage');
@@ -312,5 +311,3 @@ function imageUploadedTicket() {
 }
 
 // Ticket Js
-=======
->>>>>>> ac2bbe2844e6f3e675e70ea7f8dba655fc4716f1
