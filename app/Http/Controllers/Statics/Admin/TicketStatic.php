@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Statics\Admin;
 
 use App\Http\Controllers\Core\Services\TicketServices;
 use App\Models\Tickets;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Http;
@@ -15,14 +16,16 @@ class TicketStatic extends Controller
     {
         // list of tickets based on status, -> only active (open ticket)
         // data = [] => all tickets
-        
-        return view('Admin.Ticket.index');
+    //    return User::with('tickets')->get()->toArray();
+        $data = [
+            'users' => User::with('tickets')->get()->toArray()
+        ];
+        return view('Admin.Ticket.index', $data);
     }
     public function show($id)
     {
         // todo get ticket by id
         return view('Admin.Ticket.index');
-
     }
     public function store(TicketServices $ticket, Request $request)
     {

@@ -30,6 +30,12 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/currency', [CurrencyController::class, 'get_currencies']);
 
 Route::prefix('/dashboard')->middleware('auth:api')->group(function (): void {
+
+    // T I C K E T 
+    Route::get('/ticket', [TicketController::class, 'get_tickets']);
+
+
+
     // B L O G
     // Route::post('/post', [PostController::class, 'create_post'])->middleware(['auth:api', 'role_or_permission:post a blog']);
     // Route::delete('/post/{id}', [PostController::class, 'delete_post'])->middleware(['auth:api', 'role:SubAdmin']);
