@@ -50,7 +50,7 @@
  <script src="https://cdn.jsdelivr.net/npm/nice-toast-js/dist/js/nice-toast-js.min.js"
  type="text/javascript"></script>
  
-    <script src="/client/js/Wizard.js"></script>
+
 </body>
 
 </html>
