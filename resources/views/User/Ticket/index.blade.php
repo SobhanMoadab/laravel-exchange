@@ -22,14 +22,14 @@
             <form action="{{route('user_store_ticket')}}" method="POST">
                 @csrf
                 @include('flash-message')
-                <input name="title" placeholder="title">
-                <input name="content" placeholder="content">
-                <select name="priority">
+                <input name="title" class="form-control d-inline w-25" placeholder="title">
+                <input name="content" class="form-control d-inline w-25" placeholder="content">
+                <select name="priority" class="form-select d-inline w-25">
                     <option value="high">high</option>
                     <option value="medium">medium</option>
                     <option value="low">low</option>
                 </select>
-                <button type="submit">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
 
             </form>
             <table class="table table-hover">
@@ -39,6 +39,7 @@
                         <th scope="col">Title</th>
                         <th scope="col">Ticket Status</th>
                         <th scope="col">Last Update</th>
+                        <th scope="col">Image</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,8 +50,9 @@
                                     Error - Wallet 1245-****-1215 Error - Wallet 1245-****-1215</a>
                             </div>
                         </td>
-                        <td class="text-center"><span class="badge  bg-danger">Danger</span></td>
+                        <td class="text-center"><span class="badge  bg-danger">Error</span></td>
                         <td>1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
+                        <td></td>
                     </tr>
                     <tr class="link-el" data-href="#">
                         <td class="text-center">1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
@@ -61,6 +63,7 @@
                         </td>
                         <td class="text-center"><span class="badge  bg-success">Done</span></td>
                         <td>1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
+                        <td></td>
                     </tr>
                     <tr class="link-el" data-href="#">
                         <td class="text-center">1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
@@ -71,6 +74,7 @@
                         </td>
                         <td class="text-center"><span class="badge  bg-info">in progress</span></td>
                         <td>1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
+                        <td></td>
                     </tr>
 
                 </tbody>

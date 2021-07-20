@@ -28,10 +28,11 @@
                             <p>Message</p>
                             <textarea class="w-100" rows="9" name="textarea"></textarea>
                             <p>attachment</p>
-                            <p class="fw-light">Allowed extensions: .jpg, .gif, .jpeg, .png, .txt, .pdf, .zip, .rar
+                            <p class="fw-light">Allowed extensions: .jpg, .gif, .jpeg, .png, 
                             </p>
                             <div id="ticket-attachment">
-                                <input class="form-control file-ticket" type="file">
+                                <input class="form-control file-ticket" type="file" id="ticketImage" onchange="imageUploadedTicket();" accept=".png, .jpg, .jpeg, .gif">
+                                <input type="hidden" name="icon" id="upload_base_ticket" />
                             </div>
                             <input id="ticket-add" type="button" class="btn btn-primary float-end"
                                 value="New attachment">
