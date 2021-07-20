@@ -9,7 +9,6 @@
                 <div class="d-flex flex-row justify-content-between mb-3 chat-heading-container">
 
                     <div class="card-body pl-0 align-self-center d-flex flex-lg-row justify-content-between min-width-zero">
-
                         <div>
                             <a href="#">
                                 <p class="list-item-heading mb-1 truncate ">Ticket Status</p>
@@ -141,20 +140,109 @@
     </div>
 
     <div class="app-menu">
-        <ul class="nav nav-tabs card-header-tabs ml-0 mr-0 mb-1" role="tablist">
-            <li class="nav-item w-100 text-center">
+
                 {{-- Modal Button  --}}
                 <button class=" btn btn-primary rounded-2 w-100" type="button" data-toggle="modal" data-backdrop="static" data-target="#TicketCreate">Create New Ticket </button>
                 {{-- End --}}
+           
+        <ul class="nav nav-tabs card-header-tabs ml-0 mr-0 my-1" role="tablist">
+            <li class="nav-item w-50 text-center">
+                <a class="nav-link active" id="first-tab" data-toggle="tab" href="#firstFull" role="tab"
+                    aria-selected="true">Messages</a>
+            </li>
+            <li class="nav-item w-50 text-center">
+                <a class="nav-link" id="second-tab" data-toggle="tab" href="#secondFull" role="tab"
+                    aria-selected="false">Contacts</a>
             </li>
         </ul>
-
         <div class="p-4 h-75">
             <div class="form-group">
                 {{-- Sreach User Ticket --}}
                 <input type="text" class="form-control rounded" placeholder="Search">
             </div>
             <div class="tab-content h-100">
+
+                <div class="tab-pane fade show active  h-100" id="firstFull" role="tabpanel"
+                aria-labelledby="first-tab">
+
+                <div class="scroll">
+
+                    <div class="d-flex flex-row mb-1 border-bottom pb-3 mb-3">
+                        <a class="d-flex" href="#">
+                            <img alt="Profile Picture" src="/Admin/img/profiles/l-1.jpg"
+                                class="img-thumbnail border-0 rounded-circle mr-3 list-thumbnail align-self-center xsmall">
+                        </a>
+                        <div class="d-flex flex-grow-1 min-width-zero">
+                            <div
+                                class="pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                                <div class="min-width-zero">
+                                    <a href="#">
+                                        <p class=" mb-0 truncate">Sarah Kortney</p>
+                                    </a>
+                                    <p class="mb-1 text-muted text-small">14:20</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="d-flex flex-row mb-1 border-bottom pb-3 mb-3">
+                        <a class="d-flex" href="#">
+                            <img alt="Profile Picture" src="/Admin/img/profiles/l-2.jpg"
+                                class="img-thumbnail border-0 rounded-circle mr-3 list-thumbnail align-self-center xsmall">
+                        </a>
+                        <div class="d-flex flex-grow-1 min-width-zero">
+                            <div
+                                class="pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                                <div class="min-width-zero">
+                                    <a href="#">
+                                        <p class=" mb-0 truncate">Rasheeda Vaquera</p>
+                                    </a>
+                                    <p class="mb-1 text-muted text-small">11:10</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row mb-1 border-bottom pb-3 mb-3">
+                        <a class="d-flex" href="#">
+                            <img alt="Profile Picture" src="/Admin/img/profiles/l-3.jpg"
+                                class="img-thumbnail border-0 rounded-circle mr-3 list-thumbnail align-self-center xsmall">
+                        </a>
+                        <div class="d-flex flex-grow-1 min-width-zero">
+                            <div
+                                class="pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                                <div class="min-width-zero">
+                                    <a href="#">
+                                        <p class=" mb-0 truncate">Shelia Otterson</p>
+                                    </a>
+                                    <p class="mb-1 text-muted text-small">09:50</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row mb-1  pb-3 mb-3">
+                        <a class="d-flex" href="#">
+                            <img alt="Profile Picture" src="/Admin/img/profiles/l-4.jpg"
+                                class="img-thumbnail border-0 rounded-circle mr-3 list-thumbnail align-self-center xsmall">
+                        </a>
+                        <div class="d-flex flex-grow-1 min-width-zero">
+                            <div
+                                class="pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                                <div class="min-width-zero">
+                                    <a href="#">
+                                        <p class=" mb-0 truncate">Latarsha Gama</p>
+                                    </a>
+                                    <p class="mb-1 text-muted text-small">09:10</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
                 {{-- Ticket List  --}}
 
                 <div class="tab-pane fade  h-100 active show" id="secondFull" role="tabpanel" aria-labelledby="second-tab">
@@ -275,30 +363,31 @@
 <script>
     // user ticket data
 
-            document.getElementById('AdminFileTicktBtn').addEventListener('click', fileupload);
+    document.getElementById('AdminFileTicktBtn').addEventListener('click', fileupload);
 
-            function fileupload() {
-                document.getElementById('AdminFileTickt').click();
-            }
-            document.getElementById('send').addEventListener('click', sendMsg); document.getElementById('chat-input').addEventListener("keyup", function(event) {
-                document.getElementById('send').classList.add('active-send')
-                if (this.value == '') {
-                    document.getElementById('send').classList.remove('active-send')
-                }
-                if (event.keyCode === 13) {
-                    event.preventDefault();
-                    document.getElementById('send').click()
-                    document.getElementById('send').classList.remove('active-send')
+    function fileupload() {
+        document.getElementById('AdminFileTickt').click();
+    }
+    document.getElementById('send').addEventListener('click', sendMsg);
+    document.getElementById('chat-input').addEventListener("keyup", function(event) {
+        document.getElementById('send').classList.add('active-send')
+        if (this.value == '') {
+            document.getElementById('send').classList.remove('active-send')
+        }
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById('send').click()
+            document.getElementById('send').classList.remove('active-send')
 
 
-                }
-            });
+        }
+    });
 
-            function sendMsg() {
-                document.getElementById('send').classList.remove('active-send')
-                var msg = $('.chat-input').val()
-                if (!msg == '') {
-                    $('.chat-box').append(`
+    function sendMsg() {
+        document.getElementById('send').classList.remove('active-send')
+        var msg = $('.chat-input').val()
+        if (!msg == '') {
+            $('.chat-box').append(`
                 <div class="card d-inline-block mb-3 float-right mr-2">
                     <div class="position-absolute pt-1 pr-2 r-0">
                         <span class="text-extra-small text-muted">09:41</span>
@@ -324,29 +413,29 @@
                     </div>
                 </div>
                 <div class="clearfixs"></div>`)
-                    $('.chat-input').val('');
-                    var elements = document.getElementById("scroll-chat");
-                    elements.scrollTop = elements.scrollHeight;
-                }
-            }
-            document.getElementById('delTicket').addEventListener("click", function() {
-                swal({
-                        title: "Are you sure?",
-                        text: "Once Close",
-                        icon: "warning",
-                        buttons: true,
-                        dangerMode: true,
-                    })
-                    .then((willDelete) => {
-                        if (willDelete) {
-                            swal("Ticket Closed !", {
-                                icon: "success",
-                            });
-                        } else {
-                            swal("Your  Ticket is safe!");
-                        }
-                    });
-
+            $('.chat-input').val('');
+            var elements = document.getElementById("scroll-chat");
+            elements.scrollTop = elements.scrollHeight;
+        }
+    }
+    document.getElementById('delTicket').addEventListener("click", function() {
+        swal({
+                title: "Are you sure?",
+                text: "Once Close",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
             })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Ticket Closed !", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Your  Ticket is safe!");
+                }
+            });
+
+    })
 </script>
 @include('./Admin/Layout/Footer')

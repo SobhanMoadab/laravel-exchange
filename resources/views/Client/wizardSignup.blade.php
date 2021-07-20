@@ -2,8 +2,7 @@
 
 <link rel="stylesheet" href="/Client/css/Wizard.css">
 <!-- Toast Css Link -->
-<link href="https://cdn.jsdelivr.net/npm/nice-toast-js/dist/css/nice-toast-js.min.css" rel="stylesheet"
-    type="text/css" />
+<link href="https://cdn.jsdelivr.net/npm/nice-toast-js/dist/css/nice-toast-js.min.css" rel="stylesheet" type="text/css" />
 <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 <style>
     .line {
@@ -95,6 +94,7 @@
     .slide-top {
         -webkit-animation: slide-top 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
         animation: slide-top 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+<<<<<<< HEAD
     }
 
     @-webkit-keyframes slide-top {
@@ -109,6 +109,22 @@
         }
     }
 
+=======
+    }
+
+    @-webkit-keyframes slide-top {
+        0% {
+            -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+        }
+
+        100% {
+            -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+        }
+    }
+
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
     @keyframes slide-top {
         0% {
             -webkit-transform: translateY(100px);
@@ -127,7 +143,10 @@
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
 </style>
 <!-- START HOME -->
 <div class="container">
@@ -167,24 +186,24 @@
                             </div>
                         </div>
 
-                        <div class="card-body d-flex justify-content-center align-content-center row  exchange"
-                            id="sell-body">
+                        <div class="card-body d-flex justify-content-center align-content-center row  exchange" id="sell-body">
                             <div class="col-12 col-sm-12 col-lg-6">
-                                <div
-                                    class="card bg-transparent border-0  d-flex justify-content-center align-content-center row ">
+                                <div class="card bg-transparent border-0  d-flex justify-content-center align-content-center row ">
 
                                     <div class="card-body  d-flex justify-content-center  row">
 
 
                                         <div class="input-group">
                                             <label>You Spend</label>
-                                            <input type="text"
-                                                class="form-control rounded bg-light text-dark border-0 w-100 you-spend"
-                                                value="0.00000">
+                                            <input type="text" class="form-control rounded bg-light text-dark border-0 w-100 you-spend" value="0.00000">
                                             <div class="input-group-append ">
+<<<<<<< HEAD
                                                 <button class="btn btn-primary btn-exchange " type="button"
                                                     data-toggle="modal" data-target="#YouSpend" id="coinName">
                                                     BTC</button>
+=======
+                                                <button class="btn btn-primary btn-exchange " type="button" data-toggle="modal" data-target="#YouSpend">BTC</button>
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                                             </div>
                                         </div>
 
@@ -192,12 +211,9 @@
 
                                         <div class="input-group">
                                             <label>You Receive</label>
-                                            <input type="text"
-                                                class="form-control rounded bg-light text-dark border-0 w-100 you-receive"
-                                                value="0">
+                                            <input type="text" class="form-control rounded bg-light text-dark border-0 w-100 you-receive" value="0">
                                             <div class="input-group-append">
-                                                <button class="btn btn-primary btn-exchange " type="button"
-                                                    data-toggle="modal" data-target="#ModalReceive">USD</button>
+                                                <button class="btn btn-primary btn-exchange " type="button" data-toggle="modal" data-target="#ModalReceive">USD</button>
                                             </div>
                                         </div>
 
@@ -232,8 +248,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="pr-0 font-weight-500 position-relative"><span
-                                                            class="text-success">live</span>
+                                                    <td class="pr-0 font-weight-500 position-relative"><span class="text-success">live</span>
                                                         <!---->
                                                     </td>
                                                     <td class="pl-0"><span>Purchase status</span></td>
@@ -247,14 +262,13 @@
                             <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">
                                 exchange</button>
                         </div>
-                        <div class="card-body d-none justify-content-center align-content-center row  exchange"
-                            id="Purchase-body">
+                        <div class="card-body d-none justify-content-center align-content-center row  exchange" id="Purchase-body">
                             <div class="col-12 col-sm-12 col-lg-6">
-                                <div
-                                    class="card bg-transparent border-0  d-flex justify-content-center align-content-center row ">
+                                <div class="card bg-transparent border-0  d-flex justify-content-center align-content-center row ">
 
                                     <div class="card-body  d-flex justify-content-center  row">
                                         <div class="input-group">
+<<<<<<< HEAD
                                             <label>You Receive</label>
                                             <input type="text"
                                                 class="form-control rounded bg-light text-dark border-0 w-100 you-receive"
@@ -262,9 +276,15 @@
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary btn-exchange " type="button"
                                                     data-toggle="modal" data-target="#ModalReceive">USD</button>
+=======
+                                            <input type="text" class="form-control rounded bg-light text-white border-0 w-100" placeholder=" You Spend ">
+                                            <div class="input-group-append ">
+                                                <button class="btn btn-primary btn-exchange " type="button">USD</button>
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                                             </div>
                                         </div>
                                         <div class="input-group">
+<<<<<<< HEAD
                                             <label>You Spend</label>
                                             <input type="text"
                                                 class="form-control rounded bg-light text-dark border-0 w-100 you-spend"
@@ -272,6 +292,11 @@
                                             <div class="input-group-append ">
                                                 <button class="btn btn-primary btn-exchange " type="button"
                                                     data-toggle="modal" data-target="#YouSpend">BTC</button>
+=======
+                                            <input type="text" class="form-control rounded text-white bg-light border-0 w-100" placeholder=" You Receive ">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary btn-exchange " type="button" data-toggle="modal" data-target="#ModalReceive">BTC</button>
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                                             </div>
                                         </div>
 
@@ -354,6 +379,7 @@
                         <button type="button" id="step-two-next" class="btn btn-primary w-50 mx-1"> next</button>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div class="stepbodytree my-3">
                     <div class="step-tree-form">
                         <div class="row">
@@ -372,6 +398,51 @@
                                 <input type="password" class="form-control" name="confirm_password"
                                     placeholder="confirm Password">
                             </div>
+=======
+                <div class="stepbodytree">
+                    <div id="step1" class="my-2">
+                        <input type="text" class="form-control" placeholder="Username">
+                    </div>
+                    <div id="step2 " class="my-2">
+                        <input type="text" placeholder="password" class="form-control">
+                    </div>
+                    <div id="step3" class="my-2">
+                        <input type="text" placeholder="Goodby" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100"> Finish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal slide-top" id="ModalReceive" tabindex="-1" role="dialog" aria-labelledby="ModalReceiveTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title
+                </h5>
+            </div>
+            <div class="modal-body border-0">
+                <div class="list-group">
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                        <div class="d-flex justify-content-between">
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
+                            <span class="px-2">
+                                BTC
+                            </span>
+                        </div>
+
+                        <div>
+                            12000100$
+                        </div>
+                    </button>
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                        <div class="d-flex justify-content-between">
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
+                            <span class="px-2">
+                                BTC
+                            </span>
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                         </div>
                         <div class="row ">
                             <div class="col">
@@ -382,13 +453,28 @@
                                     <option value="fdfd">sdfdsfsdf</option>
                                 </select>
 
+<<<<<<< HEAD
                             </div>
                             <div class="col">
                                 <label> Enter Personal Cart</label>
                                 <input type="file" class="form-control">
                             </div>
+=======
+                        <div>
+                            12000100$
+                        </div>
+                    </button>
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                        <div class="d-flex justify-content-between">
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
+                            <span class="px-2">
+                                BTC
+                            </span>
+                        </div>
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
 
                         </div>
+<<<<<<< HEAD
                     </div>
                     <div class="row wizard-verify  ">
                         <div class="col d-flex justify-content-center">
@@ -408,6 +494,28 @@
                 <div class="stepbodyfor">
 
                     <div class="d-flex justify-content-around align-content-center py-5">
+=======
+                    </button>
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                        <div class="d-flex justify-content-between">
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
+                            <span class="px-2">
+                                BTC
+                            </span>
+                        </div>
+
+                        <div>
+                            12000100$
+                        </div>
+                    </button>
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                        <div class="d-flex justify-content-between">
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
+                            <span class="px-2">
+                                BTC
+                            </span>
+                        </div>
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
 
                         <a class=" btn rounded-2 shadow-poper-3 d-flex align-content-center p-5">
                             payment
@@ -415,8 +523,18 @@
                         <div class=" btn rounded-2 shadow-poper-3 d-flex align-content-center p-5">
                             payment
                         </div>
+<<<<<<< HEAD
                         <div class=" btn rounded-2 shadow-poper-3 d-flex align-content-center p-5">
                             payment
+=======
+                    </button>
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                        <div class="d-flex justify-content-between">
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
+                            <span class="px-2">
+                                BTC
+                            </span>
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                         </div>
 
 
@@ -428,8 +546,7 @@
         </div>
     </div>
 </div>
-<div class="modal slide-top" id="YouSpend" tabindex="-1" role="dialog" aria-labelledby="ModalReceiveTitle"
-    aria-hidden="true">
+<div class="modal slide-top" id="YouSpend" tabindex="-1" role="dialog" aria-labelledby="ModalReceiveTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header border-0">
@@ -437,8 +554,84 @@
                 </h5>
             </div>
             <div class="modal-body border-0">
+<<<<<<< HEAD
                 <div class="list-group" id="listingCoin">
 
+=======
+                <div class="list-group">
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                        <div class="d-flex justify-content-between">
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
+                            <span class="px-2">
+                                BTC
+                            </span>
+                        </div>
+
+                        <div>
+                            12000100$
+                        </div>
+                    </button>
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                        <div class="d-flex justify-content-between">
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
+                            <span class="px-2">
+                                BTC
+                            </span>
+                        </div>
+
+                        <div>
+                            12000100$
+                        </div>
+                    </button>
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                        <div class="d-flex justify-content-between">
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
+                            <span class="px-2">
+                                BTC
+                            </span>
+                        </div>
+
+                        <div>
+                            12000100$
+                        </div>
+                    </button>
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                        <div class="d-flex justify-content-between">
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
+                            <span class="px-2">
+                                BTC
+                            </span>
+                        </div>
+
+                        <div>
+                            12000100$
+                        </div>
+                    </button>
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                        <div class="d-flex justify-content-between">
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
+                            <span class="px-2">
+                                BTC
+                            </span>
+                        </div>
+
+                        <div>
+                            12000100$
+                        </div>
+                    </button>
+                    <button type="button" class="list-group-item d-flex justify-content-between  list-group-item-action ">
+                        <div class="d-flex justify-content-between">
+                            <span class="ticker-prog"><img width="30" src="./images/svg/bitcoin-441959.svg" alt=""></span>
+                            <span class="px-2">
+                                BTC
+                            </span>
+                        </div>
+
+                        <div>
+                            12000100$
+                        </div>
+                    </button>
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                 </div>
             </div>
             <div class="modal-footer border-0">
@@ -453,7 +646,6 @@
     Echo.channel('price').listen('.App\\Events\\PriceList', (e) => {
         console.log(e);
     });
-
 </script> --}}
 <!-- <script>
     (function worker() {
@@ -483,9 +675,15 @@
         $.getJSON(CoinAPI, {
             tagmode: "any",
             format: "json"
+<<<<<<< HEAD
         }).done(function (data) {
             console.log(data)
             $.each(data.coins, function (i, item) {
+=======
+        }).done(function(data) {
+            console.log(data)
+            $.each(data.coins, function(i, item) {
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                 $("#listingCoin").append(`
                     <button type="button" id="coinBtn" value="${item.id}"
                         class="list-group-item d-flex justify-content-between  list-group-item-action ">
@@ -507,13 +705,21 @@
         });
     });
 
+<<<<<<< HEAD
     $('#listingCoin').on('click', '#coinBtn', function () {
+=======
+    $('#listingCoin').on('click', '#coinBtn', function() {
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
         var value = $(this).val();
         $('#closeModal').click();
 
         $.ajax({
             url: '/price/' + value,
+<<<<<<< HEAD
             success: function (data) {
+=======
+            success: function(data) {
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                 console.log('success')
                 const res = $.parseJSON(data.currency);
                 const symbol = res.coin.symbol;
@@ -521,16 +727,25 @@
                 $('#coinName').text(symbol)
                 $('.you-spend').val(price)
             },
+<<<<<<< HEAD
             error: function (err) {
+=======
+            error: function(err) {
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                 console.log({
                     err: err
                 });
             },
+<<<<<<< HEAD
             complete: function () {
+=======
+            complete: function() {
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
                 setTimeout(worker, 5000);
             }
         });
     });
+<<<<<<< HEAD
     $().ready(function () {
         $('.line').animate({
             width: '25%'
@@ -722,6 +937,8 @@
 
     })
 
+=======
+>>>>>>> 9bff9c220838d14e2861b9aadacc89bbfbe10809
 </script>
 
 
