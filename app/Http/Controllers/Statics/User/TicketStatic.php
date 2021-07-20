@@ -20,6 +20,10 @@ class TicketStatic extends Controller
         $data = ['ticket' => Tickets::findOrFail($id)];
         return view('User.Ticket.show', $data);
     }
+    public function create(){
+        return view('User.Ticket.create');
+
+    }
     public function store(TicketServices $ticket, Request $request)
     {
         $result = $ticket->store($request);

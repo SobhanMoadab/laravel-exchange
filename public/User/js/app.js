@@ -296,3 +296,18 @@ function validform() {
     }
 
 }
+//base64 upload image ticket
+function imageUploadedTicket() {
+    var fileInput = document.getElementById('ticketImage');
+
+    var reader = new FileReader();
+    reader.readAsDataURL(fileInput.files[0]);
+
+    reader.onload = function () {
+        // console.log(reader.result);//base64encoded string
+        document.getElementById('upload_base_ticket').value = reader.result.replace("data:", "")
+            .replace(/^.+,/, "");
+    };
+}
+
+// Ticket Js

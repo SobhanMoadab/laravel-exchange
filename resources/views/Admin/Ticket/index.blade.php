@@ -29,7 +29,7 @@
 
                         <div>
                             {{-- close Chat (delete) --}}
-                            <button type="button" id="delTicket" class="btn btn-outline-danger mx-4" >
+                            <button type="button" id="delTicket" class="btn btn-outline-danger mx-4">
                                 Close the ticket
                             </button>
                         </div>
@@ -68,7 +68,7 @@
                         <div class="clearfixs"></div>
 
                         {{-- end User Chat --}}
-                        {{--  User File send Chat --}}
+                        {{-- User File send Chat --}}
                         <div class="card d-inline-block mb-3 float-left mr-2">
                             <div class="position-absolute pt-1 pr-2 r-0">
                                 <span class="text-extra-small text-muted">09:30</span>
@@ -100,9 +100,7 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
-
                                 <div class="chat-text-left">
                                     <p class="mb-0 text-semi-muted">
                                         I am very busy at the moment and on top of everything, I forgot my umbrella
@@ -123,7 +121,7 @@
 
 
             {{-- ########    Chat notfound   ########### --}}
-                {{-- <div class="col-12 chat-app">
+            {{-- <div class="col-12 chat-app">
                     <div class="scroll" id="scroll-chat">
                         <div class="scroll-content chat-box d-flex align-item-center justify-content-center h-100">
                             <div class=" d-flex align-items-center"> 
@@ -139,14 +137,13 @@
                 </div> --}}
             {{-- ########    end Chat notfound   ########### --}}
 
-            </div>
+        </div>
     </div>
 
     <div class="app-menu">
 
                 {{-- Modal Button  --}}
-                <button class=" btn btn-primary rounded-2 w-100"  type="button"  data-toggle="modal"
-                data-backdrop="static" data-target="#TicketCreate">Create New Ticket </button>
+                <button class=" btn btn-primary rounded-2 w-100" type="button" data-toggle="modal" data-backdrop="static" data-target="#TicketCreate">Create New Ticket </button>
                 {{-- End --}}
            
         <ul class="nav nav-tabs card-header-tabs ml-0 mr-0 my-1" role="tablist">
@@ -251,32 +248,33 @@
 
                 <div class="tab-pane fade  h-100 active show" id="secondFull" role="tabpanel" aria-labelledby="second-tab">
                     <div class="scroll">
-
                         <div class="d-flex flex-row mb-3 border-bottom pb-3">
                             <a class="d-flex" href="#">
                                 <img alt="Profile Picture" src="/Admin/img/profiles/l-1.jpg" class="img-thumbnail border-0 rounded-circle mr-3 list-thumbnail align-self-center xsmall">
                             </a>
-                            <div class="d-flex flex-grow-1 min-width-zero">
+                            @foreach($users as $index=>$user)
+                            @if(!empty($users[$index]['tickets']))
+                            <div onclick="get_user_tickets()" class="d-flex flex-grow-1 min-width-zero">
                                 <div class="m-2 pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
                                     <div class="min-width-zero">
                                         <div class="d-flex justify-content-between ">
                                             <a href="#" class="">
                                                 {{-- User Name --}}
-                                                <p class="mb-0 truncate">Sarah Kortney</p>
+                                                <p class="mb-0 truncate">{{$users[$index]['email']}}</p>
                                             </a>
                                             <span class=" badge badge-primary status-ticket">&nbsp;</span>
                                         </div>
                                         {{-- Ticket Title --}}
                                         <p class="mb-0 text-semi-muted">
-                                            I am very busy at the moment and on 
+                                            {{$users[$index]['tickets'][0]['content']}}
                                         </p>
                                     </div>
-                                   
                                 </div>
                             </div>
+                            @endif
+                            @endforeach
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -299,23 +297,22 @@
 
         </div>
     </div>
-        {{--  Modal Add Ticket  --}}
-    <div class="modal fade modal-right" id="TicketCreate" tabindex="-1" role="dialog"
-    aria-labelledby="TicketCreate" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            {{-- Start Modal --}}
+    {{-- Modal Add Ticket  --}}
+    <div class="modal fade modal-right" id="TicketCreate" tabindex="-1" role="dialog" aria-labelledby="TicketCreate" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                {{-- Start Modal --}}
 
-            <form>
+                <form>
 
-                <div class="modal-header">
-                    <h5 class="modal-title">Add New Ticket</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add New Ticket</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
 
-                <div class="modal-body">
+                    <div class="modal-body">
 
                         <div class="form-group">
                             {{-- Ticket Title --}}
@@ -330,14 +327,14 @@
                         {{-- Ticket Creator { User  or  Admin} --}}
                         <div class="form-group">
                             <label> Ticket Creator (search User)</label>
-                            <input name="creator" list="Users"  class="form-control selectss">
-                            <datalist id="Users" >
-                            <option value="Admin">
-                            <option value="User One">
-                            <option value="Ali">
-                            <option value="symon">
-                            <option value="v">
-                            </datalist>  
+                            <input name="creator" list="Users" class="form-control selectss">
+                            <datalist id="Users">
+                                <option value="Admin">
+                                <option value="User One">
+                                <option value="Ali">
+                                <option value="symon">
+                                <option value="v">
+                            </datalist>
                         </div>
                         {{-- Ticket Status Select Option --}}
                         <div class="form-group">
@@ -349,48 +346,48 @@
                                 <option value="Process">Process</option>
                             </select>
                         </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-primary"
-                        data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
 
+            </div>
         </div>
     </div>
-</div>
-{{-- End Modal  --}}
+    {{-- End Modal  --}}
 
 
 </main>
 
 <script>
-      document.getElementById('AdminFileTicktBtn').addEventListener('click', fileupload);
+    // user ticket data
 
-    function fileupload() {
-        document.getElementById('AdminFileTickt').click();
-    }
-    document.getElementById('send').addEventListener('click', sendMsg);
-    document.getElementById('chat-input').addEventListener("keyup" , function(event){   
-        document.getElementById('send').classList.add('active-send')
-        if(this.value  ==  ''){
-            document.getElementById('send').classList.remove('active-send')
-        }
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById('send').click()
-            document.getElementById('send').classList.remove('active-send')
+            document.getElementById('AdminFileTicktBtn').addEventListener('click', fileupload);
+
+            function fileupload() {
+                document.getElementById('AdminFileTickt').click();
+            }
+            document.getElementById('send').addEventListener('click', sendMsg); document.getElementById('chat-input').addEventListener("keyup", function(event) {
+                document.getElementById('send').classList.add('active-send')
+                if (this.value == '') {
+                    document.getElementById('send').classList.remove('active-send')
+                }
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById('send').click()
+                    document.getElementById('send').classList.remove('active-send')
 
 
-        }
-    });
-    function sendMsg() {
-    document.getElementById('send').classList.remove('active-send')
+                }
+            });
 
-        var msg = $('.chat-input').val()
-        if (!msg == '') {
-            $('.chat-box').append(`
+            function sendMsg() {
+                document.getElementById('send').classList.remove('active-send')
+                var msg = $('.chat-input').val()
+                if (!msg == '') {
+                    $('.chat-box').append(`
                 <div class="card d-inline-block mb-3 float-right mr-2">
                     <div class="position-absolute pt-1 pr-2 r-0">
                         <span class="text-extra-small text-muted">09:41</span>
@@ -416,35 +413,29 @@
                     </div>
                 </div>
                 <div class="clearfixs"></div>`)
-            $('.chat-input').val('');
-            var elements = document.getElementById("scroll-chat");
-            elements.scrollTop = elements.scrollHeight;
-        }
-    }
+                    $('.chat-input').val('');
+                    var elements = document.getElementById("scroll-chat");
+                    elements.scrollTop = elements.scrollHeight;
+                }
+            }
+            document.getElementById('delTicket').addEventListener("click", function() {
+                swal({
+                        title: "Are you sure?",
+                        text: "Once Close",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            swal("Ticket Closed !", {
+                                icon: "success",
+                            });
+                        } else {
+                            swal("Your  Ticket is safe!");
+                        }
+                    });
 
-    document.getElementById('delTicket').addEventListener("click", function(){
-        swal({
-    title: "Are you sure?",
-    text: "Once Close",
-    icon: "warning",
-    buttons: true,
-    dangerMode: true,
-})
-    .then((willDelete) => {
-        if (willDelete) {
-            swal("Ticket Closed !", {
-                icon: "success",
-            });
-        } else {
-            swal("Your  Ticket is safe!");
-        }
-    });
-
-    })
-
-
-
-   
-
+            })
 </script>
 @include('./Admin/Layout/Footer')

@@ -306,11 +306,7 @@
             success: function(data) {
                 $.each(data.currencies, function(i, item) {
                     $("#listingCoin").append(`
-<<<<<<< HEAD
-                            <button type="submit" id="coinBtn" onclick="change_icon('${item.icon}')" value="${item.id}"
-=======
                             <button type="button" id="${item.name}" onclick="change_logo('${item.icon}','${item.name}')"
->>>>>>> 157d2f498d0adaf41fa380219a28d4176c83670e
                                 class="list-group-item d-flex justify-content-between  list-group-item-action ">
                                 <div class="d-flex justify-content-between">
                                     <span class="ticker-prog"><img width="30" src="data:image/png;base64,${item.icon}"
@@ -319,49 +315,14 @@
                                         ${item.name.charAt(0).toUpperCase() + item.name.slice(1)}
                                     </span>
                                 </div> 
-<<<<<<< HEAD
+
                             </button> `)
 
                 });
             }
-        
+
         });
     });
-
-    $('#listingCoin').on('click', '#coinBtn', function() {
-        var value =  $(this).val();
-        $('#closeModal').click();
-
-        $.ajax({
-            url: '/price/'+value,
-            success: function(data) {
-                console.log('success')
-            const res = $.parseJSON(data.currency);
-            const symbol = res.coin.symbol;
-            const price = res.coin.price;
-                $('#coinName').text(symbol)
-                $('.you-spend').val(price)
-            },
-            error: function(err) {
-                console.log({
-                    err: err
-                });
-            },
-            complete: function() {
-                setTimeout(worker, 5000);
-            }
-        });
-    });
-    // modal ro bband
-=======
-                            </button>
-                `)
-                })
-            }
-
-        })
-    })
->>>>>>> 157d2f498d0adaf41fa380219a28d4176c83670e
 </script>
 
 

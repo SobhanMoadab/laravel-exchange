@@ -98,11 +98,12 @@ Route::middleware('auth')->group(function () {
     // profile
     Route::get('/profile', [ProfileStatic::class, 'index'])->name('dashboard');
     // order register
-    Route::post('/order/verify_email', [OrderServices::class, 'verify_email'])->name('order_verify');
+Route::post('/order/verify_email', [OrderServices::class, 'verify_email'])->name('order_verify');
     Route::post('/order/choose_password', [OrderServices::class, 'choose_password'])->name('order_verify');
 
     // ticket
     Route::get('/ticket', [ticketuser::class, 'index']);
+    Route::get('/ticket/create', [ticketuser::class, 'create']);
     Route::get('/ticket/{id}', [ticketuser::class, 'show']);
     Route::post('/ticket', [ticketuser::class, 'store'])->name('user_store_ticket');
 
@@ -126,6 +127,3 @@ Route::get('/price/{id}', function (PriceServices $price_service, $id) {
     return $coin;
 });
 
-Route::get('/ad', function () {
-    return view('Admin.Ticket.index');
-})->name('dashboard');
