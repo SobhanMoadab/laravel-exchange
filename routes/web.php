@@ -126,7 +126,3 @@ Route::get('/price/{id}', function (PriceServices $price_service, $id) {
     // event(new PriceList($coin));
     return $coin;
 });
-
-Route::get('/test', function () {
-        return view('Client.wizardSignUp');
-});
