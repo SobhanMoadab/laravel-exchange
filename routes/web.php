@@ -11,7 +11,7 @@ use App\Http\Controllers\Statics\Admin\OrderStatic;
 use App\Http\Controllers\Statics\Admin\PageStatic;
 use App\Http\Controllers\Statics\Admin\PermissionStatic;
 use App\Http\Controllers\Statics\Admin\PostStatic;
-use App\Http\Controllers\Statics\Admin\User\ProfileStatic;
+use App\Http\Controllers\Statics\User\ProfileStatic;
 use App\Http\Controllers\Statics\Admin\SettingStatic;
 use App\Http\Controllers\Statics\Admin\TicketStatic as ticketadmin;
 use App\Http\Controllers\Statics\User\TicketStatic as ticketuser;
@@ -34,6 +34,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Client.Home');
 });
+
 // AUTH
 Route::get('/register', [AuthStatic::class, 'register_form'])->name('register');
 Route::post('/register', [AuthStatic::class, 'register'])->name('register_store');
@@ -42,6 +43,9 @@ Route::post('/login', [AuthStatic::class, 'login'])->name('login_store');
 
 Route::get('/order', [OrderStatic::class, 'register_order_form']);
 
+Route::get('/dashboard', function () {
+    return view('Admin.Home');
+});
 Route::prefix('/dashboard')->middleware('auth')->group(function () {
 
 
@@ -125,8 +129,4 @@ Route::get('/price/{id}', function (PriceServices $price_service, $id) {
     $coin = $price_service->get_currency_by_id($id);
     // event(new PriceList($coin));
     return $coin;
-});
-
-Route::get('/test', function () {
-        return view('Client.wizardSignUp');
 });

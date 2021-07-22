@@ -18,12 +18,10 @@
 .stepbodytwo{
     display:none;
    }
-   .stepbodytree{
-    display:none;
+   .stepbodyfinish{
+    display: none;
    }
-   .stepbodyfor{
-    display:none;
-   }
+
    .stepOne{
     color:transparent ;
 }
@@ -33,9 +31,7 @@
 .stepTree{
     color:transparent ;
 }
-.stepFor{
-    color:transparent ;
-}
+
 .wizard-verify{
     display: none;
 }
