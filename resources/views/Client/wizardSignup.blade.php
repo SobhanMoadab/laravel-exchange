@@ -13,9 +13,8 @@
             <div class="stephead mx-auto align-content-center">
                 <div class="d-flex justify-content-around mb-3">
                     <div class="p-2 stepOne">quantity</div>
-                    <div class="p-2 stepTwo">Chekcing</div>
-                    <div class="p-2 stepTree">Createing User</div>
-                    <div class="p-2 stepFor">Payment</div>
+                    <div class="p-2 stepTwo">Createing User</div>
+                    <div class="p-2 stepTree">Payment</div>
                 </div>
                 <div class="line  mx-1"></div>
             </div>
@@ -86,8 +85,8 @@
                                             <tbody class="text-dark text-right">
                                                 <tr>
                                                     <td dir="ltr" class="pr-0 font-weight-500 position-relative">
-                                                        <span>
-                                                            836,476,500
+                                                        <span id="coin-rate">
+                                                           
                                                         </span> <span> $</span>
                                                     </td>
                                                     <td class="pl-0 text-right">
@@ -95,9 +94,9 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="pr-0 font-weight-500"><span>Buy from us</span></td>
+                                                    <td class="pr-0 font-weight-500"><span class="coin-name"> </span></td>
                                                     <td class="pl-0">
-                                                        Type of exchange
+                                                        Coin Name
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -107,8 +106,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="pr-0 font-weight-500 position-relative"><span
-                                                            class="text-success">live</span>
+                                                    <td class="pr-0 font-weight-500 position-relative coin-status">
                                                         <!---->
                                                     </td>
                                                     <td class="pl-0"><span>Purchase status</span></td>
@@ -161,7 +159,7 @@
                                                 <tr>
                                                     <td dir="ltr" class="pr-0 font-weight-500 position-relative">
                                                         <span>
-                                                            836,476,500
+                                                           
                                                         </span> <span> $</span>
                                                     </td>
                                                     <td class="pl-0 text-right">
@@ -201,89 +199,46 @@
 
                     </div>
                 </div>
+
                 <div class="stepbodytwo my-3">
-                    <div class="row">
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="First name">
+                        <div class="row">
+                            <div class="col">
+                            <label class="control-label">Email</label>
+                                <input type="email" name="email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="col">
+                                <label class="control-label">Countries</label>
+                                    <select type="text" name="country_id" class="form-control country_select2" style="width: 100%">
+                                        <option value=""> iran </option>
+                                    </select>
+                            </div>
                         </div>
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Last name">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="First name">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Last name">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="First name">
+                        <div class="row">
+                            <div class="col">
+                            <label class="control-label">Password</label>
+                                <input type="password" name="password" class="form-control" placeholder="Password">
+                            </div>
+                            <div class="col">
+                            <label class="control-label">Confrim Password</label>
+                                <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Your Password">
+                            </div>
+                            <div class="row wizard-verify  ">
+                                <div class="col d-flex justify-content-center">
+                                    <input type="text" class="form-control w-50 text-center border-info "
+                                placeholder="Enter Code">
+                            </div>
                         </div>
 
-                    </div>
+
+                        </div>
                     <div class="d-flex justify-content-around">
                         <button type="button" id="step-two-back" class="btn btn-secondary w-50 mx-1"> back</button>
-                        <button type="button" id="step-two-next" class="btn btn-primary w-50 mx-1"> next</button>
+                        <button type="button" id="step-two-check" class="btn  btn-warning w-50 mx-1"> Check</button>
+                        <button type="button" id="step-two-next" class="btn btn-primary w-50 mx-1 d-none"> next</button>
                     </div>
                 </div>
-                <div class="stepbodytree my-3">
-                    <div class="step-tree-form">
-                        <div class="row">
-                            <div class="col">
-                                <input type="text" class="form-control" name="fullname" placeholder="Full name">
-                            </div>
-                            <div class="col">
-                                <input type="email" class="form-control" name="email" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <input type="password" class="form-control" name="password" placeholder="Password">
-                            </div>
-                            <div class="col">
-                                <input type="password" class="form-control" name="confirm_password"
-                                    placeholder="confirm Password">
-                            </div>
-                        </div>
-                        <div class="row ">
-                            <div class="col">
-                                <label> Contry</label>
-                                <select name="" id="" class="form-control">
-                                    <option value="fdfd">ffsfsdfsd</option>
-                                    <option value="fdfd">sdfsdfds</option>
-                                    <option value="fdfd">sdfdsfsdf</option>
-                                </select>
-
-                            </div>
-                            <div class="col">
-                                <label> Enter Personal Cart</label>
-                                <input type="file" class="form-control">
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="row wizard-verify  ">
-                        <div class="col d-flex justify-content-center">
-                            <input type="text" class="form-control w-50 text-center border-info "
-                                placeholder="Enter Code">
-                        </div>
-
-                    </div>
-                    <div class="d-flex justify-content-around">
-                        <button type="button" id="step-tree-back" class="btn btn-secondary w-50 mx-1"> back</button>
-                        <button type="button" id="step-tree-check" class="btn disabled   btn-secondary w-50 mx-1">
-                            Check</button>
-                        <button type="button" id="step-tree-next" class="btn btn-primary w-50 mx-1 d-none">
-                            next</button>
-                    </div>
-                </div>
-                <div class="stepbodyfor">
-
+                <div class="stepbodyfinish my-3">
                     <div class="d-flex justify-content-around align-content-center py-5">
-
                         <a class=" btn rounded-2 shadow-poper-3 d-flex align-content-center p-5">
                             payment
                         </a>
@@ -293,8 +248,6 @@
                         <div class=" btn rounded-2 shadow-poper-3 d-flex align-content-center p-5">
                             payment
                         </div>
-
-
                     </div>
 
                     <button type="submit" class="btn btn-primary w-100"> Create Order</button>
@@ -385,9 +338,17 @@
     });
 </script>
 <script>
-    function change_logo(icon, name) {
+    function change_coin(icon, name, price, status) {
         
         $('#currency_id').attr('src', `data:image/png;base64,${icon}`);
+        $('#coin-rate').text(price)
+        if(status == 1){
+            $('.coin-status').html('<span class="text-success">live</span>')
+        }else{
+            $('.coin-status').html('<span class="text-danger">Not Active</span>')
+
+        }
+        $('.coin-name').text(name)
         const amount_1_input = document.getElementById('amount_1');
         const amount_2_input = document.getElementById('amount_2');
         amount_1_input.value = "";
@@ -417,9 +378,10 @@
         $.ajax({
             url: '/api/currency',
             success: function(data) {
+                console.log(data)
                 $.each(data.currencies, function(i, item) {
                     $("#listingCoin").append(`
-                            <button type="button" id="${item.name}" onclick="change_logo('${item.icon}','${item.name}')"
+                            <button type="button" id="${item.name}" onclick="change_coin('${item.icon}','${item.name}','${item.price}','${item.is_active}')"
                                 class="list-group-item d-flex justify-content-between  list-group-item-action ">
                                 <div class="d-flex justify-content-between">
                                     <span class="ticker-prog"><img width="30" src="data:image/png;base64,${item.icon}"

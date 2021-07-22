@@ -267,10 +267,12 @@
 </main>
 <script>
     // user ticket data
-    var url = 'http://api.alquran.cloud/v1/quran/en.asad';
-    $.ajax(url, function(d) {}).done(function(d) {
-        $.each(d.data.surahs, function(i, item) {
-            $('#users-list').append(`
+// console.log(json)
+var url = 'http://api.alquran.cloud/v1/quran/en.asad';
+$.ajax(url, function(d){
+}).done(function(d){
+    $.each(d.data.surahs, function (i, item) {
+                    $('#users-list').append(`
                                         <div class="d-flex flex-row mb-3 border-bottom pb-3">
                                             <a class="d-flex" href="#">
                                                 <img alt="Profile Picture" src="/Admin/img/profiles/l-1.jpg" class="img-thumbnail border-0 rounded-circle mr-3 list-thumbnail align-self-center xsmall">
