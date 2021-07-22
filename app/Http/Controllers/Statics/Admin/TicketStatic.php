@@ -34,7 +34,7 @@ class TicketStatic extends Controller
             return redirect()->back()->with('error', $result['error']);
         }
 
-        return redirect()->back()->with('success', 'تیکت با موفقیت ارسال شد');
+        return redirect()->route('user_tickets');
     }
     public function create()
     {

@@ -12,6 +12,16 @@ use Illuminate\Support\Facades\Http;
 
 class TicketServices extends Controller
 {
+    public function delete($request, $id){
+        try{
+        $ticket =Tickets::findOrFail($id);
+            $ticket->delete();
+            return ['msg' => 'Successfully Deleted'];
+
+        }catch(\Exception $e){
+            return ['error' => $e->getMessage()];
+        }
+    }
     public function store($request)
     {
         $request->validate([

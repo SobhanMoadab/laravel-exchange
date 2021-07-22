@@ -7,13 +7,15 @@ use App\Http\Controllers\Core\Services\TicketServices;
 use App\Models\Tickets;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
 class TicketStatic extends Controller
 {
     public function index()
     {
-        return view('User.Ticket.index');
+       $data = ['tickets' => Tickets::where('user_id', Auth::id())->get()]; 
+        return view('User.Ticket.index', $data);
     }
     public function show($id)
     {
@@ -30,6 +32,6 @@ class TicketStatic extends Controller
         if ($result['error']) {
             return redirect()->back()->with('error', $result['error']);
         }
-        return redirect()->back()->with('success', 'تیکت با موفقیت ارسال شد');
+        return redirect(route('user_tickets'));
     }
 }

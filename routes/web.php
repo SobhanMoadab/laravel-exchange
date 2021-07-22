@@ -106,10 +106,11 @@ Route::post('/order/verify_email', [OrderServices::class, 'verify_email'])->name
     Route::post('/order/choose_password', [OrderServices::class, 'choose_password'])->name('order_verify');
 
     // ticket
-    Route::get('/ticket', [ticketuser::class, 'index']);
+    Route::get('/ticket', [ticketuser::class, 'index'])->name('user_tickets');
     Route::get('/ticket/create', [ticketuser::class, 'create']);
-    Route::get('/ticket/{id}', [ticketuser::class, 'show']);
     Route::post('/ticket', [ticketuser::class, 'store'])->name('user_store_ticket');
+    Route::get('/ticket/{id}', [ticketuser::class, 'show']);
+    Route::delete('/ticket/{id}', [ticketuser::class, 'delete'])->name('user_delete_ticket');
 
 });
 

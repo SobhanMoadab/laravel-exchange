@@ -4,95 +4,93 @@
     <div class="container">
         <div class="row">
             <div class="border-bottom border-1">
-                <h3 class="float-start">Support</h3>
-                <p class="float-end">Page 1 of 0 , Result 0</p>
+                <h3 class="float-start">Tickets</h3>
             </div>
-            <div class=" mb-3 mt-4 d-flex justify-content-between">
-                <a href="#" class="float-end">
-                    <button type="button" class="btn btn-primary">List</button>
-                </a>
-                <select class=" form-select form-select-sm w-25" aria-label=".form-select-sm example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-
-            </div>
-            <form action="{{route('user_store_ticket')}}" method="POST">
-                @csrf
-                @include('flash-message')
-                <input name="title" class="form-control d-inline w-25" placeholder="title">
-                <input name="content" class="form-control d-inline w-25" placeholder="content">
-                <select name="priority" class="form-select d-inline w-25">
-                    <option value="high">high</option>
-                    <option value="medium">medium</option>
-                    <option value="low">low</option>
-                </select>
-                <button type="submit" class="btn btn-primary">Submit</button>
-
-            </form>
+            @include('flash-message')
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">Date</th>
                         <th scope="col">Title</th>
-                        <th scope="col">Ticket Status</th>
-                        <th scope="col">Last Update</th>
-                        <th scope="col">File</th>
+                        <th scope="col">Content</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                        <th scope="col">Created at</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($tickets as $ticket)
                     <tr class="link-el" data-href="#">
-                        <td class="text-center">1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
-                        <td class="text-center">
-                            <div class="text-left text-truncate w-75"><a><i class="icon md-comment-list margin-right-5"></i>#6883361 -
-                                    Error - Wallet 1245-****-1215 Error - Wallet 1245-****-1215</a>
-                            </div>
-                        </td>
-                        <td class="text-center"><span class="badge  bg-danger">Error</span></td>
-                        <td>1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
-                        <td>
-                        <input type="hidden" class="base_64_icons">
-                        </td>
+                        <td class="text-center">{{$ticket->title}}</td>
+                        <td class="text-center">{{$ticket->content}}</td>
+                        <td class="text-center"><span class="badge  bg-info">@if($ticket->status == 0) Open @else Closed @endif</td>
+                        <td class="text-center" onclick="delFunc({{$ticket->id}})" id="delete_ticket"><span class="badge  bg-info">Delete</span></td>
+                        <td class="text-center">{{$ticket->created_at}}</td>
                     </tr>
-                    <tr class="link-el" data-href="#">
-                        <td class="text-center">1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
-                        <td class="text-center">
-                            <div class="text-left text-truncate w-75"><a><i class="icon md-comment-list margin-right-5"></i>#6883361 -
-                                    Error - Wallet 1245-****-1215 Error - Wallet 1245-****-1215</a>
-                            </div>
-                        </td>
-                        <td class="text-center"><span class="badge  bg-success">Done</span></td>
-                        <td>1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
-                        <td></td>
-                    </tr>
-                    <tr class="link-el" data-href="#">
-                        <td class="text-center">1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
-                        <td class="text-center">
-                            <div class="text-left text-truncate w-75"><a><i class="icon md-comment-list margin-right-5"></i>#6883361 -
-                                    Error - Wallet 1245-****-1215 Error - Wallet 1245-****-1215</a>
-                            </div>
-                        </td>
-                        <td class="text-center"><span class="badge  bg-info">in progress</span></td>
-                        <td>1400/03/31&nbsp;(2021/06/21&nbsp;14:05)</td>
-                        <td></td>
-                    </tr>
-
+                    @endforeach
                 </tbody>
             </table>
         </div>
     </div>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
+<link rel="stylesheet" href="node_modules/sweetalert/dist/sweetalert.css">
+<script>
+    function delFunc() {
+        swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((result) => {
+                if (result.value) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        type: "delete",
+                        url: "{{url('/ticket')}}/" + id,
+                        success: function(data) {
+                            if (data['msg']) {
+                                swal("Permissions Delete", {
+                                    icon: "success",
+                                });
+                                // need update content
+                            } else {
+                                swal(
+                                    'خطا',
+                                    'مشکلی در انجام عملیات به وجود آمد، لطفا دوباره تلاش کنید',
+                                    'error'
+                                )
+                            }
 
+                        }
+                    });
+                } else if (result.dismiss === 'cancel') {
+                    swal(
+                        'انصراف',
+                        'تغییری صورت نپذیرفت',
+                        'error'
+                    )
+
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
+    };
+</script>
 <script>
     $(document).ready(function($) {
         $(".link-el").click(function() {
             window.location = $(this).data("href");
         });
     });
-        // get all elements in class 'base_64_icons'
-        let elements = document.getElementsByClassName('base_64_icons');
+    // get all elements in class 'base_64_icons'
+    let elements = document.getElementsByClassName('base_64_icons');
     for (let i = 0; i < elements.length; i++) {
         // get value of value(base64 string) of input element
         let base64 = `${elements[i]['value']}`;
