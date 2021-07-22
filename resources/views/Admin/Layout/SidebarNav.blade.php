@@ -37,6 +37,7 @@
                             <i class="iconsminds-cpu"></i> Plugins
                         </a>
                     </li>
+
                     <li>
                         <a href="#Setting">
                             <i class="iconsminds-gear"></i> Setting
@@ -60,6 +61,36 @@
                     <li class="{{ request()->is('dashboard/pages') ? 'active' : '' }}">
                         <a href="/dashboard/pages">
                             <i class="simple-icon-note"></i> <span class="d-inline-block">Pages</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="simple-icon-note"></i> <span class="d-inline-block">Contact us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="simple-icon-note"></i> <span class="d-inline-block">About us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="simple-icon-note"></i> <span class="d-inline-block">FAQ</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="simple-icon-note"></i> <span class="d-inline-block">Custom Page</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="simple-icon-note"></i> <span class="d-inline-block">Rules</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="simple-icon-note"></i> <span class="d-inline-block">Verification Help</span>
                         </a>
                     </li>
                 </ul>
@@ -105,55 +136,15 @@
                 </ul> 
                 <ul class="list-unstyled" data-link="Setting">
                     <li>
-                        <a href="#" data-toggle="collapse" data-target="#SiteSetting" aria-expanded="true"
-                            aria-controls=SiteSettings" class="rotate-arrow-icon">
-                            <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">ُSite </span>
-                        </a>
-                        <div id="SiteSetting" class="collapse show" data-parent="#Settings">
-                            <ul class="list-unstyled inner-level-menu">
-                                <li>
-                                    <a href="Menu.Default.html">
-                                        <i class="simple-icon-control-pause"></i> <span
-                                            class="d-inline-block">Global</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="Menu.Subhidden.html">
-                                        <i class="simple-icon-arrow-left mi-subhidden"></i> <span
-                                            class="d-inline-block"> Payment </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="Menu.Hidden.html">
-                                        <i class="simple-icon-control-start mi-hidden"></i> <span
-                                            class="d-inline-block"> ... </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="Menu.Mainhidden.html">
-                                        <i class="simple-icon-control-rewind mi-hidden"></i> <span
-                                            class="d-inline-block"> ... </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="Dashboard.Default.html">
-                            <i class="simple-icon-rocket"></i> <span class="d-inline-block">Lisence</span>
+                        <a href="#">
+                            <i class="simple-icon-magic-wand"></i> <span class="d-inline-block">System Preferences</span>
                         </a>
                     </li>
                     <li>
-                        <a href="Dashboard.Default.html">
-                            <i class="simple-icon-rocket"></i> <span class="d-inline-block">Plans</span>
+                        <a href="#">
+                            <i class="simple-icon-rocket"></i> <span class="d-inline-block">Maintenance</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="Dashboard.Default.html">
-                            <i class="simple-icon-rocket"></i> <span class="d-inline-block">Site health</span>
-                        </a>
-                    </li>
-
                 </ul>
 
 

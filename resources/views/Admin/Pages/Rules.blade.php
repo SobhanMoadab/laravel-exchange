@@ -1,11 +1,11 @@
 @include('Admin.Layout.Header')
 @include('Admin.Layout.SidebarNav')
-<main style="display:none">
+<main>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="mb-2">
-                    <h1>Pages</h1>
+                    <h1>Rules</h1>
                     <div class="top-right-button-container">
                         <button type="button" class="btn btn-primary btn-lg top-right-button mr-1" data-toggle="modal"
                             data-backdrop="static" data-target="#exampleModalRight">ADD NEW</button>
@@ -51,21 +51,6 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="btn-group">
-                            <div class="btn btn-primary btn-lg pl-4 pr-0 check-button">
-                                <label class="custom-control custom-checkbox mb-0 d-inline-block">
-                                    <input type="checkbox" class="custom-control-input" id="checkAll">
-                                    <span class="custom-control-label">&nbsp;</span>
-                                </label>
-                            </div>
-                            <button type="button" class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Delete</a>
                             </div>
                         </div>
                     </div>
@@ -130,31 +115,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="mb-2">
-                    <a class="btn pt-0 pl-0 d-inline-block d-md-none" data-toggle="collapse" href="#displayOptions"
-                        role="button" aria-expanded="true" aria-controls="displayOptions">
-                        Display Options
-                        <i class="simple-icon-arrow-down align-middle"></i>
-                    </a>
-                    <div class="collapse d-md-block" id="displayOptions">
-                        <div class="d-block d-md-inline-block">
-                            <div class="btn-group float-md-left mr-1 mb-1">
-                                <button class="btn btn-outline-dark btn-xs dropdown-toggle" type="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Order By
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">A-Z</a>
-                                    <a class="dropdown-item" href="#">Z-A</a>
-                                </div>
-                            </div>
-                            <div class="search-sm d-inline-block float-md-left mr-1 mb-1 align-top">
-                                <input placeholder="Search...">
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="separator mb-5"></div>
                 @foreach($pages as $page)
                 <div class="list disable-text-selection" data-check-all="checkAll">
@@ -184,10 +144,28 @@
                     </div>
                 </div>
                 @endforeach
+                <div>
+                    <div class="card d-flex flex-row mb-3">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label fs-5">Email address</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fs-5">Example textarea</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary">submit</button>
+                                <button type="button" class="btn btn-danger">delete</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
 
 </main>
-
 @include('Admin.Layout.Footer')
