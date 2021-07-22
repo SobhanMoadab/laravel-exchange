@@ -11,7 +11,7 @@ use App\Http\Controllers\Statics\Admin\OrderStatic;
 use App\Http\Controllers\Statics\Admin\PageStatic;
 use App\Http\Controllers\Statics\Admin\PermissionStatic;
 use App\Http\Controllers\Statics\Admin\PostStatic;
-use App\Http\Controllers\Statics\Admin\User\ProfileStatic;
+use App\Http\Controllers\Statics\User\ProfileStatic;
 use App\Http\Controllers\Statics\Admin\SettingStatic;
 use App\Http\Controllers\Statics\Admin\TicketStatic as ticketadmin;
 use App\Http\Controllers\Statics\User\TicketStatic as ticketuser;
