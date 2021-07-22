@@ -3,37 +3,37 @@
             <div class="scroll">
                 <ul class="list-unstyled">
                     <li class="{{ request()->is('dashboard') ? 'active' : '' }}">
-                        <a href="#dashboard">
+                        <a href="dashboard">
                             <i class="iconsminds-digital-drawing"></i> Dashboard
                         </a>
                     </li>
                     <li class="{{ request()->is('dashboard/pages') ? 'active' : '' }}">
-                        <a href="#Pages">
+                        <a href="/dashboard/pages">
                             <i class="iconsminds-project"></i> Pages
                         </a>
                     </li>
                     <li class="{{ request()->is('dashboard/post') ? 'active' : '' }}">
-                        <a href="#Posts">
+                        <a href="/dashboard/post">
                             <i class="iconsminds-files"></i> Posts
                         </a>
                     </li>
                     <li class="{{ request()->is('dashboard/order') ? 'active' : '' }}">
-                        <a href="#Orders">
+                        <a href="/dashboard/order">
                             <i class="iconsminds-pantone"></i> Order
                         </a>
                     </li>
                     <li>
-                        <a href="#Roles">
+                        <a href="/dashboard/roles">
                             <i class="iconsminds-unlock-2"></i> Roles Users
                         </a>
                     </li>
                     <li class="{{ request()->is('dashboard/currency') ? 'active' : '' }}">
                         <a href="/dashboard/currency">
-                            <i class="iconsminds-coins-2"></i> currency
+                            <i class="iconsminds-coins-2"></i> Currency
                         </a>
                     </li>
                     <li>
-                        <a href="#Plugins">
+                        <a href="/dashboard/plugins">
                             <i class="iconsminds-cpu"></i> Plugins
                         </a>
                     </li>

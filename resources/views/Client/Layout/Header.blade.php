@@ -25,6 +25,7 @@
     <!-- Custom  Css -->
     <link rel="stylesheet" type="text/css" href="/Client/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 </head>
 

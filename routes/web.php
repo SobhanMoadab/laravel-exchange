@@ -34,6 +34,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Client.Home');
 });
+
 // AUTH
 Route::get('/register', [AuthStatic::class, 'register_form'])->name('register');
 Route::post('/register', [AuthStatic::class, 'register'])->name('register_store');
@@ -42,6 +43,9 @@ Route::post('/login', [AuthStatic::class, 'login'])->name('login_store');
 
 Route::get('/order', [OrderStatic::class, 'register_order_form']);
 
+Route::get('/dashboard', function () {
+    return view('Admin.Home');
+});
 Route::prefix('/dashboard')->middleware('auth')->group(function () {
 
 
