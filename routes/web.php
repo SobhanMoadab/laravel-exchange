@@ -11,7 +11,7 @@ use App\Http\Controllers\Statics\Admin\OrderStatic;
 use App\Http\Controllers\Statics\Admin\PageStatic;
 use App\Http\Controllers\Statics\Admin\PermissionStatic;
 use App\Http\Controllers\Statics\Admin\PostStatic;
-use App\Http\Controllers\Statics\User\ProfileStatic;
+use App\Http\Controllers\Statics\Admin\User\ProfileStatic;
 use App\Http\Controllers\Statics\Admin\SettingStatic;
 use App\Http\Controllers\Statics\Admin\TicketStatic as ticketadmin;
 use App\Http\Controllers\Statics\User\TicketStatic as ticketuser;
@@ -106,11 +106,10 @@ Route::post('/order/verify_email', [OrderServices::class, 'verify_email'])->name
     Route::post('/order/choose_password', [OrderServices::class, 'choose_password'])->name('order_verify');
 
     // ticket
-    Route::get('/ticket', [ticketuser::class, 'index'])->name('user_tickets');
+    Route::get('/ticket', [ticketuser::class, 'index']);
     Route::get('/ticket/create', [ticketuser::class, 'create']);
-    Route::post('/ticket', [ticketuser::class, 'store'])->name('user_store_ticket');
     Route::get('/ticket/{id}', [ticketuser::class, 'show']);
-    Route::delete('/ticket/{id}', [ticketuser::class, 'delete'])->name('user_delete_ticket');
+    Route::post('/ticket', [ticketuser::class, 'store'])->name('user_store_ticket');
 
 });
 
