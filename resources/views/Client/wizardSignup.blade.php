@@ -27,13 +27,13 @@
                                 <input type="radio" id="Sell" name="themes" onclick="tabsSell()" checked />
                                 <label for="Sell">
                                     <span>
-                                        <i data-feather="sun"></i>Sell ​​to site
+                                        <i data-feather="sun"></i>Purchase the site
                                     </span>
                                 </label>
                                 <input type="radio" id="Purchase" onclick="tabsPurchase()" name="themes" />
                                 <label for="Purchase">
                                     <span>
-                                        <i data-feather="moon"></i>Purchase the site
+                                        <i data-feather="moon"></i>Sell the site
                                     </span>
                                 </label>
                                 <span class="slider"></span>
