@@ -2294,9 +2294,6 @@ background-attachment: local, local, scroll, scroll;
 .ticker-prog{color:#f00000;}
 .ticker-opp, .ticker-at{width:100%;}
 
-.text-news{
-  text-align: center;
-}
 .title-news{
   color: #2ba2ce;
 }

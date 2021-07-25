@@ -27,9 +27,8 @@
    .stepTwo{
     color:transparent ;
 }
-.stepTree{
-    color:transparent ;
-}.modal{
+
+.modal{
     position: fixed;
     bottom: 0;
     top:auto;

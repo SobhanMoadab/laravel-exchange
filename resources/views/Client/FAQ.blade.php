@@ -12,6 +12,7 @@
                                 FAQ
                             </div>
 {{-- 
+                            <!--FAQ text-->
                             <div id="accordion">
                                 <div class="card faq-card  p-0 m-2">
                                     <div class="card-header p-0 faq-heading " id="headingOne">
