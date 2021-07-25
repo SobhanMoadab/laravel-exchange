@@ -21,27 +21,27 @@
                     </div>
                     <div class="line  mx-1"></div>
                 </div>
-                <form action="">
-                    <!----step one quantity---->
-                    <div class="stepbodyone">
-                        <!--tab button-->
-                        <div class="card  border-0 shadow-white p-4 my-2 ">
-                            <div class="menu-header">
-                                <div class="tab-switcher">
-                                    <input type="radio" id="Sell" name="themes" onclick="tabsSell()" checked />
-                                    <label for="Sell">
-                                        <span>
-                                            <i data-feather="sun"></i>Sell ​​to site
-                                        </span>
-                                    </label>
-                                    <input type="radio" id="Purchase" onclick="tabsPurchase()" name="themes" />
-                                    <label for="Purchase">
-                                        <span>
-                                            <i data-feather="moon"></i>Purchase the site
-                                        </span>
-                                    </label>
-                                    <span class="slider"></span>
-                                </div>
+                <div class="line  mx-1"></div>
+            </div>
+            <form action="">
+                <div class="stepbodyone">
+                   <!--tab button--->
+                    <div class="card  border-0 shadow-white p-4 my-2 ">
+                        <div class="menu-header">
+                            <div class="tab-switcher">
+                                <input type="radio" id="Sell" name="themes" onclick="tabsSell()" checked />
+                                <label for="Sell">
+                                    <span>
+                                        <i data-feather="sun"></i>Purchase the site
+                                    </span>
+                                </label>
+                                <input type="radio" id="Purchase" onclick="tabsPurchase()" name="themes" />
+                                <label for="Purchase">
+                                    <span>
+                                        <i data-feather="moon"></i>Sell the site
+                                    </span>
+                                </label>
+                                <span class="slider"></span>
                             </div>
                             <!--Sell ​​to site--->
                             <div class="card-body d-flex justify-content-center align-content-center row  exchange"

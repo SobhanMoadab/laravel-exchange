@@ -40,7 +40,7 @@
                             </div>
                         </div>
 
-                        <button class="btn btn-primary w-100 my-2  " type="submit">SaveChange</button>
+                        <button class="btn btn-primary w-100 my-2 text-center " type="submit">SaveChange</button>
                     </form>
                 </div>
             </div>

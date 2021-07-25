@@ -2,7 +2,7 @@
 @include('Admin.Layout.SidebarNav')
 <main>
     <div class="container-fluid">
-        <div class="row app-row">
+        <div class="row">
             <div class="col-12">
                 <div class="mb-2">
                     <h1>Posts</h1>
@@ -73,7 +73,7 @@
                                 <span class="sr-only">Toggle Dropdown</span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" id="delete-item" >Delete</a>
                                 <a class="dropdown-item" href="#">Another action</a>
                             </div>
                         </div>
@@ -198,7 +198,7 @@
                                     Order By
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#"></a>
                                     <a class="dropdown-item" href="#">Another action</a>
                                 </div>
                             </div>
@@ -210,85 +210,97 @@
                 </div>
                 <div class="separator mb-5"></div>
 
-                <div class="list disable-text-selection" data-check-all="checkAll">
-                    <div class="list disable-text-selection" data-check-all="checkAll">
+
+                <div class="row">
+                    <div class="col-12 list" data-check-all="checkAll" >
+
                         <div class="card d-flex flex-row mb-3">
                             <div class="d-flex flex-grow-1 min-width-zero">
-                                <div class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
-                                    <a class="list-item-heading mb-0 truncate w-40 w-xs-100 mt-0" href="Apps.Survey.html">
-                                        <i class="simple-icon-check heading-icon"></i>
-                                        <span class="align-middle d-inline-block"> New Post</span>
+                                <div
+                                    class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                    <a class="list-item-heading mb-0 truncate w-40 w-xs-100 item-list" >
+                                        fdrfhghg Cake
                                     </a>
-                                    <p class="mb-0 text-muted text-small w-15 w-xs-100">Admin</p>
-                                    <p class="mb-0 text-muted text-small w-15 w-xs-100">11.08.2021</p>
-                                    <div class="w-10 w-xs-100">
+                                    <p class="mb-0 text-muted text-small w-15 w-xs-100">Cakes</p>
+                                    <p class="mb-0 text-muted text-small w-15 w-xs-100">02.04.2018</p>
+                                    <div class="w-15 w-xs-100">
                                         <span class="badge badge-pill badge-secondary">ON HOLD</span>
                                     </div>
-                                    <div class="w-20 w-xs-100">
-                                        <button class="btn-sm border-0 btn-info"  data-toggle="modal" data-backdrop="static" data-target="#UpdateModalRight">Update </button>
-                                        <button class="btn-sm border-0 btn-danger">Delete </button>
-                                    </div>
+
+                                  
                                 </div>
-                                <label class="custom-control custom-checkbox mb-1 align-self-center mr-4">
+                                <div class="d-flex align-items-center mx-2">
+                                    <button class="btn btn-sm btn-info truncate"  data-toggle="modal" data-backdrop="static" data-target="#exampleModalRight"> Update</button>
+                                </div>
+                                <label class="custom-control custom-checkbox mb-1 align-self-center pr-4">
                                     <input type="checkbox" class="custom-control-input">
                                     <span class="custom-control-label">&nbsp;</span>
-                                </label>
+                                </label >
                             </div>
                         </div>
+                        <div class="card d-flex flex-row mb-3"  >
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                    <a class="list-item-heading mb-0 truncate w-40 w-xs-100 item-list" >
+                                        fdrfhghg Cake
+                                    </a>
+                                    <p class="mb-0 text-muted text-small w-15 w-xs-100">One Items</p>
+                                    <p class="mb-0 text-muted text-small w-15 w-xs-100">02.04.2018</p>
+                                    <div class="w-15 w-xs-100">
+                                        <span class="badge badge-pill badge-secondary">ON HOLD</span>
+                                    </div>
+
+                                  
+                                </div>
+                                <div class="d-flex align-items-center mx-2">
+                                    <button class="btn btn-sm btn-info truncate"  data-toggle="modal" data-backdrop="static" data-target="#exampleModalRight"> Update</button>
+                                </div>
+                                <label  class="custom-control custom-checkbox mb-1 align-self-center pr-4">
+                                    <input type="checkbox" class="custom-control-input">
+                                    <span class="custom-control-label">&nbsp;</span>
+                                </label >
+                            </div>
+                        </div>
+
+    {{-- page Ination  --}}
+                        <nav class="mt-4 mb-3">
+                            <ul class="pagination justify-content-center mb-0">
+                                <li class="page-item ">
+                                    <a class="page-link first" href="#">
+                                        <i class="simple-icon-control-start"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item ">
+                                    <a class="page-link prev" href="#">
+                                        <i class="simple-icon-arrow-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item ">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item ">
+                                    <a class="page-link next" href="#" aria-label="Next">
+                                        <i class="simple-icon-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item ">
+                                    <a class="page-link last" href="#">
+                                        <i class="simple-icon-control-end"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="app-menu">
-        <div class="p-4 h-100">
-            <div class="scroll">
-                <p class="text-muted text-small">Status</p>
-                <ul class="list-unstyled mb-5">
-                    <li class="active">
-                        <a href="#">
-                            <i class="simple-icon-refresh"></i>
-                            Active Surveys
-                            <span class="float-right">12</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="simple-icon-check"></i>
-                            Completed Surveys
-                            <span class="float-right">24</span>
-
-                        </a>
-                    </li>
-                </ul>
-
-                <p class="text-muted text-small">Categories</p>
-                <ul class="list-unstyled mb-5">
-                    <li>
-                        <div class="custom-control custom-checkbox mb-2">
-                            <input type="checkbox" class="custom-control-input" id="category1">
-                            <label class="custom-control-label" for="category1">Development</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="custom-control custom-checkbox mb-2">
-                            <input type="checkbox" class="custom-control-input" id="category2">
-                            <label class="custom-control-label" for="category2">Workplace</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="custom-control custom-checkbox ">
-                            <input type="checkbox" class="custom-control-input" id="category3">
-                            <label class="custom-control-label" for="category3">Hardware</label>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <a class="app-menu-button d-inline-block d-xl-none" href="#">
-            <i class="simple-icon-options"></i>
-        </a>
     </div>
 </main>
 
