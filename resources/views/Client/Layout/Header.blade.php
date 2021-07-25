@@ -13,6 +13,10 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="/Client/css/bootstrap.min.css" type="text/css">
+
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
     <!--Material Icon -->
     <link rel="stylesheet" type="text/css" href="/Client/css/materialdesignicons.min.css" />
 
@@ -24,11 +28,12 @@
 
     <!-- Custom  Css -->
     <link rel="stylesheet" type="text/css" href="/Client/css/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <!--jsdelivr core css-->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="/Admin/js/vendor/jquery-3.3.1.min.js"></script>
+
 </head>
 
 <body class="bg-light">
@@ -37,12 +42,10 @@
         <div class="container" id="navbar">
 
             <!-- LOGO -->
-
-
-
             <a class="navbar-brand logo text-uppercase " href="index-1.html">
                 <img src="/client/images/E-cms.png" alt="" height="40">
             </a>
+            <!-- login register -->
             <div>
                 <a href="/login"><button id="nav-btn" class="btn-sm btn-primary mx-1 border-0 bg-transparent">login</button></a>
                 <a href="/register"><button class="btn-sm btn-primary mx-1 border-0">register</button></a>
@@ -50,6 +53,7 @@
                 </button>
 
             </div>
+            <!-- nav list -->
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto" id="navbar-navlist">
                     <li class="nav-item">
@@ -75,6 +79,7 @@
 
 
     </nav>
+    <!-- nav list phone size -->
     <div id="nav-phone" class="menu-mobile  d-lg-none">
         <div class="d-flex justify-content-center w-100 p-3 ">
             <button onclick="navPhoneclose()" class="justify-content-around flex-column align-content-end bg-transparent border-0">

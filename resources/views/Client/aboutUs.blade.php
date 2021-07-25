@@ -1,4 +1,5 @@
 @include('Client.Layout.Header')
+<!--about us-->
 <section class="bg-home-2 align-items-center d-flex">
 
     <div class="container">

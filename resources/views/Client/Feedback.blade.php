@@ -1,5 +1,5 @@
 @include('Client.Layout.Header')
-
+<!---nav background-->
 <section class="bg-home-2" style="padding: 80px 0px 80px 0px;">
     <div class="container">
         <div class="row ">
@@ -10,7 +10,7 @@
 
 </section>
 <h3 class="feedback-head">feedback</h3>
-
+<!---feedback-->
 <div class="card mb-4 feedback-card col-12 col-sm-8 col-md-8">
     <div class="row ">
         <div class="col-4 col-sm-4 col-md-2 col-lg-2"
@@ -179,7 +179,7 @@
         </div>
     </div>
 </div>
-
+<!--pagination-->
 <ul class="pagination justify-content-center">
     <li class="page-item">
         <a class="page-link text-white bg-primary" href="#" tabindex="-1">Previous</a>

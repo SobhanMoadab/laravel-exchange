@@ -2279,4 +2279,16 @@ transition: .3s;
 .select-ticket select {
  width: 350px;
 }
+.steptwo-text{
+  margin-left:20px;
+}
+.line2{
+  width:50px;
+  height:2px;
+  background:#7a57d1;
+  border-radius: 20px;
+}
+.steptwo-background{
+  background: #e2e3e5;
+} 
 /*# sourceMappingURL=style.css.map */
