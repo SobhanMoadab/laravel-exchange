@@ -16,7 +16,7 @@ class TicketStatic extends Controller
     {
         // list of tickets based on status, -> only active (open ticket)
         // data = [] => all tickets
-    //    return User::with('tickets')->get()->toArray();
+        //    return User::with('tickets')->get()->toArray();
         $data = [
             'users' => User::with('tickets')->get()->toArray()
         ];
@@ -25,7 +25,8 @@ class TicketStatic extends Controller
     public function show($id)
     {
         // todo get ticket by id
-        return view('Admin.Ticket.index');
+        $data = ['ticket' => Tickets::findOrFail($id)];
+        return view('Admin.Ticket.index', $data);
     }
     public function store(TicketServices $ticket, Request $request)
     {

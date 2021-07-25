@@ -52,6 +52,7 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
     Route::get('/dashboard', [PageStatic::class])->name('dashboard');
     // ORDER
     Route::get('/order', [OrderStatic::class, 'register_order_form']);
+    Route::post('/order', [OrderStatic::class, 'register_order'])->name('register_order');
 
     // PERMISSION
     Route::get('/roles', [PermissionStatic::class, 'get_all_roles_form']);
@@ -93,7 +94,7 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
 
     // Ticket
     Route::get('/ticket', [ticketadmin::class, 'index']);
-    Route::get('/ticket/{id}', [ticketadmin::class, 'show']);
+    Route::get('/ticket/{id}', [ticketadmin::class, 'show'])->name('show_ticket');
     Route::post('/ticket', [ticketadmin::class, 'store'])->name('store_ticket');
 });
 
@@ -111,6 +112,7 @@ Route::post('/order/verify_email', [OrderServices::class, 'verify_email'])->name
     Route::post('/ticket', [ticketuser::class, 'store'])->name('user_store_ticket');
     Route::get('/ticket/{id}', [ticketuser::class, 'show']);
     Route::delete('/ticket/{id}', [ticketuser::class, 'delete'])->name('user_delete_ticket');
+    Route::get('/ticket/{id}', [ticketuser::class, 'show'])->name('user_show_ticket');
 
 });
 

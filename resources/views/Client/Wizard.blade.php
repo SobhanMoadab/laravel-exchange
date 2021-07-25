@@ -21,9 +21,10 @@
                 </div>
                 <div class="line  mx-1"></div>
             </div>
-            <form action="">
+            <form action="POST" href="{{route('register_order')}}">
                 <div class="stepbodyone">
-
+                    @csrf
+                    @include('flash-message')
                     <div class="card  border-0 shadow-white p-4 my-2 ">
                         <div class="menu-header">
                             <div class="tab-switcher">
@@ -46,10 +47,7 @@
                         <div class="card-body d-flex justify-content-center align-content-center row  exchange" id="sell-body">
                             <div class="col-12 col-sm-12 col-lg-6">
                                 <div class="card bg-transparent border-0  d-flex justify-content-center align-content-center row ">
-
                                     <div class="card-body  d-flex justify-content-center  row">
-
-
                                         <div class="input-group">
                                             <label>You Spend</label>
                                             <input value="" id="amount_1" data-currency="bitcoin" type="number" class="form-control rounded bg-light text-dark border-0 w-100 you-spend">
@@ -110,7 +108,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">
                                 exchange</button>
                         </div>
@@ -195,7 +192,7 @@
                             <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Your Password">
                         </div>
                         <div class="col">
-                        <label for="default" class="control-label">Countries</label>
+                            <label for="default" class="control-label">Countries</label>
                             <select type="text" name="country_id" class="form-control country_select2" style="width: 100%">
                                 @foreach($countries as $country)
                                 <option value="{{$country['id']}}">{{$country['name']}}</option>
@@ -208,6 +205,8 @@
                         <button type="button" id="step-two-next" class="btn btn-primary w-50 mx-1"> next</button>
                     </div>
                 </div>
+                <button type="submit" class="btn btn-primary w-100"> Finish</button>
+
                 <div class="stepbodytree">
                     <div id="step1" class="my-2">
                         <input type="text" class="form-control" placeholder="Username">
@@ -218,7 +217,6 @@
                     <div id="step3" class="my-2">
                         <input type="text" placeholder="Goodby" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-primary w-100"> Finish</button>
                 </div>
             </form>
         </div>
@@ -398,10 +396,7 @@
         }
     )
     $('.country_select2').select2();
-	$('.country_select2').materialSelect();
-	
-
-
+    $('.country_select2').materialSelect();
 </script>
 
 

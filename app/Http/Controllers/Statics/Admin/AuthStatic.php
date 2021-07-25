@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Statics\Admin;
 
 use App\Http\Controllers\Core\Services\AuthenticationServices;
+use App\Models\Country;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -14,13 +15,9 @@ class AuthStatic extends Controller
 {
     public function register_form()
     {
-        $response = Http::withHeaders([
-            'X-CSCAPI-KEY' => env('COUNTRY_API_KEY'),
-        ])->get('https://api.countrystatecity.in/v1/countries');
-        $response = strval($response->getBody());
-        $response = json_decode($response, true);
+       
         $data = [
-            'countries' => $response
+            'countries' => Country::all()
         ];
         return view('auth.register', $data);
     }
