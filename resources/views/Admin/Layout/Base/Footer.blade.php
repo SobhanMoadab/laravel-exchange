@@ -1,3 +1,4 @@
+<script src="/Admin/js/vendor/jquery-3.3.1.min.js"></script>
 <script src="/Admin/js/vendor/bootstrap.bundle.min.js"></script>
 <script src="/Admin/js/vendor/Chart.bundle.min.js"></script>
 <script src="/Admin/js/vendor/chartjs-plugin-datalabels.js"></script>
