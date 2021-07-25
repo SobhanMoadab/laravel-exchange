@@ -47,6 +47,7 @@
                 <p>Documents we need to issue master card for you:</p>
                 <p>-Passport scan</p>
                 <p>-Personal information</p>
+                <!--Pagination-->
                 <div style="margin-top: 50px;">
                     <a href="#" class="btn btn-primary news-prev">PREV</a>
                     <a href="#" class="btn btn-primary news-next">NEXT</a>

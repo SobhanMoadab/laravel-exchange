@@ -8,7 +8,7 @@
 
 <section class="bg-home-2 align-items-center d-flex">
     <div class="container">
-        <div class="card my-5">
+        <div class="card my-5 rounded-2">
             <div class="card-body wizardstep ">
                 <a class=" logo d-flex justify-content-center my-2 " href="#">
                     <img src="images/E-cms.png" alt="" height="40">
@@ -127,6 +127,7 @@
                                 </div>
 
                                 <button type="button" class="step-next btn btn-primary w-100 shadow-lg mt-3 ">exchange</button>
+                                <a href="#" class="step-next-form btn btn-success w-100 shadow-lg mt-3" style="display:none">form</a>
                             </div>
                             <!---Purchase the site---->
                             <div class="card-body d-none justify-content-center align-content-center row  exchange"
@@ -208,50 +209,49 @@
                                 </div>
 
                                 <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">exchange</button>
+                                <a href="#" class="step-next-form btn btn-success w-100 shadow-lg mt-3 " style="display:none">form</a>
                             </div>
 
 
 
                         </div>
                     </div>
-                    <!---step two form--->
-                    <div class="stepbodytwo my-3">
-                            <div class="row">
-                                <div class="col">
-                                <label class="control-label">Email</label>
-                                    <input type="email" name="email" class="form-control" placeholder="Email">
-                                </div>
-                                <div class="col">
-                                    <label class="control-label">Countries</label>
-                                        <select type="text" name="country_id" class="form-control country_select2" style="width: 100%">
-                                            <option value=""> iran </option>
-                                        </select>
-                                </div>
+                </div>    
+                <!---step two form--->
+                <div class="stepbodytwo my-3">
+                        <div class="row">
+                            <div class="col">
+                            <label class="control-label">Email</label>
+                                <input type="email" name="email" class="form-control" placeholder="Email">
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                <label class="control-label">Password</label>
-                                    <input type="password" name="password" class="form-control" placeholder="Password">
-                                </div>
-                                <div class="col">
-                                <label class="control-label">Confrim Password</label>
-                                    <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Your Password">
-                                </div>
-                                <div class="row wizard-verify  ">
-                                    <div class="col d-flex justify-content-center">
-                                        <input type="text" class="form-control w-50 text-center border-info "
-                                    placeholder="Enter Code">
-                                </div>
+                            <div class="col">
+                                <label class="control-label">Countries</label>
+                                    <select type="text" name="country_id" class="form-control country_select2" style="width: 100%">
+                                        <option value=""> iran </option>
+                                    </select>
                             </div>
-
-
-                            </div>
-                        <div class="d-flex justify-content-around">
-                            <button type="button" id="step-two-back" class="btn btn-secondary w-50 mx-1"> back</button>
-                            <button type="button" id="step-two-check" class="btn  btn-warning w-50 mx-1"> Check</button>
-                            <button type="button" id="step-two-next" class="btn btn-primary w-50 mx-1 d-none"> next</button>
                         </div>
+                        <div class="row">
+                            <div class="col">
+                            <label class="control-label">Password</label>
+                                <input type="password" name="password" class="form-control" placeholder="Password">
+                            </div>
+                            <div class="col">
+                            <label class="control-label">Confrim Password</label>
+                                <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Your Password">
+                            </div>
+                            <div class="row wizard-verify  ">
+                                <div class="col d-flex justify-content-center">
+                                    <input type="text" class="form-control w-50 text-center border-info "placeholder="Enter Code">
+                                </div>
+                            </div>
+                        </div>
+                    <div class="d-flex justify-content-around">
+                        <button type="button" id="step-two-back" class="btn btn-secondary w-50 mx-1"> back</button>
+                        <button type="button" id="step-two-check" class="btn  btn-warning w-50 mx-1"> Check</button>
+                        <button type="button" id="step-two-next" class="btn btn-primary w-50 mx-1 d-none"> next</button>
                     </div>
+                </div>
                     <!--step tree payment--->
                     <div class="stepbodyfinish my-3">
                         <div class="d-flex justify-content-around align-content-center py-5">

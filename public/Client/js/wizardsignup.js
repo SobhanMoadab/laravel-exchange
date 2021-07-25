@@ -18,7 +18,8 @@ $('.step-next').click(
             $.niceToast.error("Please enter the number");
         }
         else if ($('.you-receive').val() >= 100) {
-            $.niceToast.error('The maximum amount payable in each purchase must be 100$');
+            $.niceToast.error('please fill the form');
+            $('.step-next-form').css("display","block");
         }
         else {
             $('.line').animate({ width: '65%' }, 1000, 'easeInOutQuint')
