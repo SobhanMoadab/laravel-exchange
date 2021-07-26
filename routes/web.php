@@ -136,5 +136,5 @@ Route::get('/price/{id}', function (PriceServices $price_service, $id) {
 
 
 Route::get('/pre', function () {
-    return view('Client.singlepost');
+    return view('Client.Wizard');
 });
