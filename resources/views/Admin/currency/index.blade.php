@@ -51,7 +51,7 @@
                                                 <label>Status</label>
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" name="is_active" class="custom-control-input" id="customCheck1">
-                                                    <label class="custom-control-label" for="customCheck1">Available</label>
+                                                    <label class="custom-control-label" for="customCheck1">Active</label>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
@@ -109,7 +109,7 @@
                                                 <label>Status</label>
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" name="is_active" class="custom-control-input" id="customCheck1">
-                                                    <label class="custom-control-label" for="customCheck1">Completed</label>
+                                                    <label class="custom-control-label" for="customCheck1">Active</label>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
@@ -151,7 +151,7 @@
                     @foreach($currencies as $index=>$currency)
                     <li class="list-group-item d-flex align-items-center border-0">
                         <div class="col-3 align-items-center border-0">{{ucwords($currency->name)}}</div>
-                        <div class="col-3 align-items-center border-0">@if($currency->is_active == 1) Active @elseif($currency->is_active == 0) Deactive @endif</div>
+                        <div class="col-3 align-items-center border-0">  @if($currency->is_active == 1) Active @elseif($currency->is_active == 0) Deactive @endif</div>
                         <div class="col-2">
                             <input type="hidden" id="{{$currency->id}}" value="{{$currency->icon}}" class="base_64_icons">
                         </div>
@@ -168,17 +168,4 @@
     </div>
 
 </main>
-<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-
-<script>
-    // get all elements in class 'base_64_icons'
-    let elements = document.getElementsByClassName('base_64_icons');
-    for (let i = 0; i < elements.length; i++) {
-        // get value of value(base64 string) of input element
-        let base64 = `${elements[i]['value']}`;
-        src = `data:image/png;base64,${base64}`;
-        //replace each input element with img element
-        $(`#${elements[i]['id']}`).replaceWith(`<img width="50" class="base_64_icons" height="50" src="${src}">`);
-    }
-</script>
 @include('Admin.layout.Footer')

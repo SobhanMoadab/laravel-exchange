@@ -17,18 +17,7 @@
                 </form>
             </div>
         </div>
-        <script>
-            function check_input() {
-                var val = document.getElementById('logs_delete');
-                if (val.value == 'custom') {
-                    $('#content').append(`<input name="custom-number" type="text" id="custom-number" placeholder=" enter custom number" class=" form-control my-2">`);
 
-                }
-                else {
-                    $('#custom-number').remove();
-                }
-            }
-        </script>
 
 </main>
 

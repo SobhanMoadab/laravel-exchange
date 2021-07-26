@@ -14,18 +14,19 @@ $().ready(function () {
 })
 $('.step-next').click(
     function () {
-        if ($('.you-spend').val() == 0 || $('.you-receive').val() == 0) {
+        if ($('.you-spend').val() == 0) {
             $.niceToast.error("Please enter the number");
         }
-        else if ($('.you-receive').val() <= 100) {
-            $.niceToast.error('The maximum amount payable in each purchase must be 540000$');
+        else if ($('.you-receive').val() >= 100) {
+            $.niceToast.error('please fill the form');
+            $('.step-next-form').css("display","block");
         }
         else {
-            $('.line').animate({ width: '60%' }, 1000, 'easeInOutQuint')
+            $('.line').animate({ width: '65%' }, 1000, 'easeInOutQuint')
             $('.stepOne').animate({ color: '#7A57D1' })
             $('.stepTwo').animate({ color: '#7A57D1' })
 
-            $('.stepbodyone').slideUp('fast')
+            $('.stepbodyone').slideUp('fast');
             $('.stepbodytwo').slideDown('fast');
         }
     }

@@ -243,6 +243,7 @@ function tabsPurchase() {
     document.getElementById('Purchase-body').classList.add('d-flex')
     document.getElementById('sell-body').classList.remove('d-flex')
     document.getElementById('sell-body').classList.add('d-none')
+    // document.getElementById('sell-body').classList.add('d-none')
 }
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
@@ -270,4 +271,5 @@ function navPhoneOpen() {
 function navPhoneclose() {
     document.getElementById('nav-phone').classList.remove('menu-mobile-open');
 }
+
 

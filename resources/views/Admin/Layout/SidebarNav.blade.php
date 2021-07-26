@@ -3,7 +3,7 @@
             <div class="scroll">
                 <ul class="list-unstyled">
                     <li class="{{ request()->is('dashboard') ? 'active' : '' }}">
-                        <a href="dashboard">
+                        <a href="/dashboard">
                             <i class="iconsminds-digital-drawing"></i> Dashboard
                         </a>
                     </li>
