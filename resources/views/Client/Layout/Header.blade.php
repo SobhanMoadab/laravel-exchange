@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/Client/css/style.css" />
     <!--jsdelivr core css-->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    
+
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
@@ -47,9 +47,11 @@
             </a>
             <!-- login register -->
             <div>
-                <a href="/login"><button id="nav-btn" class="btn-sm btn-primary mx-1 border-0 bg-transparent">login</button></a>
+                <a href="/login"><button id="nav-btn"
+                        class="btn-sm btn-primary mx-1 border-0 bg-transparent">login</button></a>
                 <a href="/register"><button class="btn-sm btn-primary mx-1 border-0">register</button></a>
-                <button onclick="navPhoneOpen()" class="d-lg-none bg-transparent mx-1 border-0"><i class="bi bi-list text-white" id="nav-phone-icon"></i>
+                <button onclick="navPhoneOpen()" class="d-lg-none bg-transparent mx-1 border-0"><i
+                        class="bi bi-list text-white" id="nav-phone-icon"></i>
                 </button>
 
             </div>
@@ -82,9 +84,11 @@
     <!-- nav list phone size -->
     <div id="nav-phone" class="menu-mobile  d-lg-none">
         <div class="d-flex justify-content-center w-100 p-3 ">
-            <button onclick="navPhoneclose()" class="justify-content-around flex-column align-content-end bg-transparent border-0">
+            <button onclick="navPhoneclose()"
+                class="justify-content-around flex-column align-content-end bg-transparent border-0">
                 <svg viewBox="0 0 24 24" class="i-float_left cursor-pointer" style="width: 34px; height: 34px;">
-                    <path fill="#fff" d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z">
+                    <path fill="#fff"
+                        d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z">
                     </path>
                 </svg>
             </button>
@@ -115,41 +119,44 @@
 
     <!-- END NAVBAR -->
     <!-- tickers start -->
-    <div class="contain-div container-fluid ">
-        <div class="row cycle-slideshow" data-cycle-fx=carousel data-cycle-speed="4000" data-cycle-timeout=0.1 data-cycle-easing="linear" data-cycle-carousel-fluid=true data-cycle-pause-on-hover="true" data-cycle-slides="> div">
+    <div class="contain-div container-fluid " id="ticker">
+        <div class="row cycle-slideshow" data-cycle-fx=carousel data-cycle-speed="2000" data-cycle-timeout=1
+            data-cycle-easing="linear" data-cycle-carousel-fluid=true data-cycle-pause-on-hover="true">
 
-            <div class="box">
-                <div class="ticker-box">
-                    <div class="ticker-date">9/08<span class="ticker-prog"><img width="20" src="/client/images/svg/bitcoin-441959.svg" alt=""></span></div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="ticker-box">
-                    <div class="ticker-date">9/08<span class="ticker-prog"><img width="20" src="/client/images/svg/aurouracoin-441945.svg" alt=""></span></div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="ticker-box">
-                    <div class="ticker-date">9/08<span class="ticker-prog"><img width="20" src="/client/images/svg/dash-441957.svg" alt=""></span></div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="ticker-box">
-                    <div class="ticker-date">9/08<span class="ticker-prog"><img width="20" src="/client/images/svg/devcoin-441952.svg" alt=""></span></div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="ticker-box">
-                    <div class="ticker-date">9/08<span class="ticker-prog"><img width="20" src="/client/images/svg/dogecoin-441958.svg" alt=""></span></div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="ticker-box">
-                    <div class="ticker-date">9/08<span class="ticker-prog"><img width="20" src="/client/images/svg/etherium-441951.svg" alt=""></span></div>
-                </div>
-            </div>
+
+
+
+
 
         </div>
     </div>
+    {{-- <script>
+        // ticker crousel coin 
+        $().ready(function() {
+            $.ajax({
+                url: '/api/currency',
+                success: function(data) {
+                    $.each(data.currencies, function(i, item) {
+                        $(".cycle-slideshow").append(`
+                <div class="box">
+                    <div class="ticker-box">
+                        <div class="ticker-date"> <span class="text-danger"> 9/08 <i class="bi bi-arrow-down-short "
+                                    style="font-size: 20px;"></i></span>
+                            <span class="ticker-prog"><img width="20" src="" alt=""></span>
+                        </div>
+                    </div>
+                </div>
 
+                `)
+
+                    });
+
+
+
+
+                }
+
+            });
+        });
+    </script> --}}
     <!-- tckers End -->

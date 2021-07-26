@@ -864,135 +864,135 @@
 </section>
 <!-- END PRICING -->
 <!--START model Exchange-->
-   <div class="modal slide-top" id="YouSpend" tabindex="-1" role="dialog" aria-labelledby="ModalReceiveTitle"
-     aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title
-                    </h5>
-                </div>
-                <div class="modal-body border-0">
-                    <div class="list-group" id="listingCoin">
+<div class="modal slide-top" id="YouSpend" tabindex="-1" role="dialog" aria-labelledby="ModalReceiveTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title
+                </h5>
+            </div>
+            <div class="modal-body border-0">
+                <div class="list-group" id="listingCoin">
 
-                    </div>
                 </div>
-                <div class="modal-footer border-0">
-                    <button type="button" id="closeModal" class="btn btn-secondary w-100"
-                        data-dismiss="modal">Close</button>
-                </div>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" id="closeModal" class="btn btn-secondary w-100"
+                    data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
-<!--END model Exchange-->    
-    <!-- START CTA -->
-    <div class="section-sm bg-cta" id="contact">
-        <div class="color-overlay"></div>
-        <div class="container">
-            <div class="row justify-content-center">
+</div>
+<!--END model Exchange-->
+<!-- START CTA -->
+<div class="section-sm bg-cta" id="contact">
+    <div class="color-overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center">
 
-                <div class="col-lg-8">
+            <div class="col-lg-8">
 
-                    <div class="heading-box text-white text-center">
-                        <h3 class="heading-title">Let's Get Started</h3>
-                        <p class="heading-desc text-white-50 mt-3">Far far away, behind the word mountains, far from
-                            the
-                            countries Vokalia and Consonantia,
-                            there suspendisse suscipit sapien sit amet live the blind texts.</p>
+                <div class="heading-box text-white text-center">
+                    <h3 class="heading-title">Let's Get Started</h3>
+                    <p class="heading-desc text-white-50 mt-3">Far far away, behind the word mountains, far from
+                        the
+                        countries Vokalia and Consonantia,
+                        there suspendisse suscipit sapien sit amet live the blind texts.</p>
 
-                        <div class="mt-4">
-                            <a href="" class="btn btn-primary">Get Started <i class="mdi mdi-arrow-right ps-1"></i></a>
-                        </div>
-
-                        <p class="mt-4 mb-0">Have a question? Give us a call 347-776-3316</p>
+                    <div class="mt-4">
+                        <a href="" class="btn btn-primary">Get Started <i class="mdi mdi-arrow-right ps-1"></i></a>
                     </div>
 
+                    <p class="mt-4 mb-0">Have a question? Give us a call 347-776-3316</p>
                 </div>
 
             </div>
+
         </div>
     </div>
-    <!-- END CTA -->
+</div>
+<!-- END CTA -->
 
 
-    <script>
-        /****js model exhange*** */
-        function change_coin(icon, name, price, status) {
+<script>
+    /****js model exhange*** */
+    function change_coin(icon, name, price, status) {
 
-            $('#currency_id').attr('src', `data:image/png;base64,${icon}`);
-            $('#currency_id_2').attr('src', `data:image/png;base64,${icon}`);
-            $('#coin-rate').text(price);
-            $('#coin-rate-2').text(price);
-            if (status == 1) {
-                $('.coin-status').html('<span class="text-success">live</span>')
-            } else {
-                $('.coin-status').html('<span class="text-danger">Not Active</span>')
+        $('#currency_id').attr('src', `data:image/png;base64,${icon}`);
+        $('#currency_id_2').attr('src', `data:image/png;base64,${icon}`);
+        $('#coin-rate').text(price);
+        $('#coin-rate-2').text(price);
+        if (status == 1) {
+            $('.coin-status').html('<span class="text-success">live</span>')
+        } else {
+            $('.coin-status').html('<span class="text-danger">Not Active</span>')
 
-            }
-            if (status == 1) {
-                $('.coin-status-2').html('<span class="text-success">live</span>')
-            } else {
-                $('.coin-status-2').html('<span class="text-danger">Not Active</span>')
-
-            }
-            $('.coin-name').text(name)
-            const amount_1_input = document.getElementById('amount_1');
-            const amount_2_input = document.getElementById('amount_2');
-            amount_1_input.value = "";
-            amount_2_input.value = "";
-            amount_1_input.attributes['data-currency'].value = name;
-            $('#closeModal').click();
-
-            $('.coin-name-2').text(name)
-            const amount_3_input = document.getElementById('amount_3');
-            const amount_4_input = document.getElementById('amount_4');
-            amount_3_input.value = "";
-            amount_4_input.value = "";
-            amount_3_input.attributes['data-currency'].value = name;
-            $('#closeModal').click();
         }
+        if (status == 1) {
+            $('.coin-status-2').html('<span class="text-success">live</span>')
+        } else {
+            $('.coin-status-2').html('<span class="text-danger">Not Active</span>')
 
-        $('#amount_1').keyup(function () {
-            const amount_1_input = document.getElementById('amount_1');
-            $.ajax({
-                url: `https://api.coinstats.app/public/v1/coins/${amount_1_input.attributes['data-currency'].value}`,
-                success: function (data) {
-                    let quantity = amount_1_input.value;
-                    document.getElementById('amount_2').value = Number(quantity * data.coin[
-                        'price']).toFixed(2);
-                },
-                error: function (err) {
-                    alert({
-                        err
-                    });
-                }
-            });
-        });
+        }
+        $('.coin-name').text(name)
+        const amount_1_input = document.getElementById('amount_1');
+        const amount_2_input = document.getElementById('amount_2');
+        amount_1_input.value = "";
+        amount_2_input.value = "";
+        amount_1_input.attributes['data-currency'].value = name;
+        $('#closeModal').click();
 
-        $('#amount_3').keyup(function () {
-            const amount_3_input = document.getElementById('amount_3');
-            $.ajax({
-                url: `https://api.coinstats.app/public/v1/coins/${amount_3_input.attributes['data-currency'].value}`,
-                success: function (data) {
-                    let quantity = amount_3_input.value;
-                    document.getElementById('amount_4').value = Number(quantity * data.coin[
-                        'price']).toFixed(2);
-                },
-                error: function (err) {
-                    alert({
-                        err
-                    });
-                }
-            });
+        $('.coin-name-2').text(name)
+        const amount_3_input = document.getElementById('amount_3');
+        const amount_4_input = document.getElementById('amount_4');
+        amount_3_input.value = "";
+        amount_4_input.value = "";
+        amount_3_input.attributes['data-currency'].value = name;
+        $('#closeModal').click();
+    }
+
+    $('#amount_1').keyup(function() {
+        const amount_1_input = document.getElementById('amount_1');
+        $.ajax({
+            url: `https://api.coinstats.app/public/v1/coins/${amount_1_input.attributes['data-currency'].value}`,
+            success: function(data) {
+                let quantity = amount_1_input.value;
+                document.getElementById('amount_2').value = Number(quantity * data.coin[
+                    'price']).toFixed(2);
+            },
+            error: function(err) {
+                alert({
+                    err
+                });
+            }
         });
-        $(document).ready(() => {
-            document.getElementById('amount_1').value = "";
-            document.getElementById('amount_2').value = "";
-            $.ajax({
-                url: '/api/currency',
-                success: function (data) {
-                    $.each(data.currencies, function (i, item) {
-                        $("#listingCoin").append(`
+    });
+
+    $('#amount_3').keyup(function() {
+        const amount_3_input = document.getElementById('amount_3');
+        $.ajax({
+            url: `https://api.coinstats.app/public/v1/coins/${amount_3_input.attributes['data-currency'].value}`,
+            success: function(data) {
+                let quantity = amount_3_input.value;
+                document.getElementById('amount_4').value = Number(quantity * data.coin[
+                    'price']).toFixed(2);
+            },
+            error: function(err) {
+                alert({
+                    err
+                });
+            }
+        });
+    });
+    $(document).ready(() => {
+        document.getElementById('amount_1').value = "";
+        document.getElementById('amount_2').value = "";
+        $.ajax({
+            url: '/api/currency',
+            success: function(data) {
+                $.each(data.currencies, function(i, item) {
+                    $("#listingCoin").append(`
                             <button type="button" id="${item.name}" onclick="change_coin('${item.icon}','${item.name}','${item.price}','${item.is_active}')"
                                 class="list-group-item d-flex justify-content-between  list-group-item-action ">
                                 <div class="d-flex justify-content-between">
@@ -1005,20 +1005,20 @@
 
                             </button> `)
 
-                    });
-                }
+                });
+            }
 
-            });
         });
+    });
 
-        $(document).ready(() => {
-            document.getElementById('amount_3').value = "";
-            document.getElementById('amount_4').value = "";
-            $.ajax({
-                url: '/api/currency',
-                success: function (data) {
-                    $.each(data.currencies, function (i, item) {
-                        $("#listingCoin").append(`
+    $(document).ready(() => {
+        document.getElementById('amount_3').value = "";
+        document.getElementById('amount_4').value = "";
+        $.ajax({
+            url: '/api/currency',
+            success: function(data) {
+                $.each(data.currencies, function(i, item) {
+                    $("#listingCoin").append(`
                             <button type="button" id="${item.name}" onclick="change_coin('${item.icon}','${item.name}','${item.price}','${item.is_active}')"
                                 class="list-group-item d-flex justify-content-between  list-group-item-action ">
                                 <div class="d-flex justify-content-between">
@@ -1031,11 +1031,10 @@
 
                             </button> `)
 
-                    });
-                }
+                });
+            }
 
-            });
         });
-
-    </script>
-    @include('client.Layout.Footer')
+    });
+</script>
+@include('client.Layout.Footer')
