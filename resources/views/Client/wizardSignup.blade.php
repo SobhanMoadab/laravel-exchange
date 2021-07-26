@@ -2,7 +2,8 @@
 
 <link rel="stylesheet" href="/Client/css/wizardsignup.css">
 <!-- Toast Css Link -->
-<link href="https://cdn.jsdelivr.net/npm/nice-toast-js/dist/css/nice-toast-js.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/npm/nice-toast-js/dist/css/nice-toast-js.min.css" rel="stylesheet"
+    type="text/css" />
 <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 <!--wizard sign up-->
 
@@ -25,7 +26,7 @@
             </div>
             <form action="">
                 <div class="stepbodyone">
-                   <!--tab button--->
+                    <!--tab button--->
                     <div class="card  border-0 shadow-white p-4 my-2 ">
                         <div class="menu-header">
                             <div class="tab-switcher">
@@ -52,8 +53,8 @@
 
                                         <div class="card-body  d-flex justify-content-center  row">
 
-                                        
-                                        
+
+
                                             <div class="input-group">
                                                 <label>You Spend</label>
                                                 <input value="" id="amount_1" data-currency="bitcoin" type="text"
@@ -94,7 +95,7 @@
                                                     <tr>
                                                         <td dir="ltr" class="pr-0 font-weight-500 position-relative">
                                                             <span id="coin-rate">
-                                                            
+
                                                             </span> <span> $</span>
                                                         </td>
                                                         <td class="pl-0 text-right">
@@ -102,7 +103,8 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td class="pr-0 font-weight-500"><span class="coin-name"> </span></td>
+                                                        <td class="pr-0 font-weight-500"><span class="coin-name">
+                                                            </span></td>
                                                         <td class="pl-0">
                                                             Coin Name
                                                         </td>
@@ -126,8 +128,10 @@
                                     </div>
                                 </div>
 
-                                <button type="button" class="step-next btn btn-primary w-100 shadow-lg mt-3 ">exchange</button>
-                                <a href="#" class="step-next-form btn btn-success w-100 shadow-lg mt-3" style="display:none">form</a>
+                                <button type="button"
+                                    class="step-next btn btn-primary w-100 shadow-lg mt-3 ">exchange</button>
+                                <a href="#" class="step-next-form btn btn-success w-100 shadow-lg mt-3"
+                                    style="display:none">form</a>
                             </div>
                             <!---Purchase the site---->
                             <div class="card-body d-none justify-content-center align-content-center row  exchange"
@@ -196,7 +200,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                    <td class="pr-0 font-weight-500 position-relative coin-status">
+                                                        <td class="pr-0 font-weight-500 position-relative coin-status">
                                                             <span class="text-success">live</span>
                                                             <!---->
                                                         </td>
@@ -208,69 +212,74 @@
                                     </div>
                                 </div>
 
-                                <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">exchange</button>
-                                <a href="#" class="step-next-form btn btn-success w-100 shadow-lg mt-3 " style="display:none">form</a>
+                                <button type="button"
+                                    class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">exchange</button>
+                                <a href="#" class="step-next-form btn btn-success w-100 shadow-lg mt-3 "
+                                    style="display:none">form</a>
                             </div>
 
 
 
                         </div>
                     </div>
-                </div>    
+                </div>
                 <!---step two form--->
                 <div class="stepbodytwo my-3">
-                        <div class="row">
-                            <div class="col">
+                    <div class="row">
+                        <div class="col">
                             <label class="control-label">Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="Email">
-                            </div>
-                            <div class="col">
-                                <label class="control-label">Countries</label>
-                                    <select type="text" name="country_id" class="form-control country_select2" style="width: 100%">
-                                        <option value=""> iran </option>
-                                    </select>
-                            </div>
+                            <input type="email" name="email" class="form-control" placeholder="Email">
                         </div>
-                        <div class="row">
-                            <div class="col">
+                        <div class="col">
+                            <label class="control-label">Countries</label>
+                            <select type="text" name="country_id" class="form-control country_select2"
+                                style="width: 100%">
+                                <option value=""> iran </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
                             <label class="control-label">Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Password">
-                            </div>
-                            <div class="col">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="col">
                             <label class="control-label">Confrim Password</label>
-                                <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Your Password">
-                            </div>
-                            <div class="row wizard-verify  ">
-                                <div class="col d-flex justify-content-center">
-                                    <input type="text" class="form-control w-50 text-center border-info "placeholder="Enter Code">
-                                </div>
+                            <input type="password" name="password_confirmation" class="form-control"
+                                placeholder="Confirm Your Password">
+                        </div>
+                        <div class="row wizard-verify  ">
+                            <div class="col d-flex justify-content-center">
+                                <input type="text" class="form-control w-50 text-center border-info "
+                                    placeholder="Enter Code">
                             </div>
                         </div>
+                    </div>
                     <div class="d-flex justify-content-around">
                         <button type="button" id="step-two-back" class="btn btn-secondary w-50 mx-1"> back</button>
                         <button type="button" id="step-two-check" class="btn  btn-warning w-50 mx-1"> Check</button>
                         <button type="button" id="step-two-next" class="btn btn-primary w-50 mx-1 d-none"> next</button>
                     </div>
                 </div>
-                    <!--step tree payment--->
-                    <div class="stepbodyfinish my-3">
-                        <div class="d-flex justify-content-around align-content-center py-5">
-                            <a class=" btn rounded-2 shadow-poper-3 d-flex align-content-center p-5">
-                                payment
-                            </a>
-                            <div class=" btn rounded-2 shadow-poper-3 d-flex align-content-center p-5">
-                                payment
-                            </div>
-                            <div class=" btn rounded-2 shadow-poper-3 d-flex align-content-center p-5">
-                                payment
-                            </div>
+                <!--step tree payment--->
+                <div class="stepbodyfinish my-3">
+                    <div class="d-flex justify-content-around align-content-center py-5">
+                        <a class=" btn rounded-2 shadow-poper-3 d-flex align-content-center p-5">
+                            payment
+                        </a>
+                        <div class=" btn rounded-2 shadow-poper-3 d-flex align-content-center p-5">
+                            payment
                         </div>
-
-                        <button type="submit" class="btn btn-primary w-100"> Create Order</button>
+                        <div class=" btn rounded-2 shadow-poper-3 d-flex align-content-center p-5">
+                            payment
+                        </div>
                     </div>
-                </form>
-            </div>
+
+                    <button type="submit" class="btn btn-primary w-100"> Create Order</button>
+                </div>
+            </form>
         </div>
+    </div>
     </div>
 </section>
 <!--model Exchange-->
@@ -297,13 +306,12 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/Client/js/wizardsignup.js"></script>
 
 
 <script>
-       /****js model exhange*** */
-       function change_coin(icon, name, price, status) {
+    /****js model exhange*** */
+    function change_coin(icon, name, price, status) {
 
         $('#currency_id').attr('src', `data:image/png;base64,${icon}`);
         $('#currency_id_2').attr('src', `data:image/png;base64,${icon}`);
@@ -336,48 +344,48 @@
         amount_4_input.value = "";
         amount_3_input.attributes['data-currency'].value = name;
         $('#closeModal').click();
-        }
+    }
 
-        $('#amount_1').keyup(function () {
+    $('#amount_1').keyup(function() {
         const amount_1_input = document.getElementById('amount_1');
         $.ajax({
             url: `https://api.coinstats.app/public/v1/coins/${amount_1_input.attributes['data-currency'].value}`,
-            success: function (data) {
+            success: function(data) {
                 let quantity = amount_1_input.value;
                 document.getElementById('amount_2').value = Number(quantity * data.coin[
                     'price']).toFixed(2);
             },
-            error: function (err) {
+            error: function(err) {
                 alert({
                     err
                 });
             }
         });
-        });
+    });
 
-        $('#amount_3').keyup(function () {
+    $('#amount_3').keyup(function() {
         const amount_3_input = document.getElementById('amount_3');
         $.ajax({
             url: `https://api.coinstats.app/public/v1/coins/${amount_3_input.attributes['data-currency'].value}`,
-            success: function (data) {
+            success: function(data) {
                 let quantity = amount_3_input.value;
                 document.getElementById('amount_4').value = Number(quantity * data.coin[
                     'price']).toFixed(2);
             },
-            error: function (err) {
+            error: function(err) {
                 alert({
                     err
                 });
             }
         });
-        });
-        $(document).ready(() => {
+    });
+    $(document).ready(() => {
         document.getElementById('amount_1').value = "";
         document.getElementById('amount_2').value = "";
         $.ajax({
             url: '/api/currency',
-            success: function (data) {
-                $.each(data.currencies, function (i, item) {
+            success: function(data) {
+                $.each(data.currencies, function(i, item) {
                     $("#listingCoin").append(`
                         <button type="button" id="${item.name}" onclick="change_coin('${item.icon}','${item.name}','${item.price}','${item.is_active}')"
                             class="list-group-item d-flex justify-content-between  list-group-item-action ">
@@ -395,15 +403,15 @@
             }
 
         });
-        });
+    });
 
-        $(document).ready(() => {
+    $(document).ready(() => {
         document.getElementById('amount_3').value = "";
         document.getElementById('amount_4').value = "";
         $.ajax({
             url: '/api/currency',
-            success: function (data) {
-                $.each(data.currencies, function (i, item) {
+            success: function(data) {
+                $.each(data.currencies, function(i, item) {
                     $("#listingCoin").append(`
                         <button type="button" id="${item.name}" onclick="change_coin('${item.icon}','${item.name}','${item.price}','${item.is_active}')"
                             class="list-group-item d-flex justify-content-between  list-group-item-action ">
@@ -421,8 +429,6 @@
             }
 
         });
-        });
-
- 
+    });
 </script>
 @include('client.Layout.Footer')
