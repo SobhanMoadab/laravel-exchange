@@ -122,8 +122,8 @@
                                     </div>
                                 </div>
 
-                                <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">
-                                    exchange</button>
+                                <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">exchange</button>
+                                <button type="button" class=" step-next-wizard btn btn-success shadow-lg mt-3 " style="display:none">verification</button>
                             </div>
                             <!---Purchase the site--->
                             <div class="card-body d-none justify-content-center align-content-center row  exchange" id="Purchase-body">
@@ -201,8 +201,8 @@
                                     </div>
                                 </div>
 
-                                <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">
-                                    exchange</button>
+                                <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">exchange</button>
+                                <button type="button" class=" step-next-wizard btn btn-success w-100 shadow-lg mt-3 " style="display:none">verification</button>
                             </div>
                         </div>
                     </div>
@@ -470,8 +470,9 @@
         function() {
             if ($('.you-spend').val() == 0 || $('.you-receive').val() == 0) {
                 $.niceToast.error("Please enter the number");
-            } else if ($('.you-receive').val() <= 540000) {
-                $.niceToast.error('The maximum amount payable in each purchase must be 540000$');
+            } else if ($('.you-receive').val() >= 100) {
+                $.niceToast.error('The maximum amount payable in each purchase must be 100$');
+                $('.step-next-wizard').css("display","block");
             } else {
                 $('.line').animate({
                     width: '100%'
