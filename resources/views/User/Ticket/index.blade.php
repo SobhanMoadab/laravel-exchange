@@ -19,7 +19,7 @@
                 </thead>
                 <tbody>
                     @foreach($tickets as $ticket)
-                    <tr class="link-el" data-href="#">
+                    <tr class="link-el" href="{{route('user_show_ticket', $ticket->id)}}">
                         <td class="text-center">{{$ticket->title}}</td>
                         <td class="text-center">{{$ticket->content}}</td>
                         <td class="text-center"><span class="badge  bg-info">@if($ticket->status == 0) Open @else Closed @endif</td>
