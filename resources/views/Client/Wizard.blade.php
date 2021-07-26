@@ -114,8 +114,9 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 " id="purchaseBtn">
+                                <button type="button" class=" step-next-wizard btn btn-success shadow-lg mt-3 " style="display:none">verification</button>
+                                <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 "
+                                    id="purchaseBtn">
                                     exchange</button>
 
                             </div>
@@ -190,8 +191,8 @@
                                     </div>
                                 </div>
 
-                                <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">
-                                    exchange</button>
+                                <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">exchange</button>
+                                <button type="button" class=" step-next-wizard btn btn-success w-100 shadow-lg mt-3 " style="display:none">verification</button>
                             </div>
                         </div>
                     </div>
@@ -476,8 +477,9 @@
         function() {
             if ($('.you-spend').val() == 0 || $('.you-receive').val() == 0) {
                 $.niceToast.error("Please enter the number");
-            } else if ($('.you-receive').val() <= 100) {
-                $.niceToast.error('100$');
+            } else if ($('.you-receive').val() >= 100) {
+                $.niceToast.error('The maximum amount payable in each purchase must be 100$');
+                $('.step-next-wizard').css("display","block");
             } else {
                 $('.line').animate({
                     width: '100%'
