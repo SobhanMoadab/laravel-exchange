@@ -7,7 +7,7 @@ use App\Http\Controllers\Core\Services\OrderServices;
 use App\Http\Controllers\Core\Services\PriceServices;
 use App\Http\Controllers\Statics\Admin\AuthStatic;
 use App\Http\Controllers\Statics\Admin\CurrencyStatic;
-use App\Http\Controllers\Statics\Admin\OrderStatic;
+use App\Http\Controllers\Statics\Admin\OrderStatic as orderadmin;
 use App\Http\Controllers\Statics\Admin\PageStatic;
 use App\Http\Controllers\Statics\Admin\PermissionStatic;
 use App\Http\Controllers\Statics\Admin\PostStatic;
@@ -15,7 +15,8 @@ use App\Http\Controllers\Statics\Admin\User\ProfileStatic;
 use App\Http\Controllers\Statics\Admin\SettingStatic;
 use App\Http\Controllers\Statics\Admin\TicketStatic as ticketadmin;
 use App\Http\Controllers\Statics\User\TicketStatic as ticketuser;
-use Composer\DependencyResolver\Request;
+use App\Http\Controllers\Statics\User\OrderStatic as orderuser;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,8 +52,7 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
 
     Route::get('/dashboard', [PageStatic::class])->name('dashboard');
     // ORDER
-    Route::get('/order', [OrderStatic::class, 'register_order_form']);
-    Route::post('/order', [OrderStatic::class, 'register_order'])->name('register_order');
+   
 
     // PERMISSION
     Route::get('/roles', [PermissionStatic::class, 'get_all_roles_form']);
@@ -103,8 +103,8 @@ Route::middleware('auth')->group(function () {
     // profile
     Route::get('/profile', [ProfileStatic::class, 'index'])->name('dashboard');
     // order register
-Route::post('/order/verify_email', [OrderServices::class, 'verify_email'])->name('order_verify');
-    Route::post('/order/choose_password', [OrderServices::class, 'choose_password'])->name('order_verify');
+    Route::get('/order', [orderuser::class, 'register_order_form']);
+    Route::post('/order', [orderuser::class, 'register_order'])->name('store_user_order');
 
     // ticket
     Route::get('/ticket', [ticketuser::class, 'index']);
@@ -113,7 +113,6 @@ Route::post('/order/verify_email', [OrderServices::class, 'verify_email'])->name
     Route::delete('/ticket/{id}', [ticketuser::class, 'delete'])->name('user_delete_ticket');
     Route::get('/ticket/{id}', [ticketuser::class, 'show'])->name('user_show_ticket');
     Route::post('/ticket', [ticketuser::class, 'store'])->name('user_store_ticket');
-
 });
 
 // Route::get('/broadcast', function (PriceServices $price, Request $request) {
@@ -136,6 +135,6 @@ Route::get('/price/{id}', function (PriceServices $price_service, $id) {
 
 
 
-Route::get('/pre', function(){
+Route::get('/pre', function () {
     return view('Client.singlepost');
 });
