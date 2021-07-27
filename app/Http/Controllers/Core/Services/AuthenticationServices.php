@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Core\Services;
 
+use App\Events\VerifyEmailOrder;
 use App\Http\Resources\UserResource;
 use App\Models\Log;
 use App\Models\User;
+use App\Models\Verification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class AuthenticationServices
 {
@@ -29,13 +32,49 @@ class AuthenticationServices
             $validated['password'] = bcrypt($request->password);
             $user = User::create($validated);
             $token = $user->createToken('authToken')->accessToken;
+            $verificationCode = random_int(1000, 9999);
+            $verificationInfo = Verification::updateOrCreate(
+                [
+                    'user_id' => $user->id
+                ],
+                [
+                    'code' => $verificationCode,
+                ]
+            );
+            // VerifyEmailOrder::dispatch($validated['email'], $verificationCode);
+            Mail::send('User.Mail.verify', ['body' => $verificationCode], function ($message) use ($user) {
+                $message->to($user->email)
+                    ->subject('Verify Your Email');
+                $message->from('veiledassassin99@gmail.com', 'E-CMS');
+            });
+
             Log::create(['action' => ' ساخت حساب کاربری', 'user_id' => $user->id, 'is_admin' => false]);
-            return ['result' => [$user], 'token'=>$token];
+            Auth::login($user);
+            return ['msg' => 'success', 'result' => [$user]];
         } catch (\Exception $e) {
             return ['msg' => $e->getMessage()];
         }
     }
-
+    public function verify_order_email($request)
+    {
+        $validated = $request->validate([
+            'code' => 'required'
+        ], [
+            'code.required' => 'code is required'
+        ]);
+        try {
+            $verification_code = Verification::where('code', $validated['code'])->first();
+            if (!$verification_code) {
+                return ['error' => 'code is wrong'];
+            }
+            $user = User::where('id', $verification_code->user_id)->first();
+            $user->update(['is_verified' => 1]);
+            $verification_code->delete();
+            return ['msg' => 'success'];
+        } catch (\Exception $e) {
+            return ['error' => $e->getMessage()];
+        }
+    }
     public function login($request)
     {
         $validated = $request->validate([

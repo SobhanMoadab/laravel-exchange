@@ -41,6 +41,7 @@ Route::get('/register', [AuthStatic::class, 'register_form'])->name('register');
 Route::post('/register', [AuthStatic::class, 'register'])->name('register_store');
 Route::get('/login', [AuthStatic::class, 'login_form'])->name('login');
 Route::post('/login', [AuthStatic::class, 'login'])->name('login_store');
+Route::get('/logout', [AuthStatic::class, 'logout'])->name('logout');
 
 Route::get('/order', [OrderStatic::class, 'register_order_form']);
 
@@ -52,7 +53,7 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
 
     Route::get('/dashboard', [PageStatic::class])->name('dashboard');
     // ORDER
-   
+
 
     // PERMISSION
     Route::get('/roles', [PermissionStatic::class, 'get_all_roles_form']);
@@ -103,8 +104,7 @@ Route::middleware('auth')->group(function () {
     // profile
     Route::get('/profile', [ProfileStatic::class, 'index'])->name('dashboard');
     // order register
-    Route::get('/order', [orderuser::class, 'register_order_form']);
-    Route::post('/order', [orderuser::class, 'register_order'])->name('store_user_order');
+
 
     // ticket
     Route::get('/ticket', [ticketuser::class, 'index']);
@@ -114,24 +114,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/ticket/{id}', [ticketuser::class, 'show'])->name('user_show_ticket');
     Route::post('/ticket', [ticketuser::class, 'store'])->name('user_store_ticket');
 });
+Route::get('/order', [orderuser::class, 'register_order_form']);
+Route::post('/order', [orderuser::class, 'register_order'])->name('store_user_order');
 
-// Route::get('/broadcast', function (PriceServices $price, Request $request) {
-//     $result = $price->get_all_prices($request);
-//     $result = json_encode($result);
-//     $result = json_decode($result);
-// //    broadcast(new PriceList($result->currencies, $request));
-
-//     PriceList::dispatch($result->currencies, $request);
+// Route::get('/price', function (PriceServices $price_service) {
+//     $currency_list = $price_service->get_currencies();
+//     event(new PriceList($currency_list));
 // });
-Route::get('/price', function (PriceServices $price_service) {
-    $currency_list = $price_service->get_currencies();
-    event(new PriceList($currency_list));
-});
-Route::get('/price/{id}', function (PriceServices $price_service, $id) {
-    $coin = $price_service->get_currency_by_id($id);
-    // event(new PriceList($coin));
-    return $coin;
-});
+// Route::get('/price/{id}', function (PriceServices $price_service, $id) {
+//     $coin = $price_service->get_currency_by_id($id);
+//     // event(new PriceList($coin));
+//     return $coin;
+// });
 
 
 

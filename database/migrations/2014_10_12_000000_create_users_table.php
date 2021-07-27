@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->integer('phone')->nullable();
             $table->text('address')->nullable();
             $table->integer('country_id')->nullable();
-            $table->enum('is_verified', ['yes','no', 'in_progress'])->default('no');
+            $table->integer('is_verified')->default(0);
             $table->integer('wallet_credits')->default(0);
             $table->json('commission_data')->nullable();
             $table->text('passport_pic')->nullable();
