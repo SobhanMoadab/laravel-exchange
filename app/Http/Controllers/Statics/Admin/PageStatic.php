@@ -13,8 +13,8 @@ class PageStatic extends Controller
 
     public function create(Request $request)
     {
-        $pages = Pages::all();
-        return view('Admin.Pages.index', ['pages' => $pages]);
+        $data = ['pages' => Pages::all()];
+        return view('Admin.Pages.index', $data);
     }
     public function store(PageServices $page, Request $request)
     {

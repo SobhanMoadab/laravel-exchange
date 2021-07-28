@@ -12,12 +12,16 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable,HasApiTokens,HasRoles;
+    use HasFactory, Notifiable, HasApiTokens, HasRoles;
     protected $guarded = [];
     // protected $guard_name = 'api';
 
-    public function tickets()
+    public function user_tickets()
     {
-        return $this->hasMany(Tickets::class, 'user_id', 'id');
+        return $this->hasMany(Tickets::class, 'user_id', 'id')->latest();
+    }
+    public function admin_tickets()
+    {
+        return $this->hasMany(Tickets::class, 'admin_id', 'id');
     }
 }

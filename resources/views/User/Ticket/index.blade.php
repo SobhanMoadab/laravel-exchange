@@ -56,7 +56,7 @@
                         url: "{{url('/ticket')}}/" + id,
                         success: function(data) {
                             if (data['msg']) {
-                                swal("Permissions Delete", {
+                                swal("Ticket Delete", {
                                     icon: "success",
                                 });
                                 // need update content

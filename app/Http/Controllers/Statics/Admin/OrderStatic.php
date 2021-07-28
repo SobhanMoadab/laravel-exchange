@@ -19,10 +19,10 @@ class OrderStatic extends Controller
         $data = ['orders' => Order::All()];
         return view('Admin.Orders.index', $data);
     }
-    public function delete(){
-
+    public function delete()
+    {
     }
-    public function change_order_status($id){
-
+    public function change_order_status($id)
+    {
     }
 }

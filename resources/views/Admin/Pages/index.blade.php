@@ -7,11 +7,9 @@
                 <div class="mb-2">
                     <h1>Pages</h1>
                     <div class="top-right-button-container">
-                        <button type="button" class="btn btn-primary btn-lg top-right-button mr-1" data-toggle="modal"
-                            data-backdrop="static" data-target="#exampleModalRight">ADD NEW</button>
+                        <button type="button" class="btn btn-primary btn-lg top-right-button mr-1" data-toggle="modal" data-backdrop="static" data-target="#exampleModalRight">ADD NEW</button>
 
-                        <div class="modal fade modal-right" id="exampleModalRight" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalRight" aria-hidden="true">
+                        <div class="modal fade modal-right" id="exampleModalRight" tabindex="-1" role="dialog" aria-labelledby="exampleModalRight" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -30,8 +28,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Details</label>
-                                                <textarea placeholder="" name="body" class="form-control"
-                                                    rows="2"></textarea>
+                                                <textarea placeholder="" name="body" class="form-control" rows="2"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label>Type</label>
@@ -44,8 +41,7 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-outline-primary"
-                                                    data-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
                                                 <button type="submit" class="btn btn-primary">Submit</button>
                                             </div>
                                         </form>
@@ -60,8 +56,7 @@
                                     <span class="custom-control-label">&nbsp;</span>
                                 </label>
                             </div>
-                            <button type="button" class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="sr-only">Toggle Dropdown</span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
@@ -70,8 +65,7 @@
                         </div>
                     </div>
 
-                    <div class="modal fade modal-right" id="exampleModal" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade modal-right" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -103,8 +97,7 @@
 
                                         <div class="form-group">
                                             <label>Labels</label>
-                                            <select class="form-control select2-multiple" multiple="multiple"
-                                                data-width="100%">
+                                            <select class="form-control select2-multiple" multiple="multiple" data-width="100%">
                                                 <option value="New Framework">New Framework</option>
                                                 <option value="Education">Education</option>
                                                 <option value="Personal">Personal</option>
@@ -122,8 +115,7 @@
                                     </form>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline-primary"
-                                        data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
                                     <button type="button" class="btn btn-primary">Submit</button>
                                 </div>
                             </div>
@@ -132,16 +124,14 @@
                 </div>
 
                 <div class="mb-2">
-                    <a class="btn pt-0 pl-0 d-inline-block d-md-none" data-toggle="collapse" href="#displayOptions"
-                        role="button" aria-expanded="true" aria-controls="displayOptions">
+                    <a class="btn pt-0 pl-0 d-inline-block d-md-none" data-toggle="collapse" href="#displayOptions" role="button" aria-expanded="true" aria-controls="displayOptions">
                         Display Options
                         <i class="simple-icon-arrow-down align-middle"></i>
                     </a>
                     <div class="collapse d-md-block" id="displayOptions">
                         <div class="d-block d-md-inline-block">
                             <div class="btn-group float-md-left mr-1 mb-1">
-                                <button class="btn btn-outline-dark btn-xs dropdown-toggle" type="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-outline-dark btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Order By
                                 </button>
                                 <div class="dropdown-menu">
@@ -160,8 +150,7 @@
                 <div class="list disable-text-selection" data-check-all="checkAll">
                     <div class="card d-flex flex-row mb-3">
                         <div class="d-flex flex-grow-1 min-width-zero">
-                            <div
-                                class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                            <div class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
                                 <a class="list-item-heading mb-0 truncate w-40 w-xs-100 mt-0" href="Apps.Survey.html">
                                     <span class="align-middle d-inline-block"> {{$page->name}} </span>
                                 </a>
@@ -172,8 +161,7 @@
                                     <span class="badge badge-pill badge-secondary">{{$page->created_at}}</span>
                                 </div>
                                 <div class="w-10 w-xs-100">
-                                    <a href="" class=""><span class="btn-sm btn-info d-inline-block text-truncate"
-                                            style="max-width: 100px;">Update</span></a>
+                                    <a href="" class=""><span class="btn-sm btn-info d-inline-block text-truncate" style="max-width: 100px;">Update</span></a>
                                 </div>
                             </div>
                             <label class="custom-control custom-checkbox mb-1 align-self-center mr-4">

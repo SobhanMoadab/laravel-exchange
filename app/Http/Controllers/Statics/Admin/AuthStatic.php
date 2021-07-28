@@ -15,7 +15,7 @@ class AuthStatic extends Controller
 {
     public function register_form()
     {
-       
+
         $data = [
             'countries' => Country::all()
         ];
@@ -33,10 +33,10 @@ class AuthStatic extends Controller
     public function login(AuthenticationServices $auth, Request $request)
     {
         $result = $auth->login($request);
-        if($result['error']){
+        if ($result['error']) {
             return redirect()->back()->with('error', $result['error']);
         }
-       return redirect('/')->with('success', 'SUCCESS');
+        return redirect('/')->with('success', 'SUCCESS');
     }
     public function logout()
     {

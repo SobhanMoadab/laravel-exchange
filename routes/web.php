@@ -53,7 +53,7 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
 
     Route::get('/dashboard', [PageStatic::class])->name('dashboard');
     // ORDER
-    Route::get('/order', [OrderStatic::class, '']);
+    Route::get('/order', [orderadmin::class, 'order_list']);
     // Route::delete('/order', [OrderStatic::class, '']);
     // Route::post('/status/{id}', [OrderStatic::class, '']);
 
@@ -134,4 +134,4 @@ Route::post('/order', [orderuser::class, 'register_order'])->name('store_user_or
 
 Route::get('/pre', function () {
     return view('Client.Wizard');
-}); 
+});

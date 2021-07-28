@@ -68,6 +68,8 @@ Route::prefix('/dashboard')->middleware('auth:api')->group(function (): void {
     // S E T T I N G
     // Route::post('/down', [SettingController::class, 'maintenance_on'])->middleware('role:super-admin');
     // Route::get('/up', [SettingController::class, 'maintenance_off'])->middleware('role:super-admin');
+
+    
 });
 // Route::get('/ws_market', [CurrencyController::class, 'ws_market']);
 Route::get('/debug-sentry', function (): void {

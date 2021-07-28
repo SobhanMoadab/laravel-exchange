@@ -14,10 +14,13 @@ class PostStatic extends Controller
 {
     public function get_posts(Request $request, PostServices $post)
     {
+        $all_users_with_all_their_roles = User::with('roles')->get();
+        $all_users_with_all_direct_permissions = User::with('permissions')->get();
+        return ['a' => $all_users_with_all_their_roles, 'b' => $all_users_with_all_direct_permissions];
         $result = $post->get_posts($request);
         return view('Admin.Posts.index', $result);
     }
-  
+
     public function store_post(Request $request, PostServices $post)
     {
         $result = $post->store_post($request);
