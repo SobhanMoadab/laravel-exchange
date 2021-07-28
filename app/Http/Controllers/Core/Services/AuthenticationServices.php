@@ -67,8 +67,6 @@ class AuthenticationServices
             if (!$verification_code) {
                 return ['error' => 'code is wrong'];
             }
-            $user = User::where('id', $verification_code->user_id)->first();
-            $user->update(['is_verified' => 1]);
             $verification_code->delete();
             return ['msg' => 'success'];
         } catch (\Exception $e) {

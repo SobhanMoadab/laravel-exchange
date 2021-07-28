@@ -53,6 +53,9 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
 
     Route::get('/dashboard', [PageStatic::class])->name('dashboard');
     // ORDER
+    Route::get('/order', [OrderStatic::class, '']);
+    // Route::delete('/order', [OrderStatic::class, '']);
+    // Route::post('/status/{id}', [OrderStatic::class, '']);
 
 
     // PERMISSION
@@ -107,7 +110,7 @@ Route::middleware('auth')->group(function () {
 
 
     // ticket
-    Route::get('/ticket', [ticketuser::class, 'index']);
+    Route::get('/ticket', [ticketuser::class, 'index'])->name('user_tickets');
     Route::get('/ticket/create', [ticketuser::class, 'create']);
     Route::get('/ticket/{id}', [ticketuser::class, 'show']);
     Route::delete('/ticket/{id}', [ticketuser::class, 'delete'])->name('user_delete_ticket');
