@@ -132,6 +132,19 @@ Route::post('/order', [orderuser::class, 'register_order'])->name('store_user_or
 
 
 
-Route::get('/pre', function () {
-    return view('Client.Wizard');
+
+
+// CLIENT SITE
+Route::get('/feedback', function () {
+    return view('Client.Feedback');
+});
+Route::get('/faq', function () {
+    return view('Client.FAQ');
+});
+Route::get('/contactus', function () {
+    return view('Client.ContactUs');
+});
+
+Route::get('/verify', function () {
+    return view('User.Verification');
 });

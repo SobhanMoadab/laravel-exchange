@@ -10,14 +10,18 @@ $().ready(function () {
         timeout: 5000,
     });
 })
+$('#verifyBtn').click(function () {
+    let url = '/register'
+    document.location.href = url;
+})
 $('.step-next').click(
     function () {
         if ($('.you-spend').val() == 0) {
             $.niceToast.error("Please enter the number");
         }
         else if ($('.you-receive').val() >= 100) {
-            $.niceToast.error('please fill the form');
-            $('.step-next-form').css("display", "block");
+            $.niceToast.error('The amount 100$ plase verify account');
+            $('#verifyBtn').css("display", "block")
         }
         else {
             $('.line').animate({ width: '65%' }, 1000, 'easeInOutQuint')

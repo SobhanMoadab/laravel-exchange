@@ -273,6 +273,8 @@ hr {
     background: #7A57D1;
     border-color: #7A57D1 !important;
     color: #ffffff;
+    box-shadow: 0 0 10px 0 #7A57D1 !important;
+
     transition: .2s;
 }
 
@@ -2272,7 +2274,8 @@ textarea.form-control {
 }
 
 .rounded-2 {
-    border-radius: 15px !important;
+    border-radius: 10px !important;
+
 }
 
 .shadow-1 {
@@ -2293,6 +2296,20 @@ textarea.form-control {
 
 .border-primary {
     border: solid 3px #8916FF !important;
+}
+
+.login-btn {
+    box-shadow: none !important;
+    border: none !important;
+    background-color: transparent !important;
+
+}
+
+.login-btn:hover {
+    box-shadow: none !important;
+    border: none !important;
+    background-color: #7A57D1 !important;
+
 }
 
 .border-bottom-1 {
@@ -2773,5 +2790,35 @@ textarea.form-control {
     100% {
         transform: scale(2);
         opacity: 0;
+    }
+}
+
+
+.card-animate {
+    opacity: 0;
+    animation: scalecard .6s 1s cubic-bezier(0.175, 1.085, 0.420, 1.275) forwards;
+    /* filter: blur(8px); */
+    box-shadow: 0 0 0px 0 #fff;
+
+}
+
+@keyframes scalecard {
+    0% {
+        transform: scale(0.9);
+
+    }
+
+    50% {
+        box-shadow: 0 0 0px 0 #fff;
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        /* filter: blur(0px); */
+        box-shadow: 0 0 14px 0 #fff;
+
+
     }
 }

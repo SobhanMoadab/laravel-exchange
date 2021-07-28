@@ -18,7 +18,7 @@
             <div class="container">
                 <div class="row mt-lg-n10 mt-md-n12 mt-n11">
                     <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
-                        <div class="card z-index-0 shadow-1">
+                        <div class="card z-index-0 card-animate">
                             <div class="card-header text-center bg-white border-0 pt-4">
                                 <img src="images/E-cms.png" alt="" height="40">
 
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form action="{{route('register_store')}}" method="POST">
+                                <form action="{{ route('register_store') }}" method="POST">
                                     @csrf
                                     @include('flash-message')
                                     <div class="mb-3">
@@ -107,8 +107,9 @@
                                         <div class="form-group">
                                             <select class="form-control" name="country_id" placeholder="Contrry"
                                                 id="ConuntrySelect1">
-                                                @foreach($countries as $country)
-                                                <option value="{{$country['id']}}">{{$country['name']}}</option>
+                                                @foreach ($countries as $country)
+                                                    <option value="{{ $country['id'] }}">{{ $country['name'] }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -129,8 +130,10 @@
                                         </p>
                                     </div>
                                     <div class="text-center">
-                                        <a href="/login"><button type="button" class="btn bg-gradient-dark w-100 mt-2 mb-4">Sign
-                                            In</button></a>
+                                        <a href="/login"><button type="button"
+                                                class="btn bg-gradient-dark w-100 mt-2 mb-4"
+                                                style="border: 1px solid #eee !important; border-radius:10px;">Sign
+                                                In</button></a>
                                     </div>
                                 </form>
                             </div>

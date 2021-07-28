@@ -47,8 +47,7 @@
             </a>
             <!-- login register -->
             <div>
-                <a href="/login"><button id="nav-btn"
-                        class="btn-sm btn-primary mx-1 border-0 bg-transparent">login</button></a>
+                <a href="/login"><button id="nav-btn" class="btn-sm btn-primary mx-1 login-btn">login</button></a>
                 <a href="/register"><button class="btn-sm btn-primary mx-1 border-0">register</button></a>
                 <button onclick="navPhoneOpen()" class="d-lg-none bg-transparent mx-1 border-0"><i
                         class="bi bi-list text-white" id="nav-phone-icon"></i>
