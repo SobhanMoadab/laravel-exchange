@@ -4,9 +4,7 @@ $().ready(function () {
     if ($('.you-spend').val() == '') {
         $('.you-spend').val('0')
     }
-    $(".you-spend").keyup(function () {
-        $(".you-receive").val($(this).val() * 2350);
-    });
+
     $.niceToast.setup({
         position: "bottom-right",
         timeout: 5000,
@@ -19,7 +17,7 @@ $('.step-next').click(
         }
         else if ($('.you-receive').val() >= 100) {
             $.niceToast.error('please fill the form');
-            $('.step-next-form').css("display","block");
+            $('.step-next-form').css("display", "block");
         }
         else {
             $('.line').animate({ width: '65%' }, 1000, 'easeInOutQuint')
