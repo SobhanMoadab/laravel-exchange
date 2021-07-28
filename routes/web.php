@@ -134,4 +134,4 @@ Route::post('/order', [orderuser::class, 'register_order'])->name('store_user_or
 
 Route::get('/pre', function () {
     return view('Client.Wizard');
-});
+}); 
