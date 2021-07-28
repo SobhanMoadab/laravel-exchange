@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\CurrencyController;
+use App\Http\Controllers\Core\Services\AuthenticationServices;
 // use App\Http\Controllers\Core\SettingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // A U T H E N T I C A T I O N
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/verify_order_email', [AuthController::class, 'verify_order_email']);
+
 //TODO: add middleware to check if user is registered, removed for developement reasons
 Route::get('/currency', [CurrencyController::class, 'get_currencies']);
 

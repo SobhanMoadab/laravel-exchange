@@ -19,7 +19,7 @@ class AuthStatic extends Controller
         $data = [
             'countries' => Country::all()
         ];
-        return view('auth.register', $data);
+        return view('Admin.auth.register', $data);
     }
     public function register(AuthenticationServices $auth, Request $request)
     {
@@ -28,7 +28,7 @@ class AuthStatic extends Controller
     }
     public function login_form()
     {
-        return view('auth.login');
+        return view('Admin.auth.login');
     }
     public function login(AuthenticationServices $auth, Request $request)
     {

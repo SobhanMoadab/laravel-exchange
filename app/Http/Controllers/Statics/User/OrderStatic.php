@@ -24,11 +24,12 @@ class OrderStatic extends Controller
     }
     public function register_order(Request $request, OrderServices $order)
     {
-       $result = $order->register_order($request);
-       if($result['error']){
-           return redirect()->back()->with('error', $result['error']);
-       }
-       return $result;
-    //    return view
+        $result = $order->register_order($request);
+        if ($result['error']) {
+            return redirect()->back()->with('error', $result['error']);
+        }
+        return $result;
+        
+        //    return view
     }
 }

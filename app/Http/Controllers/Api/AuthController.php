@@ -68,6 +68,11 @@ class AuthController extends Controller
         $result = $auth->login($request);
         return response()->json(['msg' => 'success', 'result' => $result,'token'=>$result['token']], 200);
     }
+    public function verify_order_email(AuthenticationServices $auth, Request $request)
+    {
+        $result = $auth->verify_order_email($request);
+        return response()->json(['msg' => 'success'], 200);
+    }
 
     // public function register(Request $request)
     // {

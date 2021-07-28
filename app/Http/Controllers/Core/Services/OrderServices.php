@@ -44,7 +44,7 @@ class OrderServices
                 return ['order' => $order, 'error' => null];
             }
             $order = Order::create([
-                'currency_id' => $request->currency_id,
+                'currency_id' =>  $currency->id,
                 'amount' => $request->amount,
                 'order_status' => 'pending_confirmation',
 
