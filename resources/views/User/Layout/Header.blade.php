@@ -28,8 +28,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script src="/Admin/js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="/Admin/js/vendor/jquery-3.3.1.min.js"></script>
 </head>
 
 <body class="bg-light">
@@ -45,16 +45,18 @@
                 <img src="/Client/images/E-cms.png" alt="" height="40">
             </a>
             <div>
-                <a href="/login"><button id="nav-btn" class="btn-sm btn-primary mx-1 border-0 bg-transparent">login</button></a>
+                <a href="/login"><button id="nav-btn"
+                        class="btn-sm btn-primary mx-1 border-0 bg-transparent">login</button></a>
                 <a href="/register"><button class="btn-sm btn-primary mx-1 border-0">register</button></a>
-                <button onclick="navPhoneOpen()" class="d-lg-none bg-transparent mx-1 border-0"><i class="bi bi-list text-white" id="nav-phone-icon"></i>
+                <button onclick="navPhoneOpen()" class="d-lg-none bg-transparent mx-1 border-0"><i
+                        class="bi bi-list text-white" id="nav-phone-icon"></i>
                 </button>
 
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto" id="navbar-navlist">
-                    <li class="nav-item">
-                        <a id="nav-link" class="nav-link " href="/">Home</a>
+                    <li class="nav-item active">
+                        <a id="nav-link" class="nav-link  " href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a id="nav-link" class="nav-link " href="/feedback">Feedback</a>
@@ -112,22 +114,22 @@
     </div>
 
     <!-- END NAVBAR -->
-    <section class="heading" >
+    <section class="heading">
         <div class="container">
             <div class="text-center mb-5 ">
                 <h1 class="display-5 fw-normal text-white">Dashboard <span class="fw-bold text-white"> User Name</span>
                 </h1>
-    
+
             </div>
-    
+
         </div>
         <nav class="navbar w-100 navbar-expand-lg  ">
             <div class="container bg-white py-3 px-0 rounded-2">
-    
+
                 <div class=" overflow navbar-collapse">
                     <ul class="nav mx-auto nav-user  ">
                         <li class="nav-item">
-    
+
                             <a class="nav-link-user active " href="/users"> <i class="bi bi-person"></i> Home</a>
                         </li>
                         <li class="nav-item">
@@ -147,59 +149,59 @@
                                 Setting</a>
                         </li>
                     </ul>
-    
-    
+
+
                 </div>
             </div>
-    
-    
+
+
         </nav>
     </section>
 
-        <!-- tickers start -->
-        <div class="contain-div container-fluid ">
-            <div class="row cycle-slideshow" data-cycle-fx=carousel data-cycle-speed="2000" data-cycle-timeout=1
-                data-cycle-easing="linear" data-cycle-carousel-fluid=true data-cycle-pause-on-hover="true"
-                data-cycle-slides="> div">
-    
-                <div class="box">
-                    <div class="ticker-box">
-                        <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
-                                    src="/client/images/svg/bitcoin-441959.svg" alt=""></span></div>
-                    </div>
+    <!-- tickers start -->
+    <div class="contain-div container-fluid ">
+        <div class="row cycle-slideshow" data-cycle-fx=carousel data-cycle-speed="2000" data-cycle-timeout=1
+            data-cycle-easing="linear" data-cycle-carousel-fluid=true data-cycle-pause-on-hover="true"
+            data-cycle-slides="> div">
+
+            <div class="box">
+                <div class="ticker-box">
+                    <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
+                                src="/client/images/svg/bitcoin-441959.svg" alt=""></span></div>
                 </div>
-                <div class="box">
-                    <div class="ticker-box">
-                        <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
-                                    src="/Client/images/svg/aurouracoin-441945.svg" alt=""></span></div>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="ticker-box">
-                        <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
-                                    src="/Client/images/svg/dash-441957.svg" alt=""></span></div>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="ticker-box">
-                        <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
-                                    src="/Client/images/svg/devcoin-441952.svg" alt=""></span></div>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="ticker-box">
-                        <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
-                                    src="/Client/images/svg/dogecoin-441958.svg" alt=""></span></div>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="ticker-box">
-                        <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
-                                    src="/Client/images/svg/etherium-441951.svg" alt=""></span></div>
-                    </div>
-                </div>
-    
             </div>
+            <div class="box">
+                <div class="ticker-box">
+                    <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
+                                src="/Client/images/svg/aurouracoin-441945.svg" alt=""></span></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="ticker-box">
+                    <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
+                                src="/Client/images/svg/dash-441957.svg" alt=""></span></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="ticker-box">
+                    <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
+                                src="/Client/images/svg/devcoin-441952.svg" alt=""></span></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="ticker-box">
+                    <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
+                                src="/Client/images/svg/dogecoin-441958.svg" alt=""></span></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="ticker-box">
+                    <div class="ticker-date">9/08<span class="ticker-prog"><img width="20"
+                                src="/Client/images/svg/etherium-441951.svg" alt=""></span></div>
+                </div>
+            </div>
+
         </div>
-    
-        <!-- tckers End -->
+    </div>
+
+    <!-- tckers End -->

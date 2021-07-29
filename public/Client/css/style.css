@@ -1262,12 +1262,24 @@ hr {
 .navbar-custom .navbar-nav li a:hover,
 .navbar-custom .navbar-nav li a:focus,
 .navbar-custom .navbar-nav li a:active {
-    color: #ccc !important;
+    color: #fff;
     transition: .2s;
 }
 
-.navbar-custom .navbar-nav li.active a {
-    border-top: 3px solid #614a9a;
+.navbar-custom .navbar-nav li {
+    padding-bottom: 4px;
+    transition: .4s;
+    margin: 0px 2px;
+    border-bottom: 2px solid transparent;
+
+}
+
+.navbar-custom .navbar-nav li:hover {
+    /* border-top: 3px solid #614a9a; */
+    border-bottom: 2px solid #5f3bff;
+    padding-bottom: 4px;
+    transition: .1s;
+
 
 }
 
@@ -2261,17 +2273,32 @@ textarea.form-control {
     font-size: 12px;
 }
 
-.feedback-card {
-    margin: auto 180px;
-    border-radius: 20px;
+.feedback-card::before {
+    content: '';
+    width: 100.2%;
+    height: 102%;
+    background: linear-gradient(150deg, rgba(80, 193, 233, 1) 0%, #fff, #fff, rgba(122, 87, 209, 1) 80%);
+    position: absolute;
+    z-index: -1;
+    transform: translateX(-0.1%) translateY(-1%);
+    border-radius: 5px;
+
 }
 
-@media only screen and (max-width: 690px) {
-    .feedback-card {
-        margin: auto auto;
+.feedback-card::after {
+    filter: blur(3px);
+    content: '';
+    width: 100.2%;
+    height: 102%;
+    background: linear-gradient(150deg, rgba(80, 193, 233, 1) 0%, #fff, #fff, rgba(122, 87, 209, 1) 100%);
+    position: absolute;
+    z-index: -1;
+    transform: translateX(-0.1%) translateY(-1%);
+    border-radius: 5px;
 
-    }
 }
+
+
 
 .rounded-2 {
     border-radius: 10px !important;
@@ -2309,6 +2336,7 @@ textarea.form-control {
     box-shadow: none !important;
     border: none !important;
     background-color: #7A57D1 !important;
+    color: #fff !important;
 
 }
 

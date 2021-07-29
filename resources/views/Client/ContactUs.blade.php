@@ -7,7 +7,7 @@
 
 
             <div class="col-12">
-                <div class="card">
+                <div class="card shadow-1">
                     <div class="card-body">
 
                         <section class="section p-0">
@@ -17,14 +17,14 @@
                                     <div class="col-lg-3">
 
                                         <div class="mt-4">
-                                        <!--addres-->
+                                            <!--addres-->
                                             <h5 class="f-17 mb-1 mt-4 pt-2">
-                                               <P> Email Address: JohnPBeau@jourrapide.com</P>
-                                                
-                                               <P>Contact Number: +112 708-231-9668</P>
-                                                 
-                                               <P>Office Address: 3429 Gnatty Creek Road Farmingdale, NY 11735</P> 
-                                                
+                                                <P> Email Address: JohnPBeau@jourrapide.com</P>
+
+                                                <P>Contact Number: +112 708-231-9668</P>
+
+                                                <P>Office Address: 3429 Gnatty Creek Road Farmingdale, NY 11735</P>
+
                                             </h5>
                                         </div>
 

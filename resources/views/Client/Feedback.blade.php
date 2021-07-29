@@ -1,184 +1,115 @@
 @include('Client.Layout.Header')
 <!---nav background-->
-<section class="bg-home-2" style="padding: 80px 0px 80px 0px;">
-    <div class="container">
-        <div class="row ">
+<section class="bg-home-2 h-25  d-flex justify-content-center align-items-center ">
+    <div class="container ">
+        <div class="row">
 
+            <h3 class=" text-white text-center">Feedback</h3>
         </div>
 
     </div>
 
 </section>
-<h3 class="feedback-head">feedback</h3>
 <!---feedback-->
-<div class="card mb-4 feedback-card col-12 col-sm-8 col-md-8">
-    <div class="row ">
-        <div class="col-4 col-sm-4 col-md-2 col-lg-2"
-            style="background: rgba(182, 48, 182, 0.781); border-bottom-left-radius: 20px; border-top-left-radius: 20px; ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                class="bi bi-person text-white" viewBox="0 0 16 16"
-                style="padding-left: 10px; padding-top: 10px; margin-left: 15px;">
-                <path
-                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-            </svg>
 
-            <p class="d-block text-white" style="width: 100px; padding-top: 10px; padding-left: 15px;">Card title
-            </p>
-        </div>
-        <div class="col-8 col-sm-8 col-md-10 col-lg-10">
-            <div class="card-body" style="padding: 0.5rem 0.5rem; ">
-                <p class="card-text fw-bolder " style=" margin: auto; ">This is a wider card with supporting text
-                    below as a natural lead-in to
-                    additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted ">Last updated 3 mins ago</small></p>
+<div class=" col-12 d-flex flex-column justify-content-center align-items-center ">
+
+    <div class="card my-2 col-8 border-0 shadow-1 feedback-card">
+        <div class="row ">
+            <div class=" d-flex justify-content-between px-4 py-2 ">
+                <div class="d-flex align-items-center">
+                    <img src="/client/images/users/profile.jpg" alt=""
+                        style="border-radius: 50%; border: 1px solid #eee" width="60px" height="60px">
+                    <span class="mx-2">mohammadsgr@gmail.com</span>
+                    <p class="card-text"><small class="text-muted ">Last updated 3 mins ago</small></p>
+
+                </div>
+                <div class="d-flex align-items-center">
+                    <img src="/client/images/svg/bitcoin-441959.svg" alt="" width="30px">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-arrow-left-right col-4 " viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z">
+                        </path>
+                    </svg>
+                    <img src="/client/images/svg/peercoin-441947.svg" alt="" width="30px">
+                </div>
+            </div>
+            <div class="col-8 col-sm-8 col-md-10 col-lg-10">
+                <div class="card-body">
+                    <p class="card-text fw-bolder ">This is a wider card with supporting text
+                        below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="card mb-4 feedback-card col-12 col-sm-8 col-md-8">
-    <div class="row ">
-        <div class="col-4 col-sm-4 col-md-2 col-lg-2"
-            style="background: rgba(182, 48, 182, 0.781); border-bottom-left-radius: 20px; border-top-left-radius: 20px; ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                class="bi bi-person text-white" viewBox="0 0 16 16"
-                style="padding-left: 10px; padding-top: 10px; margin-left: 15px;">
-                <path
-                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-            </svg>
 
-            <p class="d-block text-white" style="width: 100px; padding-top: 10px; padding-left: 15px;">Card title
-            </p>
-        </div>
-        <div class="col-8 col-sm-8 col-md-10 col-lg-10">
-            <div class="card-body" style="padding: 0.5rem 0.5rem; ">
-                <p class="card-text fw-bolder " style=" margin: auto; ">This is a wider card with supporting text
-                    below as a natural lead-in to
-                    additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted ">Last updated 3 mins ago</small></p>
+    <div class="card my-2 col-8 border-0 shadow-1 feedback-card">
+        <div class="row ">
+            <div class=" d-flex justify-content-between px-4 py-2 ">
+                <div class="d-flex align-items-center">
+                    <img src="/client/images/users/profile.jpg" alt=""
+                        style="border-radius: 50%; border: 1px solid #eee" width="60px" height="60px">
+                    <span class="mx-2">mohammadsgr@gmail.com</span>
+                    <p class="card-text"><small class="text-muted ">Last updated 3 mins ago</small></p>
+
+                </div>
+                <div class="d-flex align-items-center">
+                    <img src="/client/images/svg/bitcoin-441959.svg" alt="" width="30px">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-arrow-left-right col-4 " viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z">
+                        </path>
+                    </svg>
+                    <img src="/client/images/svg/peercoin-441947.svg" alt="" width="30px">
+                </div>
+            </div>
+            <div class="col-8 col-sm-8 col-md-10 col-lg-10">
+                <div class="card-body">
+                    <p class="card-text fw-bolder ">This is a wider card with supporting text
+                        below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="card mb-4 feedback-card col-12 col-sm-8 col-md-8">
-    <div class="row ">
-        <div class="col-4 col-sm-4 col-md-2 col-lg-2"
-            style="background: rgba(182, 48, 182, 0.781); border-bottom-left-radius: 20px; border-top-left-radius: 20px; ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                class="bi bi-person text-white" viewBox="0 0 16 16"
-                style="padding-left: 10px; padding-top: 10px; margin-left: 15px;">
-                <path
-                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-            </svg>
 
-            <p class="d-block text-white" style="width: 100px; padding-top: 10px; padding-left: 15px;">Card title
-            </p>
-        </div>
-        <div class="col-8 col-sm-8 col-md-10 col-lg-10">
-            <div class="card-body" style="padding: 0.5rem 0.5rem; ">
-                <p class="card-text fw-bolder " style=" margin: auto; ">This is a wider card with supporting text
-                    below as a natural lead-in to
-                    additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted ">Last updated 3 mins ago</small></p>
+    <div class="card my-2 col-8 border-0 shadow-1 feedback-card">
+        <div class="row ">
+            <div class=" d-flex justify-content-between px-4 py-2 ">
+                <div class="d-flex align-items-center">
+                    <img src="/client/images/users/profile.jpg" alt=""
+                        style="border-radius: 50%; border: 1px solid #eee" width="60px" height="60px">
+                    <span class="mx-2">mohammadsgr@gmail.com</span>
+                    <p class="card-text"><small class="text-muted ">Last updated 3 mins ago</small></p>
+
+                </div>
+                <div class="d-flex align-items-center">
+                    <img src="/client/images/svg/bitcoin-441959.svg" alt="" width="30px">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-arrow-left-right col-4 " viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z">
+                        </path>
+                    </svg>
+                    <img src="/client/images/svg/peercoin-441947.svg" alt="" width="30px">
+                </div>
+            </div>
+            <div class="col-8 col-sm-8 col-md-10 col-lg-10">
+                <div class="card-body">
+                    <p class="card-text fw-bolder ">This is a wider card with supporting text
+                        below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="card mb-4 feedback-card col-12 col-sm-8 col-md-8">
-    <div class="row ">
-        <div class="col-4 col-sm-4 col-md-2 col-lg-2"
-            style="background: rgba(182, 48, 182, 0.781); border-bottom-left-radius: 20px; border-top-left-radius: 20px; ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                class="bi bi-person text-white" viewBox="0 0 16 16"
-                style="padding-left: 10px; padding-top: 10px; margin-left: 15px;">
-                <path
-                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-            </svg>
 
-            <p class="d-block text-white" style="width: 100px; padding-top: 10px; padding-left: 15px;">Card title
-            </p>
-        </div>
-        <div class="col-8 col-sm-8 col-md-10 col-lg-10">
-            <div class="card-body" style="padding: 0.5rem 0.5rem; ">
-                <p class="card-text fw-bolder " style=" margin: auto; ">This is a wider card with supporting text
-                    below as a natural lead-in to
-                    additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted ">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="card mb-4 feedback-card col-12 col-sm-8 col-md-8">
-    <div class="row ">
-        <div class="col-4 col-sm-4 col-md-2 col-lg-2"
-            style="background: rgba(182, 48, 182, 0.781); border-bottom-left-radius: 20px; border-top-left-radius: 20px; ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                class="bi bi-person text-white" viewBox="0 0 16 16"
-                style="padding-left: 10px; padding-top: 10px; margin-left: 15px;">
-                <path
-                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-            </svg>
 
-            <p class="d-block text-white" style="width: 100px; padding-top: 10px; padding-left: 15px;">Card title
-            </p>
-        </div>
-        <div class="col-8 col-sm-8 col-md-10 col-lg-10">
-            <div class="card-body" style="padding: 0.5rem 0.5rem; ">
-                <p class="card-text fw-bolder " style=" margin: auto; ">This is a wider card with supporting text
-                    below as a natural lead-in to
-                    additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted ">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-    </div>
 </div>
-<div class="card mb-4 feedback-card col-12 col-sm-8 col-md-8">
-    <div class="row ">
-        <div class="col-4 col-sm-4 col-md-2 col-lg-2"
-            style="background: rgba(182, 48, 182, 0.781); border-bottom-left-radius: 20px; border-top-left-radius: 20px; ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                class="bi bi-person text-white" viewBox="0 0 16 16"
-                style="padding-left: 10px; padding-top: 10px; margin-left: 15px;">
-                <path
-                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-            </svg>
 
-            <p class="d-block text-white" style="width: 100px; padding-top: 10px; padding-left: 15px;">Card title
-            </p>
-        </div>
-        <div class="col-8 col-sm-8 col-md-10 col-lg-10">
-            <div class="card-body" style="padding: 0.5rem 0.5rem; ">
-                <p class="card-text fw-bolder " style=" margin: auto; ">This is a wider card with supporting text
-                    below as a natural lead-in to
-                    additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted ">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="card mb-4 feedback-card col-12 col-sm-8 col-md-8">
-    <div class="row ">
-        <div class="col-4 col-sm-4 col-md-2 col-lg-2"
-            style="background: rgba(182, 48, 182, 0.781); border-bottom-left-radius: 20px; border-top-left-radius: 20px; ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                class="bi bi-person text-white" viewBox="0 0 16 16"
-                style="padding-left: 10px; padding-top: 10px; margin-left: 15px;">
-                <path
-                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-            </svg>
-
-            <p class="d-block text-white" style="width: 100px; padding-top: 10px; padding-left: 15px;">Card title
-            </p>
-        </div>
-        <div class="col-8 col-sm-8 col-md-10 col-lg-10">
-            <div class="card-body" style="padding: 0.5rem 0.5rem; ">
-                <p class="card-text fw-bolder " style=" margin: auto; ">This is a wider card with supporting text
-                    below as a natural lead-in to
-                    additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted ">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-    </div>
-</div>
 <!--pagination-->
 <ul class="pagination justify-content-center">
     <li class="page-item">

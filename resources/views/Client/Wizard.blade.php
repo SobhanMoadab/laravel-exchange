@@ -13,7 +13,7 @@
 
     <section class="bg-home-2 align-items-center d-flex">
         <div class="container">
-            <div class="card my-5">
+            <div class="card my-5 shadow-1">
                 <div class="card-body wizardstep ">
                     @include('flash-message')
                     <!--wizardstep-->
@@ -388,7 +388,7 @@
 
     <section class="bg-home-2 align-items-center d-flex">
         <div class="container">
-            <div class="card my-5 rounded-2">
+            <div class="card my-5 rounded-2 shadow-1">
                 <div class="card-body wizardstep ">
                     <a class=" logo d-flex justify-content-center my-2 " href="#">
                         <img src="images/E-cms.png" alt="" height="40">

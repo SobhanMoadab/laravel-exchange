@@ -57,14 +57,14 @@
             <!-- nav list -->
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto" id="navbar-navlist">
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a id="nav-link" class="nav-link " href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a id="nav-link" class="nav-link " href="/feedback">Feedback</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link" class="nav-link" href="/wizard">Wizard</a>
+                        <a id="nav-link" class="nav-link" href="/order">Wizard</a>
                     </li>
                     <li class="nav-item">
                         <a id="nav-link" class="nav-link " href="/faq">FAQ</a>
@@ -105,7 +105,7 @@
                 <a id="nav-link" class="nav-link " href="/feedback">Feedback</a>
             </li>
             <li class="nav-item">
-                <a id="nav-link" class="nav-link" href="/wizard">Wizard</a>
+                <a id="nav-link" class="nav-link" href="/order">Wizard</a>
             </li>
             <li class="nav-item">
                 <a id="nav-link" class="nav-link " href="/faq">FAQ</a>

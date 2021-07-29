@@ -119,8 +119,7 @@
                                     </div>
                                 </div>
 
-                                <a type="button" href="/dashboard/order"
-                                    class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">
+                                <a type="button" href="/order" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">
                                     exchange</a>
                             </div>
                             <!--Purchase the site-->
@@ -200,8 +199,8 @@
                                     </div>
                                 </div>
 
-                                <button type="button" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">
-                                    exchange</button>
+                                <a type="button" href="/order" class=" step-next btn btn-primary w-100 shadow-lg mt-3 ">
+                                    exchange</a>
                             </div>
 
 
