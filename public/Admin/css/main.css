@@ -252,3 +252,10 @@ body.show-spinner::after {
     background-color: var(--theme-color-1) !important;
     border-color: var(--theme-color-1) !important;
 }
+
+.btn .btn-sm {
+    padding: 0.1rem .5rem .1rem .5rem !important;
+    font-size: .65rem !important;
+    line-height: 1.5 !important;
+}
+}

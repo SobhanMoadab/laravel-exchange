@@ -242,11 +242,7 @@
         
                         <div class="chat-text-left">
                             <p class="mb-0 text-semi-muted">
-        
-        
                                 {{ $user->id }}
-        
-        
                             </p>
                         </div>
                     </div>
