@@ -16,7 +16,7 @@ class OrderStatic extends Controller
 {
     public function order_list()
     {
-        $data = ['orders' => Order::All()];
+        $data = ['orders' => Order::with('currency')->get()];
         return view('Admin.Orders.index', $data);
     }
     public function delete()

@@ -24,40 +24,31 @@
                     <table class="table table-hover hove ">
                         <thead>
                             <tr>
-                                <th scope="col"> Order Id</th>
-                                <th scope="col"> Order</th>
+                                <th scope="col"> Id</th>
+                                <th scope="col"> Currency</th>
                                 <th scope="col"> Date</th>
                                 <th scope="col"> Status</th>
-                                <th scope="col"> Sum </th>
+                                <th scope="col"> Amount </th>
                                 <th scope="col"> </th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($orders as $order)
                             <tr id="order-1" class="table-list ">
-                                <th scope="row">203</th>
-                                <td> BTC</td>
-                                <td> 2021/5/4</td>
-                                <td> <span class="badge bg-primary"> Was paid </span></td>
-                                <td>24,600,000 $</td>
+                                <th scope="row">{{$order->id}}</th>
+                                <td> {{ucfirst($order['currency']['name']) }}</td>
+                                <td> {{$order->created_at}}</td>
+                                @php
+                                $upd = str_replace('_', ' ', $order->order_status);
+                                @endphp
+                                <td> <span class="badge bg-primary">{{ucfirst($upd)}}</span></td>
+                                <td>{{$order->amount}}</td>
                                 <td>
-
                                     <button class="btn btn-sm btn-primary "> View</button>
+                                    <button class="btn btn-sm btn-primary "> Confirm</button>
                                 </td>
-
                             </tr>
-                            <tr id="order-2" class="table-list">
-                                <th scope="row">205</th>
-                                <td> BTC </td>
-                                <td> 2021/5/4</td>
-                                <td> <span class="badge bg-warning"> Pending </span></td>
-                                <td>0 $</td>
-                                <td>
-
-                                    <button class="btn btn-sm btn-primary "> View</button>
-                                </td>
-
-                            </tr>
-
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -65,7 +56,7 @@
         </div>
     </div>
     <script>
-        $('.table-list').click(function () {
+        $('.table-list').click(function() {
             console.log($(this).attr('id'))
         })
     </script>
