@@ -29,13 +29,14 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/verify_order_email', [AuthController::class, 'verify_order_email']);
 
+    // T I C K E T 
+Route::post('/ticket/{id}', [TicketController::class, 'answer_user'])->middleware('auth');
+
 //TODO: add middleware to check if user is registered, removed for developement reasons
 Route::get('/currency', [CurrencyController::class, 'get_currencies']);
 
 Route::prefix('/dashboard')->middleware('auth:api')->group(function (): void {
 
-    // T I C K E T 
-    Route::get('/ticket', [TicketController::class, 'get_tickets']);
 
 
 

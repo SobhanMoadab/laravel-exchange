@@ -22,7 +22,7 @@ class CreateTicketsTable extends Migration
             $table->text('content');
             $table->longText('attachments')->nullable();
             $table->integer('status');
-            $table->enum('priority', ['low', 'medium', 'high']);
+            $table->enum('priority', ['low', 'medium', 'high'])->nullable();
             $table->timestamps();
         });
     }

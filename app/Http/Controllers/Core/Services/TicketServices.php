@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Core\Services;
 
 use App\Models\Log;
 use App\Models\Tickets;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -12,13 +13,37 @@ use Illuminate\Support\Facades\Http;
 
 class TicketServices extends Controller
 {
-    public function delete($request, $id){
-        try{
-        $ticket =Tickets::findOrFail($id);
+
+    public function answer_user($request, $id)
+    {
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+
+        ], [
+            'title.required' => ' title is required',
+            'content.required' => 'content is required',
+
+        ]);
+        try {
+            $user = User::findOrFail($id);
+            $ticket = Tickets::create([
+                'title' => $request->title,
+                'admin_id' => Auth::id(),
+                'user_id' => 
+                'content' => $request->content
+            ]);
+        } catch (\Exception $e) {
+            return ['error' => $e->getMessage()];
+        }
+    }
+    public function delete($request, $id)
+    {
+        try {
+            $ticket = Tickets::findOrFail($id);
             $ticket->delete();
             return ['msg' => 'Successfully Deleted'];
-
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             return ['error' => $e->getMessage()];
         }
     }
@@ -96,7 +121,7 @@ class TicketServices extends Controller
 
                     ]);
                     Log::create(['action' => 'تیکت ساخته شد', 'user_id' => Auth::id(), 'is_admin' => true]);
-                    return ['msg' => 'success', 'ticket' => $ticket, 'error' => null];
+                    return ['msg' => 'success', 'error' => null];
                 }
             }
         } catch (\Exception $e) {
